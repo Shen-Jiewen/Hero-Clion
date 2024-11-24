@@ -1,3 +1,5 @@
+#include <sys/types.h>
+#include <sys/cdefs.h>
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -25,8 +27,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "ws2812.h"
-#include "bsp_adc.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -62,6 +63,13 @@ const osThreadAttr_t logTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for ledTask */
+osThreadId_t ledTaskHandle;
+const osThreadAttr_t ledTask_attributes = {
+  .name = "ledTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -70,6 +78,7 @@ const osThreadAttr_t logTask_attributes = {
 
 void StartDefaultTask(void *argument);
 void log_task(void *argument);
+_Noreturn void led_task(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -105,6 +114,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of logTask */
   logTaskHandle = osThreadNew(log_task, NULL, &logTask_attributes);
+
+  /* creation of ledTask */
+  ledTaskHandle = osThreadNew(led_task, NULL, &ledTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
@@ -151,6 +163,24 @@ __weak void log_task(void *argument)
 
 	}
   /* USER CODE END log_task */
+}
+
+/* USER CODE BEGIN Header_led_task */
+/**
+* @brief Function implementing the ledTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_led_task */
+_Noreturn __weak void led_task(void *argument)
+{
+  /* USER CODE BEGIN led_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END led_task */
 }
 
 /* Private application code --------------------------------------------------*/

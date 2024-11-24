@@ -30,7 +30,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "ws2812.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

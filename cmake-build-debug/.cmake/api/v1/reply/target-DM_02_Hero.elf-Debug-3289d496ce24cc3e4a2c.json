@@ -29,7 +29,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 76,
+				"line" : 74,
 				"parent" : 0
 			},
 			{
@@ -41,19 +41,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
+				"line" : 70,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 71,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
 				"line" : 72,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 73,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 74,
 				"parent" : 0
 			},
 			{
@@ -313,9 +313,10 @@
 				166,
 				167,
 				168,
-				170,
-				172,
-				174,
+				169,
+				171,
+				173,
+				175,
 				177
 			]
 		},
@@ -519,16 +520,6 @@
 				"backtrace" : 5,
 				"fragment" : "D:/ClionProject/DM_02_Hero/STM32H723VGTX_FLASH.ld",
 				"role" : "flags"
-			},
-			{
-				"backtrace" : 5,
-				"fragment" : "User/bsp/dm02/bsp_crc32.c",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 5,
-				"fragment" : "User/bsp/dm02/bsp_crc32.h",
-				"role" : "flags"
 			}
 		],
 		"language" : "C"
@@ -656,12 +647,12 @@
 				157,
 				158,
 				161,
-				169,
-				171,
-				173,
-				175,
+				170,
+				172,
+				174,
 				176,
-				178
+				178,
+				179
 			]
 		},
 		{
@@ -723,9 +714,10 @@
 				166,
 				167,
 				168,
-				170,
-				172,
-				174,
+				169,
+				171,
+				173,
+				175,
 				177
 			]
 		},
@@ -737,7 +729,7 @@
 				32,
 				57,
 				106,
-				179
+				180
 			]
 		}
 	],
@@ -1635,6 +1627,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "User/application/task/led_task.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "User/application/task/log_task.c",
 			"sourceGroupIndex" : 1
 		},
@@ -1684,18 +1682,18 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "User/components/support/struct_typedef.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "User/ws2812.c",
+			"path" : "User/bsp/dm02/bsp_ws2812.c",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "User/ws2812.h",
+			"path" : "User/bsp/dm02/bsp_ws2812.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "User/components/support/struct_typedef.h",
 			"sourceGroupIndex" : 0
 		},
 		{

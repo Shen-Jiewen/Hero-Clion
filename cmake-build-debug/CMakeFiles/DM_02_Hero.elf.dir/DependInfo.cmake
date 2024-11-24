@@ -94,12 +94,13 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/timers.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/application/task/led_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/task/log_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_adc.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_buzzer.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_crc32.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.obj.d"
-  "D:/ClionProject/DM_02_Hero/User/ws2812.c" "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_ws2812.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

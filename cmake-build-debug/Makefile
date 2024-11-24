@@ -1408,6 +1408,30 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 
+User/application/task/led_task.obj: User/application/task/led_task.c.obj
+.PHONY : User/application/task/led_task.obj
+
+# target to build an object file
+User/application/task/led_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj
+.PHONY : User/application/task/led_task.c.obj
+
+User/application/task/led_task.i: User/application/task/led_task.c.i
+.PHONY : User/application/task/led_task.i
+
+# target to preprocess a source file
+User/application/task/led_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.i
+.PHONY : User/application/task/led_task.c.i
+
+User/application/task/led_task.s: User/application/task/led_task.c.s
+.PHONY : User/application/task/led_task.s
+
+# target to generate assembly for a file
+User/application/task/led_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.s
+.PHONY : User/application/task/led_task.c.s
+
 User/application/task/log_task.obj: User/application/task/log_task.c.obj
 .PHONY : User/application/task/log_task.obj
 
@@ -1528,29 +1552,29 @@ User/bsp/dm02/bsp_crc32.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.s
 .PHONY : User/bsp/dm02/bsp_crc32.c.s
 
-User/ws2812.obj: User/ws2812.c.obj
-.PHONY : User/ws2812.obj
+User/bsp/dm02/bsp_ws2812.obj: User/bsp/dm02/bsp_ws2812.c.obj
+.PHONY : User/bsp/dm02/bsp_ws2812.obj
 
 # target to build an object file
-User/ws2812.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj
-.PHONY : User/ws2812.c.obj
+User/bsp/dm02/bsp_ws2812.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
+.PHONY : User/bsp/dm02/bsp_ws2812.c.obj
 
-User/ws2812.i: User/ws2812.c.i
-.PHONY : User/ws2812.i
+User/bsp/dm02/bsp_ws2812.i: User/bsp/dm02/bsp_ws2812.c.i
+.PHONY : User/bsp/dm02/bsp_ws2812.i
 
 # target to preprocess a source file
-User/ws2812.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.i
-.PHONY : User/ws2812.c.i
+User/bsp/dm02/bsp_ws2812.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.i
+.PHONY : User/bsp/dm02/bsp_ws2812.c.i
 
-User/ws2812.s: User/ws2812.c.s
-.PHONY : User/ws2812.s
+User/bsp/dm02/bsp_ws2812.s: User/bsp/dm02/bsp_ws2812.c.s
+.PHONY : User/bsp/dm02/bsp_ws2812.s
 
 # target to generate assembly for a file
-User/ws2812.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.s
-.PHONY : User/ws2812.c.s
+User/bsp/dm02/bsp_ws2812.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.s
+.PHONY : User/bsp/dm02/bsp_ws2812.c.s
 
 # Help Target
 help:
@@ -1721,6 +1745,9 @@ help:
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.obj
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.i
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.s
+	@echo ... User/application/task/led_task.obj
+	@echo ... User/application/task/led_task.i
+	@echo ... User/application/task/led_task.s
 	@echo ... User/application/task/log_task.obj
 	@echo ... User/application/task/log_task.i
 	@echo ... User/application/task/log_task.s
@@ -1736,9 +1763,9 @@ help:
 	@echo ... User/bsp/dm02/bsp_crc32.obj
 	@echo ... User/bsp/dm02/bsp_crc32.i
 	@echo ... User/bsp/dm02/bsp_crc32.s
-	@echo ... User/ws2812.obj
-	@echo ... User/ws2812.i
-	@echo ... User/ws2812.s
+	@echo ... User/bsp/dm02/bsp_ws2812.obj
+	@echo ... User/bsp/dm02/bsp_ws2812.i
+	@echo ... User/bsp/dm02/bsp_ws2812.s
 .PHONY : help
 
 
