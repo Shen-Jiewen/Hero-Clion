@@ -1408,6 +1408,30 @@ User/bsp/dm02/bsp_buzzer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.s
 .PHONY : User/bsp/dm02/bsp_buzzer.c.s
 
+User/bsp/dm02/bsp_can.obj: User/bsp/dm02/bsp_can.c.obj
+.PHONY : User/bsp/dm02/bsp_can.obj
+
+# target to build an object file
+User/bsp/dm02/bsp_can.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
+.PHONY : User/bsp/dm02/bsp_can.c.obj
+
+User/bsp/dm02/bsp_can.i: User/bsp/dm02/bsp_can.c.i
+.PHONY : User/bsp/dm02/bsp_can.i
+
+# target to preprocess a source file
+User/bsp/dm02/bsp_can.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.i
+.PHONY : User/bsp/dm02/bsp_can.c.i
+
+User/bsp/dm02/bsp_can.s: User/bsp/dm02/bsp_can.c.s
+.PHONY : User/bsp/dm02/bsp_can.s
+
+# target to generate assembly for a file
+User/bsp/dm02/bsp_can.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.s
+.PHONY : User/bsp/dm02/bsp_can.c.s
+
 User/ws2812.obj: User/ws2812.c.obj
 .PHONY : User/ws2812.obj
 
@@ -1601,6 +1625,9 @@ help:
 	@echo ... User/bsp/dm02/bsp_buzzer.obj
 	@echo ... User/bsp/dm02/bsp_buzzer.i
 	@echo ... User/bsp/dm02/bsp_buzzer.s
+	@echo ... User/bsp/dm02/bsp_can.obj
+	@echo ... User/bsp/dm02/bsp_can.i
+	@echo ... User/bsp/dm02/bsp_can.s
 	@echo ... User/ws2812.obj
 	@echo ... User/ws2812.i
 	@echo ... User/ws2812.s

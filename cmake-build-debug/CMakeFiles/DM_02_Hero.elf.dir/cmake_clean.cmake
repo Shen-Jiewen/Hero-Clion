@@ -106,6 +106,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj.d"
   "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj"
   "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj.d"
+  "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj"
+  "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj.d"
   "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj"
   "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj.d"
   "DM_02_Hero.elf"

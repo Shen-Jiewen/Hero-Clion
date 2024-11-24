@@ -823,10 +823,24 @@ CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.s"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_buzzer.c -o CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_buzzer.c.s
 
+CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
+CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj: D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.c
+CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj"
+	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_can.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_can.c.obj -c D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_can.c
+
+CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.i"
+	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_can.c > CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_can.c.i
+
+CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.s"
+	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_can.c -o CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_can.c.s
+
 CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj: D:/ClionProject/DM_02_Hero/User/ws2812.c
 CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\ws2812.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\ws2812.c.obj -c D:\ClionProject\DM_02_Hero\User\ws2812.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.i: cmake_force
@@ -893,6 +907,7 @@ DM_02_Hero_elf_OBJECTS = \
 "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj" \
+"CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj"
 
 # External object files for target DM_02_Hero.elf
@@ -952,11 +967,12 @@ DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/S
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj
+DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/build.make
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/objects1.rsp
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Linking C executable DM_02_Hero.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Linking C executable DM_02_Hero.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\DM_02_Hero.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/ClionProject/DM_02_Hero/cmake-build-debug/DM_02_Hero.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/ClionProject/DM_02_Hero/cmake-build-debug/DM_02_Hero.bin"

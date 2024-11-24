@@ -94,6 +94,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/User/application/task/log_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_adc.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_buzzer.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/ws2812.c" "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj.d"
   )
 
