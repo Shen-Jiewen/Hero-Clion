@@ -33,10 +33,15 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"
   "D:/ClionProject/DM_02_Hero/User"
+  "D:/ClionProject/DM_02_Hero/User/application"
+  "D:/ClionProject/DM_02_Hero/User/bsp/dm02"
+  "D:/ClionProject/DM_02_Hero/User/components"
+  "D:/ClionProject/DM_02_Hero/User/components/support"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/ClionProject/DM_02_Hero/Core/Src/adc.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/fdcan.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/fdcan.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/fdcan.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/freertos.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/freertos.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/freertos.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/gpio.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/gpio.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/gpio.c.obj.d"
@@ -51,6 +56,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/Core/Src/system_stm32h7xx.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/system_stm32h7xx.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/system_stm32h7xx.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/usart.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/usart.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/usart.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c.obj.d"
@@ -83,6 +90,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/timers.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_adc.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/ws2812.c" "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj.d"
   )
 
