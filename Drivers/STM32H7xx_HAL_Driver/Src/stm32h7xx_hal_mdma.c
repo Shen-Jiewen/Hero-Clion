@@ -200,7 +200,7 @@ static void MDMA_Init(MDMA_HandleTypeDef *hmdma);
     [..]
     The HAL_MDMA_Init() function follows the MDMA channel configuration procedures as described in
     reference manual.
-    The HAL_MDMA_DeInit function allows to Deinitialize the MDMA channel.
+    The HAL_MDMA_DeInit function allows to deinitialize the MDMA channel.
     HAL_MDMA_RegisterCallback and  HAL_MDMA_UnRegisterCallback functions allows
     respectevely to register/unregister an MDMA callback function.
 

@@ -32,6 +32,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"
+  "D:/ClionProject/DM_02_Hero/User"
   )
 
 # The set of dependency files which are needed:
@@ -41,12 +42,14 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/Core/Src/gpio.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/gpio.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/gpio.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/main.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/memorymap.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/memorymap.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/memorymap.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/Core/Src/spi.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/spi.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/spi.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/stm32h7xx_hal_msp.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_hal_msp.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_hal_msp.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/stm32h7xx_hal_timebase_tim.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_hal_timebase_tim.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_hal_timebase_tim.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/stm32h7xx_it.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_it.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_it.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/syscalls.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/syscalls.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/syscalls.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/sysmem.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/sysmem.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/sysmem.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/system_stm32h7xx.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/system_stm32h7xx.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/system_stm32h7xx.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/Core/Src/usart.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/usart.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/usart.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c.obj.d"
@@ -64,8 +67,12 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/croutine.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj.d"
@@ -76,7 +83,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/timers.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj.d"
-  "D:/ClionProject/DM_02_Hero/User/drivers/can/CAN_Interface.cpp" "CMakeFiles/DM_02_Hero.elf.dir/User/drivers/can/CAN_Interface.cpp.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/drivers/can/CAN_Interface.cpp.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/ws2812.c" "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/ws2812.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,3 +1,0 @@
-D:/ClionProject/DM_02_Hero/cmake-build-debug-mingwstm32/CMakeFiles/DM_02_Hero.elf.dir
-D:/ClionProject/DM_02_Hero/cmake-build-debug-mingwstm32/CMakeFiles/ALL_BUILD.dir
-D:/ClionProject/DM_02_Hero/cmake-build-debug-mingwstm32/CMakeFiles/ZERO_CHECK.dir

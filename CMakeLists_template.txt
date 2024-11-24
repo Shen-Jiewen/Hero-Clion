@@ -50,9 +50,19 @@ endif ()
 
 include_directories(${includes})
 
+# User include_directories BEGIN
+
+include_directories(User)
+
+# User include_directories END
+
 add_definitions(${defines})
 
-file(GLOB_RECURSE SOURCES ${sources})
+file(GLOB_RECURSE SOURCES ${sources}
+        # User file BEGIN
+        "User/*.*"
+        # User file END
+)
 
 set(LINKER_SCRIPT $${CMAKE_SOURCE_DIR}/${linkerScript})
 

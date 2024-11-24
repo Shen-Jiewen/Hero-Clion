@@ -502,7 +502,7 @@ static void I2C_ConvertOtherXferOptions(I2C_HandleTypeDef *hi2c);
               ##### Initialization and de-initialization functions #####
  ===============================================================================
     [..]  This subsection provides a set of functions allowing to initialize and
-          Deinitialize the I2Cx peripheral:
+          deinitialize the I2Cx peripheral:
 
       (+) User must Implement HAL_I2C_MspInit() function in which he configures
           all related peripherals resources (CLOCK, GPIO, DMA, IT and NVIC ).

@@ -200,7 +200,7 @@ static void DMA_CalcDMAMUXRequestGenBaseAndMask(DMA_HandleTypeDef *hdma);
     [..]
     The HAL_DMA_Init() function follows the DMA configuration procedures as described in
     reference manual.
-    The HAL_DMA_DeInit function allows to Deinitialize the DMA stream.
+    The HAL_DMA_DeInit function allows to deinitialize the DMA stream.
 
 @endverbatim
   * @{

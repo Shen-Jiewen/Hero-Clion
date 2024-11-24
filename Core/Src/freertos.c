@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "ws2812.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -143,10 +143,19 @@ void StartDefaultTask(void *argument)
 __weak void log_task(void *argument)
 {
   /* USER CODE BEGIN log_task */
+	uint8_t r = 1;
+	uint8_t g = 1;
+	uint8_t b = 1;
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	WS2812_Ctrl(r, g, b);
+	r++;
+	g += 5;
+	b += 10;
+	HAL_Delay(1);
+	r++;g++;b++;
+	HAL_Delay(100);
   }
   /* USER CODE END log_task */
 }

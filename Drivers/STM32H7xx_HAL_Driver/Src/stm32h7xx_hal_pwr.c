@@ -199,7 +199,7 @@
               ##### Initialization and De-Initialization Functions #####
  ===============================================================================
     [..]
-      This section provides functions allowing to Deinitialize power peripheral.
+      This section provides functions allowing to deinitialize power peripheral.
 
     [..]
       After system reset, the backup domain (RTC registers, RTC backup data
