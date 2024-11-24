@@ -152,6 +152,30 @@ Core/Src/adc.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.s
 .PHONY : Core/Src/adc.c.s
 
+Core/Src/crc.obj: Core/Src/crc.c.obj
+.PHONY : Core/Src/crc.obj
+
+# target to build an object file
+Core/Src/crc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.obj
+.PHONY : Core/Src/crc.c.obj
+
+Core/Src/crc.i: Core/Src/crc.c.i
+.PHONY : Core/Src/crc.i
+
+# target to preprocess a source file
+Core/Src/crc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.i
+.PHONY : Core/Src/crc.c.i
+
+Core/Src/crc.s: Core/Src/crc.c.s
+.PHONY : Core/Src/crc.s
+
+# target to generate assembly for a file
+Core/Src/crc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.s
+.PHONY : Core/Src/crc.c.s
+
 Core/Src/fdcan.obj: Core/Src/fdcan.c.obj
 .PHONY : Core/Src/fdcan.obj
 
@@ -591,6 +615,54 @@ Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.s: Drivers/STM32H7xx_HAL_D
 Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c.s
 .PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c.s
+
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.obj: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.obj
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.obj
+
+# target to build an object file
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.obj
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.obj
+
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.i: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.i
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.i
+
+# target to preprocess a source file
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.i
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.i
+
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.s: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.s
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.s
+
+# target to generate assembly for a file
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.s
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.s
+
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.obj: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.obj
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.obj
+
+# target to build an object file
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.obj
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.obj
+
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.i: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.i
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.i
+
+# target to preprocess a source file
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.i
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.i
+
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.s: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.s
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.s
+
+# target to generate assembly for a file
+Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.s
+.PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.s
 
 Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.obj: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c.obj
 .PHONY : Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.obj
@@ -1432,6 +1504,30 @@ User/bsp/dm02/bsp_can.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.s
 .PHONY : User/bsp/dm02/bsp_can.c.s
 
+User/bsp/dm02/bsp_crc32.obj: User/bsp/dm02/bsp_crc32.c.obj
+.PHONY : User/bsp/dm02/bsp_crc32.obj
+
+# target to build an object file
+User/bsp/dm02/bsp_crc32.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.obj
+.PHONY : User/bsp/dm02/bsp_crc32.c.obj
+
+User/bsp/dm02/bsp_crc32.i: User/bsp/dm02/bsp_crc32.c.i
+.PHONY : User/bsp/dm02/bsp_crc32.i
+
+# target to preprocess a source file
+User/bsp/dm02/bsp_crc32.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.i
+.PHONY : User/bsp/dm02/bsp_crc32.c.i
+
+User/bsp/dm02/bsp_crc32.s: User/bsp/dm02/bsp_crc32.c.s
+.PHONY : User/bsp/dm02/bsp_crc32.s
+
+# target to generate assembly for a file
+User/bsp/dm02/bsp_crc32.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.s
+.PHONY : User/bsp/dm02/bsp_crc32.c.s
+
 User/ws2812.obj: User/ws2812.c.obj
 .PHONY : User/ws2812.obj
 
@@ -1468,6 +1564,9 @@ help:
 	@echo ... Core/Src/adc.obj
 	@echo ... Core/Src/adc.i
 	@echo ... Core/Src/adc.s
+	@echo ... Core/Src/crc.obj
+	@echo ... Core/Src/crc.i
+	@echo ... Core/Src/crc.s
 	@echo ... Core/Src/fdcan.obj
 	@echo ... Core/Src/fdcan.i
 	@echo ... Core/Src/fdcan.s
@@ -1523,6 +1622,12 @@ help:
 	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.obj
 	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.i
 	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.s
+	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.obj
+	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.i
+	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.s
+	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.obj
+	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.i
+	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.s
 	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.obj
 	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.i
 	@echo ... Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.s
@@ -1628,6 +1733,9 @@ help:
 	@echo ... User/bsp/dm02/bsp_can.obj
 	@echo ... User/bsp/dm02/bsp_can.i
 	@echo ... User/bsp/dm02/bsp_can.s
+	@echo ... User/bsp/dm02/bsp_crc32.obj
+	@echo ... User/bsp/dm02/bsp_crc32.i
+	@echo ... User/bsp/dm02/bsp_crc32.s
 	@echo ... User/ws2812.obj
 	@echo ... User/ws2812.i
 	@echo ... User/ws2812.s
