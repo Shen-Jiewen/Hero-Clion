@@ -440,6 +440,30 @@ Core/Src/system_stm32h7xx.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/system_stm32h7xx.c.s
 .PHONY : Core/Src/system_stm32h7xx.c.s
 
+Core/Src/tim.obj: Core/Src/tim.c.obj
+.PHONY : Core/Src/tim.obj
+
+# target to build an object file
+Core/Src/tim.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/tim.c.obj
+.PHONY : Core/Src/tim.c.obj
+
+Core/Src/tim.i: Core/Src/tim.c.i
+.PHONY : Core/Src/tim.i
+
+# target to preprocess a source file
+Core/Src/tim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/tim.c.i
+.PHONY : Core/Src/tim.c.i
+
+Core/Src/tim.s: Core/Src/tim.c.s
+.PHONY : Core/Src/tim.s
+
+# target to generate assembly for a file
+Core/Src/tim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/tim.c.s
+.PHONY : Core/Src/tim.c.s
+
 Core/Src/usart.obj: Core/Src/usart.c.obj
 .PHONY : Core/Src/usart.obj
 
@@ -1312,6 +1336,30 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 
+User/application/task/log_task.obj: User/application/task/log_task.c.obj
+.PHONY : User/application/task/log_task.obj
+
+# target to build an object file
+User/application/task/log_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
+.PHONY : User/application/task/log_task.c.obj
+
+User/application/task/log_task.i: User/application/task/log_task.c.i
+.PHONY : User/application/task/log_task.i
+
+# target to preprocess a source file
+User/application/task/log_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.i
+.PHONY : User/application/task/log_task.c.i
+
+User/application/task/log_task.s: User/application/task/log_task.c.s
+.PHONY : User/application/task/log_task.s
+
+# target to generate assembly for a file
+User/application/task/log_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.s
+.PHONY : User/application/task/log_task.c.s
+
 User/bsp/dm02/bsp_adc.obj: User/bsp/dm02/bsp_adc.c.obj
 .PHONY : User/bsp/dm02/bsp_adc.obj
 
@@ -1335,6 +1383,30 @@ User/bsp/dm02/bsp_adc.s: User/bsp/dm02/bsp_adc.c.s
 User/bsp/dm02/bsp_adc.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.s
 .PHONY : User/bsp/dm02/bsp_adc.c.s
+
+User/bsp/dm02/bsp_buzzer.obj: User/bsp/dm02/bsp_buzzer.c.obj
+.PHONY : User/bsp/dm02/bsp_buzzer.obj
+
+# target to build an object file
+User/bsp/dm02/bsp_buzzer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj
+.PHONY : User/bsp/dm02/bsp_buzzer.c.obj
+
+User/bsp/dm02/bsp_buzzer.i: User/bsp/dm02/bsp_buzzer.c.i
+.PHONY : User/bsp/dm02/bsp_buzzer.i
+
+# target to preprocess a source file
+User/bsp/dm02/bsp_buzzer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.i
+.PHONY : User/bsp/dm02/bsp_buzzer.c.i
+
+User/bsp/dm02/bsp_buzzer.s: User/bsp/dm02/bsp_buzzer.c.s
+.PHONY : User/bsp/dm02/bsp_buzzer.s
+
+# target to generate assembly for a file
+User/bsp/dm02/bsp_buzzer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.s
+.PHONY : User/bsp/dm02/bsp_buzzer.c.s
 
 User/ws2812.obj: User/ws2812.c.obj
 .PHONY : User/ws2812.obj
@@ -1408,6 +1480,9 @@ help:
 	@echo ... Core/Src/system_stm32h7xx.obj
 	@echo ... Core/Src/system_stm32h7xx.i
 	@echo ... Core/Src/system_stm32h7xx.s
+	@echo ... Core/Src/tim.obj
+	@echo ... Core/Src/tim.i
+	@echo ... Core/Src/tim.s
 	@echo ... Core/Src/usart.obj
 	@echo ... Core/Src/usart.i
 	@echo ... Core/Src/usart.s
@@ -1517,9 +1592,15 @@ help:
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.obj
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.i
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.s
+	@echo ... User/application/task/log_task.obj
+	@echo ... User/application/task/log_task.i
+	@echo ... User/application/task/log_task.s
 	@echo ... User/bsp/dm02/bsp_adc.obj
 	@echo ... User/bsp/dm02/bsp_adc.i
 	@echo ... User/bsp/dm02/bsp_adc.s
+	@echo ... User/bsp/dm02/bsp_buzzer.obj
+	@echo ... User/bsp/dm02/bsp_buzzer.i
+	@echo ... User/bsp/dm02/bsp_buzzer.s
 	@echo ... User/ws2812.obj
 	@echo ... User/ws2812.i
 	@echo ... User/ws2812.s

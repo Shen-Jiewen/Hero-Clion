@@ -144,21 +144,11 @@ void StartDefaultTask(void *argument)
 __weak void log_task(void *argument)
 {
   /* USER CODE BEGIN log_task */
-	uint8_t r = 1;
-	uint8_t g = 1;
-	uint8_t b = 1;
+
 	/* Infinite loop */
 	for (;;)
 	{
-		WS2812_Ctrl(r, g, b);
-		r++;
-		g += 5;
-		b += 10;
-		vTaskDelay(10);
-		r++;
-		g++;
-		b++;
-		vTaskDelay(100);
+
 	}
   /* USER CODE END log_task */
 }
