@@ -125,6 +125,68 @@ CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.obj: D:/ClionProject/DM_02_Hero/Cor
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h
 
+CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.obj: D:/ClionProject/DM_02_Hero/Core/Src/dma.c \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/dma.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h
+
 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/fdcan.c.obj: D:/ClionProject/DM_02_Hero/Core/Src/fdcan.c \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
@@ -191,31 +253,20 @@ CMakeFiles/DM_02_Hero.elf.dir/Core/Src/freertos.c.obj: D:/ClionProject/DM_02_Her
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_endian.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/endian.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/types.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/reent.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_pthreadtypes.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_sigset.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_timespec.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_timeval.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/sched.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/select.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/timespec.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/types.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/FreeRTOSConfig.h \
@@ -356,6 +407,7 @@ CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj: D:/ClionProject/DM_02_Hero/Co
   D:/ClionProject/DM_02_Hero/Core/Inc/FreeRTOSConfig.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/adc.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/crc.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/dma.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/fdcan.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/gpio.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
@@ -2973,6 +3025,146 @@ CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.o
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h
 
+CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj: D:/ClionProject/DM_02_Hero/User/application/module/imu_module.c \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu_module.h \
+  D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
+
+CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj: D:/ClionProject/DM_02_Hero/User/application/task/imu_task.c \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/FreeRTOSConfig.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu_module.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_imu.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088driver.h \
+  D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
+
 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj: D:/ClionProject/DM_02_Hero/User/application/task/led_task.c \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
@@ -3374,6 +3566,143 @@ CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.obj: D:/ClionProject/DM_
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_crc32.h \
   D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
 
+CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj: D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_imu.c \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/FreeRTOSConfig.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_imu.h \
+  D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
+
+CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.obj: D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_uart.c \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_uart.h
+
 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj: D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_ws2812.c \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
@@ -3436,6 +3765,132 @@ CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj: D:/ClionProject/DM
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_ws2812.h
 
+CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj: D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088Middleware.c \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088Middleware.h
+
+CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj: D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.c \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088Middleware.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088driver.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088reg.h
+
 
 D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c:
 
@@ -3458,8 +3913,6 @@ D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h:
-
-D:/ClionProject/DM_02_Hero/Core/Src/fdcan.c:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h:
 
@@ -3581,6 +4034,8 @@ D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h:
 
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h:
 
+D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088driver.h:
+
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h:
 
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
@@ -3589,33 +4044,23 @@ D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_e
 
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:
 
+D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.c:
+
+D:/ClionProject/DM_02_Hero/Core/Src/dma.c:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h:
+
+D:/ClionProject/DM_02_Hero/Core/Inc/dma.h:
+
+D:/ClionProject/DM_02_Hero/Core/Src/fdcan.c:
+
 D:/ClionProject/DM_02_Hero/Core/Inc/fdcan.h:
 
 D:/ClionProject/DM_02_Hero/Core/Src/freertos.c:
 
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_endian.h:
-
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/endian.h:
-
-D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c:
-
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/types.h:
-
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/timespec.h:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/reent.h:
-
-D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h:
-
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_sigset.h:
-
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_timespec.h:
-
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_timeval.h:
-
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/select.h:
-
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/types.h:
 
 D:/ClionProject/DM_02_Hero/Core/Inc/FreeRTOSConfig.h:
 
@@ -3673,9 +4118,19 @@ D:/ClionProject/DM_02_Hero/Core/Src/tim.c:
 
 D:/ClionProject/DM_02_Hero/Core/Src/syscalls.c:
 
+D:/ClionProject/DM_02_Hero/User/application/module/imu_module.h:
+
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/alloca.h:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/errno.h:
+
+D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088reg.h:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_endian.h:
+
+D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_uart.c:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/endian.h:
 
 D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 
@@ -3685,6 +4140,10 @@ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/time.h:
 
+D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/types.h:
+
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/signal.h:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdio.h:
@@ -3693,7 +4152,19 @@ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h:
 
+D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_sigset.h:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_timespec.h:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_timeval.h:
+
+D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_uart.h:
+
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/errno.h:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/select.h:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/stat.h:
 
@@ -3706,6 +4177,8 @@ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-
 D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/times.h:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/types.h:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/time.h:
 
@@ -3759,8 +4232,6 @@ D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h:
 
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h:
-
 D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_mpool.h:
 
 D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h:
@@ -3785,6 +4256,14 @@ D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/stack
 
 D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/timers.c:
 
+D:/ClionProject/DM_02_Hero/User/application/module/imu_module.c:
+
+D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h:
+
+D:/ClionProject/DM_02_Hero/User/application/task/imu_task.c:
+
+D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_imu.h:
+
 D:/ClionProject/DM_02_Hero/User/application/task/led_task.c:
 
 D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_ws2812.h:
@@ -3794,8 +4273,6 @@ D:/ClionProject/DM_02_Hero/User/application/task/log_task.c:
 D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_adc.h:
 
 D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_buzzer.h:
-
-D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h:
 
 D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_buzzer.c:
 
@@ -3807,4 +4284,10 @@ D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_crc32.c:
 
 D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_crc32.h:
 
+D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_imu.c:
+
 D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_ws2812.c:
+
+D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088Middleware.c:
+
+D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088Middleware.h:

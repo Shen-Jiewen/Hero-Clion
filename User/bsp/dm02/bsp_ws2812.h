@@ -21,6 +21,6 @@
 #define WS2812_SetColor(color_macro) ws2812_set_color(color_macro)
 
 void ws2812_set_color(uint8_t r, uint8_t g, uint8_t b);
-void HSV_to_RGB(float h, float s, float v, uint8_t *r, uint8_t *g, uint8_t *b);
+void HSV_to_RGB(float h, float s, float v, uint8_t* r, uint8_t* g, uint8_t* b);
 
 #endif //DM_02_HERO_USER_BSP_DM02_BSP_WS2812_H_

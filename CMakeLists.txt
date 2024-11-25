@@ -53,7 +53,9 @@ include_directories(Core/Inc Drivers/STM32H7xx_HAL_Driver/Inc Drivers/STM32H7xx_
 
 # User include_directories BEGIN
 
-include_directories(User User/application User/bsp/dm02 User/components User/components/support)
+include_directories(User User/application User/application/module
+        User/bsp/dm02 User/components User/components/support
+        User/components/device/BMI088 User/components/device/BMI088/inc)
 
 # User include_directories END
 

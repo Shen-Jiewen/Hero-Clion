@@ -75,6 +75,7 @@ CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj: \
  D:\ClionProject\DM_02_Hero\Core\Inc/adc.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/main.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/crc.h \
+ D:\ClionProject\DM_02_Hero\Core\Inc/dma.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/fdcan.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/memorymap.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/spi.h \

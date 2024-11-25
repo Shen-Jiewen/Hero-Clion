@@ -13,8 +13,9 @@ fp32 temperature = 0.f;
 fp32 voltage_in = 0.f;
 uint8_t psc = 23;
 
-_Noreturn void log_task(void *argument){
-	while(1)
+_Noreturn void log_task(void* argument)
+{
+	while (1)
 	{
 		// 获取电压
 		init_vrefint_reciprocal();
