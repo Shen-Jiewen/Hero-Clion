@@ -61,6 +61,9 @@ CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj: \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_tim_ex.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_uart.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_uart_ex.h \
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd.h \
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_ll_usb.h \
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/FreeRTOSConfig.h \

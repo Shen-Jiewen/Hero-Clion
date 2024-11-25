@@ -58,4 +58,7 @@ CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpi
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_tim.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_tim_ex.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_uart.h \
- D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_uart_ex.h
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_uart_ex.h \
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd.h \
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_ll_usb.h \
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h

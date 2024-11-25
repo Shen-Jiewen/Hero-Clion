@@ -60,6 +60,9 @@ CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj: \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_tim_ex.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_uart.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_uart_ex.h \
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd.h \
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_ll_usb.h \
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/FreeRTOSConfig.h \
@@ -81,4 +84,17 @@ CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj: \
  D:\ClionProject\DM_02_Hero\Core\Inc/spi.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/tim.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/usart.h \
+ D:\ClionProject\DM_02_Hero\USB_DEVICE\App/usb_device.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\ST\STM32_USB_Device_Library\Core\Inc/usbd_def.h \
+ D:\ClionProject\DM_02_Hero\USB_DEVICE\Target/usbd_conf.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdio.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdarg.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/stdio.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdlib.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/stdlib.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/alloca.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/string.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/gpio.h

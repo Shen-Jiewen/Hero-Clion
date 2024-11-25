@@ -75,6 +75,13 @@ const osThreadAttr_t imuTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for usbTask */
+osThreadId_t usbTaskHandle;
+const osThreadAttr_t usbTask_attributes = {
+  .name = "usbTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for imuBinarySem01 */
 osSemaphoreId_t imuBinarySem01Handle;
 const osSemaphoreAttr_t imuBinarySem01_attributes = {
@@ -90,7 +97,9 @@ void StartDefaultTask(void *argument);
 void log_task(void *argument);
 void led_task(void *argument);
 void imu_task(void *argument);
+void usb_task(void *argument);
 
+extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
@@ -136,6 +145,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of imuTask */
   imuTaskHandle = osThreadNew(imu_task, NULL, &imuTask_attributes);
 
+  /* creation of usbTask */
+  usbTaskHandle = osThreadNew(usb_task, NULL, &usbTask_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -155,6 +167,8 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void *argument)
 {
+  /* init code for USB_DEVICE */
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN StartDefaultTask */
 	/* Infinite loop */
 	for (;;)
@@ -217,6 +231,24 @@ __weak void imu_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END imu_task */
+}
+
+/* USER CODE BEGIN Header_usb_task */
+/**
+* @brief Function implementing the usbTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_usb_task */
+__weak void usb_task(void *argument)
+{
+  /* USER CODE BEGIN usb_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END usb_task */
 }
 
 /* Private application code --------------------------------------------------*/
