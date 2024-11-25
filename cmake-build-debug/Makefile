@@ -176,6 +176,30 @@ Core/Src/crc.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.s
 .PHONY : Core/Src/crc.c.s
 
+Core/Src/dma.obj: Core/Src/dma.c.obj
+.PHONY : Core/Src/dma.obj
+
+# target to build an object file
+Core/Src/dma.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.obj
+.PHONY : Core/Src/dma.c.obj
+
+Core/Src/dma.i: Core/Src/dma.c.i
+.PHONY : Core/Src/dma.i
+
+# target to preprocess a source file
+Core/Src/dma.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.i
+.PHONY : Core/Src/dma.c.i
+
+Core/Src/dma.s: Core/Src/dma.c.s
+.PHONY : Core/Src/dma.s
+
+# target to generate assembly for a file
+Core/Src/dma.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.s
+.PHONY : Core/Src/dma.c.s
+
 Core/Src/fdcan.obj: Core/Src/fdcan.c.obj
 .PHONY : Core/Src/fdcan.obj
 
@@ -1408,6 +1432,54 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 
+User/application/module/imu_module.obj: User/application/module/imu_module.c.obj
+.PHONY : User/application/module/imu_module.obj
+
+# target to build an object file
+User/application/module/imu_module.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj
+.PHONY : User/application/module/imu_module.c.obj
+
+User/application/module/imu_module.i: User/application/module/imu_module.c.i
+.PHONY : User/application/module/imu_module.i
+
+# target to preprocess a source file
+User/application/module/imu_module.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.i
+.PHONY : User/application/module/imu_module.c.i
+
+User/application/module/imu_module.s: User/application/module/imu_module.c.s
+.PHONY : User/application/module/imu_module.s
+
+# target to generate assembly for a file
+User/application/module/imu_module.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.s
+.PHONY : User/application/module/imu_module.c.s
+
+User/application/task/imu_task.obj: User/application/task/imu_task.c.obj
+.PHONY : User/application/task/imu_task.obj
+
+# target to build an object file
+User/application/task/imu_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj
+.PHONY : User/application/task/imu_task.c.obj
+
+User/application/task/imu_task.i: User/application/task/imu_task.c.i
+.PHONY : User/application/task/imu_task.i
+
+# target to preprocess a source file
+User/application/task/imu_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.i
+.PHONY : User/application/task/imu_task.c.i
+
+User/application/task/imu_task.s: User/application/task/imu_task.c.s
+.PHONY : User/application/task/imu_task.s
+
+# target to generate assembly for a file
+User/application/task/imu_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.s
+.PHONY : User/application/task/imu_task.c.s
+
 User/application/task/led_task.obj: User/application/task/led_task.c.obj
 .PHONY : User/application/task/led_task.obj
 
@@ -1552,6 +1624,54 @@ User/bsp/dm02/bsp_crc32.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.s
 .PHONY : User/bsp/dm02/bsp_crc32.c.s
 
+User/bsp/dm02/bsp_imu.obj: User/bsp/dm02/bsp_imu.c.obj
+.PHONY : User/bsp/dm02/bsp_imu.obj
+
+# target to build an object file
+User/bsp/dm02/bsp_imu.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
+.PHONY : User/bsp/dm02/bsp_imu.c.obj
+
+User/bsp/dm02/bsp_imu.i: User/bsp/dm02/bsp_imu.c.i
+.PHONY : User/bsp/dm02/bsp_imu.i
+
+# target to preprocess a source file
+User/bsp/dm02/bsp_imu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.i
+.PHONY : User/bsp/dm02/bsp_imu.c.i
+
+User/bsp/dm02/bsp_imu.s: User/bsp/dm02/bsp_imu.c.s
+.PHONY : User/bsp/dm02/bsp_imu.s
+
+# target to generate assembly for a file
+User/bsp/dm02/bsp_imu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.s
+.PHONY : User/bsp/dm02/bsp_imu.c.s
+
+User/bsp/dm02/bsp_uart.obj: User/bsp/dm02/bsp_uart.c.obj
+.PHONY : User/bsp/dm02/bsp_uart.obj
+
+# target to build an object file
+User/bsp/dm02/bsp_uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.obj
+.PHONY : User/bsp/dm02/bsp_uart.c.obj
+
+User/bsp/dm02/bsp_uart.i: User/bsp/dm02/bsp_uart.c.i
+.PHONY : User/bsp/dm02/bsp_uart.i
+
+# target to preprocess a source file
+User/bsp/dm02/bsp_uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.i
+.PHONY : User/bsp/dm02/bsp_uart.c.i
+
+User/bsp/dm02/bsp_uart.s: User/bsp/dm02/bsp_uart.c.s
+.PHONY : User/bsp/dm02/bsp_uart.s
+
+# target to generate assembly for a file
+User/bsp/dm02/bsp_uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.s
+.PHONY : User/bsp/dm02/bsp_uart.c.s
+
 User/bsp/dm02/bsp_ws2812.obj: User/bsp/dm02/bsp_ws2812.c.obj
 .PHONY : User/bsp/dm02/bsp_ws2812.obj
 
@@ -1576,6 +1696,54 @@ User/bsp/dm02/bsp_ws2812.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.s
 .PHONY : User/bsp/dm02/bsp_ws2812.c.s
 
+User/components/device/BMI088/BMI088Middleware.obj: User/components/device/BMI088/BMI088Middleware.c.obj
+.PHONY : User/components/device/BMI088/BMI088Middleware.obj
+
+# target to build an object file
+User/components/device/BMI088/BMI088Middleware.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
+.PHONY : User/components/device/BMI088/BMI088Middleware.c.obj
+
+User/components/device/BMI088/BMI088Middleware.i: User/components/device/BMI088/BMI088Middleware.c.i
+.PHONY : User/components/device/BMI088/BMI088Middleware.i
+
+# target to preprocess a source file
+User/components/device/BMI088/BMI088Middleware.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.i
+.PHONY : User/components/device/BMI088/BMI088Middleware.c.i
+
+User/components/device/BMI088/BMI088Middleware.s: User/components/device/BMI088/BMI088Middleware.c.s
+.PHONY : User/components/device/BMI088/BMI088Middleware.s
+
+# target to generate assembly for a file
+User/components/device/BMI088/BMI088Middleware.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.s
+.PHONY : User/components/device/BMI088/BMI088Middleware.c.s
+
+User/components/device/BMI088/BMI088driver.obj: User/components/device/BMI088/BMI088driver.c.obj
+.PHONY : User/components/device/BMI088/BMI088driver.obj
+
+# target to build an object file
+User/components/device/BMI088/BMI088driver.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
+.PHONY : User/components/device/BMI088/BMI088driver.c.obj
+
+User/components/device/BMI088/BMI088driver.i: User/components/device/BMI088/BMI088driver.c.i
+.PHONY : User/components/device/BMI088/BMI088driver.i
+
+# target to preprocess a source file
+User/components/device/BMI088/BMI088driver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.i
+.PHONY : User/components/device/BMI088/BMI088driver.c.i
+
+User/components/device/BMI088/BMI088driver.s: User/components/device/BMI088/BMI088driver.c.s
+.PHONY : User/components/device/BMI088/BMI088driver.s
+
+# target to generate assembly for a file
+User/components/device/BMI088/BMI088driver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.s
+.PHONY : User/components/device/BMI088/BMI088driver.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -1591,6 +1759,9 @@ help:
 	@echo ... Core/Src/crc.obj
 	@echo ... Core/Src/crc.i
 	@echo ... Core/Src/crc.s
+	@echo ... Core/Src/dma.obj
+	@echo ... Core/Src/dma.i
+	@echo ... Core/Src/dma.s
 	@echo ... Core/Src/fdcan.obj
 	@echo ... Core/Src/fdcan.i
 	@echo ... Core/Src/fdcan.s
@@ -1745,6 +1916,12 @@ help:
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.obj
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.i
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.s
+	@echo ... User/application/module/imu_module.obj
+	@echo ... User/application/module/imu_module.i
+	@echo ... User/application/module/imu_module.s
+	@echo ... User/application/task/imu_task.obj
+	@echo ... User/application/task/imu_task.i
+	@echo ... User/application/task/imu_task.s
 	@echo ... User/application/task/led_task.obj
 	@echo ... User/application/task/led_task.i
 	@echo ... User/application/task/led_task.s
@@ -1763,9 +1940,21 @@ help:
 	@echo ... User/bsp/dm02/bsp_crc32.obj
 	@echo ... User/bsp/dm02/bsp_crc32.i
 	@echo ... User/bsp/dm02/bsp_crc32.s
+	@echo ... User/bsp/dm02/bsp_imu.obj
+	@echo ... User/bsp/dm02/bsp_imu.i
+	@echo ... User/bsp/dm02/bsp_imu.s
+	@echo ... User/bsp/dm02/bsp_uart.obj
+	@echo ... User/bsp/dm02/bsp_uart.i
+	@echo ... User/bsp/dm02/bsp_uart.s
 	@echo ... User/bsp/dm02/bsp_ws2812.obj
 	@echo ... User/bsp/dm02/bsp_ws2812.i
 	@echo ... User/bsp/dm02/bsp_ws2812.s
+	@echo ... User/components/device/BMI088/BMI088Middleware.obj
+	@echo ... User/components/device/BMI088/BMI088Middleware.i
+	@echo ... User/components/device/BMI088/BMI088Middleware.s
+	@echo ... User/components/device/BMI088/BMI088driver.obj
+	@echo ... User/components/device/BMI088/BMI088driver.i
+	@echo ... User/components/device/BMI088/BMI088driver.s
 .PHONY : help
 
 

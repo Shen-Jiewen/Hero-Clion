@@ -29,7 +29,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 74,
+				"line" : 76,
 				"parent" : 0
 			},
 			{
@@ -41,19 +41,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 70,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 71,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
 				"line" : 72,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 73,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 74,
 				"parent" : 0
 			},
 			{
@@ -95,7 +95,7 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 60,
+				"line" : 62,
 				"parent" : 0
 			},
 			{
@@ -236,6 +236,10 @@
 				},
 				{
 					"backtrace" : 14,
+					"path" : "D:/ClionProject/DM_02_Hero/User/application/module"
+				},
+				{
+					"backtrace" : 14,
 					"path" : "D:/ClionProject/DM_02_Hero/User/bsp/dm02"
 				},
 				{
@@ -245,6 +249,14 @@
 				{
 					"backtrace" : 14,
 					"path" : "D:/ClionProject/DM_02_Hero/User/components/support"
+				},
+				{
+					"backtrace" : 14,
+					"path" : "D:/ClionProject/DM_02_Hero/User/components/device/BMI088"
+				},
+				{
+					"backtrace" : 14,
+					"path" : "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc"
 				}
 			],
 			"language" : "C",
@@ -258,7 +270,6 @@
 			},
 			"sourceIndexes" : 
 			[
-				12,
 				13,
 				14,
 				15,
@@ -274,8 +285,8 @@
 				25,
 				26,
 				27,
-				107,
-				108,
+				28,
+				29,
 				109,
 				110,
 				111,
@@ -301,13 +312,13 @@
 				131,
 				132,
 				133,
+				134,
 				135,
-				139,
-				140,
-				159,
-				160,
+				137,
+				141,
+				142,
+				161,
 				162,
-				163,
 				164,
 				165,
 				166,
@@ -315,9 +326,17 @@
 				168,
 				169,
 				171,
+				172,
 				173,
-				175,
-				177
+				174,
+				176,
+				178,
+				180,
+				182,
+				184,
+				186,
+				188,
+				189
 			]
 		},
 		{
@@ -450,6 +469,10 @@
 				},
 				{
 					"backtrace" : 14,
+					"path" : "D:/ClionProject/DM_02_Hero/User/application/module"
+				},
+				{
+					"backtrace" : 14,
 					"path" : "D:/ClionProject/DM_02_Hero/User/bsp/dm02"
 				},
 				{
@@ -459,12 +482,20 @@
 				{
 					"backtrace" : 14,
 					"path" : "D:/ClionProject/DM_02_Hero/User/components/support"
+				},
+				{
+					"backtrace" : 14,
+					"path" : "D:/ClionProject/DM_02_Hero/User/components/device/BMI088"
+				},
+				{
+					"backtrace" : 14,
+					"path" : "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc"
 				}
 			],
 			"language" : "ASM",
 			"sourceIndexes" : 
 			[
-				28
+				30
 			]
 		}
 	],
@@ -549,11 +580,10 @@
 				9,
 				10,
 				11,
-				29,
-				30,
+				12,
 				31,
+				32,
 				33,
-				34,
 				35,
 				36,
 				37,
@@ -576,8 +606,8 @@
 				54,
 				55,
 				56,
+				57,
 				58,
-				59,
 				60,
 				61,
 				62,
@@ -624,12 +654,12 @@
 				103,
 				104,
 				105,
-				134,
+				106,
+				107,
 				136,
-				137,
 				138,
-				141,
-				142,
+				139,
+				140,
 				143,
 				144,
 				145,
@@ -646,20 +676,27 @@
 				156,
 				157,
 				158,
-				161,
+				159,
+				160,
+				163,
 				170,
-				172,
-				174,
-				176,
-				178,
-				179
+				175,
+				177,
+				179,
+				181,
+				183,
+				185,
+				187,
+				190,
+				191,
+				192,
+				193
 			]
 		},
 		{
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				12,
 				13,
 				14,
 				15,
@@ -675,8 +712,8 @@
 				25,
 				26,
 				27,
-				107,
-				108,
+				28,
+				29,
 				109,
 				110,
 				111,
@@ -702,13 +739,13 @@
 				131,
 				132,
 				133,
+				134,
 				135,
-				139,
-				140,
-				159,
-				160,
+				137,
+				141,
+				142,
+				161,
 				162,
-				163,
 				164,
 				165,
 				166,
@@ -716,20 +753,28 @@
 				168,
 				169,
 				171,
+				172,
 				173,
-				175,
-				177
+				174,
+				176,
+				178,
+				180,
+				182,
+				184,
+				186,
+				188,
+				189
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				28,
-				32,
-				57,
-				106,
-				180
+				30,
+				34,
+				59,
+				108,
+				194
 			]
 		}
 	],
@@ -748,6 +793,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "Core/Inc/crc.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Core/Inc/dma.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -805,6 +855,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/crc.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/dma.c",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -1627,6 +1683,23 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "User/application/module/imu_module.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "User/application/module/imu_module.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "User/application/task/imu_task.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "User/application/task/led_task.c",
 			"sourceGroupIndex" : 1
 		},
@@ -1683,12 +1756,61 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "User/bsp/dm02/bsp_imu.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "User/bsp/dm02/bsp_imu.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "User/bsp/dm02/bsp_uart.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "User/bsp/dm02/bsp_uart.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "User/bsp/dm02/bsp_ws2812.c",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"path" : "User/bsp/dm02/bsp_ws2812.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "User/components/device/BMI088/BMI088Middleware.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "User/components/device/BMI088/BMI088driver.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "User/components/device/BMI088/inc/BMI088Middleware.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "User/components/device/BMI088/inc/BMI088driver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "User/components/device/BMI088/inc/BMI088reg.h",
 			"sourceGroupIndex" : 0
 		},
 		{

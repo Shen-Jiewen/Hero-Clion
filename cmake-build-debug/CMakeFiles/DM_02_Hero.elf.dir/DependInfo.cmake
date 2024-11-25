@@ -34,15 +34,19 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"
   "D:/ClionProject/DM_02_Hero/User"
   "D:/ClionProject/DM_02_Hero/User/application"
+  "D:/ClionProject/DM_02_Hero/User/application/module"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02"
   "D:/ClionProject/DM_02_Hero/User/components"
   "D:/ClionProject/DM_02_Hero/User/components/support"
+  "D:/ClionProject/DM_02_Hero/User/components/device/BMI088"
+  "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/Core/Src/adc.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/crc.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/Core/Src/dma.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/fdcan.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/fdcan.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/fdcan.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/freertos.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/freertos.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/freertos.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Core/Src/gpio.c" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/gpio.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Core/Src/gpio.c.obj.d"
@@ -94,13 +98,19 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj.d"
   "D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/timers.c" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/application/module/imu_module.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/application/task/imu_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/task/led_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/task/log_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_adc.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_buzzer.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_crc32.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_imu.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_uart.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_ws2812.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088Middleware.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

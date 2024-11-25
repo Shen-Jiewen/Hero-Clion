@@ -17,25 +17,28 @@ volatile uint32_t vref_voltage = 3300;
   * @param[in]      adc通道号
   * @retval         返回获取到的采样值
   */
-static uint32_t adcx_get_chx_value(ADC_HandleTypeDef *ADCx, uint32_t ch, uint32_t  sample_time){
-	static ADC_ChannelConfTypeDef sConfig = {0};
+static uint32_t adcx_get_chx_value(ADC_HandleTypeDef* ADCx, uint32_t ch, uint32_t sample_time)
+{
+	static ADC_ChannelConfTypeDef sConfig = { 0 };
 	uint32_t adcValue = 0;
 
 	sConfig.Channel = ch;
 	sConfig.Rank = ADC_REGULAR_RANK_1;
-	sConfig.SamplingTime = sample_time;				// 推荐采用较长的采样时间
-	sConfig.SingleDiff =  ADC_SINGLE_ENDED;			// 单端模式
-	sConfig.OffsetNumber  = ADC_OFFSET_NONE;		// 无偏移
-	sConfig.Offset  = 0;
+	sConfig.SamplingTime = sample_time;                // 推荐采用较长的采样时间
+	sConfig.SingleDiff = ADC_SINGLE_ENDED;            // 单端模式
+	sConfig.OffsetNumber = ADC_OFFSET_NONE;        // 无偏移
+	sConfig.Offset = 0;
 
-	if(HAL_ADC_ConfigChannel(ADCx, &sConfig) != HAL_OK){
+	if (HAL_ADC_ConfigChannel(ADCx, &sConfig) != HAL_OK)
+	{
 		Error_Handler();
 	}
 
 	// 启动ADC转换
 	HAL_ADC_Start(ADCx);
 	// 以阻塞的方式等待转换完成,超时时间设置为10ms
-	if(HAL_ADC_PollForConversion(ADCx, 10) == HAL_OK){
+	if (HAL_ADC_PollForConversion(ADCx, 10) == HAL_OK)
+	{
 		adcValue = HAL_ADC_GetValue(ADCx);
 	}
 	// 关闭ADC转换
@@ -92,14 +95,15 @@ fp32 get_temperature(void)
   * @author         Javen
   * @retval         返回经过校准值校验的电池电压
   */
-fp32 get_battery_voltage(void){
+fp32 get_battery_voltage(void)
+{
 	fp32 voltage;
 	uint16_t adcx = 0;
 
 	adcx = adcx_get_chx_value(&hadc1, ADC_CHANNEL_4, ADC_SAMPLETIME_810CYCLES_5);
 
 	//校准
-	voltage = (fp32) (adcx * 3.3f / 65535) * 11.00009f; // NOLINT(*-narrowing-conversions)
+	voltage = (fp32)(adcx * 3.3f / 65535) * 11.00009f; // NOLINT(*-narrowing-conversions)
 
 	return voltage;
 }
