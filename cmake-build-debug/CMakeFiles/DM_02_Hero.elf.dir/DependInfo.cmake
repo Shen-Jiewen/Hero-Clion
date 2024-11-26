@@ -114,6 +114,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/USB_DEVICE/App/usbd_cdc_if.c" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj.d"
   "D:/ClionProject/DM_02_Hero/USB_DEVICE/App/usbd_desc.c" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_desc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_desc.c.obj.d"
   "D:/ClionProject/DM_02_Hero/USB_DEVICE/Target/usbd_conf.c" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/application/module/chassis_module.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/module/imu_module.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/task/imu_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/task/led_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj.d"

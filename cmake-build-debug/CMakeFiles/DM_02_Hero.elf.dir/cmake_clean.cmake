@@ -130,6 +130,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_desc.c.obj.d"
   "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj"
   "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj.d"
+  "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.obj"
+  "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.obj.d"
   "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj"
   "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj.d"
   "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj"

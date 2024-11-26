@@ -1696,6 +1696,30 @@ USB_DEVICE/Target/usbd_conf.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.s
 .PHONY : USB_DEVICE/Target/usbd_conf.c.s
 
+User/application/module/chassis_module.obj: User/application/module/chassis_module.c.obj
+.PHONY : User/application/module/chassis_module.obj
+
+# target to build an object file
+User/application/module/chassis_module.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.obj
+.PHONY : User/application/module/chassis_module.c.obj
+
+User/application/module/chassis_module.i: User/application/module/chassis_module.c.i
+.PHONY : User/application/module/chassis_module.i
+
+# target to preprocess a source file
+User/application/module/chassis_module.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.i
+.PHONY : User/application/module/chassis_module.c.i
+
+User/application/module/chassis_module.s: User/application/module/chassis_module.c.s
+.PHONY : User/application/module/chassis_module.s
+
+# target to generate assembly for a file
+User/application/module/chassis_module.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.s
+.PHONY : User/application/module/chassis_module.c.s
+
 User/application/module/imu_module.obj: User/application/module/imu_module.c.obj
 .PHONY : User/application/module/imu_module.obj
 
@@ -2261,6 +2285,9 @@ help:
 	@echo ... USB_DEVICE/Target/usbd_conf.obj
 	@echo ... USB_DEVICE/Target/usbd_conf.i
 	@echo ... USB_DEVICE/Target/usbd_conf.s
+	@echo ... User/application/module/chassis_module.obj
+	@echo ... User/application/module/chassis_module.i
+	@echo ... User/application/module/chassis_module.s
 	@echo ... User/application/module/imu_module.obj
 	@echo ... User/application/module/imu_module.i
 	@echo ... User/application/module/imu_module.s
