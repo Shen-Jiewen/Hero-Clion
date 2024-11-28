@@ -41,8 +41,11 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/ClionProject/DM_02_Hero/User/application/module"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02"
   "D:/ClionProject/DM_02_Hero/User/components"
+  "D:/ClionProject/DM_02_Hero/User/components/controller"
+  "D:/ClionProject/DM_02_Hero/User/components/algorithm"
   "D:/ClionProject/DM_02_Hero/User/components/support"
   "D:/ClionProject/DM_02_Hero/User/components/support/vofa+"
+  "D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508"
   "D:/ClionProject/DM_02_Hero/User/components/device/BMI088"
   "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc"
   )
@@ -114,7 +117,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/USB_DEVICE/App/usbd_cdc_if.c" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj.d"
   "D:/ClionProject/DM_02_Hero/USB_DEVICE/App/usbd_desc.c" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_desc.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_desc.c.obj.d"
   "D:/ClionProject/DM_02_Hero/USB_DEVICE/Target/usbd_conf.c" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj.d"
-  "D:/ClionProject/DM_02_Hero/User/application/module/chassis_module.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/application/module/chassis.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/module/imu_module.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/task/imu_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/task/led_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj.d"
@@ -127,8 +130,10 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_imu.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_uart.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_ws2812.c" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/components/controller/pid.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088Middleware.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/components/support/vofa+/vofa.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj.d"
   )
 

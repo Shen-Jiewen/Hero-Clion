@@ -22,7 +22,7 @@ void fdcan1_filter_init(void)
 	HAL_FDCAN_ConfigFilter(&hfdcan1, &fdcan_filter_st);    //配置过滤器
 
 	//拒绝接收匹配不成功的标准ID和扩展ID,不接受远程帧
-	HAL_FDCAN_ConfigGlobalFilter(&hfdcan1,FDCAN_REJECT,FDCAN_REJECT,FDCAN_REJECT_REMOTE,FDCAN_REJECT_REMOTE);
+	HAL_FDCAN_ConfigGlobalFilter(&hfdcan1, FDCAN_REJECT, FDCAN_REJECT, FDCAN_REJECT_REMOTE, FDCAN_REJECT_REMOTE);
 	HAL_FDCAN_ConfigFifoWatermark(&hfdcan1, FDCAN_CFG_RX_FIFO0, 1);
 
 	// 启动FDCAN1
@@ -43,16 +43,16 @@ void fdcan2_filter_init(void)
 	FDCAN_FilterTypeDef fdcan_filter_st;
 
 	// 初始化FDCAN2过滤器
-	fdcan_filter_st.IdType = FDCAN_STANDARD_ID;                    	// 使用标准标识符(11位)
-	fdcan_filter_st.FilterIndex = 0;                           		// 过滤器索引0
+	fdcan_filter_st.IdType = FDCAN_STANDARD_ID;                        // 使用标准标识符(11位)
+	fdcan_filter_st.FilterIndex = 0;                                // 过滤器索引0
 	fdcan_filter_st.FilterType = FDCAN_FILTER_MASK;                 // 标识符屏蔽模式
 	fdcan_filter_st.FilterConfig = FDCAN_FILTER_TO_RXFIFO0;         // 通过过滤器接收的消息放到FIFO0
-	fdcan_filter_st.FilterID1 = 0x000;                            	// 标识符(起始值)
-	fdcan_filter_st.FilterID2 = 0x000;                            	// 屏蔽标识符
+	fdcan_filter_st.FilterID1 = 0x000;                                // 标识符(起始值)
+	fdcan_filter_st.FilterID2 = 0x000;                                // 屏蔽标识符
 	HAL_FDCAN_ConfigFilter(&hfdcan2, &fdcan_filter_st);    //配置过滤器
 
 	//拒绝接收匹配不成功的标准ID和扩展ID,不接受远程帧
-	HAL_FDCAN_ConfigGlobalFilter(&hfdcan2,FDCAN_REJECT,FDCAN_REJECT,FDCAN_REJECT_REMOTE,FDCAN_REJECT_REMOTE);
+	HAL_FDCAN_ConfigGlobalFilter(&hfdcan2, FDCAN_REJECT, FDCAN_REJECT, FDCAN_REJECT_REMOTE, FDCAN_REJECT_REMOTE);
 	HAL_FDCAN_ConfigFifoWatermark(&hfdcan2, FDCAN_CFG_RX_FIFO0, 1);
 
 	// 启动FDCAN2
@@ -82,7 +82,7 @@ void fdcan3_filter_init(void)
 	HAL_FDCAN_ConfigFilter(&hfdcan3, &fdcan_filter_st);    //配置过滤器
 
 	//拒绝接收匹配不成功的标准ID和扩展ID,不接受远程帧
-	HAL_FDCAN_ConfigGlobalFilter(&hfdcan3,FDCAN_REJECT,FDCAN_REJECT,FDCAN_REJECT_REMOTE,FDCAN_REJECT_REMOTE);
+	HAL_FDCAN_ConfigGlobalFilter(&hfdcan3, FDCAN_REJECT, FDCAN_REJECT, FDCAN_REJECT_REMOTE, FDCAN_REJECT_REMOTE);
 	HAL_FDCAN_ConfigFifoWatermark(&hfdcan3, FDCAN_CFG_RX_FIFO0, 1);
 
 	// 启动FDCAN3
@@ -111,25 +111,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 		{
 			if (HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &RxHeader, RxData) == HAL_OK)
 			{
-				// 处理 FDCAN1 的接收到的消息
-				switch (RxHeader.IdType)
-				{
-				case CAN_3508_M1_ID:
-				case CAN_3508_M2_ID:
-				case CAN_3508_M3_ID:
-				case CAN_3508_M4_ID:
-				{
-//					vofa_send_data();
-					break;
-				}
-				case 0x200:
-				{
 
-					break;
-				}
-				default:
-					break;
-				}
 			}
 		}
 	}

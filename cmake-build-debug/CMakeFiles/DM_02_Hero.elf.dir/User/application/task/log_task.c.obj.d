@@ -78,4 +78,6 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj: \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_buzzer.h \
- D:\ClionProject\DM_02_Hero\User\application\module/chassis_module.h
+ D:\ClionProject\DM_02_Hero\User\application\module/chassis.h \
+ D:\ClionProject\DM_02_Hero\User\components\device\motor\DJI-3508/dji_3508.h \
+ D:\ClionProject\DM_02_Hero\User\components\controller/pid.h

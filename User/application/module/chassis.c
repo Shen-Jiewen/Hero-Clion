@@ -2,18 +2,18 @@
 // Created by Rick on 24-11-26.
 //
 
-#include "chassis_module.h"
+#include "chassis.h"
 
 extern FDCAN_HandleTypeDef hfdcan1;
 
-chassis_control_t chassis_control;
+static chassis_control_t chassis_control;
 
 static void FDCAN_cmd_chassis(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4){
 	FDCAN_TxHeaderTypeDef txHeader;
 	uint8_t txData[8]; // 数据缓存
 
 	// 配置 FDCAN 消息头
-	txHeader.Identifier = 0x200;               // 示例标准 ID (根据实际需求修改)
+	txHeader.Identifier = CAN_CHASSIS_ALL_ID;  // 示例标准 ID (根据实际需求修改)
 	txHeader.IdType = FDCAN_STANDARD_ID;       // 标准帧 (11位 ID)
 	txHeader.TxFrameType = FDCAN_DATA_FRAME;   // 数据帧
 	txHeader.DataLength = FDCAN_DLC_BYTES_8;   // 数据长度为 8 字节
@@ -40,10 +40,30 @@ static void FDCAN_cmd_chassis(int16_t motor1, int16_t motor2, int16_t motor3, in
 	}
 }
 
+static void CAN_rec_chassis(uint32_t can_id, const uint8_t* rx_data){
+	switch (can_id)
+	{
+	case CAN_3508_M1_ID:
+		get_motor_3508_measure((motor_3508_measure_t *)(&chassis_control.motor_chassis[0].motor_3508_measure), rx_data);
+		break;
+	case CAN_3508_M2_ID:
+		get_motor_3508_measure((motor_3508_measure_t *)(&chassis_control.motor_chassis[1].motor_3508_measure), rx_data);
+		break;
+	case CAN_3508_M3_ID:
+		get_motor_3508_measure((motor_3508_measure_t *)(&chassis_control.motor_chassis[2].motor_3508_measure), rx_data);
+		break;
+	case CAN_3508_M4_ID:
+		get_motor_3508_measure((motor_3508_measure_t *)(&chassis_control.motor_chassis[3].motor_3508_measure), rx_data);
+		break;
+	default:
+		break;
+	}
+}
+
 chassis_control_t* get_chassis_control_point(void){
 	return &chassis_control;
 }
 
-chassis_control_t chassis_control = {
+static chassis_control_t chassis_control = {
 	.CAN_cmd_chassis = FDCAN_cmd_chassis
 };

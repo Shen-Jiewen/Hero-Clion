@@ -1696,29 +1696,29 @@ USB_DEVICE/Target/usbd_conf.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.s
 .PHONY : USB_DEVICE/Target/usbd_conf.c.s
 
-User/application/module/chassis_module.obj: User/application/module/chassis_module.c.obj
-.PHONY : User/application/module/chassis_module.obj
+User/application/module/chassis.obj: User/application/module/chassis.c.obj
+.PHONY : User/application/module/chassis.obj
 
 # target to build an object file
-User/application/module/chassis_module.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.obj
-.PHONY : User/application/module/chassis_module.c.obj
+User/application/module/chassis.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis.c.obj
+.PHONY : User/application/module/chassis.c.obj
 
-User/application/module/chassis_module.i: User/application/module/chassis_module.c.i
-.PHONY : User/application/module/chassis_module.i
+User/application/module/chassis.i: User/application/module/chassis.c.i
+.PHONY : User/application/module/chassis.i
 
 # target to preprocess a source file
-User/application/module/chassis_module.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.i
-.PHONY : User/application/module/chassis_module.c.i
+User/application/module/chassis.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis.c.i
+.PHONY : User/application/module/chassis.c.i
 
-User/application/module/chassis_module.s: User/application/module/chassis_module.c.s
-.PHONY : User/application/module/chassis_module.s
+User/application/module/chassis.s: User/application/module/chassis.c.s
+.PHONY : User/application/module/chassis.s
 
 # target to generate assembly for a file
-User/application/module/chassis_module.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis_module.c.s
-.PHONY : User/application/module/chassis_module.c.s
+User/application/module/chassis.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis.c.s
+.PHONY : User/application/module/chassis.c.s
 
 User/application/module/imu_module.obj: User/application/module/imu_module.c.obj
 .PHONY : User/application/module/imu_module.obj
@@ -2008,6 +2008,30 @@ User/bsp/dm02/bsp_ws2812.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.s
 .PHONY : User/bsp/dm02/bsp_ws2812.c.s
 
+User/components/controller/pid.obj: User/components/controller/pid.c.obj
+.PHONY : User/components/controller/pid.obj
+
+# target to build an object file
+User/components/controller/pid.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj
+.PHONY : User/components/controller/pid.c.obj
+
+User/components/controller/pid.i: User/components/controller/pid.c.i
+.PHONY : User/components/controller/pid.i
+
+# target to preprocess a source file
+User/components/controller/pid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.i
+.PHONY : User/components/controller/pid.c.i
+
+User/components/controller/pid.s: User/components/controller/pid.c.s
+.PHONY : User/components/controller/pid.s
+
+# target to generate assembly for a file
+User/components/controller/pid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.s
+.PHONY : User/components/controller/pid.c.s
+
 User/components/device/BMI088/BMI088Middleware.obj: User/components/device/BMI088/BMI088Middleware.c.obj
 .PHONY : User/components/device/BMI088/BMI088Middleware.obj
 
@@ -2055,6 +2079,30 @@ User/components/device/BMI088/BMI088driver.s: User/components/device/BMI088/BMI0
 User/components/device/BMI088/BMI088driver.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.s
 .PHONY : User/components/device/BMI088/BMI088driver.c.s
+
+User/components/device/motor/DJI-3508/dji_3508.obj: User/components/device/motor/DJI-3508/dji_3508.c.obj
+.PHONY : User/components/device/motor/DJI-3508/dji_3508.obj
+
+# target to build an object file
+User/components/device/motor/DJI-3508/dji_3508.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
+.PHONY : User/components/device/motor/DJI-3508/dji_3508.c.obj
+
+User/components/device/motor/DJI-3508/dji_3508.i: User/components/device/motor/DJI-3508/dji_3508.c.i
+.PHONY : User/components/device/motor/DJI-3508/dji_3508.i
+
+# target to preprocess a source file
+User/components/device/motor/DJI-3508/dji_3508.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.i
+.PHONY : User/components/device/motor/DJI-3508/dji_3508.c.i
+
+User/components/device/motor/DJI-3508/dji_3508.s: User/components/device/motor/DJI-3508/dji_3508.c.s
+.PHONY : User/components/device/motor/DJI-3508/dji_3508.s
+
+# target to generate assembly for a file
+User/components/device/motor/DJI-3508/dji_3508.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.s
+.PHONY : User/components/device/motor/DJI-3508/dji_3508.c.s
 
 User/components/support/vofa+/vofa.obj: User/components/support/vofa+/vofa.c.obj
 .PHONY : User/components/support/vofa+/vofa.obj
@@ -2285,9 +2333,9 @@ help:
 	@echo ... USB_DEVICE/Target/usbd_conf.obj
 	@echo ... USB_DEVICE/Target/usbd_conf.i
 	@echo ... USB_DEVICE/Target/usbd_conf.s
-	@echo ... User/application/module/chassis_module.obj
-	@echo ... User/application/module/chassis_module.i
-	@echo ... User/application/module/chassis_module.s
+	@echo ... User/application/module/chassis.obj
+	@echo ... User/application/module/chassis.i
+	@echo ... User/application/module/chassis.s
 	@echo ... User/application/module/imu_module.obj
 	@echo ... User/application/module/imu_module.i
 	@echo ... User/application/module/imu_module.s
@@ -2324,12 +2372,18 @@ help:
 	@echo ... User/bsp/dm02/bsp_ws2812.obj
 	@echo ... User/bsp/dm02/bsp_ws2812.i
 	@echo ... User/bsp/dm02/bsp_ws2812.s
+	@echo ... User/components/controller/pid.obj
+	@echo ... User/components/controller/pid.i
+	@echo ... User/components/controller/pid.s
 	@echo ... User/components/device/BMI088/BMI088Middleware.obj
 	@echo ... User/components/device/BMI088/BMI088Middleware.i
 	@echo ... User/components/device/BMI088/BMI088Middleware.s
 	@echo ... User/components/device/BMI088/BMI088driver.obj
 	@echo ... User/components/device/BMI088/BMI088driver.i
 	@echo ... User/components/device/BMI088/BMI088driver.s
+	@echo ... User/components/device/motor/DJI-3508/dji_3508.obj
+	@echo ... User/components/device/motor/DJI-3508/dji_3508.i
+	@echo ... User/components/device/motor/DJI-3508/dji_3508.s
 	@echo ... User/components/support/vofa+/vofa.obj
 	@echo ... User/components/support/vofa+/vofa.i
 	@echo ... User/components/support/vofa+/vofa.s
