@@ -69,8 +69,6 @@ void MX_FREERTOS_Init(void);
 
 /* USER CODE END 0 */
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "EndlessLoop"
 /**
   * @brief  The application entry point.
   * @retval int
@@ -117,11 +115,13 @@ int main(void)
   MX_USART10_UART_Init();
   MX_SPI2_Init();
   MX_TIM3_Init();
+  MX_UART5_Init();
   /* USER CODE BEGIN 2 */
   MX_USB_DEVICE_Init();
-	fdcan1_filter_init();
-	fdcan2_filter_init();
-	fdcan3_filter_init();
+  fdcan1_filter_init();
+  fdcan2_filter_init();
+  fdcan3_filter_init();
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -146,7 +146,6 @@ int main(void)
 	}
   /* USER CODE END 3 */
 }
-#pragma clang diagnostic pop
 
 /**
   * @brief System Clock Configuration

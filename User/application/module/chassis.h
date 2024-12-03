@@ -44,7 +44,7 @@ typedef struct {
 
 	// 通信接口定义
 	void (*CAN_cmd_chassis)(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);
-	void (*CAN_rec_chassis)(uint32_t can_id, const int16_t *rx_data);
+	void (*CAN_rec_chassis)(uint32_t can_id, const uint8_t* rx_data);
 }chassis_control_t;
 
 extern chassis_control_t* get_chassis_control_point(void);

@@ -40,7 +40,7 @@ static void FDCAN_cmd_chassis(int16_t motor1, int16_t motor2, int16_t motor3, in
 	}
 }
 
-static void CAN_rec_chassis(uint32_t can_id, const uint8_t* rx_data){
+static void FDCAN_rec_chassis(uint32_t can_id, const uint8_t* rx_data){
 	switch (can_id)
 	{
 	case CAN_3508_M1_ID:
@@ -65,5 +65,6 @@ chassis_control_t* get_chassis_control_point(void){
 }
 
 static chassis_control_t chassis_control = {
-	.CAN_cmd_chassis = FDCAN_cmd_chassis
+	.CAN_cmd_chassis = FDCAN_cmd_chassis,
+	.CAN_rec_chassis = FDCAN_rec_chassis,
 };

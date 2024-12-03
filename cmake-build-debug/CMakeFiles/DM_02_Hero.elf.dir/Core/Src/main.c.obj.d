@@ -99,4 +99,7 @@ CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj: \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/gpio.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_can.h \
- D:\ClionProject\DM_02_Hero\User\components\support\vofa+/vofa.h
+ D:\ClionProject\DM_02_Hero\User\application\module/chassis.h \
+ D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
+ D:\ClionProject\DM_02_Hero\User\components\device\motor\DJI-3508/dji_3508.h \
+ D:\ClionProject\DM_02_Hero\User\components\controller/pid.h

@@ -1888,6 +1888,30 @@ User/bsp/dm02/bsp_buzzer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_buzzer.c.s
 .PHONY : User/bsp/dm02/bsp_buzzer.c.s
 
+User/bsp/dm02/bsp_callback.obj: User/bsp/dm02/bsp_callback.c.obj
+.PHONY : User/bsp/dm02/bsp_callback.obj
+
+# target to build an object file
+User/bsp/dm02/bsp_callback.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj
+.PHONY : User/bsp/dm02/bsp_callback.c.obj
+
+User/bsp/dm02/bsp_callback.i: User/bsp/dm02/bsp_callback.c.i
+.PHONY : User/bsp/dm02/bsp_callback.i
+
+# target to preprocess a source file
+User/bsp/dm02/bsp_callback.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.i
+.PHONY : User/bsp/dm02/bsp_callback.c.i
+
+User/bsp/dm02/bsp_callback.s: User/bsp/dm02/bsp_callback.c.s
+.PHONY : User/bsp/dm02/bsp_callback.s
+
+# target to generate assembly for a file
+User/bsp/dm02/bsp_callback.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.s
+.PHONY : User/bsp/dm02/bsp_callback.c.s
+
 User/bsp/dm02/bsp_can.obj: User/bsp/dm02/bsp_can.c.obj
 .PHONY : User/bsp/dm02/bsp_can.obj
 
@@ -1959,6 +1983,30 @@ User/bsp/dm02/bsp_imu.s: User/bsp/dm02/bsp_imu.c.s
 User/bsp/dm02/bsp_imu.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.s
 .PHONY : User/bsp/dm02/bsp_imu.c.s
+
+User/bsp/dm02/bsp_rc.obj: User/bsp/dm02/bsp_rc.c.obj
+.PHONY : User/bsp/dm02/bsp_rc.obj
+
+# target to build an object file
+User/bsp/dm02/bsp_rc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
+.PHONY : User/bsp/dm02/bsp_rc.c.obj
+
+User/bsp/dm02/bsp_rc.i: User/bsp/dm02/bsp_rc.c.i
+.PHONY : User/bsp/dm02/bsp_rc.i
+
+# target to preprocess a source file
+User/bsp/dm02/bsp_rc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.i
+.PHONY : User/bsp/dm02/bsp_rc.c.i
+
+User/bsp/dm02/bsp_rc.s: User/bsp/dm02/bsp_rc.c.s
+.PHONY : User/bsp/dm02/bsp_rc.s
+
+# target to generate assembly for a file
+User/bsp/dm02/bsp_rc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.s
+.PHONY : User/bsp/dm02/bsp_rc.c.s
 
 User/bsp/dm02/bsp_uart.obj: User/bsp/dm02/bsp_uart.c.obj
 .PHONY : User/bsp/dm02/bsp_uart.obj
@@ -2079,6 +2127,30 @@ User/components/device/BMI088/BMI088driver.s: User/components/device/BMI088/BMI0
 User/components/device/BMI088/BMI088driver.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.s
 .PHONY : User/components/device/BMI088/BMI088driver.c.s
+
+User/components/device/control/DT7/dt7.obj: User/components/device/control/DT7/dt7.c.obj
+.PHONY : User/components/device/control/DT7/dt7.obj
+
+# target to build an object file
+User/components/device/control/DT7/dt7.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
+.PHONY : User/components/device/control/DT7/dt7.c.obj
+
+User/components/device/control/DT7/dt7.i: User/components/device/control/DT7/dt7.c.i
+.PHONY : User/components/device/control/DT7/dt7.i
+
+# target to preprocess a source file
+User/components/device/control/DT7/dt7.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.i
+.PHONY : User/components/device/control/DT7/dt7.c.i
+
+User/components/device/control/DT7/dt7.s: User/components/device/control/DT7/dt7.c.s
+.PHONY : User/components/device/control/DT7/dt7.s
+
+# target to generate assembly for a file
+User/components/device/control/DT7/dt7.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.s
+.PHONY : User/components/device/control/DT7/dt7.c.s
 
 User/components/device/motor/DJI-3508/dji_3508.obj: User/components/device/motor/DJI-3508/dji_3508.c.obj
 .PHONY : User/components/device/motor/DJI-3508/dji_3508.obj
@@ -2357,6 +2429,9 @@ help:
 	@echo ... User/bsp/dm02/bsp_buzzer.obj
 	@echo ... User/bsp/dm02/bsp_buzzer.i
 	@echo ... User/bsp/dm02/bsp_buzzer.s
+	@echo ... User/bsp/dm02/bsp_callback.obj
+	@echo ... User/bsp/dm02/bsp_callback.i
+	@echo ... User/bsp/dm02/bsp_callback.s
 	@echo ... User/bsp/dm02/bsp_can.obj
 	@echo ... User/bsp/dm02/bsp_can.i
 	@echo ... User/bsp/dm02/bsp_can.s
@@ -2366,6 +2441,9 @@ help:
 	@echo ... User/bsp/dm02/bsp_imu.obj
 	@echo ... User/bsp/dm02/bsp_imu.i
 	@echo ... User/bsp/dm02/bsp_imu.s
+	@echo ... User/bsp/dm02/bsp_rc.obj
+	@echo ... User/bsp/dm02/bsp_rc.i
+	@echo ... User/bsp/dm02/bsp_rc.s
 	@echo ... User/bsp/dm02/bsp_uart.obj
 	@echo ... User/bsp/dm02/bsp_uart.i
 	@echo ... User/bsp/dm02/bsp_uart.s
@@ -2381,6 +2459,9 @@ help:
 	@echo ... User/components/device/BMI088/BMI088driver.obj
 	@echo ... User/components/device/BMI088/BMI088driver.i
 	@echo ... User/components/device/BMI088/BMI088driver.s
+	@echo ... User/components/device/control/DT7/dt7.obj
+	@echo ... User/components/device/control/DT7/dt7.i
+	@echo ... User/components/device/control/DT7/dt7.s
 	@echo ... User/components/device/motor/DJI-3508/dji_3508.obj
 	@echo ... User/components/device/motor/DJI-3508/dji_3508.i
 	@echo ... User/components/device/motor/DJI-3508/dji_3508.s
