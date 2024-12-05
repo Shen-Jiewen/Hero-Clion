@@ -78,4 +78,13 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj: \
  D:\ClionProject\DM_02_Hero\User\components\device\BMI088\inc/BMI088driver.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_imu.h \
  D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
- D:\ClionProject\DM_02_Hero\User\application\module/imu_module.h
+ D:\ClionProject\DM_02_Hero\User\application\module\imu/imu.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/Fusion.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionAhrs.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionConvention.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionMath.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionAxes.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionCalibration.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionCompass.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionOffset.h

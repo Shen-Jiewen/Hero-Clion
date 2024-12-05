@@ -65,14 +65,17 @@ CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj: \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_ll_usb.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h \
  D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
- D:\ClionProject\DM_02_Hero\User\application\module/chassis.h \
+ D:\ClionProject\DM_02_Hero\User/application/module/chassis/chassis.h \
  D:\ClionProject\DM_02_Hero\User\components\device\motor\DJI-3508/dji_3508.h \
- D:\ClionProject\DM_02_Hero\User\components\controller/pid.h \
- D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_can.h \
  D:\ClionProject\DM_02_Hero\User\components\device\control\DT7/dt7.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_rc.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/string.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_callback.h \
+ D:\ClionProject\DM_02_Hero\User\components\controller/pid.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm/user_lib.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\gimbal/gimbal.h \
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_can.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_rc.h

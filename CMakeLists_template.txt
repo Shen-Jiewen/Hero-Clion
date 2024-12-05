@@ -54,7 +54,9 @@ include_directories(${includes})
 
 include_directories(USB_DEVICE/App  USB_DEVICE/Target
         User
-        User/application User/application/module
+        User/application User/application/module/chassis
+        User/application/module/gimbal
+        User/application User/application/module/imu
         User/bsp/dm02 User/components
         User/components/controller
         User/components/algorithm
@@ -62,7 +64,8 @@ include_directories(USB_DEVICE/App  USB_DEVICE/Target
         User/components/device/control/DT7
         User/components/device/motor/DJI-3508
         User/components/device/BMI088
-        User/components/device/BMI088/inc)
+        User/components/device/BMI088/inc
+        Middlewares/ST/ARM/DSP/Inc)
 
 # User include_directories END
 

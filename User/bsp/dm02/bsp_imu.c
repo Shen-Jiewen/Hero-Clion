@@ -15,10 +15,6 @@ void imu_pwm_set(uint16_t pwm){
 	__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_4, pwm);
 }
 
-uint32_t imu_semaphore_wait(void){
-	return osSemaphoreAcquire(imuBinarySem01Handle, osWaitForever);
-}
-
 /**
 ************************************************************************
 * @brief:      	HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)

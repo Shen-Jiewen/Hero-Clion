@@ -49,21 +49,26 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(Core/Inc Drivers/STM32H7xx_HAL_Driver/Inc Drivers/STM32H7xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32H7xx/Include Drivers/CMSIS/Include Middlewares/Third_Party/FreeRTOS/Source/include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F USB_DEVICE/App USB_DEVICE/Target Middlewares/ST/STM32_USB_Device_Library/Core/Inc Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc)
+include_directories(Core/Inc Drivers/STM32H7xx_HAL_Driver/Inc Drivers/STM32H7xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32H7xx/Include Drivers/CMSIS/Include Middlewares/Third_Party/FreeRTOS/Source/include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F USB_DEVICE/App USB_DEVICE/Target Middlewares/ST/STM32_USB_Device_Library/Core/Inc Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc Middlewares/ST/ARM/DSP/Inc)
 
 # User include_directories BEGIN
 
 include_directories(USB_DEVICE/App  USB_DEVICE/Target
         User
-        User/application User/application/module
+        User/application User/application/module/chassis
+        User/application/module/gimbal
+        User/application User/application/module/imu
+        User/application/task
         User/bsp/dm02 User/components
         User/components/controller
         User/components/algorithm
+        User/components/algorithm/Fusion
         User/components/support User/components/support/vofa+
         User/components/device/control/DT7
         User/components/device/motor/DJI-3508
         User/components/device/BMI088
-        User/components/device/BMI088/inc)
+        User/components/device/BMI088/inc
+        Middlewares/ST/ARM/DSP/Inc)
 
 # User include_directories END
 

@@ -6,7 +6,7 @@
 #define DM_02_HERO_USER_BSP_DM02_BSP_CAN_H_
 
 #include "main.h"
-#include "chassis.h"
+#include "application/module/chassis/chassis.h"
 
 extern void fdcan1_filter_init(void);
 extern void fdcan2_filter_init(void);

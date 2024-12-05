@@ -1696,53 +1696,101 @@ USB_DEVICE/Target/usbd_conf.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.s
 .PHONY : USB_DEVICE/Target/usbd_conf.c.s
 
-User/application/module/chassis.obj: User/application/module/chassis.c.obj
-.PHONY : User/application/module/chassis.obj
+User/application/module/chassis/chassis.obj: User/application/module/chassis/chassis.c.obj
+.PHONY : User/application/module/chassis/chassis.obj
 
 # target to build an object file
-User/application/module/chassis.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis.c.obj
-.PHONY : User/application/module/chassis.c.obj
+User/application/module/chassis/chassis.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis.c.obj
+.PHONY : User/application/module/chassis/chassis.c.obj
 
-User/application/module/chassis.i: User/application/module/chassis.c.i
-.PHONY : User/application/module/chassis.i
+User/application/module/chassis/chassis.i: User/application/module/chassis/chassis.c.i
+.PHONY : User/application/module/chassis/chassis.i
 
 # target to preprocess a source file
-User/application/module/chassis.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis.c.i
-.PHONY : User/application/module/chassis.c.i
+User/application/module/chassis/chassis.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis.c.i
+.PHONY : User/application/module/chassis/chassis.c.i
 
-User/application/module/chassis.s: User/application/module/chassis.c.s
-.PHONY : User/application/module/chassis.s
+User/application/module/chassis/chassis.s: User/application/module/chassis/chassis.c.s
+.PHONY : User/application/module/chassis/chassis.s
 
 # target to generate assembly for a file
-User/application/module/chassis.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis.c.s
-.PHONY : User/application/module/chassis.c.s
+User/application/module/chassis/chassis.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis.c.s
+.PHONY : User/application/module/chassis/chassis.c.s
 
-User/application/module/imu_module.obj: User/application/module/imu_module.c.obj
-.PHONY : User/application/module/imu_module.obj
+User/application/module/chassis/chassis_behaviour.obj: User/application/module/chassis/chassis_behaviour.c.obj
+.PHONY : User/application/module/chassis/chassis_behaviour.obj
 
 # target to build an object file
-User/application/module/imu_module.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.obj
-.PHONY : User/application/module/imu_module.c.obj
+User/application/module/chassis/chassis_behaviour.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.c.obj
+.PHONY : User/application/module/chassis/chassis_behaviour.c.obj
 
-User/application/module/imu_module.i: User/application/module/imu_module.c.i
-.PHONY : User/application/module/imu_module.i
+User/application/module/chassis/chassis_behaviour.i: User/application/module/chassis/chassis_behaviour.c.i
+.PHONY : User/application/module/chassis/chassis_behaviour.i
 
 # target to preprocess a source file
-User/application/module/imu_module.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.i
-.PHONY : User/application/module/imu_module.c.i
+User/application/module/chassis/chassis_behaviour.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.c.i
+.PHONY : User/application/module/chassis/chassis_behaviour.c.i
 
-User/application/module/imu_module.s: User/application/module/imu_module.c.s
-.PHONY : User/application/module/imu_module.s
+User/application/module/chassis/chassis_behaviour.s: User/application/module/chassis/chassis_behaviour.c.s
+.PHONY : User/application/module/chassis/chassis_behaviour.s
 
 # target to generate assembly for a file
-User/application/module/imu_module.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu_module.c.s
-.PHONY : User/application/module/imu_module.c.s
+User/application/module/chassis/chassis_behaviour.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.c.s
+.PHONY : User/application/module/chassis/chassis_behaviour.c.s
+
+User/application/module/gimbal/gimbal.obj: User/application/module/gimbal/gimbal.c.obj
+.PHONY : User/application/module/gimbal/gimbal.obj
+
+# target to build an object file
+User/application/module/gimbal/gimbal.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.obj
+.PHONY : User/application/module/gimbal/gimbal.c.obj
+
+User/application/module/gimbal/gimbal.i: User/application/module/gimbal/gimbal.c.i
+.PHONY : User/application/module/gimbal/gimbal.i
+
+# target to preprocess a source file
+User/application/module/gimbal/gimbal.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.i
+.PHONY : User/application/module/gimbal/gimbal.c.i
+
+User/application/module/gimbal/gimbal.s: User/application/module/gimbal/gimbal.c.s
+.PHONY : User/application/module/gimbal/gimbal.s
+
+# target to generate assembly for a file
+User/application/module/gimbal/gimbal.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.s
+.PHONY : User/application/module/gimbal/gimbal.c.s
+
+User/application/module/imu/imu.obj: User/application/module/imu/imu.c.obj
+.PHONY : User/application/module/imu/imu.obj
+
+# target to build an object file
+User/application/module/imu/imu.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.obj
+.PHONY : User/application/module/imu/imu.c.obj
+
+User/application/module/imu/imu.i: User/application/module/imu/imu.c.i
+.PHONY : User/application/module/imu/imu.i
+
+# target to preprocess a source file
+User/application/module/imu/imu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.i
+.PHONY : User/application/module/imu/imu.c.i
+
+User/application/module/imu/imu.s: User/application/module/imu/imu.c.s
+.PHONY : User/application/module/imu/imu.s
+
+# target to generate assembly for a file
+User/application/module/imu/imu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.s
+.PHONY : User/application/module/imu/imu.c.s
 
 User/application/task/imu_task.obj: User/application/task/imu_task.c.obj
 .PHONY : User/application/task/imu_task.obj
@@ -2055,6 +2103,102 @@ User/bsp/dm02/bsp_ws2812.s: User/bsp/dm02/bsp_ws2812.c.s
 User/bsp/dm02/bsp_ws2812.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.s
 .PHONY : User/bsp/dm02/bsp_ws2812.c.s
+
+User/components/algorithm/Fusion/FusionAhrs.obj: User/components/algorithm/Fusion/FusionAhrs.c.obj
+.PHONY : User/components/algorithm/Fusion/FusionAhrs.obj
+
+# target to build an object file
+User/components/algorithm/Fusion/FusionAhrs.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
+.PHONY : User/components/algorithm/Fusion/FusionAhrs.c.obj
+
+User/components/algorithm/Fusion/FusionAhrs.i: User/components/algorithm/Fusion/FusionAhrs.c.i
+.PHONY : User/components/algorithm/Fusion/FusionAhrs.i
+
+# target to preprocess a source file
+User/components/algorithm/Fusion/FusionAhrs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.i
+.PHONY : User/components/algorithm/Fusion/FusionAhrs.c.i
+
+User/components/algorithm/Fusion/FusionAhrs.s: User/components/algorithm/Fusion/FusionAhrs.c.s
+.PHONY : User/components/algorithm/Fusion/FusionAhrs.s
+
+# target to generate assembly for a file
+User/components/algorithm/Fusion/FusionAhrs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.s
+.PHONY : User/components/algorithm/Fusion/FusionAhrs.c.s
+
+User/components/algorithm/Fusion/FusionCompass.obj: User/components/algorithm/Fusion/FusionCompass.c.obj
+.PHONY : User/components/algorithm/Fusion/FusionCompass.obj
+
+# target to build an object file
+User/components/algorithm/Fusion/FusionCompass.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.obj
+.PHONY : User/components/algorithm/Fusion/FusionCompass.c.obj
+
+User/components/algorithm/Fusion/FusionCompass.i: User/components/algorithm/Fusion/FusionCompass.c.i
+.PHONY : User/components/algorithm/Fusion/FusionCompass.i
+
+# target to preprocess a source file
+User/components/algorithm/Fusion/FusionCompass.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.i
+.PHONY : User/components/algorithm/Fusion/FusionCompass.c.i
+
+User/components/algorithm/Fusion/FusionCompass.s: User/components/algorithm/Fusion/FusionCompass.c.s
+.PHONY : User/components/algorithm/Fusion/FusionCompass.s
+
+# target to generate assembly for a file
+User/components/algorithm/Fusion/FusionCompass.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.s
+.PHONY : User/components/algorithm/Fusion/FusionCompass.c.s
+
+User/components/algorithm/Fusion/FusionOffset.obj: User/components/algorithm/Fusion/FusionOffset.c.obj
+.PHONY : User/components/algorithm/Fusion/FusionOffset.obj
+
+# target to build an object file
+User/components/algorithm/Fusion/FusionOffset.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
+.PHONY : User/components/algorithm/Fusion/FusionOffset.c.obj
+
+User/components/algorithm/Fusion/FusionOffset.i: User/components/algorithm/Fusion/FusionOffset.c.i
+.PHONY : User/components/algorithm/Fusion/FusionOffset.i
+
+# target to preprocess a source file
+User/components/algorithm/Fusion/FusionOffset.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.i
+.PHONY : User/components/algorithm/Fusion/FusionOffset.c.i
+
+User/components/algorithm/Fusion/FusionOffset.s: User/components/algorithm/Fusion/FusionOffset.c.s
+.PHONY : User/components/algorithm/Fusion/FusionOffset.s
+
+# target to generate assembly for a file
+User/components/algorithm/Fusion/FusionOffset.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.s
+.PHONY : User/components/algorithm/Fusion/FusionOffset.c.s
+
+User/components/algorithm/user_lib.obj: User/components/algorithm/user_lib.c.obj
+.PHONY : User/components/algorithm/user_lib.obj
+
+# target to build an object file
+User/components/algorithm/user_lib.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj
+.PHONY : User/components/algorithm/user_lib.c.obj
+
+User/components/algorithm/user_lib.i: User/components/algorithm/user_lib.c.i
+.PHONY : User/components/algorithm/user_lib.i
+
+# target to preprocess a source file
+User/components/algorithm/user_lib.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.i
+.PHONY : User/components/algorithm/user_lib.c.i
+
+User/components/algorithm/user_lib.s: User/components/algorithm/user_lib.c.s
+.PHONY : User/components/algorithm/user_lib.s
+
+# target to generate assembly for a file
+User/components/algorithm/user_lib.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.s
+.PHONY : User/components/algorithm/user_lib.c.s
 
 User/components/controller/pid.obj: User/components/controller/pid.c.obj
 .PHONY : User/components/controller/pid.obj
@@ -2405,12 +2549,18 @@ help:
 	@echo ... USB_DEVICE/Target/usbd_conf.obj
 	@echo ... USB_DEVICE/Target/usbd_conf.i
 	@echo ... USB_DEVICE/Target/usbd_conf.s
-	@echo ... User/application/module/chassis.obj
-	@echo ... User/application/module/chassis.i
-	@echo ... User/application/module/chassis.s
-	@echo ... User/application/module/imu_module.obj
-	@echo ... User/application/module/imu_module.i
-	@echo ... User/application/module/imu_module.s
+	@echo ... User/application/module/chassis/chassis.obj
+	@echo ... User/application/module/chassis/chassis.i
+	@echo ... User/application/module/chassis/chassis.s
+	@echo ... User/application/module/chassis/chassis_behaviour.obj
+	@echo ... User/application/module/chassis/chassis_behaviour.i
+	@echo ... User/application/module/chassis/chassis_behaviour.s
+	@echo ... User/application/module/gimbal/gimbal.obj
+	@echo ... User/application/module/gimbal/gimbal.i
+	@echo ... User/application/module/gimbal/gimbal.s
+	@echo ... User/application/module/imu/imu.obj
+	@echo ... User/application/module/imu/imu.i
+	@echo ... User/application/module/imu/imu.s
 	@echo ... User/application/task/imu_task.obj
 	@echo ... User/application/task/imu_task.i
 	@echo ... User/application/task/imu_task.s
@@ -2450,6 +2600,18 @@ help:
 	@echo ... User/bsp/dm02/bsp_ws2812.obj
 	@echo ... User/bsp/dm02/bsp_ws2812.i
 	@echo ... User/bsp/dm02/bsp_ws2812.s
+	@echo ... User/components/algorithm/Fusion/FusionAhrs.obj
+	@echo ... User/components/algorithm/Fusion/FusionAhrs.i
+	@echo ... User/components/algorithm/Fusion/FusionAhrs.s
+	@echo ... User/components/algorithm/Fusion/FusionCompass.obj
+	@echo ... User/components/algorithm/Fusion/FusionCompass.i
+	@echo ... User/components/algorithm/Fusion/FusionCompass.s
+	@echo ... User/components/algorithm/Fusion/FusionOffset.obj
+	@echo ... User/components/algorithm/Fusion/FusionOffset.i
+	@echo ... User/components/algorithm/Fusion/FusionOffset.s
+	@echo ... User/components/algorithm/user_lib.obj
+	@echo ... User/components/algorithm/user_lib.i
+	@echo ... User/components/algorithm/user_lib.s
 	@echo ... User/components/controller/pid.obj
 	@echo ... User/components/controller/pid.i
 	@echo ... User/components/controller/pid.s

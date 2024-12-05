@@ -75,4 +75,15 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj: \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
- D:\ClionProject\DM_02_Hero\User\components\support\vofa+/vofa.h
+ D:\ClionProject\DM_02_Hero\User\components\support\vofa+/vofa.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/Fusion.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionAhrs.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionConvention.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionMath.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionAxes.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionCalibration.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionCompass.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionOffset.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\imu/imu.h \
+ D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h
