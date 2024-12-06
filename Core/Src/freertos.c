@@ -1,3 +1,5 @@
+#include <sys/types.h>
+#include <sys/cdefs.h>
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -82,6 +84,13 @@ const osThreadAttr_t usbTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for refereeTask */
+osThreadId_t refereeTaskHandle;
+const osThreadAttr_t refereeTask_attributes = {
+  .name = "refereeTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for imuBinarySem01 */
 osSemaphoreId_t imuBinarySem01Handle;
 const osSemaphoreAttr_t imuBinarySem01_attributes = {
@@ -98,6 +107,7 @@ void log_task(void *argument);
 void led_task(void *argument);
 void imu_task(void *argument);
 void usb_task(void *argument);
+_Noreturn void referee_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -147,6 +157,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of usbTask */
   usbTaskHandle = osThreadNew(usb_task, NULL, &usbTask_attributes);
+
+  /* creation of refereeTask */
+  refereeTaskHandle = osThreadNew(referee_task, NULL, &refereeTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
@@ -249,6 +262,24 @@ __weak void usb_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END usb_task */
+}
+
+/* USER CODE BEGIN Header_referee_task */
+/**
+* @brief Function implementing the refereeTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_referee_task */
+_Noreturn __weak void referee_task(void *argument)
+{
+  /* USER CODE BEGIN referee_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END referee_task */
 }
 
 /* Private application code --------------------------------------------------*/

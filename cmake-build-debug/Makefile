@@ -1792,6 +1792,30 @@ User/application/module/imu/imu.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.s
 .PHONY : User/application/module/imu/imu.c.s
 
+User/application/module/referee/referee.obj: User/application/module/referee/referee.c.obj
+.PHONY : User/application/module/referee/referee.obj
+
+# target to build an object file
+User/application/module/referee/referee.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.obj
+.PHONY : User/application/module/referee/referee.c.obj
+
+User/application/module/referee/referee.i: User/application/module/referee/referee.c.i
+.PHONY : User/application/module/referee/referee.i
+
+# target to preprocess a source file
+User/application/module/referee/referee.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.i
+.PHONY : User/application/module/referee/referee.c.i
+
+User/application/module/referee/referee.s: User/application/module/referee/referee.c.s
+.PHONY : User/application/module/referee/referee.s
+
+# target to generate assembly for a file
+User/application/module/referee/referee.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.s
+.PHONY : User/application/module/referee/referee.c.s
+
 User/application/task/imu_task.obj: User/application/task/imu_task.c.obj
 .PHONY : User/application/task/imu_task.obj
 
@@ -1863,6 +1887,30 @@ User/application/task/log_task.s: User/application/task/log_task.c.s
 User/application/task/log_task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.s
 .PHONY : User/application/task/log_task.c.s
+
+User/application/task/referee_task.obj: User/application/task/referee_task.c.obj
+.PHONY : User/application/task/referee_task.obj
+
+# target to build an object file
+User/application/task/referee_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj
+.PHONY : User/application/task/referee_task.c.obj
+
+User/application/task/referee_task.i: User/application/task/referee_task.c.i
+.PHONY : User/application/task/referee_task.i
+
+# target to preprocess a source file
+User/application/task/referee_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.i
+.PHONY : User/application/task/referee_task.c.i
+
+User/application/task/referee_task.s: User/application/task/referee_task.c.s
+.PHONY : User/application/task/referee_task.s
+
+# target to generate assembly for a file
+User/application/task/referee_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.s
+.PHONY : User/application/task/referee_task.c.s
 
 User/application/task/usb_task.obj: User/application/task/usb_task.c.obj
 .PHONY : User/application/task/usb_task.obj
@@ -2079,6 +2127,30 @@ User/bsp/dm02/bsp_uart.s: User/bsp/dm02/bsp_uart.c.s
 User/bsp/dm02/bsp_uart.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.s
 .PHONY : User/bsp/dm02/bsp_uart.c.s
+
+User/bsp/dm02/bsp_usart.obj: User/bsp/dm02/bsp_usart.c.obj
+.PHONY : User/bsp/dm02/bsp_usart.obj
+
+# target to build an object file
+User/bsp/dm02/bsp_usart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.obj
+.PHONY : User/bsp/dm02/bsp_usart.c.obj
+
+User/bsp/dm02/bsp_usart.i: User/bsp/dm02/bsp_usart.c.i
+.PHONY : User/bsp/dm02/bsp_usart.i
+
+# target to preprocess a source file
+User/bsp/dm02/bsp_usart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.i
+.PHONY : User/bsp/dm02/bsp_usart.c.i
+
+User/bsp/dm02/bsp_usart.s: User/bsp/dm02/bsp_usart.c.s
+.PHONY : User/bsp/dm02/bsp_usart.s
+
+# target to generate assembly for a file
+User/bsp/dm02/bsp_usart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.s
+.PHONY : User/bsp/dm02/bsp_usart.c.s
 
 User/bsp/dm02/bsp_ws2812.obj: User/bsp/dm02/bsp_ws2812.c.obj
 .PHONY : User/bsp/dm02/bsp_ws2812.obj
@@ -2319,6 +2391,54 @@ User/components/device/motor/DJI-3508/dji_3508.s: User/components/device/motor/D
 User/components/device/motor/DJI-3508/dji_3508.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.s
 .PHONY : User/components/device/motor/DJI-3508/dji_3508.c.s
+
+User/components/support/crc/CRC8_CRC16.obj: User/components/support/crc/CRC8_CRC16.c.obj
+.PHONY : User/components/support/crc/CRC8_CRC16.obj
+
+# target to build an object file
+User/components/support/crc/CRC8_CRC16.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
+.PHONY : User/components/support/crc/CRC8_CRC16.c.obj
+
+User/components/support/crc/CRC8_CRC16.i: User/components/support/crc/CRC8_CRC16.c.i
+.PHONY : User/components/support/crc/CRC8_CRC16.i
+
+# target to preprocess a source file
+User/components/support/crc/CRC8_CRC16.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.i
+.PHONY : User/components/support/crc/CRC8_CRC16.c.i
+
+User/components/support/crc/CRC8_CRC16.s: User/components/support/crc/CRC8_CRC16.c.s
+.PHONY : User/components/support/crc/CRC8_CRC16.s
+
+# target to generate assembly for a file
+User/components/support/crc/CRC8_CRC16.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.s
+.PHONY : User/components/support/crc/CRC8_CRC16.c.s
+
+User/components/support/fifo/fifo.obj: User/components/support/fifo/fifo.c.obj
+.PHONY : User/components/support/fifo/fifo.obj
+
+# target to build an object file
+User/components/support/fifo/fifo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
+.PHONY : User/components/support/fifo/fifo.c.obj
+
+User/components/support/fifo/fifo.i: User/components/support/fifo/fifo.c.i
+.PHONY : User/components/support/fifo/fifo.i
+
+# target to preprocess a source file
+User/components/support/fifo/fifo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.i
+.PHONY : User/components/support/fifo/fifo.c.i
+
+User/components/support/fifo/fifo.s: User/components/support/fifo/fifo.c.s
+.PHONY : User/components/support/fifo/fifo.s
+
+# target to generate assembly for a file
+User/components/support/fifo/fifo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.s
+.PHONY : User/components/support/fifo/fifo.c.s
 
 User/components/support/vofa+/vofa.obj: User/components/support/vofa+/vofa.c.obj
 .PHONY : User/components/support/vofa+/vofa.obj
@@ -2561,6 +2681,9 @@ help:
 	@echo ... User/application/module/imu/imu.obj
 	@echo ... User/application/module/imu/imu.i
 	@echo ... User/application/module/imu/imu.s
+	@echo ... User/application/module/referee/referee.obj
+	@echo ... User/application/module/referee/referee.i
+	@echo ... User/application/module/referee/referee.s
 	@echo ... User/application/task/imu_task.obj
 	@echo ... User/application/task/imu_task.i
 	@echo ... User/application/task/imu_task.s
@@ -2570,6 +2693,9 @@ help:
 	@echo ... User/application/task/log_task.obj
 	@echo ... User/application/task/log_task.i
 	@echo ... User/application/task/log_task.s
+	@echo ... User/application/task/referee_task.obj
+	@echo ... User/application/task/referee_task.i
+	@echo ... User/application/task/referee_task.s
 	@echo ... User/application/task/usb_task.obj
 	@echo ... User/application/task/usb_task.i
 	@echo ... User/application/task/usb_task.s
@@ -2597,6 +2723,9 @@ help:
 	@echo ... User/bsp/dm02/bsp_uart.obj
 	@echo ... User/bsp/dm02/bsp_uart.i
 	@echo ... User/bsp/dm02/bsp_uart.s
+	@echo ... User/bsp/dm02/bsp_usart.obj
+	@echo ... User/bsp/dm02/bsp_usart.i
+	@echo ... User/bsp/dm02/bsp_usart.s
 	@echo ... User/bsp/dm02/bsp_ws2812.obj
 	@echo ... User/bsp/dm02/bsp_ws2812.i
 	@echo ... User/bsp/dm02/bsp_ws2812.s
@@ -2627,6 +2756,12 @@ help:
 	@echo ... User/components/device/motor/DJI-3508/dji_3508.obj
 	@echo ... User/components/device/motor/DJI-3508/dji_3508.i
 	@echo ... User/components/device/motor/DJI-3508/dji_3508.s
+	@echo ... User/components/support/crc/CRC8_CRC16.obj
+	@echo ... User/components/support/crc/CRC8_CRC16.i
+	@echo ... User/components/support/crc/CRC8_CRC16.s
+	@echo ... User/components/support/fifo/fifo.obj
+	@echo ... User/components/support/fifo/fifo.i
+	@echo ... User/components/support/fifo/fifo.s
 	@echo ... User/components/support/vofa+/vofa.obj
 	@echo ... User/components/support/vofa+/vofa.i
 	@echo ... User/components/support/vofa+/vofa.s

@@ -8,7 +8,7 @@
 #include "bsp_adc.h"
 #include "cmsis_os.h"
 #include "bsp_buzzer.h"
-#include "application/module/chassis/chassis.h"
+#include "chassis.h"
 
 fp32 temperature = 0.f;
 fp32 voltage_in = 0.f;

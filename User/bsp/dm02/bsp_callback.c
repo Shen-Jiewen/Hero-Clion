@@ -9,9 +9,13 @@ extern FDCAN_HandleTypeDef hfdcan1;
 extern FDCAN_HandleTypeDef hfdcan2;
 extern FDCAN_HandleTypeDef hfdcan3;
 
-// RC
+// Remote Control
 extern UART_HandleTypeDef huart5;
 extern DMA_HandleTypeDef hdma_uart5_rx;
+
+// Referee
+extern UART_HandleTypeDef huart1;
+extern DMA_HandleTypeDef hdma_usart1_rx;
 
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 {
@@ -60,6 +64,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 	}
 }
 
+
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
 	static uint16_t current_rx_len = 0;
@@ -104,6 +109,13 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 					sbus_to_dt7(DT7_DMA_MEMORY_1);
 				}
 			}
+		}
+	}
+	else if(huart == &huart1){
+		// 清除 IDLE 标志
+		__HAL_UART_CLEAR_IDLEFLAG(huart);
+		if(HAL_DMA_GetState(&hdma_uart5_rx) == HAL_DMA_STATE_READY){
+
 		}
 	}
 }

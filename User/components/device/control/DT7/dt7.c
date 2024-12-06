@@ -2,12 +2,10 @@
 // Created by Rick on 2024/11/28.
 //
 
+
 #include "dt7.h"
 
-extern UART_HandleTypeDef huart5;
-extern DMA_HandleTypeDef hdma_uart5_rx;
-
-//遥控器出错数据上限
+// 遥控器出错数据上限
 #define RC_CHANNAL_ERROR_VALUE 700
 
 static int16_t dt7_abs(int16_t value);
@@ -15,14 +13,27 @@ static int16_t dt7_abs(int16_t value);
 // 遥控器控制变量
 static DT7_ctrl_t dt7_ctrl;
 
-// 接收原始数据,为18个字节,给了36个字节长度,防止DMA传输越界
+// 接收原始数据，为18个字节，给了36个字节长度，防止DMA传输越界
 static uint8_t sbus_rx_buf[2][SBUS_RX_BUF_NUM];
 dt7_dma_memory_e dma_memory = DT7_DMA_MEMORY_0;
 
+/**
+  * @brief          初始化DT7模块
+  * @retval         none
+  *
+  * 初始化遥控器的接收缓冲区，设置DMA数据传输相关配置。
+  */
 void dt7_init(void){
 	RC_Init(sbus_rx_buf[0], sbus_rx_buf[1], SBUS_RX_BUF_NUM);
 }
 
+/**
+  * @brief          切换DMA内存区域
+  * @param[in]      memory_index: 选择的DMA内存区域（0或1）
+  * @retval         none
+  *
+  * 根据传入的内存索引切换当前使用的DMA内存区域。
+  */
 void DT7_change_dma_memory(dt7_dma_memory_e memory_index){
 	if(memory_index == DT7_DMA_MEMORY_0){
 		RC_change_dma_memory(sbus_rx_buf[0], SBUS_RX_BUF_NUM);
@@ -33,14 +44,33 @@ void DT7_change_dma_memory(dt7_dma_memory_e memory_index){
 		dma_memory = DT7_DMA_MEMORY_0;
 	}
 }
+
+/**
+  * @brief          获取当前DMA内存区域
+  * @retval         当前使用的DMA内存区域（`DT7_DMA_MEMORY_0` 或 `DT7_DMA_MEMORY_1`）
+  *
+  * 返回当前正在使用的DMA内存区域标识。
+  */
 dt7_dma_memory_e get_dt7_dma_memory(void){
 	return dma_memory;
 }
 
+/**
+  * @brief          获取遥控器控制数据
+  * @retval         指向当前遥控器控制数据的指针
+  *
+  * 返回指向遥控器控制数据结构体 `DT7_ctrl_t` 的指针，包含遥控器的当前状态。
+  */
 const DT7_ctrl_t *get_dt7_point(void){
 	return &dt7_ctrl;
 }
 
+/**
+  * @brief          检查遥控器数据是否有错误
+  * @retval         0: 数据正常, 1: 数据有错误
+  *
+  * 检查遥控器的通道值和开关状态是否超出允许的误差范围。如果检测到错误，清空控制数据并返回1。
+  */
 uint8_t dt7_data_is_error(void){
 	if (dt7_abs(dt7_ctrl.rc.ch[0]) > RC_CHANNAL_ERROR_VALUE)
 	{
@@ -84,15 +114,33 @@ error:
 	return 1;
 }
 
+/**
+  * @brief          处理遥控器丢失的情况
+  * @retval         none
+  *
+  * 当遥控器数据丢失时，调用该函数进行重新初始化。
+  */
 void solve_dt7_lost(void){
 	RC_restart(SBUS_RX_BUF_NUM);
 }
 
+/**
+  * @brief          处理数据错误的情况
+  * @retval         none
+  *
+  * 当遥控器数据发生错误时，调用该函数重新初始化遥控器接收。
+  */
 void solve_data_error(void){
 	RC_restart(SBUS_RX_BUF_NUM);
 }
 
-//取正函数
+/**
+  * @brief          取正函数
+  * @param[in]      value: 需要取绝对值的整数
+  * @retval         正数：返回值的绝对值
+  *
+  * 计算并返回输入值的绝对值。
+  */
 static int16_t dt7_abs(int16_t value)
 {
 	if (value > 0)
@@ -106,9 +154,11 @@ static int16_t dt7_abs(int16_t value)
 }
 
 /**
-  * @brief          遥控器协议解析
-  * @param[in]      sbus_buf: 原生数据指针
+  * @brief          将SBUS数据转换为DT7遥控器控制数据
+  * @param[in]      memory_index: 选择的DMA内存区域（0或1）
   * @retval         none
+  *
+  * 解析SBUS协议数据，将其转换为DT7遥控器控制数据（`DT7_ctrl_t`）。包括遥控器通道值、开关状态、鼠标位置和键盘值等。
   */
 void sbus_to_dt7(dt7_dma_memory_e memory_index)
 {
@@ -126,6 +176,7 @@ void sbus_to_dt7(dt7_dma_memory_e memory_index)
 		return;
 	}
 
+	// 解析各个遥控器通道值
 	dt7_ctrl.rc.ch[0] = (sbus_buf[0] | (sbus_buf[1] << 8)) & 0x07ff;        //!< Channel 0 NOLINT(*-narrowing-conversions)
 	dt7_ctrl.rc.ch[1] = ((sbus_buf[1] >> 3) | (sbus_buf[2] << 5)) & 0x07ff; //!< Channel 1 NOLINT(*-narrowing-conversions)
 	dt7_ctrl.rc.ch[2] = ((sbus_buf[2] >> 6) | (sbus_buf[3] << 2) |          //!< Channel 2 NOLINT(*-narrowing-conversions)
@@ -139,13 +190,12 @@ void sbus_to_dt7(dt7_dma_memory_e memory_index)
 	dt7_ctrl.mouse.press_l = sbus_buf[12];                                  //!< Mouse Left Is Press ?
 	dt7_ctrl.mouse.press_r = sbus_buf[13];                                  //!< Mouse Right Is Press ?
 	dt7_ctrl.key.v = sbus_buf[14] | (sbus_buf[15] << 8);                    //!< KeyBoard value
-	dt7_ctrl.rc.ch[4] = sbus_buf[16] | (sbus_buf[17] << 8);                 //NULL NOLINT(*-narrowing-conversions)
+	dt7_ctrl.rc.ch[4] = sbus_buf[16] | (sbus_buf[17] << 8);                 // NULL NOLINT(*-narrowing-conversions)
 
+	// 校准遥控器通道值
 	dt7_ctrl.rc.ch[0] -= RC_CH_VALUE_OFFSET;
 	dt7_ctrl.rc.ch[1] -= RC_CH_VALUE_OFFSET;
 	dt7_ctrl.rc.ch[2] -= RC_CH_VALUE_OFFSET;
 	dt7_ctrl.rc.ch[3] -= RC_CH_VALUE_OFFSET;
 	dt7_ctrl.rc.ch[4] -= RC_CH_VALUE_OFFSET;
 }
-
-

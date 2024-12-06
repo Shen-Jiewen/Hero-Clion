@@ -225,7 +225,6 @@ static void chassis_init(chassis_control_t *chassis_move_init)
 //	chassis_feedback_update(chassis_move_init);
 }
 
-
 static void FDCAN_cmd_chassis(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4)
 {
 	FDCAN_TxHeaderTypeDef txHeader;
@@ -255,7 +254,6 @@ static void FDCAN_cmd_chassis(int16_t motor1, int16_t motor2, int16_t motor3, in
 	// 将消息添加到发送 FIFO 队列
 	if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeader, txData) != HAL_OK)
 	{
-		// 如果发送失败，处理错误
 //		Error_Handler();
 	}
 }

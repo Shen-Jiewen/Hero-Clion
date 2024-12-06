@@ -8,11 +8,13 @@
 #include "main.h"
 #include "struct_typedef.h"
 // 底盘
-#include "application/module/chassis/chassis.h"
+#include "chassis.h"
 #include "bsp_can.h"
 // 遥控器
 #include "dt7.h"
 #include "bsp_rc.h"
+// 裁判系统
+#include "fifo.h"
 
 /* CAN send and receive ID */
 typedef enum

@@ -10,13 +10,14 @@
 #include "imu.h"
 #include "Fusion.h"
 
+#define SAMPLE_RATE 1000
+
 FusionAhrs ahrs;
 FusionOffset offset;
 FusionEuler euler;
 
 FusionVector gyroscope;        // replace this with actual gyroscope data in degrees/s
 FusionVector accelerometer;    // replace this with actual accelerometer data in g
-FusionVector magnetometer;     // replace this with actual magnetometer data in arbitrary units
 
 _Noreturn void imu_task(void *argument)
 {
@@ -27,17 +28,25 @@ _Noreturn void imu_task(void *argument)
 	while (BMI088_init()){
 		;
 	}
+
+	// 定义传感器校准参数
+	const FusionMatrix gyroscopeMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+	const FusionVector gyroscopeSensitivity = {1.0f, 1.0f, 1.0f};
+	const FusionVector gyroscopeOffset = {0.0f, 0.0f, 0.0f};
+	const FusionMatrix accelerometerMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+	const FusionVector accelerometerSensitivity = {1.0f, 1.0f, 1.0f};
+	const FusionVector accelerometerOffset = {0.0f, 0.0f, 0.0f};
 	//姿态解算初始化
+	FusionOffsetInitialise(&offset, SAMPLE_RATE);
 	FusionAhrsInitialise(&ahrs);    // Initialise algorithms
-	FusionOffsetInitialise(&offset, 1000);
 	// Set AHRS algorithm settings
 	const FusionAhrsSettings settings = {
 		.convention = FusionConventionNwu,
-		.gain = 10.f,
+		.gain = 10.0f,
 		.gyroscopeRange = 2000.0f, /* replace this with actual gyroscope range in degrees/s */
 		.accelerationRejection = 10.0f,
 		.magneticRejection = 10.0f,
-		.recoveryTriggerPeriod = 1000
+		.recoveryTriggerPeriod = 2 * SAMPLE_RATE
 	};
 	FusionAhrsSetSettings(&ahrs, &settings);
 
@@ -52,6 +61,13 @@ _Noreturn void imu_task(void *argument)
 		accelerometer.array[0] = imu_handle->accel[0];
 		accelerometer.array[1] = imu_handle->accel[1];
 		accelerometer.array[2] = imu_handle->accel[2];
+
+		// 传感器数据校准
+		gyroscope = FusionCalibrationInertial(gyroscope, gyroscopeMisalignment, gyroscopeSensitivity, gyroscopeOffset);
+		accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, accelerometerSensitivity, accelerometerOffset);
+
+		// 更新校准
+		gyroscope = FusionOffsetUpdate(&offset, gyroscope);
 
 		// 数据更新
 		FusionAhrsUpdateNoMagnetometer(&ahrs, gyroscope, accelerometer, (fp32)0.001);

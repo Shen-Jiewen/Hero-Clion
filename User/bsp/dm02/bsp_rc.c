@@ -34,9 +34,6 @@ void RC_Init(uint8_t *rx1_buf, uint8_t *rx2_buf, uint16_t dma_buf_num){
 void RC_unable(void){
 	// 禁用 UART5 的 DMA 接收
 	__HAL_DMA_DISABLE(&hdma_uart5_rx);
-
-	// 注意：这里没有显式检查 DMA 是否已经完全停止，
-	// 如果需要更精细的控制，可以添加超时检查等机制来确保 DMA 完全停止。
 }
 
 /**

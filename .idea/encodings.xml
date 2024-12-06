@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/User/application/module/referee/protocol.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/User/application/module/referee/referee.c" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/User/components/algorithm/user_lib.c" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/User/components/algorithm/user_lib.h" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/User/components/device/BMI088/BMI088Middleware.c" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/User/components/device/BMI088/BMI088driver.c" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/User/components/support/vofa+/vofa.c" charset="UTF-8" />
+    <file url="mock:///CRC8_CRC16.c" charset="GB18030" />
     <file url="mock:///pid.c" charset="GB2312" />
   </component>
 </project>

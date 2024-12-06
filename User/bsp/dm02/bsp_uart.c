@@ -22,23 +22,3 @@ HAL_StatusTypeDef uart10_send_data(uint8_t* pData, uint16_t Size)
 {
 	return HAL_UART_Transmit_DMA(&huart10, pData, Size);
 }
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart)
-{
-	if (huart->Instance == USART1)
-	{
-
-	}
-	else if (huart->Instance == UART7)
-	{
-
-	}
-	else if (huart->Instance == USART10)
-	{
-
-	}
-	else
-	{
-
-	}
-}
