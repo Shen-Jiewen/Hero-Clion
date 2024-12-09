@@ -2647,6 +2647,8 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
  .data          0x00000000        0x0 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
  .bss           0x00000000        0x0 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
+ .data.current3
+                0x00000000        0x2 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
  .data.psc      0x00000000        0x1 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
  .bss.voltage_in
                 0x00000000        0x4 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
@@ -6140,7 +6142,7 @@ LOAD D:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.3 rel1/bin/../lib
 LOAD D:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a
 LOAD D:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x00000000    0x5a64e
+.debug_info     0x00000000    0x5a662
  .debug_info    0x00000000     0x1184 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj
  .debug_info    0x00001184      0x6c6 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.obj
  .debug_info    0x0000184a      0x9e0 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.obj
@@ -6198,26 +6200,26 @@ LOAD D:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.3 rel1/bin/../lib
  .debug_info    0x0004d8aa      0xc55 CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.obj
  .debug_info    0x0004e4ff      0xb8f CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj
  .debug_info    0x0004f08e      0x140 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj
- .debug_info    0x0004f1ce      0x8d2 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
- .debug_info    0x0004faa0      0xdf8 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj
- .debug_info    0x00050898      0x2fb CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj
- .debug_info    0x00050b93     0x1ad5 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj
- .debug_info    0x00052668      0xbe1 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
- .debug_info    0x00053249      0x8bc CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
- .debug_info    0x00053b05      0x9d7 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
- .debug_info    0x000544dc      0xa21 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
- .debug_info    0x00054efd     0x1568 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
- .debug_info    0x00056465      0x2d9 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
- .debug_info    0x0005673e      0xb3e CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
- .debug_info    0x0005727c      0x982 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
- .debug_info    0x00057bfe      0x3f0 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
- .debug_info    0x00057fee      0x162 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
- .debug_info    0x00058150      0x3bf CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
- .debug_info    0x0005850f      0xa70 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
- .debug_info    0x00058f7f     0x1304 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
- .debug_info    0x0005a283      0x3cb CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
+ .debug_info    0x0004f1ce      0x8e5 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
+ .debug_info    0x0004fab3      0xdf9 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj
+ .debug_info    0x000508ac      0x2fb CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj
+ .debug_info    0x00050ba7     0x1ad5 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj
+ .debug_info    0x0005267c      0xbe1 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
+ .debug_info    0x0005325d      0x8bc CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
+ .debug_info    0x00053b19      0x9d7 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
+ .debug_info    0x000544f0      0xa21 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
+ .debug_info    0x00054f11     0x1568 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
+ .debug_info    0x00056479      0x2d9 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
+ .debug_info    0x00056752      0xb3e CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
+ .debug_info    0x00057290      0x982 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
+ .debug_info    0x00057c12      0x3f0 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
+ .debug_info    0x00058002      0x162 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
+ .debug_info    0x00058164      0x3bf CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
+ .debug_info    0x00058523      0xa70 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
+ .debug_info    0x00058f93     0x1304 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
+ .debug_info    0x0005a297      0x3cb CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
 
-.debug_abbrev   0x00000000     0xafe4
+.debug_abbrev   0x00000000     0xafe3
  .debug_abbrev  0x00000000      0x239 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj
  .debug_abbrev  0x00000239      0x1d5 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.obj
  .debug_abbrev  0x0000040e      0x13d CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.obj
@@ -6275,24 +6277,24 @@ LOAD D:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.3 rel1/bin/../lib
  .debug_abbrev  0x000087a3      0x1ce CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.obj
  .debug_abbrev  0x00008971      0x32a CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj
  .debug_abbrev  0x00008c9b       0xbe CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj
- .debug_abbrev  0x00008d59      0x1b4 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
- .debug_abbrev  0x00008f0d      0x245 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj
- .debug_abbrev  0x00009152      0x189 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj
- .debug_abbrev  0x000092db      0x271 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj
- .debug_abbrev  0x0000954c      0x1ba CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
- .debug_abbrev  0x00009706      0x1cd CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
- .debug_abbrev  0x000098d3      0x1bb CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
- .debug_abbrev  0x00009a8e      0x201 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
- .debug_abbrev  0x00009c8f      0x38f CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
- .debug_abbrev  0x0000a01e      0x1ae CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
- .debug_abbrev  0x0000a1cc      0x215 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
- .debug_abbrev  0x0000a3e1      0x203 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
- .debug_abbrev  0x0000a5e4      0x1d7 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
- .debug_abbrev  0x0000a7bb       0xba CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
- .debug_abbrev  0x0000a875      0x103 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
- .debug_abbrev  0x0000a978      0x206 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
- .debug_abbrev  0x0000ab7e      0x31a CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
- .debug_abbrev  0x0000ae98      0x14c CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
+ .debug_abbrev  0x00008d59      0x1b3 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
+ .debug_abbrev  0x00008f0c      0x245 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj
+ .debug_abbrev  0x00009151      0x189 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj
+ .debug_abbrev  0x000092da      0x271 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj
+ .debug_abbrev  0x0000954b      0x1ba CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
+ .debug_abbrev  0x00009705      0x1cd CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
+ .debug_abbrev  0x000098d2      0x1bb CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
+ .debug_abbrev  0x00009a8d      0x201 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
+ .debug_abbrev  0x00009c8e      0x38f CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
+ .debug_abbrev  0x0000a01d      0x1ae CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
+ .debug_abbrev  0x0000a1cb      0x215 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
+ .debug_abbrev  0x0000a3e0      0x203 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
+ .debug_abbrev  0x0000a5e3      0x1d7 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
+ .debug_abbrev  0x0000a7ba       0xba CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
+ .debug_abbrev  0x0000a874      0x103 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
+ .debug_abbrev  0x0000a977      0x206 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
+ .debug_abbrev  0x0000ab7d      0x31a CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
+ .debug_abbrev  0x0000ae97      0x14c CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
 
 .debug_loclists
                 0x00000000    0x23aaf
@@ -6732,7 +6734,7 @@ LOAD D:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.3 rel1/bin/../lib
  .debug_rnglists
                 0x00002878       0x2c CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
 
-.debug_line     0x00000000    0x3c937
+.debug_line     0x00000000    0x3c933
  .debug_line    0x00000000      0x5a4 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj
  .debug_line    0x000005a4      0x2d2 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.obj
  .debug_line    0x00000876      0x206 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.obj
@@ -6790,102 +6792,102 @@ LOAD D:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.3 rel1/bin/../lib
  .debug_line    0x0003584e      0x68c CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.obj
  .debug_line    0x00035eda      0x6da CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj
  .debug_line    0x000365b4      0x1e1 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj
- .debug_line    0x00036795      0x414 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
- .debug_line    0x00036ba9      0x614 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj
- .debug_line    0x000371bd      0x340 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj
- .debug_line    0x000374fd      0x87c CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj
- .debug_line    0x00037d79      0x37e CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
- .debug_line    0x000380f7      0x2be CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
- .debug_line    0x000383b5      0x3ff CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
- .debug_line    0x000387b4      0x469 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
- .debug_line    0x00038c1d     0x1181 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
- .debug_line    0x00039d9e      0x1ee CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
- .debug_line    0x00039f8c      0x3cd CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
- .debug_line    0x0003a359      0x5c7 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
- .debug_line    0x0003a920      0x3c6 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
- .debug_line    0x0003ace6      0x1b5 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
- .debug_line    0x0003ae9b      0x2ef CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
- .debug_line    0x0003b18a      0x463 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
- .debug_line    0x0003b5ed      0xffc CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
- .debug_line    0x0003c5e9      0x34e CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
+ .debug_line    0x00036795      0x410 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
+ .debug_line    0x00036ba5      0x614 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj
+ .debug_line    0x000371b9      0x340 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj
+ .debug_line    0x000374f9      0x87c CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj
+ .debug_line    0x00037d75      0x37e CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
+ .debug_line    0x000380f3      0x2be CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
+ .debug_line    0x000383b1      0x3ff CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
+ .debug_line    0x000387b0      0x469 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
+ .debug_line    0x00038c19     0x1181 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
+ .debug_line    0x00039d9a      0x1ee CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
+ .debug_line    0x00039f88      0x3cd CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
+ .debug_line    0x0003a355      0x5c7 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
+ .debug_line    0x0003a91c      0x3c6 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
+ .debug_line    0x0003ace2      0x1b5 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
+ .debug_line    0x0003ae97      0x2ef CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
+ .debug_line    0x0003b186      0x463 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
+ .debug_line    0x0003b5e9      0xffc CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
+ .debug_line    0x0003c5e5      0x34e CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
 
-.debug_str      0x00000000    0x1258c
- .debug_str     0x00000000    0x1258c CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj
+.debug_str      0x00000000    0x12595
+ .debug_str     0x00000000    0x12595 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj
                                 0xc8f (size before relaxing)
- .debug_str     0x0001258c      0x628 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.obj
- .debug_str     0x0001258c      0xc23 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.obj
- .debug_str     0x0001258c     0x15d7 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/fdcan.c.obj
- .debug_str     0x0001258c      0x885 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/freertos.c.obj
- .debug_str     0x0001258c      0xcf0 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/gpio.c.obj
- .debug_str     0x0001258c     0x1030 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj
- .debug_str     0x0001258c     0x1709 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/spi.c.obj
- .debug_str     0x0001258c      0xc1e CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_hal_msp.c.obj
- .debug_str     0x0001258c     0x13ea CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_hal_timebase_tim.c.obj
- .debug_str     0x0001258c     0x18e6 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_it.c.obj
- .debug_str     0x0001258c      0x252 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/sysmem.c.obj
- .debug_str     0x0001258c      0x6cc CMakeFiles/DM_02_Hero.elf.dir/Core/Src/system_stm32h7xx.c.obj
- .debug_str     0x0001258c      0xcb0 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/tim.c.obj
- .debug_str     0x0001258c     0x1798 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/usart.c.obj
- .debug_str     0x0001258c       0x89 CMakeFiles/DM_02_Hero.elf.dir/Core/Startup/startup_stm32h723vgtx.s.obj
- .debug_str     0x0001258c     0x15cb CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c.obj
- .debug_str     0x0001258c     0x154f CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c.obj
- .debug_str     0x0001258c     0x15d2 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c.obj
- .debug_str     0x0001258c     0x1070 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c.obj
- .debug_str     0x0001258c      0x4c1 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.obj
- .debug_str     0x0001258c      0x467 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.obj
- .debug_str     0x0001258c      0x988 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c.obj
- .debug_str     0x0001258c      0x825 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c.obj
- .debug_str     0x0001258c     0x1ddb CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c.obj
- .debug_str     0x0001258c      0x705 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c.obj
- .debug_str     0x0001258c      0xe7b CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.c.obj
- .debug_str     0x0001258c      0x867 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.c.obj
- .debug_str     0x0001258c      0x9e3 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c.obj
- .debug_str     0x0001258c      0x9ea CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c.obj
- .debug_str     0x0001258c      0xf2c CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c.obj
- .debug_str     0x0001258c      0xe03 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c.obj
- .debug_str     0x0001258c     0x1898 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c.obj
- .debug_str     0x0001258c     0x1224 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c.obj
- .debug_str     0x0001258c     0x14e2 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c.obj
- .debug_str     0x0001258c      0xbd6 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c.obj
- .debug_str     0x0001258c      0xdc3 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.c.obj
- .debug_str     0x0001258c      0xe2d CMakeFiles/DM_02_Hero.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
- .debug_str     0x0001258c      0xa22 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
- .debug_str     0x0001258c      0x84d CMakeFiles/DM_02_Hero.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
- .debug_str     0x0001258c      0x722 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
- .debug_str     0x0001258c     0x28df CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_str     0x0001258c      0x32f CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
- .debug_str     0x0001258c      0x4af CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .debug_str     0x0001258c      0x548 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .debug_str     0x0001258c      0xd45 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_str     0x0001258c     0x1677 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_str     0x0001258c      0xf99 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .debug_str     0x0001258c      0x733 CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usb_device.c.obj
- .debug_str     0x0001258c      0x7de CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj
- .debug_str     0x0001258c      0x4d3 CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- .debug_str     0x0001258c     0x1e45 CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
- .debug_str     0x0001258c      0xf10 CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis.c.obj
- .debug_str     0x0001258c      0x20b CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.obj
- .debug_str     0x0001258c      0xe12 CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.obj
- .debug_str     0x0001258c      0x7b9 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj
- .debug_str     0x0001258c      0x22e CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj
- .debug_str     0x0001258c      0x785 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
- .debug_str     0x0001258c      0xb7a CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj
- .debug_str     0x0001258c      0x2ae CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj
- .debug_str     0x0001258c     0x146c CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj
- .debug_str     0x0001258c      0x871 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
- .debug_str     0x0001258c      0x96e CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
- .debug_str     0x0001258c      0x8b0 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
- .debug_str     0x0001258c      0x898 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
- .debug_str     0x0001258c      0x949 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
- .debug_str     0x0001258c      0x2ea CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
- .debug_str     0x0001258c      0x9b5 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
- .debug_str     0x0001258c      0x59d CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
- .debug_str     0x0001258c      0x340 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
- .debug_str     0x0001258c      0x27f CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
- .debug_str     0x0001258c      0x32a CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
- .debug_str     0x0001258c      0x9b6 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
- .debug_str     0x0001258c      0x4e6 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
- .debug_str     0x0001258c      0x2ac CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
+ .debug_str     0x00012595      0x628 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/crc.c.obj
+ .debug_str     0x00012595      0xc23 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/dma.c.obj
+ .debug_str     0x00012595     0x15d7 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/fdcan.c.obj
+ .debug_str     0x00012595      0x885 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/freertos.c.obj
+ .debug_str     0x00012595      0xcf0 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/gpio.c.obj
+ .debug_str     0x00012595     0x1030 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj
+ .debug_str     0x00012595     0x1709 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/spi.c.obj
+ .debug_str     0x00012595      0xc1e CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_hal_msp.c.obj
+ .debug_str     0x00012595     0x13ea CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_hal_timebase_tim.c.obj
+ .debug_str     0x00012595     0x18e6 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/stm32h7xx_it.c.obj
+ .debug_str     0x00012595      0x252 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/sysmem.c.obj
+ .debug_str     0x00012595      0x6cc CMakeFiles/DM_02_Hero.elf.dir/Core/Src/system_stm32h7xx.c.obj
+ .debug_str     0x00012595      0xcb0 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/tim.c.obj
+ .debug_str     0x00012595     0x1798 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/usart.c.obj
+ .debug_str     0x00012595       0x89 CMakeFiles/DM_02_Hero.elf.dir/Core/Startup/startup_stm32h723vgtx.s.obj
+ .debug_str     0x00012595     0x15cb CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c.obj
+ .debug_str     0x00012595     0x154f CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c.obj
+ .debug_str     0x00012595     0x15d2 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c.obj
+ .debug_str     0x00012595     0x1070 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c.obj
+ .debug_str     0x00012595      0x4c1 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c.obj
+ .debug_str     0x00012595      0x467 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c.obj
+ .debug_str     0x00012595      0x988 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c.obj
+ .debug_str     0x00012595      0x825 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c.obj
+ .debug_str     0x00012595     0x1ddb CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c.obj
+ .debug_str     0x00012595      0x705 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c.obj
+ .debug_str     0x00012595      0xe7b CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.c.obj
+ .debug_str     0x00012595      0x867 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.c.obj
+ .debug_str     0x00012595      0x9e3 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c.obj
+ .debug_str     0x00012595      0x9ea CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c.obj
+ .debug_str     0x00012595      0xf2c CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c.obj
+ .debug_str     0x00012595      0xe03 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c.obj
+ .debug_str     0x00012595     0x1898 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c.obj
+ .debug_str     0x00012595     0x1224 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c.obj
+ .debug_str     0x00012595     0x14e2 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c.obj
+ .debug_str     0x00012595      0xbd6 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c.obj
+ .debug_str     0x00012595      0xdc3 CMakeFiles/DM_02_Hero.elf.dir/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.c.obj
+ .debug_str     0x00012595      0xe2d CMakeFiles/DM_02_Hero.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+ .debug_str     0x00012595      0xa22 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+ .debug_str     0x00012595      0x84d CMakeFiles/DM_02_Hero.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+ .debug_str     0x00012595      0x722 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+ .debug_str     0x00012595     0x28df CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_str     0x00012595      0x32f CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_str     0x00012595      0x4af CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .debug_str     0x00012595      0x548 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_str     0x00012595      0xd45 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_str     0x00012595     0x1677 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_str     0x00012595      0xf99 CMakeFiles/DM_02_Hero.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .debug_str     0x00012595      0x733 CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usb_device.c.obj
+ .debug_str     0x00012595      0x7de CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj
+ .debug_str     0x00012595      0x4d3 CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ .debug_str     0x00012595     0x1e45 CMakeFiles/DM_02_Hero.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+ .debug_str     0x00012595      0xf10 CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis.c.obj
+ .debug_str     0x00012595      0x20b CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.obj
+ .debug_str     0x00012595      0xe12 CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.obj
+ .debug_str     0x00012595      0x7b9 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj
+ .debug_str     0x00012595      0x22e CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj
+ .debug_str     0x00012595      0x78e CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj
+ .debug_str     0x00012595      0xb7a CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj
+ .debug_str     0x00012595      0x2ae CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj
+ .debug_str     0x00012595     0x146c CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj
+ .debug_str     0x00012595      0x871 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_can.c.obj
+ .debug_str     0x00012595      0x96e CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
+ .debug_str     0x00012595      0x8b0 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
+ .debug_str     0x00012595      0x898 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
+ .debug_str     0x00012595      0x949 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
+ .debug_str     0x00012595      0x2ea CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
+ .debug_str     0x00012595      0x9b5 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
+ .debug_str     0x00012595      0x59d CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
+ .debug_str     0x00012595      0x340 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
+ .debug_str     0x00012595      0x27f CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
+ .debug_str     0x00012595      0x32a CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
+ .debug_str     0x00012595      0x9b6 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
+ .debug_str     0x00012595      0x4e6 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
+ .debug_str     0x00012595      0x2ac CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
 
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 CMakeFiles/DM_02_Hero.elf.dir/Core/Src/adc.c.obj

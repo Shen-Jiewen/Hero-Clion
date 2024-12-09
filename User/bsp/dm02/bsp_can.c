@@ -14,11 +14,11 @@ void fdcan1_filter_init(void)
 
 	// 初始化FDCAN1过滤器
 	fdcan_filter_st.IdType = FDCAN_STANDARD_ID;                    // 使用标准标识符(11位)
-	fdcan_filter_st.FilterIndex = 0;                            // 过滤器索引0
+	fdcan_filter_st.FilterIndex = 0;                               // 过滤器索引0
 	fdcan_filter_st.FilterType = FDCAN_FILTER_MASK;                // 标识符屏蔽模式
 	fdcan_filter_st.FilterConfig = FDCAN_FILTER_TO_RXFIFO0;        // 通过过滤器接收的消息放到FIFO0
-	fdcan_filter_st.FilterID1 = 0x000;                            // 标识符(起始值)
-	fdcan_filter_st.FilterID2 = 0x000;                            // 屏蔽标识符
+	fdcan_filter_st.FilterID1 = 0x000;                             // 标识符(起始值)
+	fdcan_filter_st.FilterID2 = 0x000;                             // 屏蔽标识符
 	HAL_FDCAN_ConfigFilter(&hfdcan1, &fdcan_filter_st);    //配置过滤器
 
 	//拒绝接收匹配不成功的标准ID和扩展ID,不接受远程帧

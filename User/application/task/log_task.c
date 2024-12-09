@@ -13,6 +13,7 @@
 fp32 temperature = 0.f;
 fp32 voltage_in = 0.f;
 uint8_t psc = 23;
+uint16_t current3 = 300;
 
 _Noreturn void log_task(void* argument)
 {
@@ -21,15 +22,8 @@ _Noreturn void log_task(void* argument)
 
 	while (1)
 	{
-//		// 获取电压
-//		init_vrefint_reciprocal();
-//		// 获取温度
-//		temperature = get_temperature();
-//		// 获取电源电压
-//		voltage_in = get_battery_voltage();
-
 		// CAN发送数据
-		chassis_control->CAN_cmd_chassis(10, 10, 10, 10);
+		chassis_control->CAN_cmd_chassis(0, 0, 0, 0);
 		vTaskDelay(100);
 	}
 }

@@ -34,7 +34,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 			if (HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &RxHeader, RxData) == HAL_OK)
 			{
 				// 底盘电机获取信息
-				chassis_control->CAN_rec_chassis(RxHeader.IdType, RxData);
+				chassis_control->CAN_rec_chassis(RxHeader.Identifier, RxData);
 			}
 		}
 	}
