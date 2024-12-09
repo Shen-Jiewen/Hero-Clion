@@ -80,6 +80,7 @@ extern void DT7_change_dma_memory(dt7_dma_memory_e memory_index);
 extern void sbus_to_dt7(dt7_dma_memory_e memory_index);
 extern dt7_dma_memory_e get_dt7_dma_memory(void);
 extern const DT7_ctrl_t *get_dt7_point(void);
+
 extern uint8_t dt7_data_is_error(void);
 extern void solve_dt7_lost(void);
 extern void solve_data_error(void);

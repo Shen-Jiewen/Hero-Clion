@@ -15,7 +15,7 @@ extern DMA_HandleTypeDef hdma_uart5_rx;
 
 // Referee
 extern UART_HandleTypeDef huart1;
-extern DMA_HandleTypeDef hdma_usart1_rx;
+extern dma_buffer_t referee_dma_buffer;
 
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 {
@@ -112,10 +112,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 		}
 	}
 	else if(huart == &huart1){
-		// 清除 IDLE 标志
-		__HAL_UART_CLEAR_IDLEFLAG(huart);
-		if(HAL_DMA_GetState(&hdma_uart5_rx) == HAL_DMA_STATE_READY){
-
-		}
+		// 裁判系统数据解析
+		referee_dma_buffer.full_complete_callback(huart);
 	}
 }

@@ -89,6 +89,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj: \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_callback.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_can.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_rc.h \
- D:\ClionProject\DM_02_Hero\User\components\controller/pid.h \
+ D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer/dma_buffer.h \
+ D:\ClionProject\DM_02_Hero\User\components\controller\pid/pid.h \
  D:\ClionProject\DM_02_Hero\User\components\algorithm/user_lib.h \
  D:\ClionProject\DM_02_Hero\User\application\module\gimbal/gimbal.h

@@ -66,7 +66,7 @@ include_directories(
         User/components/algorithm
         User/components/algorithm/Fusion
         # component/controller
-        User/components/controller
+        User/components/controller/pid
         # component/device
         User/components/device/control/DT7
         User/components/device/motor/DJI-3508
@@ -76,7 +76,8 @@ include_directories(
         User/components/support
         User/components/support/vofa+
         User/components/support/crc
-        User/components/support/fifo)
+        User/components/support/fifo
+        User/components/support/dma_buffer)
 
 # User include_directories END
 

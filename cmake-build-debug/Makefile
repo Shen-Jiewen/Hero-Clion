@@ -2128,30 +2128,6 @@ User/bsp/dm02/bsp_uart.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.s
 .PHONY : User/bsp/dm02/bsp_uart.c.s
 
-User/bsp/dm02/bsp_usart.obj: User/bsp/dm02/bsp_usart.c.obj
-.PHONY : User/bsp/dm02/bsp_usart.obj
-
-# target to build an object file
-User/bsp/dm02/bsp_usart.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.obj
-.PHONY : User/bsp/dm02/bsp_usart.c.obj
-
-User/bsp/dm02/bsp_usart.i: User/bsp/dm02/bsp_usart.c.i
-.PHONY : User/bsp/dm02/bsp_usart.i
-
-# target to preprocess a source file
-User/bsp/dm02/bsp_usart.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.i
-.PHONY : User/bsp/dm02/bsp_usart.c.i
-
-User/bsp/dm02/bsp_usart.s: User/bsp/dm02/bsp_usart.c.s
-.PHONY : User/bsp/dm02/bsp_usart.s
-
-# target to generate assembly for a file
-User/bsp/dm02/bsp_usart.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.s
-.PHONY : User/bsp/dm02/bsp_usart.c.s
-
 User/bsp/dm02/bsp_ws2812.obj: User/bsp/dm02/bsp_ws2812.c.obj
 .PHONY : User/bsp/dm02/bsp_ws2812.obj
 
@@ -2272,29 +2248,29 @@ User/components/algorithm/user_lib.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.s
 .PHONY : User/components/algorithm/user_lib.c.s
 
-User/components/controller/pid.obj: User/components/controller/pid.c.obj
-.PHONY : User/components/controller/pid.obj
+User/components/controller/pid/pid.obj: User/components/controller/pid/pid.c.obj
+.PHONY : User/components/controller/pid/pid.obj
 
 # target to build an object file
-User/components/controller/pid.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj
-.PHONY : User/components/controller/pid.c.obj
+User/components/controller/pid/pid.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.obj
+.PHONY : User/components/controller/pid/pid.c.obj
 
-User/components/controller/pid.i: User/components/controller/pid.c.i
-.PHONY : User/components/controller/pid.i
+User/components/controller/pid/pid.i: User/components/controller/pid/pid.c.i
+.PHONY : User/components/controller/pid/pid.i
 
 # target to preprocess a source file
-User/components/controller/pid.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.i
-.PHONY : User/components/controller/pid.c.i
+User/components/controller/pid/pid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.i
+.PHONY : User/components/controller/pid/pid.c.i
 
-User/components/controller/pid.s: User/components/controller/pid.c.s
-.PHONY : User/components/controller/pid.s
+User/components/controller/pid/pid.s: User/components/controller/pid/pid.c.s
+.PHONY : User/components/controller/pid/pid.s
 
 # target to generate assembly for a file
-User/components/controller/pid.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.s
-.PHONY : User/components/controller/pid.c.s
+User/components/controller/pid/pid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.s
+.PHONY : User/components/controller/pid/pid.c.s
 
 User/components/device/BMI088/BMI088Middleware.obj: User/components/device/BMI088/BMI088Middleware.c.obj
 .PHONY : User/components/device/BMI088/BMI088Middleware.obj
@@ -2415,6 +2391,30 @@ User/components/support/crc/CRC8_CRC16.s: User/components/support/crc/CRC8_CRC16
 User/components/support/crc/CRC8_CRC16.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.s
 .PHONY : User/components/support/crc/CRC8_CRC16.c.s
+
+User/components/support/dma_buffer/dma_buffer.obj: User/components/support/dma_buffer/dma_buffer.c.obj
+.PHONY : User/components/support/dma_buffer/dma_buffer.obj
+
+# target to build an object file
+User/components/support/dma_buffer/dma_buffer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
+.PHONY : User/components/support/dma_buffer/dma_buffer.c.obj
+
+User/components/support/dma_buffer/dma_buffer.i: User/components/support/dma_buffer/dma_buffer.c.i
+.PHONY : User/components/support/dma_buffer/dma_buffer.i
+
+# target to preprocess a source file
+User/components/support/dma_buffer/dma_buffer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.i
+.PHONY : User/components/support/dma_buffer/dma_buffer.c.i
+
+User/components/support/dma_buffer/dma_buffer.s: User/components/support/dma_buffer/dma_buffer.c.s
+.PHONY : User/components/support/dma_buffer/dma_buffer.s
+
+# target to generate assembly for a file
+User/components/support/dma_buffer/dma_buffer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.s
+.PHONY : User/components/support/dma_buffer/dma_buffer.c.s
 
 User/components/support/fifo/fifo.obj: User/components/support/fifo/fifo.c.obj
 .PHONY : User/components/support/fifo/fifo.obj
@@ -2723,9 +2723,6 @@ help:
 	@echo ... User/bsp/dm02/bsp_uart.obj
 	@echo ... User/bsp/dm02/bsp_uart.i
 	@echo ... User/bsp/dm02/bsp_uart.s
-	@echo ... User/bsp/dm02/bsp_usart.obj
-	@echo ... User/bsp/dm02/bsp_usart.i
-	@echo ... User/bsp/dm02/bsp_usart.s
 	@echo ... User/bsp/dm02/bsp_ws2812.obj
 	@echo ... User/bsp/dm02/bsp_ws2812.i
 	@echo ... User/bsp/dm02/bsp_ws2812.s
@@ -2741,9 +2738,9 @@ help:
 	@echo ... User/components/algorithm/user_lib.obj
 	@echo ... User/components/algorithm/user_lib.i
 	@echo ... User/components/algorithm/user_lib.s
-	@echo ... User/components/controller/pid.obj
-	@echo ... User/components/controller/pid.i
-	@echo ... User/components/controller/pid.s
+	@echo ... User/components/controller/pid/pid.obj
+	@echo ... User/components/controller/pid/pid.i
+	@echo ... User/components/controller/pid/pid.s
 	@echo ... User/components/device/BMI088/BMI088Middleware.obj
 	@echo ... User/components/device/BMI088/BMI088Middleware.i
 	@echo ... User/components/device/BMI088/BMI088Middleware.s
@@ -2759,6 +2756,9 @@ help:
 	@echo ... User/components/support/crc/CRC8_CRC16.obj
 	@echo ... User/components/support/crc/CRC8_CRC16.i
 	@echo ... User/components/support/crc/CRC8_CRC16.s
+	@echo ... User/components/support/dma_buffer/dma_buffer.obj
+	@echo ... User/components/support/dma_buffer/dma_buffer.i
+	@echo ... User/components/support/dma_buffer/dma_buffer.s
 	@echo ... User/components/support/fifo/fifo.obj
 	@echo ... User/components/support/fifo/fifo.i
 	@echo ... User/components/support/fifo/fifo.s

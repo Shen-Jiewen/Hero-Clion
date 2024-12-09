@@ -16,6 +16,7 @@
   ****************************(C) COPYRIGHT 2019 DJI****************************
   */
 #include "crc8_crc16.h"
+
 //crc8 generator polynomial:G(x)=x8+x5+x4+1
 const uint8_t CRC8_INIT = 0xff;
 const uint8_t CRC8_table[256] =

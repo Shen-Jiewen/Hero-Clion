@@ -14,7 +14,7 @@
 #include "dt7.h"
 #include "bsp_rc.h"
 // 裁判系统
-#include "fifo.h"
+#include "dma_buffer.h"
 
 /* CAN send and receive ID */
 typedef enum

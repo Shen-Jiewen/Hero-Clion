@@ -1243,24 +1243,10 @@ CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.s"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_uart.c -o CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_uart.c.s
 
-CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
-CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.obj: D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_usart.c
-CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.obj"
-	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_usart.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_usart.c.obj -c D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_usart.c
-
-CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.i"
-	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_usart.c > CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_usart.c.i
-
-CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.s"
-	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_usart.c -o CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_usart.c.s
-
 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj: D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_ws2812.c
 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_ws2812.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\bsp\dm02\bsp_ws2812.c.obj -c D:\ClionProject\DM_02_Hero\User\bsp\dm02\bsp_ws2812.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.i: cmake_force
@@ -1274,7 +1260,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.s: cmake_force
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj: D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\algorithm\Fusion\FusionAhrs.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\algorithm\Fusion\FusionAhrs.c.obj -c D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion\FusionAhrs.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.i: cmake_force
@@ -1288,7 +1274,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.s: c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.obj: D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\algorithm\Fusion\FusionCompass.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\algorithm\Fusion\FusionCompass.c.obj -c D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion\FusionCompass.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.i: cmake_force
@@ -1302,7 +1288,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.s
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj: D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\algorithm\Fusion\FusionOffset.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\algorithm\Fusion\FusionOffset.c.obj -c D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion\FusionOffset.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.i: cmake_force
@@ -1316,7 +1302,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.s:
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj: D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\algorithm\user_lib.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\algorithm\user_lib.c.obj -c D:\ClionProject\DM_02_Hero\User\components\algorithm\user_lib.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.i: cmake_force
@@ -1327,24 +1313,24 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.s"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ClionProject\DM_02_Hero\User\components\algorithm\user_lib.c -o CMakeFiles\DM_02_Hero.elf.dir\User\components\algorithm\user_lib.c.s
 
-CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
-CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj: D:/ClionProject/DM_02_Hero/User/components/controller/pid.c
-CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj"
-	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\controller\pid.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\controller\pid.c.obj -c D:\ClionProject\DM_02_Hero\User\components\controller\pid.c
+CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
+CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.obj: D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.c
+CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.obj"
+	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\controller\pid\pid.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\controller\pid\pid.c.obj -c D:\ClionProject\DM_02_Hero\User\components\controller\pid\pid.c
 
-CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.i"
-	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ClionProject\DM_02_Hero\User\components\controller\pid.c > CMakeFiles\DM_02_Hero.elf.dir\User\components\controller\pid.c.i
+CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.i"
+	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ClionProject\DM_02_Hero\User\components\controller\pid\pid.c > CMakeFiles\DM_02_Hero.elf.dir\User\components\controller\pid\pid.c.i
 
-CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.s"
-	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ClionProject\DM_02_Hero\User\components\controller\pid.c -o CMakeFiles\DM_02_Hero.elf.dir\User\components\controller\pid.c.s
+CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.s"
+	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ClionProject\DM_02_Hero\User\components\controller\pid\pid.c -o CMakeFiles\DM_02_Hero.elf.dir\User\components\controller\pid\pid.c.s
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj: D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088Middleware.c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\device\BMI088\BMI088Middleware.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\device\BMI088\BMI088Middleware.c.obj -c D:\ClionProject\DM_02_Hero\User\components\device\BMI088\BMI088Middleware.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.i: cmake_force
@@ -1358,7 +1344,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.s
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj: D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\device\BMI088\BMI088driver.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\device\BMI088\BMI088driver.c.obj -c D:\ClionProject\DM_02_Hero\User\components\device\BMI088\BMI088driver.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.i: cmake_force
@@ -1372,7 +1358,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.s: cm
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj: D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\device\control\DT7\dt7.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\device\control\DT7\dt7.c.obj -c D:\ClionProject\DM_02_Hero\User\components\device\control\DT7\dt7.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.i: cmake_force
@@ -1386,7 +1372,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.s: cmake_
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj: D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\device\motor\DJI-3508\dji_3508.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\device\motor\DJI-3508\dji_3508.c.obj -c D:\ClionProject\DM_02_Hero\User\components\device\motor\DJI-3508\dji_3508.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.i: cmake_force
@@ -1400,7 +1386,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.s
 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj: D:/ClionProject/DM_02_Hero/User/components/support/crc/CRC8_CRC16.c
 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\support\crc\CRC8_CRC16.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\support\crc\CRC8_CRC16.c.obj -c D:\ClionProject\DM_02_Hero\User\components\support\crc\CRC8_CRC16.c
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.i: cmake_force
@@ -1410,6 +1396,20 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.i: cmake_
 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.s"
 	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ClionProject\DM_02_Hero\User\components\support\crc\CRC8_CRC16.c -o CMakeFiles\DM_02_Hero.elf.dir\User\components\support\crc\CRC8_CRC16.c.s
+
+CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
+CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj: D:/ClionProject/DM_02_Hero/User/components/support/dma_buffer/dma_buffer.c
+CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj: CMakeFiles/DM_02_Hero.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ClionProject\DM_02_Hero\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj"
+	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj -MF CMakeFiles\DM_02_Hero.elf.dir\User\components\support\dma_buffer\dma_buffer.c.obj.d -o CMakeFiles\DM_02_Hero.elf.dir\User\components\support\dma_buffer\dma_buffer.c.obj -c D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer\dma_buffer.c
+
+CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.i"
+	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer\dma_buffer.c > CMakeFiles\DM_02_Hero.elf.dir\User\components\support\dma_buffer\dma_buffer.c.i
+
+CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.s"
+	"D:\Program Files (x86)\Arm GNU Toolchain arm-none-eabi\13.3 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer\dma_buffer.c -o CMakeFiles\DM_02_Hero.elf.dir\User\components\support\dma_buffer\dma_buffer.c.s
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj: CMakeFiles/DM_02_Hero.elf.dir/flags.make
 CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj: D:/ClionProject/DM_02_Hero/User/components/support/fifo/fifo.c
@@ -1525,18 +1525,18 @@ DM_02_Hero_elf_OBJECTS = \
 "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.obj" \
-"CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj" \
-"CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj" \
+"CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj" \
+"CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj" \
 "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj"
 
@@ -1627,18 +1627,18 @@ DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_crc32.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_imu.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_rc.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_uart.c.obj
-DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_usart.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_ws2812.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionAhrs.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionCompass.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj
-DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj
+DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj
+DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj
 DM_02_Hero.elf: CMakeFiles/DM_02_Hero.elf.dir/build.make

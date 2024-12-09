@@ -1,5 +1,7 @@
 #include <sys/types.h>
 #include <sys/cdefs.h>
+#include <sys/types.h>
+#include <sys/cdefs.h>
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -105,7 +107,7 @@ const osSemaphoreAttr_t imuBinarySem01_attributes = {
 void StartDefaultTask(void *argument);
 void log_task(void *argument);
 void led_task(void *argument);
-void imu_task(void *argument);
+_Noreturn void imu_task(void *argument);
 void usb_task(void *argument);
 _Noreturn void referee_task(void *argument);
 
@@ -235,7 +237,7 @@ __weak void led_task(void *argument)
 * @retval None
 */
 /* USER CODE END Header_imu_task */
-__weak void imu_task(void *argument)
+_Noreturn __weak void imu_task(void *argument)
 {
   /* USER CODE BEGIN imu_task */
   /* Infinite loop */

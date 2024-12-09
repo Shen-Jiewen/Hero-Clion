@@ -1,9 +1,9 @@
+#include <sys/cdefs.h>
 //
 // Created by Rick on 24-11-25.
 //
 
 #include "main.h"
-#include "FreeRTOS.h"
 #include "cmsis_os.h"
 #include "BMI088driver.h"
 #include "bsp_imu.h"

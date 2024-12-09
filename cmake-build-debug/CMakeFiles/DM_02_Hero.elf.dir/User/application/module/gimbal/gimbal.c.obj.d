@@ -67,4 +67,4 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.obj: \
  D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
  D:\ClionProject\DM_02_Hero\User\components\device\motor\DJI-3508/dji_3508.h \
  D:\ClionProject\DM_02_Hero\User\components\algorithm/user_lib.h \
- D:\ClionProject\DM_02_Hero\User\components\controller/pid.h
+ D:\ClionProject\DM_02_Hero\User\components\controller\pid/pid.h
