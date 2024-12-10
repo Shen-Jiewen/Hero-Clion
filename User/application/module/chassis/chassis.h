@@ -7,12 +7,15 @@
 
 #include "main.h"
 #include "struct_typedef.h"
+// 设备
+#include "gimbal.h"
 #include "dji_3508.h"
 #include "dt7.h"
+// 板载层
 #include "bsp_callback.h"
+// 库
 #include "pid.h"
 #include "user_lib.h"
-#include "gimbal.h"
 
 // 任务开始时空闲一段时间
 #define CHASSIS_TASK_INIT_TIME 357
@@ -83,11 +86,6 @@
 
 #define CHASSIS_WZ_SET_SCALE 0.1f
 
-//摇摆原地不动摇摆最大角度(rad)
-#define SWING_NO_MOVE_ANGLE 0.7f
-//摇摆过程底盘运动最大角度(rad)
-#define SWING_MOVE_ANGLE 0.31415926535897932384626433832795f
-
 //底盘电机速度环PID
 #define M3505_MOTOR_SPEED_PID_KP 15000.0f
 #define M3505_MOTOR_SPEED_PID_KI 10.0f
@@ -113,7 +111,6 @@ typedef struct {
 	const DT7_ctrl_t *chassis_RC;
 	const gimbal_motor_t *chassis_yaw_motor;
 	const gimbal_motor_t *chassis_pitch_motor;
-	const fp32 *chassis_INS_angle;
 	chassis_mode_e chassis_mode;
 	chassis_mode_e last_chassis_mode;
 	motor_3508_t motor_chassis[4];
@@ -149,7 +146,14 @@ typedef struct {
 	// 通信接口定义
 	void (*CAN_cmd_chassis)(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);
 	void (*CAN_rec_chassis)(uint32_t can_id, const uint8_t* rx_data);
-}chassis_control_t;
+} chassis_control_t;
+
+extern void chassis_init(chassis_control_t *chassis_move_init);
+extern void chassis_set_mode(chassis_control_t *chassis_move_mode);
+extern void chassis_mode_change_control_transit(chassis_control_t *chassis_move_transit);
+extern void chassis_feedback_update(chassis_control_t *chassis_move_update);
+extern void chassis_set_control(chassis_control_t* chassis_move_control);
+extern void chassis_control_loop(chassis_control_t *chassis_move_control_loop);
 
 extern void chassis_rc_to_control_vector(fp32 *vx_set, fp32 *vy_set, chassis_control_t *chassis_move_rc_to_vector);
 extern chassis_control_t* get_chassis_control_point(void);

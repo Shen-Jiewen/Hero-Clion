@@ -1744,6 +1744,30 @@ User/application/module/chassis/chassis_behaviour.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.c.s
 .PHONY : User/application/module/chassis/chassis_behaviour.c.s
 
+User/application/module/detect/detect.obj: User/application/module/detect/detect.c.obj
+.PHONY : User/application/module/detect/detect.obj
+
+# target to build an object file
+User/application/module/detect/detect.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/detect/detect.c.obj
+.PHONY : User/application/module/detect/detect.c.obj
+
+User/application/module/detect/detect.i: User/application/module/detect/detect.c.i
+.PHONY : User/application/module/detect/detect.i
+
+# target to preprocess a source file
+User/application/module/detect/detect.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/detect/detect.c.i
+.PHONY : User/application/module/detect/detect.c.i
+
+User/application/module/detect/detect.s: User/application/module/detect/detect.c.s
+.PHONY : User/application/module/detect/detect.s
+
+# target to generate assembly for a file
+User/application/module/detect/detect.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/detect/detect.c.s
+.PHONY : User/application/module/detect/detect.c.s
+
 User/application/module/gimbal/gimbal.obj: User/application/module/gimbal/gimbal.c.obj
 .PHONY : User/application/module/gimbal/gimbal.obj
 
@@ -1768,30 +1792,6 @@ User/application/module/gimbal/gimbal.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.s
 .PHONY : User/application/module/gimbal/gimbal.c.s
 
-User/application/module/imu/imu.obj: User/application/module/imu/imu.c.obj
-.PHONY : User/application/module/imu/imu.obj
-
-# target to build an object file
-User/application/module/imu/imu.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.obj
-.PHONY : User/application/module/imu/imu.c.obj
-
-User/application/module/imu/imu.i: User/application/module/imu/imu.c.i
-.PHONY : User/application/module/imu/imu.i
-
-# target to preprocess a source file
-User/application/module/imu/imu.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.i
-.PHONY : User/application/module/imu/imu.c.i
-
-User/application/module/imu/imu.s: User/application/module/imu/imu.c.s
-.PHONY : User/application/module/imu/imu.s
-
-# target to generate assembly for a file
-User/application/module/imu/imu.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.s
-.PHONY : User/application/module/imu/imu.c.s
-
 User/application/module/referee/referee.obj: User/application/module/referee/referee.c.obj
 .PHONY : User/application/module/referee/referee.obj
 
@@ -1815,6 +1815,54 @@ User/application/module/referee/referee.s: User/application/module/referee/refer
 User/application/module/referee/referee.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.s
 .PHONY : User/application/module/referee/referee.c.s
+
+User/application/task/chassis_task.obj: User/application/task/chassis_task.c.obj
+.PHONY : User/application/task/chassis_task.obj
+
+# target to build an object file
+User/application/task/chassis_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/chassis_task.c.obj
+.PHONY : User/application/task/chassis_task.c.obj
+
+User/application/task/chassis_task.i: User/application/task/chassis_task.c.i
+.PHONY : User/application/task/chassis_task.i
+
+# target to preprocess a source file
+User/application/task/chassis_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/chassis_task.c.i
+.PHONY : User/application/task/chassis_task.c.i
+
+User/application/task/chassis_task.s: User/application/task/chassis_task.c.s
+.PHONY : User/application/task/chassis_task.s
+
+# target to generate assembly for a file
+User/application/task/chassis_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/chassis_task.c.s
+.PHONY : User/application/task/chassis_task.c.s
+
+User/application/task/detect_task.obj: User/application/task/detect_task.c.obj
+.PHONY : User/application/task/detect_task.obj
+
+# target to build an object file
+User/application/task/detect_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/detect_task.c.obj
+.PHONY : User/application/task/detect_task.c.obj
+
+User/application/task/detect_task.i: User/application/task/detect_task.c.i
+.PHONY : User/application/task/detect_task.i
+
+# target to preprocess a source file
+User/application/task/detect_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/detect_task.c.i
+.PHONY : User/application/task/detect_task.c.i
+
+User/application/task/detect_task.s: User/application/task/detect_task.c.s
+.PHONY : User/application/task/detect_task.s
+
+# target to generate assembly for a file
+User/application/task/detect_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/detect_task.c.s
+.PHONY : User/application/task/detect_task.c.s
 
 User/application/task/imu_task.obj: User/application/task/imu_task.c.obj
 .PHONY : User/application/task/imu_task.obj
@@ -2675,15 +2723,21 @@ help:
 	@echo ... User/application/module/chassis/chassis_behaviour.obj
 	@echo ... User/application/module/chassis/chassis_behaviour.i
 	@echo ... User/application/module/chassis/chassis_behaviour.s
+	@echo ... User/application/module/detect/detect.obj
+	@echo ... User/application/module/detect/detect.i
+	@echo ... User/application/module/detect/detect.s
 	@echo ... User/application/module/gimbal/gimbal.obj
 	@echo ... User/application/module/gimbal/gimbal.i
 	@echo ... User/application/module/gimbal/gimbal.s
-	@echo ... User/application/module/imu/imu.obj
-	@echo ... User/application/module/imu/imu.i
-	@echo ... User/application/module/imu/imu.s
 	@echo ... User/application/module/referee/referee.obj
 	@echo ... User/application/module/referee/referee.i
 	@echo ... User/application/module/referee/referee.s
+	@echo ... User/application/task/chassis_task.obj
+	@echo ... User/application/task/chassis_task.i
+	@echo ... User/application/task/chassis_task.s
+	@echo ... User/application/task/detect_task.obj
+	@echo ... User/application/task/detect_task.i
+	@echo ... User/application/task/detect_task.s
 	@echo ... User/application/task/imu_task.obj
 	@echo ... User/application/task/imu_task.i
 	@echo ... User/application/task/imu_task.s

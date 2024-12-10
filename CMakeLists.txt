@@ -58,8 +58,8 @@ include_directories(
         # application
         User/application/module/chassis
         User/application/module/gimbal
-        User/application/module/imu
         User/application/module/referee
+        User/application/module/detect
         # dsp
         User/bsp/dm02
         # component/algorithm

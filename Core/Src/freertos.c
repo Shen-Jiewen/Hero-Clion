@@ -1,7 +1,3 @@
-#include <sys/types.h>
-#include <sys/cdefs.h>
-#include <sys/types.h>
-#include <sys/cdefs.h>
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -93,6 +89,20 @@ const osThreadAttr_t refereeTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for chassisTask */
+osThreadId_t chassisTaskHandle;
+const osThreadAttr_t chassisTask_attributes = {
+  .name = "chassisTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
+};
+/* Definitions for detectTask */
+osThreadId_t detectTaskHandle;
+const osThreadAttr_t detectTask_attributes = {
+  .name = "detectTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for imuBinarySem01 */
 osSemaphoreId_t imuBinarySem01Handle;
 const osSemaphoreAttr_t imuBinarySem01_attributes = {
@@ -107,9 +117,11 @@ const osSemaphoreAttr_t imuBinarySem01_attributes = {
 void StartDefaultTask(void *argument);
 void log_task(void *argument);
 void led_task(void *argument);
-_Noreturn void imu_task(void *argument);
+void imu_task(void *argument);
 void usb_task(void *argument);
-_Noreturn void referee_task(void *argument);
+void referee_task(void *argument);
+void chassis_task(void *argument);
+void detect_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -162,6 +174,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of refereeTask */
   refereeTaskHandle = osThreadNew(referee_task, NULL, &refereeTask_attributes);
+
+  /* creation of chassisTask */
+  chassisTaskHandle = osThreadNew(chassis_task, NULL, &chassisTask_attributes);
+
+  /* creation of detectTask */
+  detectTaskHandle = osThreadNew(detect_task, NULL, &detectTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
@@ -237,7 +255,7 @@ __weak void led_task(void *argument)
 * @retval None
 */
 /* USER CODE END Header_imu_task */
-_Noreturn __weak void imu_task(void *argument)
+__weak void imu_task(void *argument)
 {
   /* USER CODE BEGIN imu_task */
   /* Infinite loop */
@@ -273,7 +291,7 @@ __weak void usb_task(void *argument)
 * @retval None
 */
 /* USER CODE END Header_referee_task */
-_Noreturn __weak void referee_task(void *argument)
+__weak void referee_task(void *argument)
 {
   /* USER CODE BEGIN referee_task */
   /* Infinite loop */
@@ -282,6 +300,42 @@ _Noreturn __weak void referee_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END referee_task */
+}
+
+/* USER CODE BEGIN Header_chassis_task */
+/**
+* @brief Function implementing the chassisTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_chassis_task */
+__weak void chassis_task(void *argument)
+{
+  /* USER CODE BEGIN chassis_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END chassis_task */
+}
+
+/* USER CODE BEGIN Header_detect_task */
+/**
+* @brief Function implementing the detectTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_detect_task */
+__weak void detect_task(void *argument)
+{
+  /* USER CODE BEGIN detect_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END detect_task */
 }
 
 /* Private application code --------------------------------------------------*/
