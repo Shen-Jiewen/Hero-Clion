@@ -53,6 +53,45 @@ void detect_init(uint32_t time)
 }
 
 /**
+  * @brief          记录时间
+  * @param[in]      toe:设备目录
+  * @retval         none
+  */
+void detect_hook(uint8_t toe)
+{
+	error_list[toe].last_time = error_list[toe].new_time;
+	error_list[toe].new_time = xTaskGetTickCount();
+
+	if (error_list[toe].is_lost)
+	{
+		error_list[toe].is_lost = 0;
+		error_list[toe].work_time = error_list[toe].new_time;
+	}
+
+	if (error_list[toe].data_is_error_fun != NULL)
+	{
+		if (error_list[toe].data_is_error_fun())
+		{
+			error_list[toe].error_exist = 1;
+			error_list[toe].data_is_error = 1;
+
+			if (error_list[toe].solve_data_error_fun != NULL)
+			{
+				error_list[toe].solve_data_error_fun();
+			}
+		}
+		else
+		{
+			error_list[toe].data_is_error = 0;
+		}
+	}
+	else
+	{
+		error_list[toe].data_is_error = 0;
+	}
+}
+
+/**
   * @brief          获取设备对应的错误状态
   * @param[in]      toe:设备目录
   * @retval         true(错误) 或者false(没错误)

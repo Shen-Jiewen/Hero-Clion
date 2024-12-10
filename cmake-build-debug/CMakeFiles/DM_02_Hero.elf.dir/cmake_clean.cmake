@@ -152,6 +152,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj.d"
   "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj"
   "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.obj.d"
+  "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/remote_control_task.c.obj"
+  "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/remote_control_task.c.obj.d"
   "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj"
   "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj.d"
   "CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_adc.c.obj"

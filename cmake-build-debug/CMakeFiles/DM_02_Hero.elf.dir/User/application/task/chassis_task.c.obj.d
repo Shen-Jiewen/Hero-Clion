@@ -75,10 +75,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/chassis_task.c.obj: \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
- D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_callback.h \
- D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_can.h \
- D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_rc.h \
- D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer/dma_buffer.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\detect/detect.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/FreeRTOSConfig.h \
@@ -91,4 +88,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/chassis_task.c.obj: \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
- D:\ClionProject\DM_02_Hero\User\application\module\detect/detect.h
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_callback.h \
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_can.h \
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_rc.h \
+ D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer/dma_buffer.h

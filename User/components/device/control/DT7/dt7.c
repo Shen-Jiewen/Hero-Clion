@@ -13,46 +13,14 @@ static int16_t dt7_abs(int16_t value);
 // 遥控器控制变量
 static DT7_ctrl_t dt7_ctrl;
 
-// 接收原始数据，为18个字节，给了36个字节长度，防止DMA传输越界
-static uint8_t sbus_rx_buf[2][SBUS_RX_BUF_NUM];
-dt7_dma_memory_e dma_memory = DT7_DMA_MEMORY_0;
-
 /**
   * @brief          初始化DT7模块
   * @retval         none
   *
   * 初始化遥控器的接收缓冲区，设置DMA数据传输相关配置。
   */
-void dt7_init(void){
-	RC_Init(sbus_rx_buf[0], sbus_rx_buf[1], SBUS_RX_BUF_NUM);
-}
-
-/**
-  * @brief          切换DMA内存区域
-  * @param[in]      memory_index: 选择的DMA内存区域（0或1）
-  * @retval         none
-  *
-  * 根据传入的内存索引切换当前使用的DMA内存区域。
-  */
-void DT7_change_dma_memory(dt7_dma_memory_e memory_index){
-	if(memory_index == DT7_DMA_MEMORY_0){
-		RC_change_dma_memory(sbus_rx_buf[0], SBUS_RX_BUF_NUM);
-		dma_memory = DT7_DMA_MEMORY_1;
-	}
-	else if(memory_index == DT7_DMA_MEMORY_1){
-		RC_change_dma_memory(sbus_rx_buf[1], SBUS_RX_BUF_NUM);
-		dma_memory = DT7_DMA_MEMORY_0;
-	}
-}
-
-/**
-  * @brief          获取当前DMA内存区域
-  * @retval         当前使用的DMA内存区域（`DT7_DMA_MEMORY_0` 或 `DT7_DMA_MEMORY_1`）
-  *
-  * 返回当前正在使用的DMA内存区域标识。
-  */
-dt7_dma_memory_e get_dt7_dma_memory(void){
-	return dma_memory;
+void dt7_init(uint8_t *rx1_buf, uint8_t *rx2_buf, uint16_t dma_buf_num){
+	RC_Init(rx1_buf, rx2_buf, dma_buf_num);
 }
 
 /**
@@ -61,7 +29,7 @@ dt7_dma_memory_e get_dt7_dma_memory(void){
   *
   * 返回指向遥控器控制数据结构体 `DT7_ctrl_t` 的指针，包含遥控器的当前状态。
   */
-const DT7_ctrl_t *get_dt7_point(void){
+DT7_ctrl_t *get_dt7_point(void){
 	return &dt7_ctrl;
 }
 
@@ -160,17 +128,8 @@ static int16_t dt7_abs(int16_t value)
   *
   * 解析SBUS协议数据，将其转换为DT7遥控器控制数据（`DT7_ctrl_t`）。包括遥控器通道值、开关状态、鼠标位置和键盘值等。
   */
-void sbus_to_dt7(dt7_dma_memory_e memory_index)
+void sbus_to_dt7(const uint8_t *sbus_buf)
 {
-	uint8_t *sbus_buf = NULL;
-	if(memory_index == DT7_DMA_MEMORY_0){
-		sbus_buf = sbus_rx_buf[0];
-	}else if(memory_index == DT7_DMA_MEMORY_1){
-		sbus_buf = sbus_rx_buf[1];
-	}else{
-		return;
-	}
-
 	if (sbus_buf == NULL)
 	{
 		return;

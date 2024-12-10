@@ -9,6 +9,7 @@
 #include "protocol.h"
 #include "fifo.h"
 #include "dma_buffer.h"
+#include "detect.h"
 
 static void referee_full_callback(UART_HandleTypeDef *huart);
 
@@ -47,6 +48,7 @@ _Noreturn void referee_task(void *argument){
 		vTaskDelay(100);
 	}
 }
+
 /**
  * @brief 完全传输完成回调函数
  *
@@ -66,19 +68,19 @@ static void referee_full_callback(UART_HandleTypeDef *huart)
 	// 静态变量用于存储本次接收的数据长度
 	static uint16_t this_time_rx_len = 0;
 
-	// 步骤1：清除 UART 的奇偶校验错误标志
+	// 清除 UART 的奇偶校验错误标志
 	__HAL_UART_CLEAR_PEFLAG(huart);
 
-	// 步骤2：禁用 DMA 接收，确保安全访问 DMA 寄存器
+	// 禁用 DMA 接收，确保安全访问 DMA 寄存器
 	__HAL_DMA_DISABLE(huart->hdmarx);
 
-	// 步骤3：计算本次接收的数据长度
+	// 计算本次接收的数据长度
 	this_time_rx_len = USART_RX_BUF_LENGTH - __HAL_DMA_GET_COUNTER(huart->hdmarx);
 
-	// 步骤4：重置 DMA 计数器，为下一次接收做准备
+	// 重置 DMA 计数器，为下一次接收做准备
 	__HAL_DMA_SET_COUNTER(huart->hdmarx, USART_RX_BUF_LENGTH);
 
-	// 步骤5：获取对应 UART 的双缓冲对象
+	// 获取对应 UART 的双缓冲对象
 	dma_buffer_t *dma_buffer = dma_buffer_get_by_uart(huart);
 	if (dma_buffer != NULL)
 	{
@@ -92,7 +94,7 @@ static void referee_full_callback(UART_HandleTypeDef *huart)
 		}
 		else
 		{
-			// 步骤6：重新启用 DMA 接收
+			// 重新启用 DMA 接收
 			__HAL_DMA_ENABLE(huart->hdmarx);
 		}
 	}
@@ -103,7 +105,7 @@ static void referee_full_callback(UART_HandleTypeDef *huart)
 		return;
 	}
 
-	// 步骤7：将接收到的数据写入 FIFO 队列
+	// 将接收到的数据写入 FIFO 队列
 	if (dma_buffer->current_buffer_index == 0)
 	{
 		// 当前使用的是 buffer1，将数据写入 FIFO
@@ -114,9 +116,6 @@ static void referee_full_callback(UART_HandleTypeDef *huart)
 		// 当前使用的是 buffer2，将数据写入 FIFO
 		fifo_s_puts(&referee_fifo, (char *)usart1_buf[1], this_time_rx_len);
 	}
-	else
-	{
-		// 如果缓冲区索引不在预期范围内，调用错误处理函数
-		Error_Handler();
-	}
+	// 掉线检测
+	detect_hook(REFEREE_TOE);
 }

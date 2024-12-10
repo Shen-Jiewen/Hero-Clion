@@ -64,4 +64,16 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/detect/detect.c.obj: \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_ll_usb.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h \
- D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h
+ D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
+ D:\ClionProject\DM_02_Hero\Core\Inc/FreeRTOSConfig.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/projdefs.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/portable.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/deprecated_definitions.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F/portmacro.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/mpu_wrappers.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/reent.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h

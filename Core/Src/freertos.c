@@ -103,6 +103,13 @@ const osThreadAttr_t detectTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for remoteControlTa */
+osThreadId_t remoteControlTaHandle;
+const osThreadAttr_t remoteControlTa_attributes = {
+  .name = "remoteControlTa",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for imuBinarySem01 */
 osSemaphoreId_t imuBinarySem01Handle;
 const osSemaphoreAttr_t imuBinarySem01_attributes = {
@@ -115,13 +122,14 @@ const osSemaphoreAttr_t imuBinarySem01_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-void log_task(void *argument);
-void led_task(void *argument);
-void imu_task(void *argument);
-void usb_task(void *argument);
-void referee_task(void *argument);
-void chassis_task(void *argument);
-void detect_task(void *argument);
+extern void log_task(void *argument);
+extern void led_task(void *argument);
+extern void imu_task(void *argument);
+extern void usb_task(void *argument);
+extern void referee_task(void *argument);
+extern void chassis_task(void *argument);
+extern void detect_task(void *argument);
+extern void remote_control_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -181,6 +189,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of detectTask */
   detectTaskHandle = osThreadNew(detect_task, NULL, &detectTask_attributes);
 
+  /* creation of remoteControlTa */
+  remoteControlTaHandle = osThreadNew(remote_control_task, NULL, &remoteControlTa_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -209,133 +220,6 @@ void StartDefaultTask(void *argument)
 		osDelay(1);
 	}
   /* USER CODE END StartDefaultTask */
-}
-
-/* USER CODE BEGIN Header_log_task */
-/**
-* @brief Function implementing the logTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_log_task */
-__weak void log_task(void *argument)
-{
-  /* USER CODE BEGIN log_task */
-
-	/* Infinite loop */
-	for (;;)
-	{
-
-	}
-  /* USER CODE END log_task */
-}
-
-/* USER CODE BEGIN Header_led_task */
-/**
-* @brief Function implementing the ledTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_led_task */
-__weak void led_task(void *argument)
-{
-  /* USER CODE BEGIN led_task */
-	/* Infinite loop */
-	for (;;)
-	{
-		osDelay(1);
-	}
-  /* USER CODE END led_task */
-}
-
-/* USER CODE BEGIN Header_imu_task */
-/**
-* @brief Function implementing the imuTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_imu_task */
-__weak void imu_task(void *argument)
-{
-  /* USER CODE BEGIN imu_task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END imu_task */
-}
-
-/* USER CODE BEGIN Header_usb_task */
-/**
-* @brief Function implementing the usbTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_usb_task */
-__weak void usb_task(void *argument)
-{
-  /* USER CODE BEGIN usb_task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END usb_task */
-}
-
-/* USER CODE BEGIN Header_referee_task */
-/**
-* @brief Function implementing the refereeTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_referee_task */
-__weak void referee_task(void *argument)
-{
-  /* USER CODE BEGIN referee_task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END referee_task */
-}
-
-/* USER CODE BEGIN Header_chassis_task */
-/**
-* @brief Function implementing the chassisTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_chassis_task */
-__weak void chassis_task(void *argument)
-{
-  /* USER CODE BEGIN chassis_task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END chassis_task */
-}
-
-/* USER CODE BEGIN Header_detect_task */
-/**
-* @brief Function implementing the detectTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_detect_task */
-__weak void detect_task(void *argument)
-{
-  /* USER CODE BEGIN detect_task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END detect_task */
 }
 
 /* Private application code --------------------------------------------------*/

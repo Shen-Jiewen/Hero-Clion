@@ -122,7 +122,7 @@ int main(void)
   fdcan1_filter_init();
   fdcan2_filter_init();
   fdcan3_filter_init();
-  dt7_init();
+
   /* USER CODE END 2 */
 
   /* Init scheduler */

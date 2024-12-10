@@ -1960,6 +1960,30 @@ User/application/task/referee_task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/referee_task.c.s
 .PHONY : User/application/task/referee_task.c.s
 
+User/application/task/remote_control_task.obj: User/application/task/remote_control_task.c.obj
+.PHONY : User/application/task/remote_control_task.obj
+
+# target to build an object file
+User/application/task/remote_control_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/remote_control_task.c.obj
+.PHONY : User/application/task/remote_control_task.c.obj
+
+User/application/task/remote_control_task.i: User/application/task/remote_control_task.c.i
+.PHONY : User/application/task/remote_control_task.i
+
+# target to preprocess a source file
+User/application/task/remote_control_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/remote_control_task.c.i
+.PHONY : User/application/task/remote_control_task.c.i
+
+User/application/task/remote_control_task.s: User/application/task/remote_control_task.c.s
+.PHONY : User/application/task/remote_control_task.s
+
+# target to generate assembly for a file
+User/application/task/remote_control_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/remote_control_task.c.s
+.PHONY : User/application/task/remote_control_task.c.s
+
 User/application/task/usb_task.obj: User/application/task/usb_task.c.obj
 .PHONY : User/application/task/usb_task.obj
 
@@ -2750,6 +2774,9 @@ help:
 	@echo ... User/application/task/referee_task.obj
 	@echo ... User/application/task/referee_task.i
 	@echo ... User/application/task/referee_task.s
+	@echo ... User/application/task/remote_control_task.obj
+	@echo ... User/application/task/remote_control_task.i
+	@echo ... User/application/task/remote_control_task.s
 	@echo ... User/application/task/usb_task.obj
 	@echo ... User/application/task/usb_task.i
 	@echo ... User/application/task/usb_task.s

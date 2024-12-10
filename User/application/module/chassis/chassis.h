@@ -11,6 +11,7 @@
 #include "gimbal.h"
 #include "dji_3508.h"
 #include "dt7.h"
+#include "detect.h"
 // 板载层
 #include "bsp_callback.h"
 // 库

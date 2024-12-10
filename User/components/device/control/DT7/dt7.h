@@ -44,11 +44,6 @@
 #define KEY_PRESSED_OFFSET_B            ((uint16_t)1 << 15)
 
 /* ----------------------- Data Struct ------------------------------------- */
-typedef enum {
-	DT7_DMA_MEMORY_0,
-	DT7_DMA_MEMORY_1
-}dt7_dma_memory_e;
-
 typedef struct
 {
 	struct
@@ -75,11 +70,9 @@ typedef struct
 
 /* ----------------------- Internal Data ----------------------------------- */
 
-extern void dt7_init(void);
-extern void DT7_change_dma_memory(dt7_dma_memory_e memory_index);
-extern void sbus_to_dt7(dt7_dma_memory_e memory_index);
-extern dt7_dma_memory_e get_dt7_dma_memory(void);
-extern const DT7_ctrl_t *get_dt7_point(void);
+extern void dt7_init(uint8_t *rx1_buf, uint8_t *rx2_buf, uint16_t dma_buf_num);
+extern void sbus_to_dt7(const uint8_t *sbus_buf);
+extern DT7_ctrl_t *get_dt7_point(void);
 
 extern uint8_t dt7_data_is_error(void);
 extern void solve_dt7_lost(void);

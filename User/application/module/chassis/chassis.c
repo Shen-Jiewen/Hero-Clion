@@ -635,15 +635,19 @@ static void FDCAN_rec_chassis(uint32_t can_id, const uint8_t* rx_data)
 	{
 	case CAN_3508_M1_ID:
 		get_motor_3508_measure((motor_3508_measure_t*)(&chassis_control.motor_chassis[0].motor_3508_measure), rx_data);
+		detect_hook(CHASSIS_MOTOR1_TOE);
 		break;
 	case CAN_3508_M2_ID:
 		get_motor_3508_measure((motor_3508_measure_t*)(&chassis_control.motor_chassis[1].motor_3508_measure), rx_data);
+		detect_hook(CHASSIS_MOTOR2_TOE);
 		break;
 	case CAN_3508_M3_ID:
 		get_motor_3508_measure((motor_3508_measure_t*)(&chassis_control.motor_chassis[2].motor_3508_measure), rx_data);
+		detect_hook(CHASSIS_MOTOR3_TOE);
 		break;
 	case CAN_3508_M4_ID:
 		get_motor_3508_measure((motor_3508_measure_t*)(&chassis_control.motor_chassis[3].motor_3508_measure), rx_data);
+		detect_hook(CHASSIS_MOTOR4_TOE);
 		break;
 	default:
 		break;

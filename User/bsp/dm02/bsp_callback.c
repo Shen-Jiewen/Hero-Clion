@@ -11,7 +11,7 @@ extern FDCAN_HandleTypeDef hfdcan3;
 
 // Remote Control
 extern UART_HandleTypeDef huart5;
-extern DMA_HandleTypeDef hdma_uart5_rx;
+extern dma_buffer_t rc_dma_buffer;
 
 // Referee
 extern UART_HandleTypeDef huart1;
@@ -67,49 +67,10 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-	static uint16_t current_rx_len = 0;
-
-	if (huart == &huart5) // 确保是你需要处理的 UART
+	if (huart == &huart5)
 	{
-		// 清除 IDLE 标志
-		__HAL_UART_CLEAR_IDLEFLAG(huart);
-
-		if(HAL_DMA_GetState(&hdma_uart5_rx) == HAL_DMA_STATE_READY){
-			if(get_dt7_dma_memory() == DT7_DMA_MEMORY_0){
-				// 当前 DMA 缓冲区 0 已经接收完成
-				// 失效DMA
-				__HAL_DMA_DISABLE(&hdma_uart5_rx);
-				// 获取接收数据长度,长度 = 设定长度 - 剩余长度
-				current_rx_len = SBUS_RX_BUF_NUM - __HAL_DMA_GET_COUNTER(&hdma_uart5_rx);
-				// 重新设定数据长度
-				__HAL_DMA_SET_COUNTER(&hdma_uart5_rx, SBUS_RX_BUF_NUM);
-				// 切换缓冲区
-				DT7_change_dma_memory(DT7_DMA_MEMORY_1);
-				// 使能DMA
-				__HAL_DMA_ENABLE(&hdma_uart5_rx);
-				// 解析数据
-				if(current_rx_len == RC_FRAME_LENGTH){
-					sbus_to_dt7(DT7_DMA_MEMORY_0);
-				}
-			}
-			else if(get_dt7_dma_memory() == DT7_DMA_MEMORY_1){
-				// 当前 DMA 缓冲区 1 已经接收完成
-				// 失效DMA
-				__HAL_DMA_DISABLE(&hdma_uart5_rx);
-				// 获取接收数据长度,长度 = 设定长度 - 剩余长度
-				current_rx_len = SBUS_RX_BUF_NUM - __HAL_DMA_GET_COUNTER(&hdma_uart5_rx);
-				// 重新设定数据长度
-				__HAL_DMA_SET_COUNTER(&hdma_uart5_rx, SBUS_RX_BUF_NUM);
-				// 切换缓冲区
-				DT7_change_dma_memory(DT7_DMA_MEMORY_0);
-				// 使能DMA
-				__HAL_DMA_ENABLE(&hdma_uart5_rx);
-				// 解析数据
-				if(current_rx_len == RC_FRAME_LENGTH){
-					sbus_to_dt7(DT7_DMA_MEMORY_1);
-				}
-			}
-		}
+		// 遥控器数据解析
+		rc_dma_buffer.full_complete_callback(huart);
 	}
 	else if(huart == &huart1){
 		// 裁判系统数据解析

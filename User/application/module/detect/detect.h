@@ -7,6 +7,7 @@
 
 #include "main.h"
 #include "struct_typedef.h"
+#include "cmsis_os.h"
 
 #define DETECT_TASK_INIT_TIME 57
 #define DETECT_CONTROL_TIME 10
