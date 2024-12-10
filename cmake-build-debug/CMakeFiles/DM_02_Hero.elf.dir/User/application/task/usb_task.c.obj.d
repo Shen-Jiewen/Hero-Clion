@@ -84,6 +84,4 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/usb_task.c.obj: \
  D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionAxes.h \
  D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionCalibration.h \
  D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionCompass.h \
- D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionOffset.h \
- D:\ClionProject\DM_02_Hero\User\application\module\imu/imu.h \
- D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionOffset.h

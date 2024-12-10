@@ -10,11 +10,6 @@
 #include "bsp_buzzer.h"
 #include "chassis.h"
 
-fp32 temperature = 0.f;
-fp32 voltage_in = 0.f;
-uint8_t psc = 23;
-uint16_t current3 = 300;
-
 _Noreturn void log_task(void* argument)
 {
 	// 获取对象

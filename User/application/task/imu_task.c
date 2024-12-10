@@ -7,7 +7,6 @@
 #include "cmsis_os.h"
 #include "BMI088driver.h"
 #include "bsp_imu.h"
-#include "imu.h"
 #include "Fusion.h"
 
 #define SAMPLE_RATE 1000
@@ -19,12 +18,12 @@ FusionEuler euler;
 FusionVector gyroscope;        // replace this with actual gyroscope data in degrees/s
 FusionVector accelerometer;    // replace this with actual accelerometer data in g
 
+float temperature = 0;
+
 _Noreturn void imu_task(void *argument)
 {
 	osDelay(500);
 	imu_pwm_start();
-	// 获取IMU指针对象
-	imu_t* imu_handle =  get_imu_point();
 	while (BMI088_init()){
 		;
 	}
@@ -52,15 +51,7 @@ _Noreturn void imu_task(void *argument)
 
 	while (1){
 		// 获取传感器数据
-		BMI088_read(imu_handle->gyro, imu_handle->accel, &(imu_handle->temp));
-
-		// 传感器数据处理
-		gyroscope.array[0] = imu_handle->gyro[0];
-		gyroscope.array[1] = imu_handle->gyro[1];
-		gyroscope.array[2] = imu_handle->gyro[2];
-		accelerometer.array[0] = imu_handle->accel[0];
-		accelerometer.array[1] = imu_handle->accel[1];
-		accelerometer.array[2] = imu_handle->accel[2];
+		BMI088_read(gyroscope.array, accelerometer.array, &temperature);
 
 		// 传感器数据校准
 		gyroscope = FusionCalibrationInertial(gyroscope, gyroscopeMisalignment, gyroscopeSensitivity, gyroscopeOffset);

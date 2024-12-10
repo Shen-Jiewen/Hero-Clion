@@ -1,7 +1,6 @@
-CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj: \
- D:\ClionProject\DM_02_Hero\User\components\controller\pid.c \
- D:\ClionProject\DM_02_Hero\User\components\controller\pid.h \
- D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
+CMakeFiles/DM_02_Hero.elf.dir/User/application/module/detect/detect.c.obj: \
+ D:\ClionProject\DM_02_Hero\User\application\module\detect\detect.c \
+ D:\ClionProject\DM_02_Hero\User\application\module\detect\detect.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/main.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/stm32h7xx_hal_conf.h \
@@ -64,4 +63,5 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid.c.obj: \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_uart_ex.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_ll_usb.h \
- D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h \
+ D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h

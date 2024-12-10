@@ -35,7 +35,7 @@ typedef enum
 	BULLET_REMAINING_CMD_ID = 0x0208,          ///< 子弹剩余发射数
 	STUDENT_INTERACTIVE_DATA_CMD_ID = 0x0301,  ///< 交互数据接收信息
 	IDCustomData,                              ///< 用户自定义数据标识
-} __attribute__((packed)) referee_cmd_id_t;  ///< 赛况命令ID枚举
+} __attribute__((packed)) referee_cmd_id_t;    ///< 赛况命令ID枚举
 
 
 /**
