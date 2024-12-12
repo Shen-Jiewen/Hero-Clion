@@ -1,6 +1,7 @@
-CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj: \
- D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer\dma_buffer.c \
- D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer\dma_buffer.h \
+CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.obj: \
+ D:\ClionProject\DM_02_Hero\User\application\module\gimbal\gimbal_behaviour.c \
+ D:\ClionProject\DM_02_Hero\User\application\module\gimbal\gimbal_behaviour.h \
+ D:\ClionProject\DM_02_Hero\Core\Inc/main.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/stm32h7xx_hal_conf.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_rcc.h \
@@ -62,4 +63,29 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.ob
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_uart_ex.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_ll_usb.h \
- D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h
+ D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h \
+ D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\gimbal\gimbal.h \
+ D:\ClionProject\DM_02_Hero\User\components\device\motor\DJI-3508/dji_3508.h \
+ D:\ClionProject\DM_02_Hero\User\components\device\motor\DJI-6020/dji_6020.h \
+ D:\ClionProject\DM_02_Hero\User\components\controller\pid/pid.h \
+ D:\ClionProject\DM_02_Hero\User\components\device\control\DT7/dt7.h \
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_rc.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/string.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm/user_lib.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\detect/detect.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
+ D:\ClionProject\DM_02_Hero\Core\Inc/FreeRTOSConfig.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/projdefs.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/portable.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/deprecated_definitions.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F/portmacro.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/mpu_wrappers.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/reent.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h

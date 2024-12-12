@@ -13,7 +13,7 @@ _Noreturn void led_task(void* argument)
 	while (1)
 	{
 		// 设置颜色
-		WS2812_SetColor(WS2812_COLOR_YELLOW);
-		HAL_Delay(100);
+		WS2812_SetColor(WS2812_COLOR_GREEN);
+		osDelay(100);
 	}
 }

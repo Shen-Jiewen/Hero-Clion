@@ -22,10 +22,9 @@ float temperature = 0;
 
 _Noreturn void imu_task(void *argument)
 {
-	osDelay(500);
 	imu_pwm_start();
 	while (BMI088_init()){
-		;
+
 	}
 
 	// 定义传感器校准参数
@@ -65,6 +64,6 @@ _Noreturn void imu_task(void *argument)
 		euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ahrs));
 
 		// 延时
-		vTaskDelay(1);
+		osDelay(1);
 	}
 }

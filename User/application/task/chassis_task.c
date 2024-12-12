@@ -20,6 +20,7 @@ _Noreturn void chassis_task(void* argument)
 	{
 		vTaskDelay(CHASSIS_CONTROL_TIME_MS);
 	}
+
 	while (1)
 	{
 		// 设置底盘的控制模式
@@ -49,5 +50,6 @@ _Noreturn void chassis_task(void* argument)
 					chassis_move.motor_chassis[3].give_current);
 			}
 		}
+		osDelay(CHASSIS_CONTROL_TIME_MS);
 	}
 }

@@ -19,8 +19,8 @@ static DT7_ctrl_t dt7_ctrl;
   *
   * 初始化遥控器的接收缓冲区，设置DMA数据传输相关配置。
   */
-void dt7_init(uint8_t *rx1_buf, uint8_t *rx2_buf, uint16_t dma_buf_num){
-	RC_Init(rx1_buf, rx2_buf, dma_buf_num);
+void dt7_init(UART_HandleTypeDef *huart, uint8_t *buff, uint32_t DataLength){
+	RC_Init(huart, buff, DataLength);
 }
 
 /**
@@ -121,40 +121,31 @@ static int16_t dt7_abs(int16_t value)
 	}
 }
 
-/**
-  * @brief          将SBUS数据转换为DT7遥控器控制数据
-  * @param[in]      memory_index: 选择的DMA内存区域（0或1）
-  * @retval         none
-  *
-  * 解析SBUS协议数据，将其转换为DT7遥控器控制数据（`DT7_ctrl_t`）。包括遥控器通道值、开关状态、鼠标位置和键盘值等。
-  */
-void sbus_to_dt7(const uint8_t *sbus_buf)
+void sbus_to_dt7(DT7_ctrl_t *rc_ctrl, uint8_t *sbus_buf)
 {
-	if (sbus_buf == NULL)
-	{
+	// 检查sbuff_buf是否为空或长度不足
+	if (rc_ctrl == NULL || sbus_buf == NULL) {
 		return;
 	}
 
-	// 解析各个遥控器通道值
-	dt7_ctrl.rc.ch[0] = (sbus_buf[0] | (sbus_buf[1] << 8)) & 0x07ff;        //!< Channel 0 NOLINT(*-narrowing-conversions)
-	dt7_ctrl.rc.ch[1] = ((sbus_buf[1] >> 3) | (sbus_buf[2] << 5)) & 0x07ff; //!< Channel 1 NOLINT(*-narrowing-conversions)
-	dt7_ctrl.rc.ch[2] = ((sbus_buf[2] >> 6) | (sbus_buf[3] << 2) |          //!< Channel 2 NOLINT(*-narrowing-conversions)
-		(sbus_buf[4] << 10)) & 0x07ff;
-	dt7_ctrl.rc.ch[3] = ((sbus_buf[4] >> 1) | (sbus_buf[5] << 7)) & 0x07ff; //!< Channel 3 NOLINT(*-narrowing-conversions)
-	dt7_ctrl.rc.s[0] = ((sbus_buf[5] >> 4) & 0x0003);                  //!< Switch right !!!!
-	dt7_ctrl.rc.s[1] = ((sbus_buf[5] >> 4) & 0x000C) >> 2;                       //!< Switch left !!!!!
-	dt7_ctrl.mouse.x = sbus_buf[6] | (sbus_buf[7] << 8);                    //!< Mouse X axis NOLINT(*-narrowing-conversions)
-	dt7_ctrl.mouse.y = sbus_buf[8] | (sbus_buf[9] << 8);                    //!< Mouse Y axis NOLINT(*-narrowing-conversions)
-	dt7_ctrl.mouse.z = sbus_buf[10] | (sbus_buf[11] << 8);                  //!< Mouse Z axis NOLINT(*-narrowing-conversions)
-	dt7_ctrl.mouse.press_l = sbus_buf[12];                                  //!< Mouse Left Is Press ?
-	dt7_ctrl.mouse.press_r = sbus_buf[13];                                  //!< Mouse Right Is Press ?
-	dt7_ctrl.key.v = sbus_buf[14] | (sbus_buf[15] << 8);                    //!< KeyBoard value
-	dt7_ctrl.rc.ch[4] = sbus_buf[16] | (sbus_buf[17] << 8);                 // NULL NOLINT(*-narrowing-conversions)
 
-	// 校准遥控器通道值
-	dt7_ctrl.rc.ch[0] -= RC_CH_VALUE_OFFSET;
-	dt7_ctrl.rc.ch[1] -= RC_CH_VALUE_OFFSET;
-	dt7_ctrl.rc.ch[2] -= RC_CH_VALUE_OFFSET;
-	dt7_ctrl.rc.ch[3] -= RC_CH_VALUE_OFFSET;
-	dt7_ctrl.rc.ch[4] -= RC_CH_VALUE_OFFSET;
+	// 解析遥控器通道值并校准
+	rc_ctrl->rc.ch[0] = ((uint16_t)sbus_buf[0] | ((uint16_t)sbus_buf[1] << 8)) & 0x07FF; // 将buff[0]和buff[1]的值组合为ch0通道的值，并将其限制在11位
+	rc_ctrl->rc.ch[0] -= 1024; // 中心值为0
+
+	rc_ctrl->rc.ch[1] = (((uint16_t)sbus_buf[1] >> 3) | ((uint16_t)sbus_buf[2] << 5)) & 0x07FF;
+	rc_ctrl->rc.ch[1] -= 1024;
+
+	rc_ctrl->rc.ch[2] = (((uint16_t)sbus_buf[2] >> 6) | ((uint16_t)sbus_buf[3] << 2) | ((uint16_t)sbus_buf[4] << 10)) & 0x07FF;
+	rc_ctrl->rc.ch[2] -= 1024;
+
+	rc_ctrl->rc.ch[3] = (((uint16_t)sbus_buf[4] >> 1) | ((uint16_t)sbus_buf[5] << 7)) & 0x07FF;
+	rc_ctrl->rc.ch[3] -= 1024;
+
+	rc_ctrl->rc.ch[4] = ((uint16_t)sbus_buf[16] | ((uint16_t)sbus_buf[17] << 8)) & 0x07FF; // 左上角滚轮
+	rc_ctrl->rc.ch[4] -= 1024;
+
+	// 解析开关状态
+	rc_ctrl->rc.s[0] = ((sbus_buf[5] >> 4) & 0x0C) >> 2;
+	rc_ctrl->rc.s[1] = (sbus_buf[5] >> 4) & 0x03;
 }

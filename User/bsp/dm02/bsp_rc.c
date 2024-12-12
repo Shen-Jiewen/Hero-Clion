@@ -15,20 +15,13 @@ extern DMA_HandleTypeDef hdma_uart5_rx;
  *
  * @note   该函数启动了 UART5 的 DMA 接收，并将数据存储到指定的缓冲区。
  */
-void RC_Init(uint8_t *rx1_buf, uint8_t *rx2_buf, uint16_t dma_buf_num){
-	// 配置双缓冲,DMA将在两个缓冲区之间轮换
-	HAL_DMAEx_MultiBufferStart_IT(&hdma_uart5_rx, (uint32_t)&huart5.Instance->RDR,(uint32_t)rx1_buf, (uint32_t)rx2_buf, dma_buf_num);
-	// 启动 UART5 DMA 接收操作，将接收到的数据存储到 rx_buf 缓冲区中
-	HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rx1_buf, dma_buf_num);
-	// 清除IDLE标志
-	__HAL_UART_CLEAR_IDLEFLAG(&huart5);
-	// 使能IDLE中断
-	__HAL_UART_ENABLE_IT(&huart5, UART_IT_IDLE);
+void RC_Init(UART_HandleTypeDef *huart, uint8_t *DstAddress, uint32_t DataLength){
+	HAL_UARTEx_ReceiveToIdle_DMA(huart, DstAddress, DataLength);
 }
 
 /**
  * @brief  禁用 UART5 的 DMA 接收功能。
- *
+ *1
  * 该函数禁用 DMA 通道，以便在重新配置或停止 DMA 时使用。
  */
 void RC_unable(void){
@@ -59,20 +52,5 @@ void RC_restart(uint16_t dma_buf_num){
 
 	// 重新启用 DMA 接收通道，开始新的 DMA 数据接收
 	__HAL_DMA_ENABLE(&hdma_uart5_rx);
-}
-
-/**
-  * @brief  切换 UART DMA 接收缓冲区
-  * @param  rx_buf:        指向新的接收缓冲区的指针
-  * @param  dma_buf_num:   DMA 接收的缓冲区大小（即每个缓冲区的数据长度）
-  * @retval None
-  *
-  * 该函数在接收到 UART 数据时，切换 DMA 的接收缓冲区。
-  * 通过调用 `HAL_UARTEx_ReceiveToIdle_DMA`，重新配置 DMA 接收新的数据到指定的缓冲区。
-  */
-void RC_change_dma_memory(uint8_t *rx_buf, uint16_t dma_buf_num)
-{
-	// 启动 DMA 接收操作，将数据接收存储到新的缓冲区 rx_buf 中
-	HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rx_buf, dma_buf_num);
 }
 

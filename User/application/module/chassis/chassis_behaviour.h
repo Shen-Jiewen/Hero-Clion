@@ -6,8 +6,8 @@
 #define DM_02_HERO_USER_APPLICATION_MODULE_CHASSIS_CHASSIS_BEHAVIOUR_H_
 
 #include "main.h"
-#include "arm_math.h"
 #include "struct_typedef.h"
+#include "arm_math.h"
 #include "chassis.h"
 #include "dt7.h"
 #include "user_lib.h"

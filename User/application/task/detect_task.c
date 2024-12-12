@@ -9,17 +9,17 @@ error_t *error_list;
 
 _Noreturn void detect_task(void *argument){
 	static uint32_t system_time;
-	system_time = xTaskGetTickCount();
+	system_time = osKernelGetTickCount();
 	// detect初始化
 	detect_init(system_time);
 	// 获取错误检测列表对象
 	error_list = get_error_list_point();
 	// 空闲一段时间,等待设备和其他任务初始化
-	vTaskDelay(DETECT_TASK_INIT_TIME);
+	osDelay(DETECT_TASK_INIT_TIME);
 
 	while (1){
 		static uint8_t error_num_display = 0;
-		system_time = xTaskGetTickCount();
+		system_time = osKernelGetTickCount();
 
 		error_num_display = ERROR_LIST_LENGHT;
 		error_list[ERROR_LIST_LENGHT].is_lost = 0;
@@ -72,6 +72,6 @@ _Noreturn void detect_task(void *argument){
 				}
 			}
 		}
-		vTaskDelay(DETECT_CONTROL_TIME);
+		osDelay(DETECT_CONTROL_TIME);
 	}
 }

@@ -19,6 +19,6 @@ _Noreturn void log_task(void* argument)
 	{
 		// CAN发送数据
 		chassis_control->CAN_cmd_chassis(0, 0, 0, 0);
-		vTaskDelay(100);
+		osDelay(100);
 	}
 }

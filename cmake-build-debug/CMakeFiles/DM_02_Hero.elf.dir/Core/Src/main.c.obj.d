@@ -98,7 +98,4 @@ CMakeFiles/DM_02_Hero.elf.dir/Core/Src/main.c.obj: \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
  D:\ClionProject\DM_02_Hero\Core\Inc/gpio.h \
- D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_can.h \
- D:\ClionProject\DM_02_Hero\User\components\device\control\DT7/dt7.h \
- D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
- D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_rc.h
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_can.h

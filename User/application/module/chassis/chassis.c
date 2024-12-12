@@ -5,6 +5,7 @@
 #include "chassis.h"
 #include "chassis_behaviour.h"
 
+
 extern FDCAN_HandleTypeDef hfdcan1;
 static chassis_control_t chassis_control;
 

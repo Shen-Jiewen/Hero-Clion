@@ -33,7 +33,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "bsp_can.h"
-#include "dt7.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

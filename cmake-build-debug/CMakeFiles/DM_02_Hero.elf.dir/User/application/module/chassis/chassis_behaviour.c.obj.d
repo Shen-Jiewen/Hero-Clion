@@ -64,6 +64,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_ll_usb.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h \
+ D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
  D:\ClionProject\DM_02_Hero\Middlewares\ST\ARM\DSP\Inc/arm_math.h \
  D:\ClionProject\DM_02_Hero\Drivers\CMSIS\Include/cmsis_compiler.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/string.h \
@@ -75,14 +76,14 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/limits.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
- D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
  D:\ClionProject\DM_02_Hero\User\application\module\chassis\chassis.h \
  D:\ClionProject\DM_02_Hero\User\application\module\gimbal/gimbal.h \
  D:\ClionProject\DM_02_Hero\User\components\device\motor\DJI-3508/dji_3508.h \
- D:\ClionProject\DM_02_Hero\User\components\algorithm/user_lib.h \
+ D:\ClionProject\DM_02_Hero\User\components\device\motor\DJI-6020/dji_6020.h \
  D:\ClionProject\DM_02_Hero\User\components\controller\pid/pid.h \
  D:\ClionProject\DM_02_Hero\User\components\device\control\DT7/dt7.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_rc.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm/user_lib.h \
  D:\ClionProject\DM_02_Hero\User\application\module\detect/detect.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
@@ -98,6 +99,4 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_callback.h \
  D:\ClionProject\DM_02_Hero\User\application\module\chassis/chassis.h \
- D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_can.h \
- D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_rc.h \
- D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer/dma_buffer.h
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_can.h

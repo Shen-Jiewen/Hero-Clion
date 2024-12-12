@@ -82,5 +82,4 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/remote_control_task.c.obj: \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
- D:\ClionProject\DM_02_Hero\User\components\support\dma_buffer/dma_buffer.h \
  D:\ClionProject\DM_02_Hero\User\application\module\detect/detect.h
