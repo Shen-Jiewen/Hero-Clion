@@ -10,13 +10,9 @@
 // 底盘
 #include "chassis.h"
 #include "bsp_can.h"
-// 遥控器
-#include "dt7.h"
-#include "bsp_rc.h"
-// 裁判系统
-#include "dma_buffer.h"
 
 /* CAN send and receive ID */
+
 typedef enum
 {
 	CAN_CHASSIS_ALL_ID = 0x200,

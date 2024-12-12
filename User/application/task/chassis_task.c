@@ -49,5 +49,6 @@ _Noreturn void chassis_task(void* argument)
 					chassis_move.motor_chassis[3].give_current);
 			}
 		}
+		vTaskDelay(CHASSIS_CONTROL_TIME_MS);
 	}
 }

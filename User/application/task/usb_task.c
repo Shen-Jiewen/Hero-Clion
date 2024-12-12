@@ -8,6 +8,7 @@
 #include "vofa.h"
 #include "Fusion.h"
 
+long long uart5_count = 0;
 extern FusionEuler euler;
 
 _Noreturn void usb_task(void* argument){

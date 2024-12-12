@@ -47,13 +47,13 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/ClionProject/DM_02_Hero/User/components/controller/pid"
   "D:/ClionProject/DM_02_Hero/User/components/device/control/DT7"
   "D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508"
+  "D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-6020"
   "D:/ClionProject/DM_02_Hero/User/components/device/BMI088"
   "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc"
   "D:/ClionProject/DM_02_Hero/User/components/support"
   "D:/ClionProject/DM_02_Hero/User/components/support/vofa+"
   "D:/ClionProject/DM_02_Hero/User/components/support/crc"
   "D:/ClionProject/DM_02_Hero/User/components/support/fifo"
-  "D:/ClionProject/DM_02_Hero/User/components/support/dma_buffer"
   )
 
 # The set of dependency files which are needed:
@@ -127,6 +127,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis_behaviour.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/detect/detect.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/detect/detect.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal_behaviour.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/module/referee/referee.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/task/chassis_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/chassis_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/chassis_task.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/application/task/detect_task.c" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/detect_task.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/application/task/detect_task.c.obj.d"
@@ -154,8 +156,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.obj.d"
+  "D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-6020/dji_6020.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-6020/dji_6020.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-6020/dji_6020.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/components/support/crc/CRC8_CRC16.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.obj.d"
-  "D:/ClionProject/DM_02_Hero/User/components/support/dma_buffer/dma_buffer.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/components/support/fifo/fifo.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/fifo/fifo.c.obj.d"
   "D:/ClionProject/DM_02_Hero/User/components/support/vofa+/vofa.c" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj" "gcc" "CMakeFiles/DM_02_Hero.elf.dir/User/components/support/vofa+/vofa.c.obj.d"
   )

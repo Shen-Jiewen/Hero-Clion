@@ -10,12 +10,10 @@ extern FDCAN_HandleTypeDef hfdcan2;
 extern FDCAN_HandleTypeDef hfdcan3;
 
 // Remote Control
-extern UART_HandleTypeDef huart5;
-extern dma_buffer_t rc_dma_buffer;
+extern void rc_callback(UART_HandleTypeDef *huart, uint16_t Size);
 
 // Referee
-extern UART_HandleTypeDef huart1;
-extern dma_buffer_t referee_dma_buffer;
+
 
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 {
@@ -67,13 +65,11 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-	if (huart == &huart5)
+	if (huart->Instance == UART5)
 	{
-		// 遥控器数据解析
-		rc_dma_buffer.full_complete_callback(huart);
+		rc_callback(huart, Size);
 	}
-	else if(huart == &huart1){
-		// 裁判系统数据解析
-		referee_dma_buffer.full_complete_callback(huart);
+	else if(huart->Instance == USART1){
+
 	}
 }

@@ -19,8 +19,8 @@ static DT7_ctrl_t dt7_ctrl;
   *
   * 初始化遥控器的接收缓冲区，设置DMA数据传输相关配置。
   */
-void dt7_init(uint8_t *rx1_buf, uint8_t *rx2_buf, uint16_t dma_buf_num){
-	RC_Init(rx1_buf, rx2_buf, dma_buf_num);
+void dt7_init(uint8_t *rx_buf, uint16_t dma_buf_num){
+	RC_Init(rx_buf, dma_buf_num);
 }
 
 /**

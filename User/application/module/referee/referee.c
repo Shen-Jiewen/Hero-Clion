@@ -35,12 +35,10 @@ void init_referee_struct_data(void)
     memset(&game_result, 0, sizeof(ext_game_result_t));
     memset(&game_robot_HP_t, 0, sizeof(ext_game_robot_HP_t));
 
-
     memset(&field_event, 0, sizeof(ext_event_data_t));
     memset(&supply_projectile_action_t, 0, sizeof(ext_supply_projectile_action_t));
     memset(&supply_projectile_booking_t, 0, sizeof(ext_supply_projectile_booking_t));
     memset(&referee_warning_t, 0, sizeof(ext_referee_warning_t));
-
 
     memset(&robot_state, 0, sizeof(ext_game_robot_state_t));
     memset(&power_heat_data_t, 0, sizeof(ext_power_heat_data_t));
@@ -50,7 +48,6 @@ void init_referee_struct_data(void)
     memset(&robot_hurt_t, 0, sizeof(ext_robot_hurt_t));
     memset(&shoot_data_t, 0, sizeof(ext_shoot_data_t));
     memset(&bullet_remaining_t, 0, sizeof(ext_bullet_remaining_t));
-
 
     memset(&student_interactive_data_t, 0, sizeof(ext_student_interactive_data_t));
 }

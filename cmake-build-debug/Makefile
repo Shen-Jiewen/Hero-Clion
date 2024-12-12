@@ -1792,6 +1792,54 @@ User/application/module/gimbal/gimbal.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.s
 .PHONY : User/application/module/gimbal/gimbal.c.s
 
+User/application/module/gimbal/gimbal_behaviour.obj: User/application/module/gimbal/gimbal_behaviour.c.obj
+.PHONY : User/application/module/gimbal/gimbal_behaviour.obj
+
+# target to build an object file
+User/application/module/gimbal/gimbal_behaviour.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.obj
+.PHONY : User/application/module/gimbal/gimbal_behaviour.c.obj
+
+User/application/module/gimbal/gimbal_behaviour.i: User/application/module/gimbal/gimbal_behaviour.c.i
+.PHONY : User/application/module/gimbal/gimbal_behaviour.i
+
+# target to preprocess a source file
+User/application/module/gimbal/gimbal_behaviour.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.i
+.PHONY : User/application/module/gimbal/gimbal_behaviour.c.i
+
+User/application/module/gimbal/gimbal_behaviour.s: User/application/module/gimbal/gimbal_behaviour.c.s
+.PHONY : User/application/module/gimbal/gimbal_behaviour.s
+
+# target to generate assembly for a file
+User/application/module/gimbal/gimbal_behaviour.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.s
+.PHONY : User/application/module/gimbal/gimbal_behaviour.c.s
+
+User/application/module/imu/imu.obj: User/application/module/imu/imu.c.obj
+.PHONY : User/application/module/imu/imu.obj
+
+# target to build an object file
+User/application/module/imu/imu.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.obj
+.PHONY : User/application/module/imu/imu.c.obj
+
+User/application/module/imu/imu.i: User/application/module/imu/imu.c.i
+.PHONY : User/application/module/imu/imu.i
+
+# target to preprocess a source file
+User/application/module/imu/imu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.i
+.PHONY : User/application/module/imu/imu.c.i
+
+User/application/module/imu/imu.s: User/application/module/imu/imu.c.s
+.PHONY : User/application/module/imu/imu.s
+
+# target to generate assembly for a file
+User/application/module/imu/imu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.s
+.PHONY : User/application/module/imu/imu.c.s
+
 User/application/module/referee/referee.obj: User/application/module/referee/referee.c.obj
 .PHONY : User/application/module/referee/referee.obj
 
@@ -2440,6 +2488,30 @@ User/components/device/motor/DJI-3508/dji_3508.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-3508/dji_3508.c.s
 .PHONY : User/components/device/motor/DJI-3508/dji_3508.c.s
 
+User/components/device/motor/DJI-6020/dji_6020.obj: User/components/device/motor/DJI-6020/dji_6020.c.obj
+.PHONY : User/components/device/motor/DJI-6020/dji_6020.obj
+
+# target to build an object file
+User/components/device/motor/DJI-6020/dji_6020.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-6020/dji_6020.c.obj
+.PHONY : User/components/device/motor/DJI-6020/dji_6020.c.obj
+
+User/components/device/motor/DJI-6020/dji_6020.i: User/components/device/motor/DJI-6020/dji_6020.c.i
+.PHONY : User/components/device/motor/DJI-6020/dji_6020.i
+
+# target to preprocess a source file
+User/components/device/motor/DJI-6020/dji_6020.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-6020/dji_6020.c.i
+.PHONY : User/components/device/motor/DJI-6020/dji_6020.c.i
+
+User/components/device/motor/DJI-6020/dji_6020.s: User/components/device/motor/DJI-6020/dji_6020.c.s
+.PHONY : User/components/device/motor/DJI-6020/dji_6020.s
+
+# target to generate assembly for a file
+User/components/device/motor/DJI-6020/dji_6020.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/device/motor/DJI-6020/dji_6020.c.s
+.PHONY : User/components/device/motor/DJI-6020/dji_6020.c.s
+
 User/components/support/crc/CRC8_CRC16.obj: User/components/support/crc/CRC8_CRC16.c.obj
 .PHONY : User/components/support/crc/CRC8_CRC16.obj
 
@@ -2463,30 +2535,6 @@ User/components/support/crc/CRC8_CRC16.s: User/components/support/crc/CRC8_CRC16
 User/components/support/crc/CRC8_CRC16.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/crc/CRC8_CRC16.c.s
 .PHONY : User/components/support/crc/CRC8_CRC16.c.s
-
-User/components/support/dma_buffer/dma_buffer.obj: User/components/support/dma_buffer/dma_buffer.c.obj
-.PHONY : User/components/support/dma_buffer/dma_buffer.obj
-
-# target to build an object file
-User/components/support/dma_buffer/dma_buffer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.obj
-.PHONY : User/components/support/dma_buffer/dma_buffer.c.obj
-
-User/components/support/dma_buffer/dma_buffer.i: User/components/support/dma_buffer/dma_buffer.c.i
-.PHONY : User/components/support/dma_buffer/dma_buffer.i
-
-# target to preprocess a source file
-User/components/support/dma_buffer/dma_buffer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.i
-.PHONY : User/components/support/dma_buffer/dma_buffer.c.i
-
-User/components/support/dma_buffer/dma_buffer.s: User/components/support/dma_buffer/dma_buffer.c.s
-.PHONY : User/components/support/dma_buffer/dma_buffer.s
-
-# target to generate assembly for a file
-User/components/support/dma_buffer/dma_buffer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/support/dma_buffer/dma_buffer.c.s
-.PHONY : User/components/support/dma_buffer/dma_buffer.c.s
 
 User/components/support/fifo/fifo.obj: User/components/support/fifo/fifo.c.obj
 .PHONY : User/components/support/fifo/fifo.obj
@@ -2753,6 +2801,12 @@ help:
 	@echo ... User/application/module/gimbal/gimbal.obj
 	@echo ... User/application/module/gimbal/gimbal.i
 	@echo ... User/application/module/gimbal/gimbal.s
+	@echo ... User/application/module/gimbal/gimbal_behaviour.obj
+	@echo ... User/application/module/gimbal/gimbal_behaviour.i
+	@echo ... User/application/module/gimbal/gimbal_behaviour.s
+	@echo ... User/application/module/imu/imu.obj
+	@echo ... User/application/module/imu/imu.i
+	@echo ... User/application/module/imu/imu.s
 	@echo ... User/application/module/referee/referee.obj
 	@echo ... User/application/module/referee/referee.i
 	@echo ... User/application/module/referee/referee.s
@@ -2834,12 +2888,12 @@ help:
 	@echo ... User/components/device/motor/DJI-3508/dji_3508.obj
 	@echo ... User/components/device/motor/DJI-3508/dji_3508.i
 	@echo ... User/components/device/motor/DJI-3508/dji_3508.s
+	@echo ... User/components/device/motor/DJI-6020/dji_6020.obj
+	@echo ... User/components/device/motor/DJI-6020/dji_6020.i
+	@echo ... User/components/device/motor/DJI-6020/dji_6020.s
 	@echo ... User/components/support/crc/CRC8_CRC16.obj
 	@echo ... User/components/support/crc/CRC8_CRC16.i
 	@echo ... User/components/support/crc/CRC8_CRC16.s
-	@echo ... User/components/support/dma_buffer/dma_buffer.obj
-	@echo ... User/components/support/dma_buffer/dma_buffer.i
-	@echo ... User/components/support/dma_buffer/dma_buffer.s
 	@echo ... User/components/support/fifo/fifo.obj
 	@echo ... User/components/support/fifo/fifo.i
 	@echo ... User/components/support/fifo/fifo.s
