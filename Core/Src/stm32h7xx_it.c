@@ -24,7 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "dt7.h"
 /* USER CODE END Includes */
-
+#include "dt7.h"
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
 
@@ -52,7 +52,7 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+extern uint8_t sbus_rx_buf[2][SBUS_RX_BUF_NUM];
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/

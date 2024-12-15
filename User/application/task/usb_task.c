@@ -9,6 +9,7 @@
 #include "Fusion.h"
 #include "dt7.h"
 
+long long uart5_count = 0;
 extern FusionEuler euler;
 
 _Noreturn void usb_task(void* argument){
