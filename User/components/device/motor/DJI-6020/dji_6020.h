@@ -53,9 +53,9 @@ typedef struct
 	fp32 motor_speed;                                  // 电机速度，单位：弧度/秒 (rad/s)
 	fp32 raw_cmd_current;                              // 原始电流命令值
 	fp32 current_set;                                  // 电流设定值
-	int16_t given_current;                             // 实际给定电流值
+	int32_t given_current;                             // 实际给定电流值
 } gimbal_motor_t;
 
-void get_motor_6020_measure(motor_6020_measure_t *ptr, const uint8_t *data);
+extern void get_motor_6020_measure(motor_6020_measure_t *ptr, const uint8_t *data);
 
 #endif //DM_02_HERO_USER_COMPONENTS_DEVICE_MOTOR_DJI_6020_DJI_6020_H_

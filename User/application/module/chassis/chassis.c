@@ -5,7 +5,6 @@
 #include "chassis.h"
 #include "chassis_behaviour.h"
 
-
 extern FDCAN_HandleTypeDef hfdcan1;
 static chassis_control_t chassis_control;
 
@@ -104,7 +103,7 @@ inline static void chassis_vector_to_mecanum_wheel_speed(const fp32 vx_set, cons
   *
   * @param[out]     vx_set: 纵向速度指针
   * @param[out]     vy_set: 横向速度指针
-  * @param[in]      chassis_move_rc_to_vector: "chassis_move" 变量指针
+  * @param[in]      chassis_move_rc_to_vector: "chassis_control" 变量指针
   * @retval         none
   */
 void chassis_rc_to_control_vector(fp32* vx_set, fp32* vy_set, chassis_control_t* chassis_move_rc_to_vector)
@@ -214,7 +213,7 @@ inline static void apply_smooth_control(chassis_control_t* chassis_move_rc_to_ve
 }
 
 /**
-  * @brief          初始化"chassis_move"变量，包括pid初始化， 遥控器指针初始化，3508底盘电机指针初始化，云台电机初始化，陀螺仪角度指针初始化
+  * @brief          初始化"chassis_control"变量，包括pid初始化， 遥控器指针初始化，3508底盘电机指针初始化，云台电机初始化，陀螺仪角度指针初始化
   * @param[out]     chassis_move_init:"chassis_control_t"变量指针.
   * @retval         none
   */

@@ -274,7 +274,7 @@ uint8_t bmi088_gyro_init(void)
 }
 /**
 ************************************************************************
-* @brief:      	BMI088_read(float gyro[3], float accel[3], float *temperate)
+* @brief:      	BMI088_read(float gyro[3], float accel[3], float *temperature)
 * @param:       gyro - 陀螺仪数据数组 (x, y, z)
 * @param:       accel - 加速度计数据数组 (x, y, z)
 * @param:       temperate - 温度数据指针

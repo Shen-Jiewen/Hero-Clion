@@ -11,7 +11,7 @@
 static int16_t dt7_abs(int16_t value);
 
 // 遥控器控制变量
-static DT7_ctrl_t dt7_ctrl;
+static RC_ctrl_t dt7_ctrl;
 
 /**
   * @brief          初始化DT7模块
@@ -27,9 +27,9 @@ void dt7_init(UART_HandleTypeDef *huart, uint8_t *buff, uint32_t DataLength){
   * @brief          获取遥控器控制数据
   * @retval         指向当前遥控器控制数据的指针
   *
-  * 返回指向遥控器控制数据结构体 `DT7_ctrl_t` 的指针，包含遥控器的当前状态。
+  * 返回指向遥控器控制数据结构体 `RC_ctrl_t` 的指针，包含遥控器的当前状态。
   */
-DT7_ctrl_t *get_dt7_point(void){
+RC_ctrl_t *get_dt7_point(void){
 	return &dt7_ctrl;
 }
 
@@ -121,7 +121,7 @@ static int16_t dt7_abs(int16_t value)
 	}
 }
 
-void sbus_to_dt7(DT7_ctrl_t *rc_ctrl, uint8_t *sbus_buf)
+void sbus_to_dt7(RC_ctrl_t *rc_ctrl, uint8_t *sbus_buf)
 {
 	// 检查sbuff_buf是否为空或长度不足
 	if (rc_ctrl == NULL || sbus_buf == NULL) {

@@ -66,7 +66,7 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint8_t main_sbus_rx_buf[2][SBUS_RX_BUF_NUM];
+
 /* USER CODE END 0 */
 
 /**

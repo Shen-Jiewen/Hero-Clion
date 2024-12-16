@@ -4031,6 +4031,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis.c.obj: D:/
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
@@ -4095,10 +4096,19 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis.c.obj: D:/
   D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis_behaviour.h \
   D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h \
   D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_rc.h \
-  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h \
   D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h \
   D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.h \
   D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.h \
@@ -4131,6 +4141,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
@@ -4195,10 +4206,19 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/chassis/chassis_behaviour.
   D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis_behaviour.h \
   D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h \
   D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_rc.h \
-  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h \
   D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h \
   D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.h \
   D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.h \
@@ -4286,82 +4306,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/detect/detect.c.obj: D:/Cl
 CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.obj: D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.c \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/string.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
-  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
-  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
-  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
-  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
-  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
-  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
-  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
-  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
-  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
-  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
-  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
-  D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
-  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_rc.h \
-  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.h \
-  D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h \
-  D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.h \
-  D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.h \
-  D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-6020/dji_6020.h \
-  D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
-
-CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.obj: D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal_behaviour.c \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
-  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/limits.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
@@ -4381,8 +4326,13 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/FreeRTOSConfig.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
@@ -4428,6 +4378,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/ST/ARM/DSP/Inc/arm_math.h \
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
@@ -4438,11 +4389,134 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis.h \
   D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h \
   D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
   D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal_behaviour.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_rc.h \
-  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h \
+  D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-6020/dji_6020.h \
+  D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
+
+CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal_behaviour.c.obj: D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal_behaviour.c \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/string.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/FreeRTOSConfig.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/ST/ARM/DSP/Inc/arm_math.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal_behaviour.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_rc.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h \
   D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h \
   D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.h \
   D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.h \
@@ -4466,6 +4540,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.obj: D:/ClionPro
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
@@ -4513,6 +4588,14 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/imu/imu.c.obj: D:/ClionPro
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
   D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h \
   D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
 
 CMakeFiles/DM_02_Hero.elf.dir/User/application/module/referee/referee.c.obj: D:/ClionProject/DM_02_Hero/User/application/module/referee/referee.c \
@@ -4620,6 +4703,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/chassis_task.c.obj: D:/Clion
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
@@ -4682,10 +4766,19 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/chassis_task.c.obj: D:/Clion
   D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis.h \
   D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h \
   D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_rc.h \
-  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h \
   D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h \
   D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.h \
   D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.h \
@@ -4768,6 +4861,114 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/detect_task.c.obj: D:/ClionP
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
   D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
   D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h \
+  D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
+
+CMakeFiles/DM_02_Hero.elf.dir/User/application/task/gimbal_task.c.obj: D:/ClionProject/DM_02_Hero/User/application/task/gimbal_task.c \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/ieeefp.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/math.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/newlib.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/string.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_types.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/cdefs.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/config.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/lock.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/reent.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/FreeRTOSConfig.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/main.h \
+  D:/ClionProject/DM_02_Hero/Core/Inc/stm32h7xx_hal_conf.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/ST/ARM/DSP/Inc/arm_math.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+  D:/ClionProject/DM_02_Hero/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.h \
+  D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_rc.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h \
+  D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-6020/dji_6020.h \
   D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
 
 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj: D:/ClionProject/DM_02_Hero/User/application/task/imu_task.c \
@@ -4855,7 +5056,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj: D:/ClionProj
   D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
   D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
   D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
-  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088driver.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.h \
   D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
 
 CMakeFiles/DM_02_Hero.elf.dir/User/application/task/led_task.c.obj: D:/ClionProject/DM_02_Hero/User/application/task/led_task.c \
@@ -4961,6 +5162,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj: D:/ClionProj
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
@@ -5023,12 +5225,21 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/log_task.c.obj: D:/ClionProj
   D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis.h \
   D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h \
   D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_adc.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_buzzer.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_rc.h \
-  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h \
   D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h \
   D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.h \
   D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.h \
@@ -5462,6 +5673,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj: D:/ClionProject/
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
@@ -5524,11 +5736,20 @@ CMakeFiles/DM_02_Hero.elf.dir/User/bsp/dm02/bsp_callback.c.obj: D:/ClionProject/
   D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis.h \
   D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h \
   D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h \
+  D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_rc.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h \
   D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_can.h \
-  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAhrs.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h \
   D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h \
   D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.h \
   D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-3508/dji_3508.h \
@@ -6013,7 +6234,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.ob
   D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h \
   D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionOffset.h
 
-CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj: D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.c \
+CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib/user_lib.c.obj: D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.c \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/limits.h \
@@ -6044,7 +6265,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj: D:/Clion
   D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_compiler.h \
   D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/cmsis_gcc.h \
   D:/ClionProject/DM_02_Hero/Middlewares/ST/ARM/DSP/Inc/arm_math.h \
-  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.h \
+  D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h \
   D:/ClionProject/DM_02_Hero/User/components/support/struct_typedef.h
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/controller/pid/pid.c.obj: D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.c \
@@ -6176,7 +6397,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088Middleware.c.o
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
-  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088Middleware.h
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088Middleware.h
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj: D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.c \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
@@ -6241,9 +6462,9 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj: 
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
   D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
-  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088Middleware.h \
-  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088driver.h \
-  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088reg.h
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088Middleware.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.h \
+  D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088reg.h
 
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/control/DT7/dt7.c.obj: D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.c \
   D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h \
@@ -6695,6 +6916,8 @@ D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_ansi.h:
 
+D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088driver.h:
+
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/_newlib_version.h:
@@ -6783,6 +7006,8 @@ D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal_behaviour.c:
 
 D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/core_cm7.h:
 
+D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.c:
+
 D:/ClionProject/DM_02_Hero/Drivers/CMSIS/Include/mpu_armv7.h:
 
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
@@ -6828,8 +7053,6 @@ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/a
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h:
 
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h:
-
-D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088driver.h:
 
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h:
 
@@ -6971,8 +7194,6 @@ D:/ClionProject/DM_02_Hero/Core/Src/syscalls.c:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/errno.h:
 
-D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088reg.h:
-
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_endian.h:
 
 D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_uart.c:
@@ -7002,6 +7223,8 @@ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/select.h:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/stat.h:
+
+D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088Middleware.h:
 
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:
 
@@ -7050,6 +7273,8 @@ D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c:
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c:
 
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.c:
+
+D:/ClionProject/DM_02_Hero/User/application/task/gimbal_task.c:
 
 D:/ClionProject/DM_02_Hero/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.c:
 
@@ -7127,6 +7352,10 @@ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h:
 
+D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.c:
+
+D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h:
+
 D:/ClionProject/DM_02_Hero/User/components/device/control/DT7/dt7.c:
 
 D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h:
@@ -7139,9 +7368,25 @@ D:/ClionProject/DM_02_Hero/User/application/module/detect/detect.h:
 
 D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal.h:
 
+D:/ClionProject/DM_02_Hero/User/application/module/referee/protocol.h:
+
+D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h:
+
 D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_callback.h:
 
-D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.h:
+D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h:
+
+D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h:
+
+D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h:
+
+D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h:
+
+D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h:
+
+D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h:
+
+D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib/user_lib.h:
 
 D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.h:
 
@@ -7150,10 +7395,6 @@ D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-6020/dji_6020.h:
 D:/ClionProject/DM_02_Hero/User/application/module/chassis/chassis_behaviour.c:
 
 D:/ClionProject/DM_02_Hero/User/application/module/gimbal/gimbal_behaviour.h:
-
-D:/ClionProject/DM_02_Hero/User/application/module/referee/protocol.h:
-
-D:/ClionProject/DM_02_Hero/User/application/module/imu/imu.h:
 
 D:/ClionProject/DM_02_Hero/User/application/module/referee/referee.c:
 
@@ -7165,25 +7406,7 @@ D:/ClionProject/DM_02_Hero/User/components/support/fifo/fifo.h:
 
 D:/ClionProject/DM_02_Hero/User/application/task/imu_task.c:
 
-D:/ClionProject/DM_02_Hero/User/components/device/BMI088/inc/BMI088Middleware.h:
-
-D:/ClionProject/DM_02_Hero/User/components/controller/pid/pid.c:
-
-D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h:
-
 D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_imu.h:
-
-D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/Fusion.h:
-
-D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionAxes.h:
-
-D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCalibration.h:
-
-D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.h:
-
-D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionConvention.h:
-
-D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionMath.h:
 
 D:/ClionProject/DM_02_Hero/User/application/task/led_task.c:
 
@@ -7219,9 +7442,9 @@ D:/ClionProject/DM_02_Hero/User/bsp/dm02/bsp_ws2812.c:
 
 D:/ClionProject/DM_02_Hero/User/components/algorithm/Fusion/FusionCompass.c:
 
-D:/ClionProject/DM_02_Hero/User/components/algorithm/user_lib.c:
-
 D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088Middleware.c:
+
+D:/ClionProject/DM_02_Hero/User/components/device/BMI088/BMI088reg.h:
 
 D:/ClionProject/DM_02_Hero/User/components/device/motor/DJI-6020/dji_6020.c:
 

@@ -1,6 +1,6 @@
 CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj: \
  D:\ClionProject\DM_02_Hero\User\components\device\BMI088\BMI088driver.c \
- D:\ClionProject\DM_02_Hero\User\components\device\BMI088\inc/BMI088driver.h \
+ D:\ClionProject\DM_02_Hero\User\components\device\BMI088\BMI088driver.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/stdint.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/machine/_default_types.h \
@@ -64,5 +64,5 @@ CMakeFiles/DM_02_Hero.elf.dir/User/components/device/BMI088/BMI088driver.c.obj: 
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_ll_usb.h \
  D:\ClionProject\DM_02_Hero\Drivers\STM32H7xx_HAL_Driver\Inc/stm32h7xx_hal_pcd_ex.h \
- D:\ClionProject\DM_02_Hero\User\components\device\BMI088\inc/BMI088reg.h \
- D:\ClionProject\DM_02_Hero\User\components\device\BMI088\inc/BMI088Middleware.h
+ D:\ClionProject\DM_02_Hero\User\components\device\BMI088\BMI088reg.h \
+ D:\ClionProject\DM_02_Hero\User\components\device\BMI088\BMI088Middleware.h

@@ -11,7 +11,10 @@
 #include "dji_6020.h"
 #include "dt7.h"
 #include "user_lib.h"
+#include "arm_math.h"
 #include "pid.h"
+#include "imu.h"
+#include "bsp_callback.h"
 
 //pitch speed close-loop PID params, max out and max iout
 //pitch 速度环 PID参数以及 PID最大输出，积分输出
@@ -65,7 +68,7 @@
 
 
 //任务初始化 空闲一段时间
-#define GIMBAL_TASK_INIT_TIME 201
+#define GIMBAL_TASK_INIT_TIME 200
 //yaw,pitch控制通道以及状态开关通道
 #define YAW_CHANNEL   2
 #define PITCH_CHANNEL 3
@@ -154,12 +157,25 @@ typedef struct
 
 typedef struct
 {
-	const DT7_ctrl_t *gimbal_rc_ctrl;       // 指向云台遥控控制输入的常量指针。
+	const RC_ctrl_t *gimbal_rc_ctrl;        // 指向云台遥控控制输入的常量指针。
 	const fp32 *gimbal_INT_angle_point;     // 指向内部角度传感器数据点的常量指针，单位弧度。
 	const fp32 *gimbal_INT_gyro_point;      // 指向内部陀螺仪传感器数据点的常量指针，单位弧度每秒。
 	gimbal_motor_t gimbal_yaw_motor;        // 控制云台偏航电机的数据和控制变量的结构体。
 	gimbal_motor_t gimbal_pitch_motor;      // 控制云台俯仰电机的数据和控制变量的结构体。
 	gimbal_step_cali_t gimbal_cali;         // 云台步进位置的校准数据。
+
+	// 通信接口定义
+	void (*CAN_cmd_gimbal)(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);
+	void (*CAN_rec_gimbal)(uint32_t can_id, const uint8_t* rx_data);
 } gimbal_control_t;
+
+extern void gimbal_init(gimbal_control_t *init);
+extern void gimbal_feedback_update(gimbal_control_t *feedback_update);
+extern void gimbal_set_mode(gimbal_control_t *set_mode);
+extern void gimbal_mode_change_control_transit(gimbal_control_t *gimbal_mode_change);
+extern void gimbal_set_control(gimbal_control_t *set_control);
+extern void gimbal_control_loop(gimbal_control_t *control_loop);
+
+extern gimbal_control_t * get_gimbal_control_point(void);
 
 #endif //DM_02_HERO_USER_APPLICATION_MODULE_GIMBAL_GIMBAL_H_

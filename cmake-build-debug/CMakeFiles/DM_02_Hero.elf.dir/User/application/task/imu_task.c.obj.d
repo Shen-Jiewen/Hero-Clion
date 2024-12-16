@@ -75,7 +75,7 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/task/imu_task.c.obj: \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
  D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
- D:\ClionProject\DM_02_Hero\User\components\device\BMI088\inc/BMI088driver.h \
+ D:\ClionProject\DM_02_Hero\User\components\device\BMI088/BMI088driver.h \
  D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_imu.h \
  D:\ClionProject\DM_02_Hero\User\components\support/struct_typedef.h \
  D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/Fusion.h \

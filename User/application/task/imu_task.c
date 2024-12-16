@@ -11,12 +11,12 @@
 
 #define SAMPLE_RATE 1000
 
-FusionAhrs ahrs;
-FusionOffset offset;
-FusionEuler euler;
+extern FusionAhrs ahrs;             // 外部声明 FusionAhrs 类型的变量 ahrs
+extern FusionOffset offset;         // 外部声明 FusionOffset 类型的变量 offset
+extern FusionEuler euler;           // 外部声明 FusionEuler 类型的变量 euler
 
-FusionVector gyroscope;        // replace this with actual gyroscope data in degrees/s
-FusionVector accelerometer;    // replace this with actual accelerometer data in g
+extern FusionVector gyroscope;      // 外部声明 FusionVector 类型的变量 gyroscope（陀螺仪数据，单位：°/s）
+extern FusionVector accelerometer;  // 外部声明 FusionVector 类型的变量 accelerometer（加速度计数据，单位：g）
 
 float temperature = 0;
 

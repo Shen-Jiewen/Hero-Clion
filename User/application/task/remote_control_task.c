@@ -18,7 +18,7 @@ _Noreturn void remote_control_task(void* argument)
 	// 初始化外设
 	RC_Init(&huart5, sbus_rx_buf, SBUS_RX_BUF_NUM);
 	// 获取遥控器对象
-	DT7_ctrl_t *dt7_ctrl = get_dt7_point();
+	RC_ctrl_t *dt7_ctrl = get_dt7_point();
 
 	while (1) {
 		osThreadSuspend(NULL);

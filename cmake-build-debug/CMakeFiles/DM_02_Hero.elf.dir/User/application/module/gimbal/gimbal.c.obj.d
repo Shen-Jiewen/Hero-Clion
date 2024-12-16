@@ -74,4 +74,39 @@ CMakeFiles/DM_02_Hero.elf.dir/User/application/module/gimbal/gimbal.c.obj: \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/_locale.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/strings.h \
  D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/string.h \
- D:\ClionProject\DM_02_Hero\User\components\algorithm/user_lib.h
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\user_lib/user_lib.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\ST\ARM\DSP\Inc/arm_math.h \
+ D:\ClionProject\DM_02_Hero\Drivers\CMSIS\Include/cmsis_compiler.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/limits.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/sys/syslimits.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\imu/imu.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/fusion.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionAhrs.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionConvention.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionMath.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionAxes.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionCalibration.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionCompass.h \
+ D:\ClionProject\DM_02_Hero\User\components\algorithm\Fusion/FusionOffset.h \
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_callback.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\chassis/chassis.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\gimbal/gimbal.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\detect/detect.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
+ D:\ClionProject\DM_02_Hero\Core\Inc/FreeRTOSConfig.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/projdefs.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/portable.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/deprecated_definitions.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F/portmacro.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/mpu_wrappers.h \
+ D:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/13.3\ rel1/arm-none-eabi/include/reent.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
+ D:\ClionProject\DM_02_Hero\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
+ D:\ClionProject\DM_02_Hero\User\bsp\dm02/bsp_can.h \
+ D:\ClionProject\DM_02_Hero\User\application\module\gimbal\gimbal_behaviour.h

@@ -328,6 +328,3 @@ void get_shoot_speed_limit (uint16_t *shoot_limit )
 {
 	*shoot_limit = robot_state.shooter_id1_42mm_speed_limit;
 }
-
-
-

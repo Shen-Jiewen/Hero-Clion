@@ -24,7 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "dt7.h"
 /* USER CODE END Includes */
-#include "dt7.h"
+
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
 

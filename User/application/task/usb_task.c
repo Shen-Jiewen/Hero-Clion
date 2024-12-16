@@ -13,7 +13,7 @@ long long uart5_count = 0;
 extern FusionEuler euler;
 
 _Noreturn void usb_task(void* argument){
-	DT7_ctrl_t *usb_dt7_ctrl = get_dt7_point();
+	RC_ctrl_t *usb_dt7_ctrl = get_dt7_point();
 
 	// 初始化
 	while (1){

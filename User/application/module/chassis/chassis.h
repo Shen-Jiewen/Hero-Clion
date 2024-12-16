@@ -110,7 +110,7 @@ typedef enum
 } chassis_mode_e;
 
 typedef struct {
-	const DT7_ctrl_t *chassis_RC;
+	const RC_ctrl_t *chassis_RC;
 	const gimbal_motor_t *chassis_yaw_motor;
 	const gimbal_motor_t *chassis_pitch_motor;
 	chassis_mode_e chassis_mode;

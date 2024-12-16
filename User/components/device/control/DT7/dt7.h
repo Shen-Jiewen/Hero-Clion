@@ -66,13 +66,13 @@ typedef struct
 		uint16_t v;      // 键盘值
 	} key;
 
-} __attribute__((packed)) DT7_ctrl_t;
+} __attribute__((packed)) RC_ctrl_t;
 
 /* ----------------------- Internal Data ----------------------------------- */
 
 extern void dt7_init(UART_HandleTypeDef *huart, uint8_t *buff, uint32_t DataLength);
-extern void sbus_to_dt7(DT7_ctrl_t *rc_ctrl, uint8_t *sbus_buf);
-extern DT7_ctrl_t *get_dt7_point(void);
+extern void sbus_to_dt7(RC_ctrl_t *rc_ctrl, uint8_t *sbus_buf);
+extern RC_ctrl_t *get_dt7_point(void);
 
 extern uint8_t dt7_data_is_error(void);
 extern void solve_dt7_lost(void);

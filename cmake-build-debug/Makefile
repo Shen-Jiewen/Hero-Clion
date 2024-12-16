@@ -1912,6 +1912,30 @@ User/application/task/detect_task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/detect_task.c.s
 .PHONY : User/application/task/detect_task.c.s
 
+User/application/task/gimbal_task.obj: User/application/task/gimbal_task.c.obj
+.PHONY : User/application/task/gimbal_task.obj
+
+# target to build an object file
+User/application/task/gimbal_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/gimbal_task.c.obj
+.PHONY : User/application/task/gimbal_task.c.obj
+
+User/application/task/gimbal_task.i: User/application/task/gimbal_task.c.i
+.PHONY : User/application/task/gimbal_task.i
+
+# target to preprocess a source file
+User/application/task/gimbal_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/gimbal_task.c.i
+.PHONY : User/application/task/gimbal_task.c.i
+
+User/application/task/gimbal_task.s: User/application/task/gimbal_task.c.s
+.PHONY : User/application/task/gimbal_task.s
+
+# target to generate assembly for a file
+User/application/task/gimbal_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/application/task/gimbal_task.c.s
+.PHONY : User/application/task/gimbal_task.c.s
+
 User/application/task/imu_task.obj: User/application/task/imu_task.c.obj
 .PHONY : User/application/task/imu_task.obj
 
@@ -2344,29 +2368,29 @@ User/components/algorithm/Fusion/FusionOffset.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/Fusion/FusionOffset.c.s
 .PHONY : User/components/algorithm/Fusion/FusionOffset.c.s
 
-User/components/algorithm/user_lib.obj: User/components/algorithm/user_lib.c.obj
-.PHONY : User/components/algorithm/user_lib.obj
+User/components/algorithm/user_lib/user_lib.obj: User/components/algorithm/user_lib/user_lib.c.obj
+.PHONY : User/components/algorithm/user_lib/user_lib.obj
 
 # target to build an object file
-User/components/algorithm/user_lib.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.obj
-.PHONY : User/components/algorithm/user_lib.c.obj
+User/components/algorithm/user_lib/user_lib.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib/user_lib.c.obj
+.PHONY : User/components/algorithm/user_lib/user_lib.c.obj
 
-User/components/algorithm/user_lib.i: User/components/algorithm/user_lib.c.i
-.PHONY : User/components/algorithm/user_lib.i
+User/components/algorithm/user_lib/user_lib.i: User/components/algorithm/user_lib/user_lib.c.i
+.PHONY : User/components/algorithm/user_lib/user_lib.i
 
 # target to preprocess a source file
-User/components/algorithm/user_lib.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.i
-.PHONY : User/components/algorithm/user_lib.c.i
+User/components/algorithm/user_lib/user_lib.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib/user_lib.c.i
+.PHONY : User/components/algorithm/user_lib/user_lib.c.i
 
-User/components/algorithm/user_lib.s: User/components/algorithm/user_lib.c.s
-.PHONY : User/components/algorithm/user_lib.s
+User/components/algorithm/user_lib/user_lib.s: User/components/algorithm/user_lib/user_lib.c.s
+.PHONY : User/components/algorithm/user_lib/user_lib.s
 
 # target to generate assembly for a file
-User/components/algorithm/user_lib.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib.c.s
-.PHONY : User/components/algorithm/user_lib.c.s
+User/components/algorithm/user_lib/user_lib.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DM_02_Hero.elf.dir\build.make CMakeFiles/DM_02_Hero.elf.dir/User/components/algorithm/user_lib/user_lib.c.s
+.PHONY : User/components/algorithm/user_lib/user_lib.c.s
 
 User/components/controller/pid/pid.obj: User/components/controller/pid/pid.c.obj
 .PHONY : User/components/controller/pid/pid.obj
@@ -2816,6 +2840,9 @@ help:
 	@echo ... User/application/task/detect_task.obj
 	@echo ... User/application/task/detect_task.i
 	@echo ... User/application/task/detect_task.s
+	@echo ... User/application/task/gimbal_task.obj
+	@echo ... User/application/task/gimbal_task.i
+	@echo ... User/application/task/gimbal_task.s
 	@echo ... User/application/task/imu_task.obj
 	@echo ... User/application/task/imu_task.i
 	@echo ... User/application/task/imu_task.s
@@ -2870,9 +2897,9 @@ help:
 	@echo ... User/components/algorithm/Fusion/FusionOffset.obj
 	@echo ... User/components/algorithm/Fusion/FusionOffset.i
 	@echo ... User/components/algorithm/Fusion/FusionOffset.s
-	@echo ... User/components/algorithm/user_lib.obj
-	@echo ... User/components/algorithm/user_lib.i
-	@echo ... User/components/algorithm/user_lib.s
+	@echo ... User/components/algorithm/user_lib/user_lib.obj
+	@echo ... User/components/algorithm/user_lib/user_lib.i
+	@echo ... User/components/algorithm/user_lib/user_lib.s
 	@echo ... User/components/controller/pid/pid.obj
 	@echo ... User/components/controller/pid/pid.i
 	@echo ... User/components/controller/pid/pid.s
