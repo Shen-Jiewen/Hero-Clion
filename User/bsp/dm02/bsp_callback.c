@@ -63,22 +63,3 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 	}
 }
 
-
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
-{
-	if (huart->Instance == UART5)
-	{
-		rc_callback(huart, Size);
-	}
-	else if(huart->Instance == USART1)
-	{
-
-	}
-}
-
-void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart){
-	if (huart->Instance == UART5)
-	{
-		HAL_UARTEx_ReceiveToIdle_DMA(huart, sbus_rx_buf, SBUS_RX_BUF_NUM);
-	}
-}
