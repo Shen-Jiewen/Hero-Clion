@@ -5,10 +5,8 @@
 #ifndef DM_02_HERO_USER_COMPONENTS_DEVICE_CONTROL_DT7_DT7_H_
 #define DM_02_HERO_USER_COMPONENTS_DEVICE_CONTROL_DT7_DT7_H_
 
-#include "struct_typedef.h"
 #include "main.h"
-#include "bsp_rc.h"
-#include "string.h"
+#include "struct_typedef.h"
 
 #define SBUS_RX_BUF_NUM 36u
 

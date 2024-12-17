@@ -16,7 +16,7 @@
 #include "string.h"
 
 #define DEVICE_USART_CNT 8     // MC02串口数量8个，其中
-#define USART_RXBUFF_LIMIT 256 // 如果协议需要更大的buff,请修改这里
+#define USART_RXBUFF_LIMIT 512 // 如果协议需要更大的buff,请修改这里
 
 // 模块回调函数,用于解析协议
 typedef void (*usart_module_callback)();
@@ -45,7 +45,7 @@ typedef struct
 // 用户初始化串口时，需要传入该结构体，定义串口的配置选项，如接收缓冲区大小、回调函数等。
 typedef struct
 {
-	uint8_t recv_buff_size;                // 模块接收一包数据的大小
+	uint16_t recv_buff_size;               // 模块接收一包数据的大小
 	UART_HandleTypeDef *usart_handle;      // 对应的USART硬件句柄
 	usart_module_callback module_callback; // 解析收到的数据的回调函数
 } usart_init_config_s;

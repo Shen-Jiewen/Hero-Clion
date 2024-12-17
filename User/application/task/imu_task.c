@@ -3,7 +3,6 @@
 // Created by Rick on 24-11-25.
 //
 
-#include "main.h"
 #include "cmsis_os.h"
 #include "BMI088driver.h"
 #include "bsp_imu.h"
@@ -17,6 +16,7 @@ extern FusionEuler euler;           // 外部声明 FusionEuler 类型的变量 
 
 extern FusionVector gyroscope;      // 外部声明 FusionVector 类型的变量 gyroscope（陀螺仪数据，单位：°/s）
 extern FusionVector accelerometer;  // 外部声明 FusionVector 类型的变量 accelerometer（加速度计数据，单位：g）
+FusionVector magnetometer;          // 外部声明 FusionVector 类型的变量 magnetometer（磁力计数据，单位：uT）
 
 float temperature = 0;
 

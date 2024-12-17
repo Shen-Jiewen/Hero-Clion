@@ -79,7 +79,7 @@ error:
   * 当遥控器数据丢失时，调用该函数进行重新初始化。
   */
 void solve_dt7_lost(void){
-	RC_restart(SBUS_RX_BUF_NUM);
+
 }
 
 /**
@@ -89,7 +89,7 @@ void solve_dt7_lost(void){
   * 当遥控器数据发生错误时，调用该函数重新初始化遥控器接收。
   */
 void solve_data_error(void){
-	RC_restart(SBUS_RX_BUF_NUM);
+
 }
 
 /**
@@ -117,7 +117,6 @@ void sbus_to_dt7(RC_ctrl_t *rc_ctrl, uint8_t *sbus_buf)
 	if (rc_ctrl == NULL || sbus_buf == NULL) {
 		return;
 	}
-
 
 	// 解析遥控器通道值并校准
 	rc_ctrl->rc.ch[0] = ((uint16_t)sbus_buf[0] | ((uint16_t)sbus_buf[1] << 8)) & 0x07FF; // 将buff[0]和buff[1]的值组合为ch0通道的值，并将其限制在11位
