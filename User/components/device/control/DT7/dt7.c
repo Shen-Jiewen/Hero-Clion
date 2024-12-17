@@ -14,16 +14,6 @@ static int16_t dt7_abs(int16_t value);
 static RC_ctrl_t dt7_ctrl;
 
 /**
-  * @brief          初始化DT7模块
-  * @retval         none
-  *
-  * 初始化遥控器的接收缓冲区，设置DMA数据传输相关配置。
-  */
-void dt7_init(UART_HandleTypeDef *huart, uint8_t *buff, uint32_t DataLength){
-	RC_Init(huart, buff, DataLength);
-}
-
-/**
   * @brief          获取遥控器控制数据
   * @retval         指向当前遥控器控制数据的指针
   *

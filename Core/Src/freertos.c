@@ -54,13 +54,6 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for logTask */
-osThreadId_t logTaskHandle;
-const osThreadAttr_t logTask_attributes = {
-  .name = "logTask",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityLow,
-};
 /* Definitions for ledTask */
 osThreadId_t ledTaskHandle;
 const osThreadAttr_t ledTask_attributes = {
@@ -129,7 +122,6 @@ const osSemaphoreAttr_t imuBinarySem01_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-extern void log_task(void *argument);
 extern void led_task(void *argument);
 extern void imu_task(void *argument);
 extern void usb_task(void *argument);
@@ -175,9 +167,6 @@ void MX_FREERTOS_Init(void) {
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-
-  /* creation of logTask */
-  logTaskHandle = osThreadNew(log_task, NULL, &logTask_attributes);
 
   /* creation of ledTask */
   ledTaskHandle = osThreadNew(led_task, NULL, &ledTask_attributes);

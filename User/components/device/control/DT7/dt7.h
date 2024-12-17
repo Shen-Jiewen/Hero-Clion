@@ -70,7 +70,6 @@ typedef struct
 
 /* ----------------------- Internal Data ----------------------------------- */
 
-extern void dt7_init(UART_HandleTypeDef *huart, uint8_t *buff, uint32_t DataLength);
 extern void sbus_to_dt7(RC_ctrl_t *rc_ctrl, uint8_t *sbus_buf);
 extern RC_ctrl_t *get_dt7_point(void);
 

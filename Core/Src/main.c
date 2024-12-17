@@ -80,6 +80,11 @@ int main(void)
 
   /* USER CODE END 1 */
 
+  /* Enable the CPU Cache */
+
+  /* Enable I-Cache---------------------------------------------------------*/
+  SCB_EnableICache();
+
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -105,7 +110,6 @@ int main(void)
   MX_FDCAN1_Init();
   MX_FDCAN2_Init();
   MX_FDCAN3_Init();
-  MX_SPI6_Init();
   MX_USART1_UART_Init();
   MX_ADC1_Init();
   MX_ADC3_Init();
@@ -116,6 +120,7 @@ int main(void)
   MX_SPI2_Init();
   MX_TIM3_Init();
   MX_UART5_Init();
+  MX_SPI6_Init();
   /* USER CODE BEGIN 2 */
   MX_USB_DEVICE_Init();
   fdcan1_filter_init();

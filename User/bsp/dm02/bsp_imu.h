@@ -6,7 +6,6 @@
 #define DM_02_HERO_USER_BSP_DM02_BSP_IMU_H_
 
 #include "main.h"
-#include "cmsis_os.h"
 #include "struct_typedef.h"
 
 extern void imu_pwm_start(void);

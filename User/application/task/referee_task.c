@@ -27,6 +27,7 @@ _Noreturn void referee_task(void *argument){
 	init_referee_struct_data();
 	// 接收FIFO初始化
 	fifo_s_init(&referee_fifo,  referee_fifo_buf, REFEREE_FIFO_BUF_LENGTH);
+	// 串口初始化
 
 	while (1){
 		// 串口数据解包
@@ -35,7 +36,7 @@ _Noreturn void referee_task(void *argument){
 	}
 }
 
-static void referee_callback(UART_HandleTypeDef *huart, uint16_t Size)
+void referee_callback(UART_HandleTypeDef *huart, uint16_t Size)
 {
 	// 掉线检测
 	detect_hook(REFEREE_TOE);
