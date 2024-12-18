@@ -14,7 +14,6 @@
 #include "arm_math.h"
 #include "pid.h"
 #include "imu.h"
-#include "bsp_callback.h"
 
 //pitch speed close-loop PID params, max out and max iout
 //pitch 速度环 PID参数以及 PID最大输出，积分输出

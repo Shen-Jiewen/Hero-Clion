@@ -9,6 +9,13 @@
 #include "struct_typedef.h"
 #include "pid.h"
 
+typedef enum
+{
+	CAN_GIMBAL_ALL_ID = 0x1FF,
+	CAN_YAW_MOTOR_ID = 0x205,
+	CAN_PIT_MOTOR_ID = 0x206,
+} motor_6020_id_e;
+
 // 定义电机控制模式的枚举类型
 typedef enum
 {
