@@ -14,7 +14,6 @@
 #include "arm_math.h"
 #include "pid.h"
 #include "imu.h"
-#include "bsp_callback.h"
 
 //pitch speed close-loop PID params, max out and max iout
 //pitch 速度环 PID参数以及 PID最大输出，积分输出
@@ -166,7 +165,6 @@ typedef struct
 
 	// 通信接口定义
 	void (*CAN_cmd_gimbal)(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);
-	void (*CAN_rec_gimbal)(uint32_t can_id, const uint8_t* rx_data);
 } gimbal_control_t;
 
 extern void gimbal_init(gimbal_control_t *init);

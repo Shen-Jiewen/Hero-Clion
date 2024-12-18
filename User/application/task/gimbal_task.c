@@ -65,7 +65,6 @@ _Noreturn void gimbal_task(void* argument)
 					0);
 			}
 		}
-
 		osDelay(GIMBAL_CONTROL_TIME);
 	}
 }

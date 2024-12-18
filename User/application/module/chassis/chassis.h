@@ -12,8 +12,6 @@
 #include "dji_3508.h"
 #include "dt7.h"
 #include "detect.h"
-// 板载层
-#include "bsp_callback.h"
 // 库
 #include "pid.h"
 #include "user_lib.h"
@@ -144,10 +142,10 @@ typedef struct {
 	uint8_t gyroscape_flag;		//小陀螺开启标志位
 	uint8_t high_speed_flag;	//提速标志位
 	uint8_t auto_flag;			//自瞄标志位
+	uint8_t is_init;			//初始化标志位
 
 	// 通信接口定义
 	void (*CAN_cmd_chassis)(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);
-	void (*CAN_rec_chassis)(uint32_t can_id, const uint8_t* rx_data);
 } chassis_control_t;
 
 extern void chassis_init(chassis_control_t *chassis_move_init);

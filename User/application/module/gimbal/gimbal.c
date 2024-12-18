@@ -39,6 +39,9 @@ void gimbal_init(gimbal_control_t *init)
 	static const fp32 Pitch_relative_angle_pid[3] = {PITCH_ENCODE_RELATIVE_PID_KP, PITCH_ENCODE_RELATIVE_PID_KI, PITCH_ENCODE_RELATIVE_PID_KD};
 	static const fp32 Pitch_speed_pid[3] = {PITCH_SPEED_PID_KP, PITCH_SPEED_PID_KI, PITCH_SPEED_PID_KD};
 
+	// 初始化云台电机测量数据
+	init->gimbal_pitch_motor.gimbal_motor_measure = get_motor_6020_measure_point(0);
+	init->gimbal_yaw_motor.gimbal_motor_measure = get_motor_6020_measure_point(1);
 	// 获取陀螺仪数据和INS角度数据的指针
 	init->gimbal_INT_angle_point = get_INS_angle_point();  // 获取惯性导航系统（INS）角度数据指针
 	init->gimbal_INT_gyro_point = get_gyro_data_point();   // 获取陀螺仪数据指针
@@ -444,23 +447,6 @@ static void FDCAN_cmd_gimbal(int16_t motor1, int16_t motor2, int16_t motor3, int
 	}
 }
 
-static void FDCAN_rec_gimbal(uint32_t can_id, const uint8_t* rx_data)
-{
-	switch (can_id)
-	{
-	case CAN_PIT_MOTOR_ID:
-		get_motor_6020_measure((motor_6020_measure_t*)(&gimbal_control.gimbal_pitch_motor.gimbal_motor_measure), rx_data);
-		detect_hook(CHASSIS_MOTOR1_TOE);
-		break;
-	case CAN_YAW_MOTOR_ID:
-		get_motor_6020_measure((motor_6020_measure_t *)(&gimbal_control.gimbal_yaw_motor.gimbal_motor_measure), rx_data);
-		detect_hook(CHASSIS_MOTOR2_TOE);
-		break;
-	default:
-		break;
-	}
-}
-
 gimbal_control_t * get_gimbal_control_point(void)
 {
 	return &gimbal_control;
@@ -468,6 +454,5 @@ gimbal_control_t * get_gimbal_control_point(void)
 
 static gimbal_control_t gimbal_control = {
 	.CAN_cmd_gimbal = FDCAN_cmd_gimbal,
-	.CAN_rec_gimbal = FDCAN_rec_gimbal,
 };
 

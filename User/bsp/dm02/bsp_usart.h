@@ -5,7 +5,7 @@
  * @brief: DM02开发板串口驱动
  * @note: 串口驱动，支持阻塞、中断、DMA发送模式
  *
- * @copyright: Copyright (c) 2022 | basic_framework_MC02
+ * @copyright: Copyright (c) 2024
  * @license: MIT
  ******************************************************************************/
 
@@ -79,13 +79,5 @@ void usart_service_init(usart_instance_t *_instance);
  * @param mode 发送模式，可以选择阻塞模式、IT模式或DMA模式
  */
 void usart_send(usart_instance_t *_instance, uint8_t *send_buf, uint16_t send_size, usart_transfer_mode mode);
-
-/**
- * @brief 判断串口是否准备好，用于IT/DMA模式下的连续或异步发送
- *
- * @param _instance 要判断的串口实例
- * @return uint8_t 返回1表示串口准备好发送，返回0表示串口正在忙
- */
-uint8_t usart_is_ready(usart_instance_t *_instance);
 
 #endif // DM_02_HERO_USER_BSP_DM02_BSP_USART_H_

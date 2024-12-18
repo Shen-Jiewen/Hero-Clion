@@ -249,6 +249,7 @@ void chassis_init(chassis_control_t* chassis_move_init)
 	// 初始化PID参数
 	for (i = 0; i < 4; i++)
 	{
+		chassis_move_init->motor_chassis[i].motor_3508_measure = get_motor_3508_measure_point(i);
 		PID_init(&chassis_move_init->motor_speed_pid[i],
 			PID_POSITION,
 			motor_speed_pid,
@@ -272,6 +273,9 @@ void chassis_init(chassis_control_t* chassis_move_init)
 
 	chassis_move_init->vy_max_speed = NORMAL_MAX_CHASSIS_SPEED_Y;
 	chassis_move_init->vy_min_speed = -NORMAL_MAX_CHASSIS_SPEED_Y;
+
+	// 更新标志位
+	chassis_control.is_init = 1;
 
 	//更新一下数据
 	chassis_feedback_update(chassis_move_init);
@@ -332,11 +336,14 @@ void chassis_mode_change_control_transit(chassis_control_t* chassis_move_transit
   */
 void chassis_feedback_update(chassis_control_t* chassis_move_update)
 {
+	if(chassis_move_update == NULL)
+	{
+		return;
+	}
 	uint8_t i = 0;
 	for (i = 0; i < 4; i++)
 	{
 		//update motor speed, accel is differential of speed PID
-		//更新电机速度，加速度是速度的PID微分
 		chassis_move_update->motor_chassis[i].speed =
 			CHASSIS_MOTOR_RPM_TO_VECTOR_SEN * (fp32)chassis_move_update->motor_chassis[i].motor_3508_measure->speed_rpm;
 		chassis_move_update->motor_chassis[i].accel =
@@ -629,31 +636,6 @@ static void FDCAN_cmd_chassis(int16_t motor1, int16_t motor2, int16_t motor3, in
 	}
 }
 
-static void FDCAN_rec_chassis(uint32_t can_id, const uint8_t* rx_data)
-{
-	switch (can_id)
-	{
-	case CAN_3508_M1_ID:
-		get_motor_3508_measure((motor_3508_measure_t*)(&chassis_control.motor_chassis[0].motor_3508_measure), rx_data);
-		detect_hook(CHASSIS_MOTOR1_TOE);
-		break;
-	case CAN_3508_M2_ID:
-		get_motor_3508_measure((motor_3508_measure_t*)(&chassis_control.motor_chassis[1].motor_3508_measure), rx_data);
-		detect_hook(CHASSIS_MOTOR2_TOE);
-		break;
-	case CAN_3508_M3_ID:
-		get_motor_3508_measure((motor_3508_measure_t*)(&chassis_control.motor_chassis[2].motor_3508_measure), rx_data);
-		detect_hook(CHASSIS_MOTOR3_TOE);
-		break;
-	case CAN_3508_M4_ID:
-		get_motor_3508_measure((motor_3508_measure_t*)(&chassis_control.motor_chassis[3].motor_3508_measure), rx_data);
-		detect_hook(CHASSIS_MOTOR4_TOE);
-		break;
-	default:
-		break;
-	}
-}
-
 chassis_control_t* get_chassis_control_point(void)
 {
 	return &chassis_control;
@@ -661,5 +643,4 @@ chassis_control_t* get_chassis_control_point(void)
 
 static chassis_control_t chassis_control = {
 	.CAN_cmd_chassis = FDCAN_cmd_chassis,
-	.CAN_rec_chassis = FDCAN_rec_chassis,
 };

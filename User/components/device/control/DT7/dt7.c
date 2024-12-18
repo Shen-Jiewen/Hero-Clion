@@ -138,3 +138,5 @@ void sbus_to_dt7(RC_ctrl_t *rc_ctrl, uint8_t *sbus_buf)
 	rc_ctrl->rc.s[0] = ((sbus_buf[5] >> 4) & 0x0C) >> 2;
 	rc_ctrl->rc.s[1] = (sbus_buf[5] >> 4) & 0x03;
 }
+
+
