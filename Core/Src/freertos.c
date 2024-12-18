@@ -110,6 +110,13 @@ const osThreadAttr_t gimbalTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityRealtime,
 };
+/* Definitions for buzzerTask */
+osThreadId_t buzzerTaskHandle;
+const osThreadAttr_t buzzerTask_attributes = {
+  .name = "buzzerTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for imuBinarySem01 */
 osSemaphoreId_t imuBinarySem01Handle;
 const osSemaphoreAttr_t imuBinarySem01_attributes = {
@@ -130,6 +137,7 @@ extern void chassis_task(void *argument);
 extern void detect_task(void *argument);
 extern void remote_control_task(void *argument);
 extern void gimbal_task(void *argument);
+extern void buzzer_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -191,6 +199,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of gimbalTask */
   gimbalTaskHandle = osThreadNew(gimbal_task, NULL, &gimbalTask_attributes);
+
+  /* creation of buzzerTask */
+  buzzerTaskHandle = osThreadNew(buzzer_task, NULL, &buzzerTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */

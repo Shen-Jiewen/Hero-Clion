@@ -12,7 +12,6 @@ uint8_t blue = 1;
 
 _Noreturn void led_task(void* argument)
 {
-	// 循环执行LED控制任务
 	while (1)
 	{
 		// 调用WS2812_Ctrl函数控制LED的颜色
