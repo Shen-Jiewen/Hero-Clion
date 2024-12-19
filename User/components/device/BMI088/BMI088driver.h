@@ -87,16 +87,34 @@ enum
     BMI088_NO_SENSOR = 0xFF,
 };
 
-
-
-
-
 extern uint8_t BMI088_init(void);
 extern uint8_t bmi088_accel_init(void);
 extern uint8_t bmi088_gyro_init(void);
 
 extern void BMI088_read(float gyro[3], float accel[3], float *temperate);
 
+/**
+ * @brief:       BMI088_read_accel(float accel[3])
+ * @param:       accel - 加速度计数据数组 (x, y, z)
+ * @retval:      void
+ * @details:     读取BMI088加速度计数据
+ */
+extern void BMI088_read_accel(float accel[3]);
 
+/**
+ * @brief:       BMI088_read_gyro(float gyro[3])
+ * @param:       gyro - 陀螺仪数据数组 (x, y, z)
+ * @retval:      void
+ * @details:     读取BMI088陀螺仪数据
+ */
+extern void BMI088_read_gyro(float gyro[3]);
+
+/**
+ * @brief:       BMI088_read_temperature(float *temperate)
+ * @param:       temperate - 温度数据指针
+ * @retval:      void
+ * @details:     读取BMI088温度数据
+ */
+extern void BMI088_read_temperature(float *temperate);
 
 #endif

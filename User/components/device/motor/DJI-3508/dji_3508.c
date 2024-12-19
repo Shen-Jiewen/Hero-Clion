@@ -85,7 +85,6 @@ void motor_3505_can_callback(uint32_t can_id, const uint8_t* rx_data)
 		motor_3508_measure_parse(&motor_3508_measure[7], rx_data); // 解析电机8的数据
 		break;
 	default:
-		Error_Handler(); // 调用错误处理函数
 		break;
 	}
 }

@@ -43,8 +43,8 @@ void gimbal_init(gimbal_control_t *init)
 	init->gimbal_pitch_motor.gimbal_motor_measure = get_motor_6020_measure_point(0);
 	init->gimbal_yaw_motor.gimbal_motor_measure = get_motor_6020_measure_point(1);
 	// 获取陀螺仪数据和INS角度数据的指针
-	init->gimbal_INT_angle_point = get_INS_angle_point();  // 获取惯性导航系统（INS）角度数据指针
-	init->gimbal_INT_gyro_point = get_gyro_data_point();   // 获取陀螺仪数据指针
+//	init->gimbal_INT_angle_point = get_INS_angle_point();  // 获取惯性导航系统（INS）角度数据指针
+//	init->gimbal_INT_gyro_point = get_gyro_data_point();   // 获取陀螺仪数据指针
 
 	// 获取遥控器数据指针
 	init->gimbal_rc_ctrl = get_dt7_point();  // 获取遥控器数据指针

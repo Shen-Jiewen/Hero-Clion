@@ -161,6 +161,7 @@ uint8_t BMI088_init(void)
     BMI088_GPIO_init();
     BMI088_com_init();
 
+
     error |= bmi088_accel_init();
     error |= bmi088_gyro_init();
 
@@ -178,6 +179,21 @@ uint8_t bmi088_accel_init(void)
 {
     uint8_t res = 0;
     uint8_t write_reg_num = 0;
+
+	// config interrupt pin
+	/********************************* @author Javen | WDR *********************************/
+	// 配置加速度计的 INT1 引脚
+	uint8_t int1_config = 0x00; // 默认值
+	int1_config |= (1 << 3);    // 设置 INT1 为输出
+	int1_config |= (0 << 2);    // 推挽模式
+	int1_config |= (0 << 1);    // 低电平激活
+	BMI088_accel_write_single_reg(0x53, int1_config); // 写入 INT1_IO_CONF 寄存器
+
+	// 将加速度计的数据准备好中断映射到 INT1
+	uint8_t int_map_data = 0x00;
+	int_map_data |= (1 << 2);    // 映射到 INT1
+	BMI088_accel_write_single_reg(0x58, int_map_data); // 写入 INT1_INT2_MAP_DATA 寄存器
+	/********************************* @author Javen | WDR *********************************/
 
     //check commiunication
     BMI088_accel_read_single_reg(BMI088_ACC_CHIP_ID, res);
@@ -230,6 +246,19 @@ uint8_t bmi088_gyro_init(void)
 {
     uint8_t write_reg_num = 0;
     uint8_t res = 0;
+
+	// config interrupt pin
+	/********************************* @author Javen | WDR *********************************/
+	// 配置陀螺仪的 INT3 引脚
+	uint8_t int3_config = 0x00; // 默认值
+	int3_config |= (0 << 1);    // 推挽模式
+	int3_config |= (0 << 0);    // 低电平激活
+	BMI088_gyro_write_single_reg(0x16, int3_config); // 写入 INT3_INT4_IO_CONF 寄存器
+
+	// 将陀螺仪的数据准备好中断映射到 INT3
+	uint8_t int3_map_data = 0x01; // 映射到 INT3
+	BMI088_gyro_write_single_reg(0x18, int3_map_data); // 写入 INT3_INT4_IO_MAP 寄存器
+	/********************************* @author Javen | WDR *********************************/
 
     //check commiunication
     BMI088_gyro_read_single_reg(BMI088_GYRO_CHIP_ID, res);
@@ -315,6 +344,85 @@ void BMI088_read(float gyro[3], float accel[3], float *temperate)
 
     *temperate = bmi088_raw_temp * BMI088_TEMP_FACTOR + BMI088_TEMP_OFFSET;
 }
+
+/**
+ * @brief:       BMI088_read_accel(float accel[3])
+ * @param:       accel - 加速度计数据数组 (x, y, z)
+ * @retval:      void
+ * @details:     读取BMI088加速度计数据
+ */
+void BMI088_read_accel(float accel[3])
+{
+	uint8_t buf[6] = {0};
+	int16_t bmi088_raw_temp;
+
+	// 读取加速度计数据
+	BMI088_accel_read_muli_reg(BMI088_ACCEL_XOUT_L, buf, 6);
+
+	// 解析加速度计数据
+	bmi088_raw_temp = (int16_t)((buf[1]) << 8) | buf[0];
+	accel[0] = bmi088_raw_temp * BMI088_ACCEL_SEN;
+
+	bmi088_raw_temp = (int16_t)((buf[3]) << 8) | buf[2];
+	accel[1] = bmi088_raw_temp * BMI088_ACCEL_SEN;
+
+	bmi088_raw_temp = (int16_t)((buf[5]) << 8) | buf[4];
+	accel[2] = bmi088_raw_temp * BMI088_ACCEL_SEN;
+}
+/**
+ * @brief:       BMI088_read_gyro(float gyro[3])
+ * @param:       gyro - 陀螺仪数据数组 (x, y, z)
+ * @retval:      void
+ * @details:     读取BMI088陀螺仪数据
+ */
+void BMI088_read_gyro(float gyro[3])
+{
+	uint8_t buf[8] = {0};
+	int16_t bmi088_raw_temp;
+
+	// 读取陀螺仪数据
+	BMI088_gyro_read_muli_reg(BMI088_GYRO_CHIP_ID, buf, 8);
+
+	// 检查陀螺仪芯片ID
+	if (buf[0] == BMI088_GYRO_CHIP_ID_VALUE)
+	{
+		// 解析陀螺仪数据
+		bmi088_raw_temp = (int16_t)((buf[3]) << 8) | buf[2];
+		gyro[0] = bmi088_raw_temp * BMI088_GYRO_SEN;
+
+		bmi088_raw_temp = (int16_t)((buf[5]) << 8) | buf[4];
+		gyro[1] = bmi088_raw_temp * BMI088_GYRO_SEN;
+
+		bmi088_raw_temp = (int16_t)((buf[7]) << 8) | buf[6];
+		gyro[2] = bmi088_raw_temp * BMI088_GYRO_SEN;
+	}
+}
+
+/**
+ * @brief:       BMI088_read_temperature(float *temperate)
+ * @param:       temperate - 温度数据指针
+ * @retval:      void
+ * @details:     读取BMI088温度数据
+ */
+void BMI088_read_temperature(float *temperate)
+{
+	uint8_t buf[2] = {0};
+	int16_t bmi088_raw_temp;
+
+	// 读取温度数据
+	BMI088_accel_read_muli_reg(BMI088_TEMP_M, buf, 2);
+
+	// 解析温度数据
+	bmi088_raw_temp = (int16_t)((buf[0] << 3) | (buf[1] >> 5));
+
+	if (bmi088_raw_temp > 1023)
+	{
+		bmi088_raw_temp -= 2048;
+	}
+
+	*temperate = bmi088_raw_temp * BMI088_TEMP_FACTOR + BMI088_TEMP_OFFSET;
+}
+
 
 #if defined(BMI088_USE_SPI)
 /**
