@@ -113,7 +113,7 @@ static void buzzer_warn_error(uint8_t error_count)
 		tick++;
 
 		if (tick < 50)
-		{
+		{ // NOLINT(*-branch-clone)
 			BUZZER_OFF() // 关闭蜂鸣器
 		}
 		else if (tick < 100)

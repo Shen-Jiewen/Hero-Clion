@@ -66,7 +66,6 @@ void motor_6020_can_callback(uint32_t can_id, const uint8_t* rx_data)
 		detect_hook(PITCH_GIMBAL_MOTOR_TOE); // 调用检测钩子函数
 		break;
 	default:
-		Error_Handler(); // 调用错误处理函数
 		break;
 	}
 }
