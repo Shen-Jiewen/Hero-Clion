@@ -20,6 +20,7 @@ _Noreturn void imu_task(void *argument) {
 			imu_calibration_init(imu_control);
 			imu_ahrs_update(imu_control);
 			imu_statistics_update(imu_control);
+			imu_temperature_control(imu_control);
 		}
 	}
 }

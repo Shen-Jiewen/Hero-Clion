@@ -73,6 +73,7 @@ void imu_hardware_init(void);
 void imu_calibration_init(imu_control_t *imu_control);
 void imu_data_update(imu_control_t *imu_control);
 void imu_ahrs_update(imu_control_t *imu_control);
+void imu_temperature_control(imu_control_t *imu_control);
 void imu_statistics_update(imu_control_t *imu_control);
 
 #endif // DM_02_HERO_USER_APPLICATION_MODULE_IMU_IMU_H_

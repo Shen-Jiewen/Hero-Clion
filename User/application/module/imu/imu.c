@@ -43,6 +43,10 @@ void imu_control_init(imu_control_t *imu_control) {
 		.recoveryTriggerPeriod = 2 * SAMPLE_RATE
 	};
 	FusionAhrsSetSettings(&imu_control->ahrs, &settings);
+
+	// 初始化温度PID控制器
+	fp32 PID_params[3] = {30.0f, 0.1f, 0.0f}; // Kp, Ki, Kd
+	PID_init(&imu_control->temp_pid, PID_POSITION, PID_params, 100.0f, 50.0f);
 }
 
 /**
@@ -125,6 +129,29 @@ void imu_statistics_update(imu_control_t *imu_control) {
 		imu_control->last_second_time = current_time;
 		BMI088_read_temperature(&imu_control->temperature);
 	}
+}
+
+/**
+ * @brief 使用PID控制IMU温度在40度
+ *
+ * @param imu_control IMU控制结构体指针
+ */
+void imu_temperature_control(imu_control_t *imu_control) {
+	// 目标温度
+	const float target_temperature = 40.0f;
+
+	// 使用PID控制器计算PWM占空比
+	float pwm_duty_cycle = PID_calc(&imu_control->temp_pid, imu_control->temperature, target_temperature);
+
+	// 限制PWM占空比在0到100之间
+	if (pwm_duty_cycle < 0.0f) {
+		pwm_duty_cycle = 0.0f;
+	} else if (pwm_duty_cycle > 100.0f) {
+		pwm_duty_cycle = 100.0f;
+	}
+
+	// 更新PWM占空比
+	BSP_PWM_SetDutyCycle(&htim3, PWM_CHANNEL_4, (uint16_t)pwm_duty_cycle);
 }
 
 /**
