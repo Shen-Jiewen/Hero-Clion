@@ -60,7 +60,7 @@ void BSP_GPIO_Init(BSP_GPIO_InitTypeDef* gpio_config)
 	// 如果模式为外部中断，配置中断
 	if (gpio_config->mode == BSP_GPIO_MODE_EXTI)
 	{
-		// @TODO 因为中断函数中会调用到FreeRTOS的ISR的API, 所以需要配置优先级小于FreeRTOS的最大优先级, 以免ISR中调用FreeRTOS的API导致优先级错误
+		// @TODO 如果中断函数中调用到FreeRTOS的ISR的API, 需要配置优先级小于FreeRTOS的最大优先级, 以免ISR中调用FreeRTOS的API导致优先级错误
 		HAL_NVIC_SetPriority(gpio_config->irqn, 10, 0);
 		HAL_NVIC_EnableIRQ(gpio_config->irqn);
 	}

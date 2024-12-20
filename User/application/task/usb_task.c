@@ -32,7 +32,7 @@ _Noreturn void usb_task(void* argument){
 		vofa_send_data(12, motor0->temperature);
 		vofa_send_data(13, motor0->speed_rpm);
 		vofa_send_data(14, motor0->given_current);
-		vofa_send_data(15, imu_control->solves_per_second);
+		vofa_send_data(15, imu_control->temperature);
 		vofa_sendframetail();
 		osDelay(10);
 	}
