@@ -39,7 +39,7 @@ static void chassis_no_move_control(fp32* vx_set,
   * @param[in]      chassis_move_rc_to_vector: 底盘控制数据指针
   * @retval         none
   */
-static void chassis_infantry_follow_gimbal_yaw_control(fp32* vx_set,
+static void chassis_follow_gimbal_yaw_control(fp32* vx_set,
 	fp32* vy_set,
 	fp32* angle_set,
 	chassis_control_t* chassis_move_rc_to_vector);
@@ -106,7 +106,7 @@ void chassis_behaviour_mode_set(chassis_control_t* chassis_move_mode)
 	{
 		// 如果开关处于中间，检查是否按下Shift键来切换模式
 		if ((chassis_move_mode->chassis_RC->key.v & KEY_PRESSED_OFFSET_SHIFT)
-			&& last_chassis_behaviour_mode == CHASSIS_INFANTRY_FOLLOW_GIMBAL_YAW)
+			&& last_chassis_behaviour_mode == CHASSIS_FOLLOW_GIMBAL_YAW)
 		{
 			// 如果当前模式是步兵跟随云台模式，按下Shift后切换到陀螺模式
 			chassis_behaviour_mode = CHASSIS_GYRO_MODE;
@@ -115,7 +115,7 @@ void chassis_behaviour_mode_set(chassis_control_t* chassis_move_mode)
 			&& last_chassis_behaviour_mode == CHASSIS_GYRO_MODE)
 		{
 			// 如果当前模式是陀螺模式，按下Shift后切换到步兵跟随云台模式
-			chassis_behaviour_mode = CHASSIS_INFANTRY_FOLLOW_GIMBAL_YAW;
+			chassis_behaviour_mode = CHASSIS_FOLLOW_GIMBAL_YAW;
 		}
 	}
 
@@ -136,7 +136,7 @@ void chassis_behaviour_mode_set(chassis_control_t* chassis_move_mode)
 //		// 底盘不移动模式，底盘锁死不允许移动 | 小陀螺模式，底盘旋转不跟随云台
 //		chassis_move_mode->chassis_mode = CHASSIS_VECTOR_NO_FOLLOW_YAW;
 //	}
-	else if (chassis_behaviour_mode == CHASSIS_INFANTRY_FOLLOW_GIMBAL_YAW)
+	else if (chassis_behaviour_mode == CHASSIS_FOLLOW_GIMBAL_YAW)
 	{
 		// 底盘跟随云台模式，底盘与云台同步
 		chassis_move_mode->chassis_mode = CHASSIS_VECTOR_FOLLOW_GIMBAL_YAW;
@@ -148,11 +148,13 @@ void chassis_behaviour_control_set(fp32* vx_set,
 	fp32* angle_set,
 	chassis_control_t* chassis_move_rc_to_vector)
 {
+	// 检查输入指针是否为空
 	if (vx_set == NULL || vy_set == NULL || angle_set == NULL || chassis_move_rc_to_vector == NULL)
 	{
 		return;
 	}
 
+	// 根据底盘行为模式设置底盘控制
 	if (chassis_behaviour_mode == CHASSIS_ZERO_FORCE)
 	{
 		chassis_zero_force_control(vx_set, vy_set, angle_set, chassis_move_rc_to_vector);
@@ -161,9 +163,9 @@ void chassis_behaviour_control_set(fp32* vx_set,
 	{
 		chassis_no_move_control(vx_set, vy_set, angle_set, chassis_move_rc_to_vector);
 	}
-	else if (chassis_behaviour_mode == CHASSIS_INFANTRY_FOLLOW_GIMBAL_YAW)
+	else if (chassis_behaviour_mode == CHASSIS_FOLLOW_GIMBAL_YAW)
 	{
-		chassis_infantry_follow_gimbal_yaw_control(vx_set, vy_set, angle_set, chassis_move_rc_to_vector);
+		chassis_follow_gimbal_yaw_control(vx_set, vy_set, angle_set, chassis_move_rc_to_vector);
 	}
 	else if (chassis_behaviour_mode == CHASSIS_NO_FOLLOW_YAW)
 	{
@@ -224,12 +226,12 @@ static void chassis_no_move_control(fp32* vx_set,
   * @param[in]      chassis_move_rc_to_vector: 底盘控制数据指针
   * @retval         none
   */
-static void chassis_infantry_follow_gimbal_yaw_control(fp32* vx_set,
+static void chassis_follow_gimbal_yaw_control(fp32* vx_set,
 	fp32* vy_set,
 	fp32* angle_set,
 	chassis_control_t* chassis_move_rc_to_vector)
 {
-	// 获取底盘的纵向和横向速度（去掉摇摆相关计算）
+	// 获取底盘的纵向和横向速度
 	chassis_rc_to_control_vector(vx_set, vy_set, chassis_move_rc_to_vector);
 
 	// 与云台的相对角度设置为0

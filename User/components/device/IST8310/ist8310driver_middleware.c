@@ -32,7 +32,7 @@ void ist8310_GPIO_init(void)
 	BSP_GPIO_InitTypeDef gpio_config = {
 		.port = RSTN_IST8310_GPIO_Port,
 		.pin = RSTN_IST8310_Pin,
-		.mode = BSP_GPIO_MODE_OUTPUT,
+		.mode = BSP_GPIO_PULLUP,
 		.pull = GPIO_NOPULL,
 		.speed = GPIO_SPEED_FREQ_LOW
 	};

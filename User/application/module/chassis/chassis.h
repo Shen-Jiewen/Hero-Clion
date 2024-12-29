@@ -60,7 +60,7 @@
 #define CHASSIS_CONTROL_TIME_MS 2
 //底盘任务控制间隔 0.002s
 #define CHASSIS_CONTROL_TIME 0.002f
-//底盘任务控制频率，尚未使用这个宏
+//底盘任务控制频率 500Hz
 #define CHASSIS_CONTROL_FREQUENCE 500.0f
 //底盘3508最大can发送电流值
 #define MAX_MOTOR_CAN_CURRENT 16000.0f
@@ -142,7 +142,6 @@ typedef struct {
 	uint8_t gyroscape_flag;		//小陀螺开启标志位
 	uint8_t high_speed_flag;	//提速标志位
 	uint8_t auto_flag;			//自瞄标志位
-	uint8_t is_init;			//初始化标志位
 
 	// 通信接口定义
 	void (*CAN_cmd_chassis)(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);

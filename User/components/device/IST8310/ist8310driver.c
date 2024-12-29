@@ -21,19 +21,20 @@
 #include "ist8310driver.h"
 #include "ist8310driver_middleware.h"
 
-#define MAG_SEN 0.3f //转换成 uT
+#define MAG_SEN 0.3f 					//转换成 uT
 
-#define IST8310_WHO_AM_I 0x00       //ist8310 who am I 寄存器
-#define IST8310_WHO_AM_I_VALUE 0x10 //设备 ID
+#define IST8310_WHO_AM_I 0x00       	//ist8310 who am I 寄存器
+#define IST8310_WHO_AM_I_VALUE 0x10 	//设备 ID
 
-#define IST8310_WRITE_REG_NUM 4 //IST8310需要设置的寄存器数目
+#define IST8310_WRITE_REG_NUM 4 		//IST8310需要设置的寄存器数目
 
 static const uint8_t ist8310_write_reg_data_error[IST8310_WRITE_REG_NUM][3] =
 	{
-		{0x0B, 0x08, 0x01},
-		{0x41, 0x09, 0x02},
-		{0x42, 0xC0, 0x03},
-		{0x0A, 0x0B, 0x04}};
+		{ 0x0A, 0x0B, 0x01 },		// 配置CTRL1寄存器，设置为连续测量模式，适用于实时数据采集
+		{ 0x0B, 0x0C, 0x02 },		// 配置CTRL2寄存器，设置为中断模式，中断电平为高电平
+		{ 0x41, 0x12, 0x03 },		// 配置AVGCNTL寄存器，设置为四次采样，提高采样精度
+		{ 0x42, 0xC0, 0x04 },		// 未知寄存器，设置为默认值
+		};
 
 uint8_t ist8310_init(void)
 {
@@ -59,7 +60,8 @@ uint8_t ist8310_init(void)
 	//set mpu6500 sonsor config and check
 	for (writeNum = 0; writeNum < IST8310_WRITE_REG_NUM; writeNum++)
 	{
-		ist8310_IIC_write_single_reg(ist8310_write_reg_data_error[writeNum][0], ist8310_write_reg_data_error[writeNum][1]);
+		ist8310_IIC_write_single_reg(ist8310_write_reg_data_error[writeNum][0],
+			ist8310_write_reg_data_error[writeNum][1]);
 		ist8310_delay_ms(wait_time);
 		res = ist8310_IIC_read_single_reg(ist8310_write_reg_data_error[writeNum][0]);
 		ist8310_delay_ms(wait_time);
@@ -72,7 +74,7 @@ uint8_t ist8310_init(void)
 	return IST8310_NO_ERROR;
 }
 
-void ist8310_read_over(uint8_t *status_buf, ist8310_real_data_t *ist8310_real_data)
+void ist8310_read_over(const uint8_t* status_buf, ist8310_real_data_t* ist8310_real_data)
 {
 
 	if (status_buf[0] & 0x01)

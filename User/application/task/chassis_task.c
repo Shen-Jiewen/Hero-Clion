@@ -8,7 +8,7 @@
 
 chassis_control_t *chassis_control;
 
-_Noreturn void chassis_task(void* argument)
+_Noreturn void chassis_task(__attribute__((unused)) void* argument)
 {
 	// 空闲一段时间
 	vTaskDelay(CHASSIS_TASK_INIT_TIME);

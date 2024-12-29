@@ -96,7 +96,7 @@ inline static void chassis_no_follow_yaw(fp32 vx_set,
 	fp32 angle_set,
 	chassis_control_t* chassis_move_control);
 
-inline static void chassis_vector_to_mecanum_wheel_speed(const fp32 vx_set, const fp32 vy_set, const fp32 wz_set, fp32 wheel_speed[4]);
+inline static void chassis_vector_to_mecanum_wheel_speed(fp32 vx_set, fp32 vy_set, fp32 wz_set, fp32 wheel_speed[4]);
 
 /**
   * @brief          根据遥控器通道值，计算纵向和横移速度
@@ -114,7 +114,8 @@ void chassis_rc_to_control_vector(fp32* vx_set, fp32* vy_set, chassis_control_t*
 		return;
 	}
 
-	int16_t vx_channel = 0, vy_channel = 0;      // 初始化通道值
+	// 初始化通道值
+	int16_t vx_channel = 0, vy_channel = 0;
 	fp32 vx_set_channel = 0.0f, vy_set_channel = 0.0f;
 
 	// 应用死区限制
@@ -219,24 +220,22 @@ inline static void apply_smooth_control(chassis_control_t* chassis_move_rc_to_ve
   */
 void chassis_init(chassis_control_t* chassis_move_init)
 {
+	// 检查输入指针是否为空
 	if (chassis_move_init == NULL)
 	{
 		return;
 	}
 
-	//chassis motor speed PID
 	//底盘速度环pid值
 	const static fp32
 		motor_speed_pid[3] = { M3505_MOTOR_SPEED_PID_KP, M3505_MOTOR_SPEED_PID_KI, M3505_MOTOR_SPEED_PID_KD };
 
-	//chassis angle PID
 	//底盘角度pid值
 	const static fp32 chassis_yaw_pid[3] =
 		{ CHASSIS_FOLLOW_GIMBAL_PID_KP, CHASSIS_FOLLOW_GIMBAL_PID_KI, CHASSIS_FOLLOW_GIMBAL_PID_KD };
 
 	const static fp32 chassis_x_order_filter[1] = { CHASSIS_ACCEL_X_NUM };
 	const static fp32 chassis_y_order_filter[1] = { CHASSIS_ACCEL_Y_NUM };
-	uint8_t i;
 
 	//底盘开机状态为原始
 	chassis_move_init->chassis_mode = CHASSIS_VECTOR_RAW;
@@ -247,7 +246,7 @@ void chassis_init(chassis_control_t* chassis_move_init)
 //	chassis_move_init->chassis_pitch_motor = get_pitch_motor_point();
 
 	// 初始化PID参数
-	for (i = 0; i < 4; i++)
+	for (uint8_t i = 0; i < 4; i++)
 	{
 		chassis_move_init->motor_chassis[i].motor_3508_measure = get_motor_3508_measure_point(i);
 		PID_init(&chassis_move_init->motor_speed_pid[i],
@@ -270,12 +269,8 @@ void chassis_init(chassis_control_t* chassis_move_init)
 	//最大 最小速度
 	chassis_move_init->vx_max_speed = NORMAL_MAX_CHASSIS_SPEED_X;
 	chassis_move_init->vx_min_speed = -NORMAL_MAX_CHASSIS_SPEED_X;
-
 	chassis_move_init->vy_max_speed = NORMAL_MAX_CHASSIS_SPEED_Y;
 	chassis_move_init->vy_min_speed = -NORMAL_MAX_CHASSIS_SPEED_Y;
-
-	// 更新标志位
-	chassis_control.is_init = 1;
 
 	//更新一下数据
 	chassis_feedback_update(chassis_move_init);
@@ -303,11 +298,13 @@ void chassis_set_mode(chassis_control_t* chassis_move_mode)
   */
 void chassis_mode_change_control_transit(chassis_control_t* chassis_move_transit)
 {
+	// 检查输入指针是否为空
 	if (chassis_move_transit == NULL)
 	{
 		return;
 	}
 
+	// 模式未改变
 	if (chassis_move_transit->last_chassis_mode == chassis_move_transit->chassis_mode)
 	{
 		return;
@@ -319,6 +316,7 @@ void chassis_mode_change_control_transit(chassis_control_t* chassis_move_transit
 	{
 		chassis_move_transit->chassis_relative_angle_set = 0.0f;
 	}
+
 		//切入不跟随云台模式
 	else if ((chassis_move_transit->last_chassis_mode != CHASSIS_VECTOR_NO_FOLLOW_YAW)
 		&& chassis_move_transit->chassis_mode == CHASSIS_VECTOR_NO_FOLLOW_YAW)
@@ -326,6 +324,7 @@ void chassis_mode_change_control_transit(chassis_control_t* chassis_move_transit
 		chassis_move_transit->chassis_yaw_set = chassis_move_transit->chassis_yaw;
 	}
 
+	// 更新模式
 	chassis_move_transit->last_chassis_mode = chassis_move_transit->chassis_mode;
 }
 
@@ -336,14 +335,16 @@ void chassis_mode_change_control_transit(chassis_control_t* chassis_move_transit
   */
 void chassis_feedback_update(chassis_control_t* chassis_move_update)
 {
-	if(chassis_move_update == NULL)
+	// 检查输入指针是否为空
+	if (chassis_move_update == NULL)
 	{
 		return;
 	}
-	uint8_t i = 0;
-	for (i = 0; i < 4; i++)
+
+	// 更新电机速度
+	for (uint8_t i = 0; i < 4; i++)
 	{
-		//update motor speed, accel is differential of speed PID
+		// 更新电机速度，加速度是速度PID的微分
 		chassis_move_update->motor_chassis[i].speed =
 			CHASSIS_MOTOR_RPM_TO_VECTOR_SEN * (fp32)chassis_move_update->motor_chassis[i].motor_3508_measure->speed_rpm;
 		chassis_move_update->motor_chassis[i].accel =
@@ -372,6 +373,7 @@ void chassis_feedback_update(chassis_control_t* chassis_move_update)
  */
 void chassis_set_control(chassis_control_t* chassis_move_control)
 {
+	// 检查输入指针是否为空
 	if (chassis_move_control == NULL)
 	{
 		return;
@@ -387,11 +389,9 @@ void chassis_set_control(chassis_control_t* chassis_move_control)
 	case CHASSIS_VECTOR_FOLLOW_GIMBAL_YAW:
 		chassis_follow_gimbal_yaw(vx_set, vy_set, angle_set, chassis_move_control);
 		break;
-
 	case CHASSIS_VECTOR_NO_FOLLOW_YAW:
 		chassis_no_follow_yaw(vx_set, vy_set, angle_set, chassis_move_control);
 		break;
-
 	case CHASSIS_VECTOR_RAW:
 		chassis_raw_mode(vx_set, vy_set, angle_set, chassis_move_control);
 		break;
@@ -408,7 +408,7 @@ void chassis_set_control(chassis_control_t* chassis_move_control)
  */
 static void chassis_follow_gimbal_yaw(fp32 vx_set, fp32 vy_set, fp32 angle_set, chassis_control_t* chassis_move_control)
 {
-	fp32 sin_yaw = 0.0f, cos_yaw = 0.0f;
+	fp32 sin_yaw, cos_yaw;
 	// 旋转控制底盘速度方向，保证前进方向是云台方向
 	sin_yaw = sinf(-chassis_move_control->chassis_yaw_motor->relative_angle);
 	cos_yaw = sinf(-chassis_move_control->chassis_yaw_motor->relative_angle);
@@ -445,8 +445,9 @@ static void chassis_no_follow_yaw(fp32 vx_set, fp32 vy_set, fp32 angle_set, chas
 	vx_set /= CHASSIS_VX_RC_SEN;
 	vy_set /= -CHASSIS_VY_RC_SEN;
 
+	// 计算速度向量的模长
 	fp32 mov_mag = (fp32)sqrt(vx_set * vx_set + vy_set * vy_set);
-	fp32 relative_angle = 0.0f;
+	fp32 relative_angle;
 
 	// 计算目标相对角度
 	relative_angle =
@@ -456,8 +457,8 @@ static void chassis_no_follow_yaw(fp32 vx_set, fp32 vy_set, fp32 angle_set, chas
 	loop_fp32_constrain(relative_angle, 0, 2 * PI);
 
 	// 计算新的 vx_set 和 vy_set
-	vx_set = mov_mag * sin(relative_angle) * CHASSIS_VX_RC_SEN;
-	vy_set = mov_mag * cos(relative_angle) * -CHASSIS_VY_RC_SEN;
+	vx_set = mov_mag * sinf(relative_angle) * CHASSIS_VX_RC_SEN;
+	vy_set = mov_mag * cosf(relative_angle) * -CHASSIS_VY_RC_SEN;
 
 	// 设置角速度
 	chassis_move_control->wz_set = angle_set;
@@ -530,11 +531,11 @@ static fp32 calculate_relative_angle(fp32 vx_set, fp32 vy_set, fp32 mov_mag, fp3
   * @param[out]     chassis_move_control_loop:"chassis_control_t"变量指针.
   * @retval         none
   */
-void chassis_control_loop(chassis_control_t *chassis_move_control_loop)
+void chassis_control_loop(chassis_control_t* chassis_move_control_loop)
 {
-	fp32 max_vector = 0.0f, vector_rate = 0.0f;
-	fp32 temp = 0.0f;
-	fp32 wheel_speed[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+	fp32 max_vector = 0.0f, vector_rate;
+	fp32 temp;
+	fp32 wheel_speed[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
 	uint8_t i = 0;
 
 	//麦轮运动分解
@@ -575,13 +576,16 @@ void chassis_control_loop(chassis_control_t *chassis_move_control_loop)
 	//计算pid
 	for (i = 0; i < 4; i++)
 	{
-		PID_calc(&chassis_move_control_loop->motor_speed_pid[i], chassis_move_control_loop->motor_chassis[i].speed, chassis_move_control_loop->motor_chassis[i].speed_set);
+		PID_calc(&chassis_move_control_loop->motor_speed_pid[i],
+			chassis_move_control_loop->motor_chassis[i].speed,
+			chassis_move_control_loop->motor_chassis[i].speed_set);
 	}
 
 	//赋值电流值
 	for (i = 0; i < 4; i++)
 	{
-		chassis_move_control_loop->motor_chassis[i].give_current = (int16_t)(chassis_move_control_loop->motor_speed_pid[i].out);
+		chassis_move_control_loop->motor_chassis[i].give_current =
+			(int16_t)(chassis_move_control_loop->motor_speed_pid[i].out);
 	}
 }
 
@@ -593,7 +597,10 @@ void chassis_control_loop(chassis_control_t *chassis_move_control_loop)
   * @param[out]     wheel_speed: 四个麦轮速度
   * @retval         none
   */
-static void chassis_vector_to_mecanum_wheel_speed(const fp32 vx_set, const fp32 vy_set, const fp32 wz_set, fp32 wheel_speed[4])
+static void chassis_vector_to_mecanum_wheel_speed(const fp32 vx_set,
+	const fp32 vy_set,
+	const fp32 wz_set,
+	fp32 wheel_speed[4])
 {
 	//because the gimbal is in front of chassis, when chassis rotates, wheel 0 and wheel 1 should be slower and wheel 2 and wheel 3 should be faster
 	//旋转的时候， 由于云台靠前，所以是前面两轮 0 ，1 旋转的速度变慢， 后面两轮 2,3 旋转的速度变快

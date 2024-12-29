@@ -36,6 +36,6 @@ typedef struct ist8310_real_data_t
 } ist8310_real_data_t;
 
 extern uint8_t ist8310_init(void);
-extern void ist8310_read_over(uint8_t *status_buf, ist8310_real_data_t *mpu6500_real_data);
+extern void ist8310_read_over(const uint8_t *status_buf, ist8310_real_data_t *mpu6500_real_data);
 extern void ist8310_read_mag(fp32 mag[3]);
 #endif

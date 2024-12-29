@@ -29,9 +29,12 @@ extern "C" {
 // 定义GPIO模式
 typedef enum
 {
-	BSP_GPIO_MODE_INPUT = 0,   // 输入模式
-	BSP_GPIO_MODE_OUTPUT,      // 输出模式
-	BSP_GPIO_MODE_EXTI         // 外部中断模式
+	BSP_GPIO_MODE_INPUT = 0,   			// 输入模式
+	BSP_GPIO_MODE_OUTPUT,      			// 输出模式
+	BSP_GPIO_MODE_EXTI,        			// 外部中断模式
+	BSP_GPIO_NOPULL = GPIO_NOPULL, 		// 无上拉/下拉
+	BSP_GPIO_PULLUP = GPIO_PULLUP, 		// 上拉
+	BSP_GPIO_PULLDOWN = GPIO_PULLDOWN,	// 下拉
 } BSP_GPIO_Mode_t;
 
 // 定义GPIO初始化结构体

@@ -10,8 +10,8 @@
  * @license: MIT
  ******************************************************************************/
 
-#ifndef DM_02_HERO_USER_COMPONENTS_DEVICE_MOTOR_DJI_6020_DJI_6020_H_
-#define DM_02_HERO_USER_COMPONENTS_DEVICE_MOTOR_DJI_6020_DJI_6020_H_
+#ifndef DJI_6020_H_
+#define DJI_6020_H_
 
 #include "main.h"
 #include "struct_typedef.h"
@@ -97,4 +97,4 @@ const motor_6020_measure_t * get_motor_6020_measure_point(uint8_t i);
  */
 void motor_6020_can_callback(uint32_t can_id, const uint8_t* rx_data);
 
-#endif //DM_02_HERO_USER_COMPONENTS_DEVICE_MOTOR_DJI_6020_DJI_6020_H_
+#endif //DJI_6020_H_

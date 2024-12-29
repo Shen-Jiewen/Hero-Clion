@@ -17,7 +17,7 @@
 typedef enum {
 	CHASSIS_ZERO_FORCE,                   // 底盘无力，类似没上电
 	CHASSIS_NO_MOVE,                      // 底盘停止，保持不动
-	CHASSIS_INFANTRY_FOLLOW_GIMBAL_YAW,   // 底盘跟随云台偏航，适用于步兵模式
+	CHASSIS_FOLLOW_GIMBAL_YAW,			  // 底盘跟随云台偏航，适用于步兵模式
 	CHASSIS_NO_FOLLOW_YAW,                // 底盘不跟随偏航角，角度开环控制，轮速闭环控制
 	CHASSIS_GYRO_MODE,					  // 底盘小陀螺模式，底盘旋转，平移跟随云台
 	CHASSIS_OPEN,                         // 遥控器输入乘比例因子后，直接发送电流值到CAN总线
