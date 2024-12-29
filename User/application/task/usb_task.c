@@ -8,15 +8,18 @@
 #include "dt7.h"
 #include "chassis.h"
 #include "imu.h"
+#include "ist8310driver.h"
 
 
 _Noreturn void usb_task(void* argument){
+	osDelay(1000);
 	RC_ctrl_t *usb_dt7_ctrl = get_dt7_point();
 	imu_control_t *imu_control = get_imu_control_point();
 	const motor_6020_measure_t *motor0 = get_motor_6020_measure_point(1);
 
 	// 初始化
 	while (1){
+		ist8310_read_mag(imu_control->magnetometer.array);
 		vofa_send_data(0, imu_control->euler.angle.pitch);
 		vofa_send_data(1, imu_control->euler.angle.yaw);
 		vofa_send_data(2, imu_control->euler.angle.roll);
@@ -33,7 +36,6 @@ _Noreturn void usb_task(void* argument){
 		vofa_send_data(13, motor0->speed_rpm);
 		vofa_send_data(14, motor0->given_current);
 		vofa_send_data(15, imu_control->temperature);
-		vofa_send_data(16, imu_control->temp_pid.out);
 		vofa_sendframetail();
 		osDelay(10);
 	}

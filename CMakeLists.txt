@@ -74,6 +74,7 @@ include_directories(
         User/components/device/motor/DJI-3508
         User/components/device/motor/DJI-6020
         User/components/device/BMI088
+        User/components/device/IST8310
         User/components/device/ws2812
         #  component/support
         User/components/support

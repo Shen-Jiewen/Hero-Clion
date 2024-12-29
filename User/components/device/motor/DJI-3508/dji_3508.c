@@ -12,7 +12,7 @@
 #include "dji_3508.h"
 
 // 静态数组，用于存储8个DJI 3508电机的测量数据
-static motor_3508_measure_t motor_3508_measure[8] = { 0};
+static motor_3508_measure_t motor_3508_measure[8] = { 0 };
 
 /**
  * @brief 解析CAN数据并填充到motor_3508_measure_t结构体中。

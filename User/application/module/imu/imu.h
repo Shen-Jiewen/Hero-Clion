@@ -51,6 +51,7 @@ typedef struct {
 
 	SemaphoreHandle_t xAccSemaphore; // 加速度计信号量
 	SemaphoreHandle_t xGyroSemaphore;// 陀螺仪信号量
+	SemaphoreHandle_t xMagSemaphore; // 磁力计信号量
 
 	TickType_t last_update_time;    // 上次更新时间戳
 	TickType_t last_second_time;    // 上次统计时间戳
