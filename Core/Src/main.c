@@ -34,6 +34,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "bsp_can.h"
+#include "bsp_tim.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -123,6 +124,7 @@ int main(void)
   MX_UART5_Init();
   MX_SPI6_Init();
   MX_I2C1_Init();
+  MX_TIM24_Init();
   /* USER CODE BEGIN 2 */
   MX_USB_DEVICE_Init();
   fdcan1_filter_init();
@@ -260,7 +262,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+	USER_TIM_PeriodElapsedCallback(htim);
   /* USER CODE END Callback 1 */
 }
 

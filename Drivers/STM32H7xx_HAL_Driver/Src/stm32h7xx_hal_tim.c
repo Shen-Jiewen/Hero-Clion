@@ -5949,7 +5949,7 @@ __weak void HAL_TIM_ErrorCallback(TIM_HandleTypeDef *htim)
 #if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)
 /**
   * @brief  Register a User TIM callback to be used instead of the weak predefined callback
-  * @param htim tim handle
+  * @param htim tick handle
   * @param CallbackID ID of the callback to be registered
   *        This parameter can be one of the following values:
   *          @arg @ref HAL_TIM_BASE_MSPINIT_CB_ID Base MspInit Callback ID
@@ -6193,7 +6193,7 @@ HAL_StatusTypeDef HAL_TIM_RegisterCallback(TIM_HandleTypeDef *htim, HAL_TIM_Call
 /**
   * @brief  Unregister a TIM callback
   *         TIM callback is redirected to the weak predefined callback
-  * @param htim tim handle
+  * @param htim tick handle
   * @param CallbackID ID of the callback to be unregistered
   *        This parameter can be one of the following values:
   *          @arg @ref HAL_TIM_BASE_MSPINIT_CB_ID Base MspInit Callback ID

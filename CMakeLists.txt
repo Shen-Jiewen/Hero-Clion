@@ -62,6 +62,7 @@ include_directories(
         User/application/module/detect
         User/application/module/imu
         User/application/module/shoot
+        User/application/module/tick
         # dsp
         User/bsp/dm02
         # component/algorithm

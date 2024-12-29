@@ -63,6 +63,7 @@ extern FDCAN_HandleTypeDef hfdcan3;
 extern DMA_HandleTypeDef hdma_spi2_tx;
 extern DMA_HandleTypeDef hdma_spi2_rx;
 extern SPI_HandleTypeDef hspi2;
+extern TIM_HandleTypeDef htim24;
 extern DMA_HandleTypeDef hdma_uart5_rx;
 extern DMA_HandleTypeDef hdma_uart7_rx;
 extern DMA_HandleTypeDef hdma_uart7_tx;
@@ -458,6 +459,20 @@ void FDCAN3_IT0_IRQHandler(void)
   /* USER CODE BEGIN FDCAN3_IT0_IRQn 1 */
 
   /* USER CODE END FDCAN3_IT0_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM24 global interrupt.
+  */
+void TIM24_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM24_IRQn 0 */
+
+  /* USER CODE END TIM24_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim24);
+  /* USER CODE BEGIN TIM24_IRQn 1 */
+
+  /* USER CODE END TIM24_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
