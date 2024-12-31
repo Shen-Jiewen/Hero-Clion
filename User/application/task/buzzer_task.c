@@ -5,7 +5,6 @@
 #include "cmsis_os.h"
 #include "bsp_pwm.h"
 #include "detect.h"
-#include "math.h"
 
 //#define BUZZER
 

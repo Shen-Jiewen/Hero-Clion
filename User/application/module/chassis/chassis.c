@@ -242,8 +242,8 @@ void chassis_init(chassis_control_t* chassis_move_init)
 	//获取遥控器指针
 	chassis_move_init->chassis_RC = get_dt7_point();
 	//获取云台电机数据指针
-//	chassis_move_init->chassis_yaw_motor = get_yaw_motor_point();
-//	chassis_move_init->chassis_pitch_motor = get_pitch_motor_point();
+	chassis_move_init->chassis_yaw_motor = get_yaw_motor_point();
+	chassis_move_init->chassis_pitch_motor = get_pitch_motor_point();
 
 	// 初始化PID参数
 	for (uint8_t i = 0; i < 4; i++)

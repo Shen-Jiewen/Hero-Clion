@@ -13,7 +13,6 @@ static imu_control_t imu_control_instance;
 // 中断回调函数声明
 static void acc_int_callback(void);
 static void gyro_int_callback(void);
-static void mag_int_callback(void);
 
 /**
  * @brief 初始化IMU控制结构体
@@ -116,7 +115,8 @@ void imu_data_update(imu_control_t *imu_control) {
  * @param imu_control IMU控制结构体指针
  */
 void imu_ahrs_update(imu_control_t *imu_control) {
-	FusionAhrsUpdate(&imu_control->ahrs, imu_control->gyroscope, imu_control->accelerometer, imu_control->magnetometer, imu_control->delta_time);
+	FusionAhrsUpdateNoMagnetometer(&imu_control->ahrs, imu_control->gyroscope, imu_control->accelerometer, imu_control->delta_time);
+//	FusionAhrsUpdate(&imu_control->ahrs, imu_control->gyroscope, imu_control->accelerometer, imu_control->magnetometer, imu_control->delta_time);
 	imu_control->euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&imu_control->ahrs));
 }
 
@@ -195,14 +195,6 @@ static void gyro_int_callback(void) {
 }
 
 /**
- * @brief 磁力计中断回调函数
- */
-static void mag_int_callback(void) {
-//	// 读取磁力计数据
-//	ist8310_read_mag(imu_control_instance.magnetometer.array);
-}
-
-/**
  * @brief IMU GPIO初始化函数
  *
  * @details 该函数用于初始化IMU模块的GPIO引脚，包括加速度计和陀螺仪的中断引脚。
@@ -242,21 +234,9 @@ void imu_gpio_init(void) {
 	};
 	BSP_GPIO_Init(&gyro_int_config);
 
-	// 配置磁力计中断引脚
-	BSP_GPIO_InitTypeDef mag_int_config = {
-		.port = MAG_INT_GPIO_Port,
-		.pin = MAG_INT_Pin,
-		.mode = BSP_GPIO_MODE_EXTI,
-		.pull = GPIO_NOPULL,
-		.speed = GPIO_SPEED_FREQ_LOW,
-		.irqn = MAG_INT_EXTI_IRQn
-	};
-	BSP_GPIO_Init(&mag_int_config);
-
 	// 注册回调函数
 	BSP_GPIO_RegisterCallback(ACC_INT_Pin, acc_int_callback);
 	BSP_GPIO_RegisterCallback(GYRO_INT_Pin, gyro_int_callback);
-	BSP_GPIO_RegisterCallback(MAG_INT_Pin, mag_int_callback);
 }
 
 /**

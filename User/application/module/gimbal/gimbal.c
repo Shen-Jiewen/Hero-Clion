@@ -452,6 +452,14 @@ gimbal_control_t * get_gimbal_control_point(void)
 	return &gimbal_control;
 }
 
+gimbal_motor_t* get_yaw_motor_point(void){
+	return &gimbal_control.gimbal_yaw_motor;
+}
+
+gimbal_motor_t* get_pitch_motor_point(void){
+	return &gimbal_control.gimbal_pitch_motor;
+}
+
 static gimbal_control_t gimbal_control = {
 	.CAN_cmd_gimbal = FDCAN_cmd_gimbal,
 };

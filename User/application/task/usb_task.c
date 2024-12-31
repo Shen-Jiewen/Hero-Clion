@@ -8,8 +8,6 @@
 #include "dt7.h"
 #include "chassis.h"
 #include "imu.h"
-#include "ist8310driver.h"
-
 
 _Noreturn void usb_task(void* argument){
 	osDelay(1000);
@@ -19,7 +17,6 @@ _Noreturn void usb_task(void* argument){
 
 	// 初始化
 	while (1){
-		ist8310_read_mag(imu_control->magnetometer.array);
 		vofa_send_data(0, imu_control->euler.angle.pitch);
 		vofa_send_data(1, imu_control->euler.angle.yaw);
 		vofa_send_data(2, imu_control->euler.angle.roll);
