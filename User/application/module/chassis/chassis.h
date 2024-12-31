@@ -2,8 +2,8 @@
 // Created by Rick on 24-11-26.
 //
 
-#ifndef DM_02_HERO_USER_APPLICATION_MODULE_CHASSIS_H_
-#define DM_02_HERO_USER_APPLICATION_MODULE_CHASSIS_H_
+#ifndef CHASSIS_H_
+#define CHASSIS_H_
 
 #include "main.h"
 #include "struct_typedef.h"
@@ -157,4 +157,4 @@ extern void chassis_control_loop(chassis_control_t *chassis_move_control_loop);
 extern void chassis_rc_to_control_vector(fp32 *vx_set, fp32 *vy_set, chassis_control_t *chassis_move_rc_to_vector);
 extern chassis_control_t* get_chassis_control_point(void);
 
-#endif //DM_02_HERO_USER_APPLICATION_MODULE_CHASSIS_H_
+#endif //CHASSIS_H_

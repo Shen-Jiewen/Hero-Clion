@@ -17,8 +17,8 @@
  * @license: MIT
  ******************************************************************************/
 
-#ifndef DM_02_HERO_USER_BSP_DM02_BSP_GPIO_H_
-#define DM_02_HERO_USER_BSP_DM02_BSP_GPIO_H_
+#ifndef BSP_GPIO_H_
+#define BSP_GPIO_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -61,4 +61,4 @@ GPIO_PinState BSP_GPIO_ReadPin(GPIO_TypeDef* port, uint16_t pin);
 }
 #endif
 
-#endif //DM_02_HERO_USER_BSP_DM02_BSP_GPIO_H_
+#endif //BSP_GPIO_H_

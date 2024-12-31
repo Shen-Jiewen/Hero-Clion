@@ -27,7 +27,7 @@ _Noreturn void remote_control_task(void* argument)
 
 	while (1)
 	{
-		osThreadSuspend(NULL);
+		osThreadSuspend(osThreadGetId());
 	}
 }
 

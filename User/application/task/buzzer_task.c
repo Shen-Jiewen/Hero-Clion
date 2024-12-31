@@ -5,6 +5,7 @@
 #include "cmsis_os.h"
 #include "bsp_pwm.h"
 #include "detect.h"
+#include "math.h"
 
 //#define BUZZER
 
@@ -19,6 +20,7 @@
 
 // 静态函数声明
 static void buzzer_warn_error(uint8_t error_count);
+static void buzzer_play_startup_sound(void);
 
 // 外部定时器句柄
 extern TIM_HandleTypeDef htim12;
@@ -41,6 +43,12 @@ _Noreturn void buzzer_task(__attribute__((unused)) void* argument)
 	};
 
 	// 初始化 PWM
+	BSP_PWM_Init(&pwm_config);
+
+	// 开启声音
+	buzzer_play_startup_sound();
+
+	// 重新初始化
 	BSP_PWM_Init(&pwm_config);
 
 	// 初始化错误状态变量
@@ -125,5 +133,30 @@ static void buzzer_warn_error(uint8_t error_count)
 			tick = 0;       // 重置 tick
 			show_count--;   // 减少显示的错误数量
 		}
+	}
+}
+
+/**
+ * @brief 播放开机声音，模拟DJI电机启动时的声音
+ */
+static void buzzer_play_startup_sound(void)
+{
+	// 定义频率和持续时间数组
+	const uint16_t frequencies[] = {
+		5211, 1636, 1335, 6373, 1765, 2411
+	};
+
+	const uint16_t durations[] = {
+		100, 100, 300, 200, 200, 100
+	};
+
+	// 播放声音
+	for (int i = 0; i < sizeof(frequencies) / sizeof(frequencies[0]); i++)
+	{
+		BSP_PWM_SetFrequency(&htim12, frequencies[i]); // 设置频率
+		BSP_PWM_SetDutyCycle(&htim12, PWM_CHANNEL_2, 3000); // 设置占空比
+		osDelay(durations[i]); // 持续指定时间
+		BSP_PWM_SetDutyCycle(&htim12, PWM_CHANNEL_2, 0); // 关闭蜂鸣器
+		osDelay(10); // 添加短暂间隔
 	}
 }

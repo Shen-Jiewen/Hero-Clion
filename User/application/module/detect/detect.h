@@ -2,8 +2,8 @@
 // Created by Rick on 2024/12/10.
 //
 
-#ifndef DM_02_HERO_USER_APPLICATION_MODULE_DETECT_DETECT_H_
-#define DM_02_HERO_USER_APPLICATION_MODULE_DETECT_DETECT_H_
+#ifndef DETECT_H_
+#define DETECT_H_
 
 #include "main.h"
 #include "struct_typedef.h"
@@ -76,4 +76,4 @@ extern void detect_hook(uint8_t toe);
   */
 extern error_t *get_error_list_point(void);
 
-#endif //DM_02_HERO_USER_APPLICATION_MODULE_DETECT_DETECT_H_
+#endif //DETECT_H_

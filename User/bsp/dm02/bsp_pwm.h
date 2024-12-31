@@ -23,8 +23,8 @@
  * @license: MIT
  ******************************************************************************/
 
-#ifndef DM_02_HERO_USER_BSP_DM02_BSP_PWM_H_
-#define DM_02_HERO_USER_BSP_DM02_BSP_PWM_H_
+#ifndef BSP_PWM_H_
+#define BSP_PWM_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -55,9 +55,10 @@ void BSP_PWM_Init(PWM_InitTypeDef* pwm_config);
 void BSP_PWM_SetDutyCycle(TIM_HandleTypeDef* htim, PWM_Channel_t channel, uint16_t duty_cycle);
 void BSP_PWM_Start(TIM_HandleTypeDef* htim, PWM_Channel_t channel);
 void BSP_PWM_Stop(TIM_HandleTypeDef* htim, PWM_Channel_t channel);
+void BSP_PWM_SetFrequency(TIM_HandleTypeDef* htim, uint32_t frequency);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif //DM_02_HERO_USER_BSP_DM02_BSP_PWM_H_
+#endif //BSP_PWM_H_

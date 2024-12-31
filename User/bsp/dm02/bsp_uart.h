@@ -16,8 +16,8 @@
  * @license: MIT
  ******************************************************************************/
 
-#ifndef DM_02_HERO_USER_BSP_DM02_BSP_UART_H_
-#define DM_02_HERO_USER_BSP_DM02_BSP_UART_H_
+#ifndef BSP_UART_H_
+#define BSP_UART_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -51,4 +51,4 @@ void BSP_UART_RegisterCallback(UART_HandleTypeDef* huart, void (*callback)(void)
 }
 #endif
 
-#endif // DM_02_HERO_USER_BSP_DM02_BSP_UART_H_
+#endif // BSP_UART_H_

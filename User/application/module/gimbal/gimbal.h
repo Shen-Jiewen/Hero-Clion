@@ -2,8 +2,8 @@
 // Created by Rick on 2024/12/5.
 //
 
-#ifndef DM_02_HERO_USER_APPLICATION_MODULE_GIMBAL_GIMBAL_H_
-#define DM_02_HERO_USER_APPLICATION_MODULE_GIMBAL_GIMBAL_H_
+#ifndef GIMBAL_H_
+#define GIMBAL_H_
 
 #include "main.h"
 #include "struct_typedef.h"
@@ -86,8 +86,8 @@
 #define RC_DEADBAND   10
 
 //遥控器通道转换成电机角度
-#define YAW_RC_SEN    -0.000005f
-#define PITCH_RC_SEN  -0.000004f //6f
+#define YAW_RC_SEN    (-0.000005f)
+#define PITCH_RC_SEN  (-0.000004f) //6f
 
 #define YAW_MOUSE_SEN   0.00005f
 #define PITCH_MOUSE_SEN 0.00005f // 0.00015
@@ -176,4 +176,4 @@ extern void gimbal_control_loop(gimbal_control_t *control_loop);
 
 extern gimbal_control_t * get_gimbal_control_point(void);
 
-#endif //DM_02_HERO_USER_APPLICATION_MODULE_GIMBAL_GIMBAL_H_
+#endif //GIMBAL_H_

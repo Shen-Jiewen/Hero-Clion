@@ -73,6 +73,7 @@ include_directories(
         User/components/device/control/DT7
         User/components/device/motor/DJI-3508
         User/components/device/motor/DJI-6020
+        User/components/device/motor/DM-4310
         User/components/device/BMI088
         User/components/device/IST8310
         User/components/device/ws2812

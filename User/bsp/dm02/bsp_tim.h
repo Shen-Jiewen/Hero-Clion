@@ -17,8 +17,8 @@
  * @license: MIT
  ******************************************************************************/
 
-#ifndef DM_02_HERO_USER_BSP_DM02_BSP_TIM_H_
-#define DM_02_HERO_USER_BSP_DM02_BSP_TIM_H_
+#ifndef BSP_TIM_H_
+#define BSP_TIM_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -48,4 +48,4 @@ void USER_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim);
 }
 #endif
 
-#endif // DM_02_HERO_USER_BSP_DM02_BSP_TIM_H_
+#endif // BSP_TIM_H_

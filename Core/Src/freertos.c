@@ -256,7 +256,7 @@ void StartDefaultTask(void *argument)
 	/* Infinite loop */
 	for (;;)
 	{
-		osDelay(1);
+		osThreadSuspend(osThreadGetId());
 	}
   /* USER CODE END StartDefaultTask */
 }

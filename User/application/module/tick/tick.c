@@ -20,7 +20,7 @@ void tick_init(void){
 	BSP_TIM_Init(&tim_config);
 }
 
+// 定时器回调函数
 static void tick_callback(void){
-	// 每次定时器溢出时执行的操作
 	task_tick++;
 }

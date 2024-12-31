@@ -2,8 +2,8 @@
 // Created by Rick on 2024/12/4.
 //
 
-#ifndef DM_02_HERO_USER_APPLICATION_MODULE_CHASSIS_CHASSIS_BEHAVIOUR_H_
-#define DM_02_HERO_USER_APPLICATION_MODULE_CHASSIS_CHASSIS_BEHAVIOUR_H_
+#ifndef CHASSIS_BEHAVIOUR_H_
+#define CHASSIS_BEHAVIOUR_H_
 
 #include "main.h"
 #include "struct_typedef.h"
@@ -27,4 +27,4 @@ extern void chassis_behaviour_mode_set(chassis_control_t *chassis_move_mode);
 
 extern void chassis_behaviour_control_set(fp32 *vx_set, fp32 *vy_set, fp32 *angle_set, chassis_control_t *chassis_move_rc_to_vector);
 
-#endif //DM_02_HERO_USER_APPLICATION_MODULE_CHASSIS_CHASSIS_BEHAVIOUR_H_
+#endif //CHASSIS_BEHAVIOUR_H_
