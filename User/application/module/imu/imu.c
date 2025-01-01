@@ -271,3 +271,19 @@ void imu_pwm_init(void) {
 	// 启动PWM
 	BSP_PWM_Start(&htim3, PWM_CHANNEL_4);
 }
+
+/**
+ * @brief 获取欧拉角数据指针
+ * @return
+ */
+fp32* get_INS_angle_point(){
+	return imu_control_instance.euler.array;
+}
+
+/**
+ * @brief 获取陀螺仪数据指针
+ * @return
+ */
+fp32* get_gyro_data_point(){
+	return imu_control_instance.gyroscope.array;
+}

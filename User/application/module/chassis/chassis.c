@@ -538,7 +538,7 @@ void chassis_control_loop(chassis_control_t* chassis_move_control_loop)
 	fp32 wheel_speed[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
 	uint8_t i = 0;
 
-	//麦轮运动分解
+	// 麦轮运动分解
 	chassis_vector_to_mecanum_wheel_speed(chassis_move_control_loop->vx_set,
 		chassis_move_control_loop->vy_set, chassis_move_control_loop->wz_set, wheel_speed);
 
@@ -554,7 +554,7 @@ void chassis_control_loop(chassis_control_t* chassis_move_control_loop)
 		return;
 	}
 
-	//计算轮子控制最大速度，并限制其最大速度
+	// 计算轮子控制最大速度，并限制其最大速度
 	for (i = 0; i < 4; i++)
 	{
 		chassis_move_control_loop->motor_chassis[i].speed_set = wheel_speed[i];

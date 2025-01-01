@@ -77,4 +77,7 @@ void imu_ahrs_update(imu_control_t *imu_control);
 void imu_temperature_control(imu_control_t *imu_control);
 void imu_statistics_update(imu_control_t *imu_control);
 
+fp32* get_INS_angle_point();
+fp32* get_gyro_data_point();
+
 #endif // IMU_H_
