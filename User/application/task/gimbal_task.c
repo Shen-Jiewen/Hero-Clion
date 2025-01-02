@@ -7,6 +7,8 @@
 
 gimbal_control_t* gimbal_control;
 
+uint8_t dm_data[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+
 _Noreturn void gimbal_task(void* argument)
 {
 	// 等待陀螺仪任务更新数据
@@ -59,11 +61,12 @@ _Noreturn void gimbal_task(void* argument)
 			else
 			{
 				gimbal_control->CAN_cmd_gimbal((int16_t)gimbal_control->gimbal_yaw_motor.given_current,
-					(int16_t)gimbal_control->gimbal_pitch_motor.given_current,
+					0,
 					0,
 					0);
 			}
 		}
+		MIT_CtrlMotor(DM_CAN, FDCAN_DM4310_M1_SLAVE_ID, 0,0,0,0,0);
 		osDelay(GIMBAL_CONTROL_TIME);
 	}
 }

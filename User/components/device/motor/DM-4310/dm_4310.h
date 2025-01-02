@@ -18,15 +18,15 @@
 #include "pid.h"
 #include "detect.h"
 
-extern FDCAN_HandleTypeDef hfdcan3;
+extern FDCAN_HandleTypeDef hfdcan2;
 
-#define DM_CAN &hfdcan3
+#define DM_CAN &hfdcan2
 
 /**
  * @brief 定义电机控制参数的取值范围
  */
-#define P_MIN (-12.5f)      // 位置最小值，单位：弧度 (rad)
-#define P_MAX 12.5f         // 位置最大值，单位：弧度 (rad)
+#define P_MIN (-3.14f)      // 位置最小值，单位：弧度 (rad)
+#define P_MAX 3.14f         // 位置最大值，单位：弧度 (rad)
 #define V_MIN (-45.0f)      // 速度最小值，单位：弧度/秒 (rad/s)
 #define V_MAX 45.0f         // 速度最大值，单位：弧度/秒 (rad/s)
 #define KP_MIN 0.0f         // 位置比例系数最小值
@@ -41,14 +41,14 @@ extern FDCAN_HandleTypeDef hfdcan3;
  */
 typedef enum
 {
-	FDCAN_DM4310_M1_MASTER_ID = 0x005,	// 电机1的FDCAN主控ID
-	FDCAN_DM4310_M1_SLAVE_ID = 0x006,   // 电机1的FDCAN从机ID
-	FDCAN_DM4310_M2_MASTER_ID = 0x007,	// 电机2的FDCAN主控ID
-	FDCAN_DM4310_M2_SLAVE_ID = 0x008,   // 电机2的FDCAN从机ID
-	FDCAN_DM4310_M3_MASTER_ID = 0x009,	// 电机3的FDCAN主控ID
-	FDCAN_DM4310_M3_SLAVE_ID = 0x00A,   // 电机3的FDCAN从机ID
-	FDCAN_DM4310_M4_MASTER_ID = 0x00B,	// 电机4的FDCAN主控ID
-	FDCAN_DM4310_M4_SLAVE_ID = 0x00C    // 电机4的FDCAN从机ID
+	FDCAN_DM4310_M1_SLAVE_ID = 0x005,   // 电机1的FDCAN从机ID
+	FDCAN_DM4310_M1_MASTER_ID = 0x006,	// 电机1的FDCAN主控ID
+	FDCAN_DM4310_M2_SLAVE_ID = 0x007,   // 电机2的FDCAN从机ID
+	FDCAN_DM4310_M2_MASTER_ID = 0x008,	// 电机2的FDCAN主控ID
+	FDCAN_DM4310_M3_SLAVE_ID = 0x009,   // 电机3的FDCAN从机ID
+	FDCAN_DM4310_M3_MASTER_ID = 0x00A,	// 电机3的FDCAN主控ID
+	FDCAN_DM4310_M4_SLAVE_ID = 0x00B,    // 电机4的FDCAN从机ID
+	FDCAN_DM4310_M4_MASTER_ID = 0x00C,	// 电机4的FDCAN主控ID
 } dm_4310_id_e;
 
 /**
@@ -113,6 +113,9 @@ const motor_4310_measure_t* get_dm_4310_measure_point(uint8_t i);
  * @param Len 字节数0~8。
  */
 uint8_t DM4310_SendStdData(FDCAN_HandleTypeDef* hfdcan, uint16_t ID, uint8_t* pData);
+
+uint8_t MIT_CtrlMotor(FDCAN_HandleTypeDef* hcan,uint16_t id, float pos, float vel,
+	float KP, float KD, float torq);
 
 /**
  * @brief 使能电机。

@@ -23,8 +23,11 @@ static motor_4310_measure_t dm_4310_measure[4] = { 0};
  * @param data 指向包含原始FDCAN数据的字节数组的指针。
  */
 void dm_4310_measure_parse(motor_4310_measure_t* ptr, const uint8_t* data) {
-	ptr->ID = (data[0] & 0xF);                      // 提取低 4 位作为 ID
 	ptr->error = (data[0] >> 4);                    // 提取高 4 位作为错误码
+	ptr->ID = (data[0] & 0xF);                      // 提取低 4 位作为 ID
+	if(ptr->error == 0 || ptr->ID == 0){
+		return;
+	}
 	ptr->p_int = (data[1] << 8) | data[2];          // 组合成 16 位位置整数
 	ptr->v_int = (data[3] << 4) | (data[4] >> 4);   // 组合成 12 位速度整数
 	ptr->t_int = ((data[4] & 0xF) << 8) | data[5];  // 组合成 12 位扭矩整数
@@ -73,6 +76,44 @@ uint8_t DM4310_SendStdData(FDCAN_HandleTypeDef* hfdcan, uint16_t ID, uint8_t* pD
 		return 1; // 发送失败
 	}
 	return 0; // 发送成功
+}
+
+uint8_t MIT_CtrlMotor(FDCAN_HandleTypeDef* hcan,uint16_t id, float pos, float vel,
+	float KP, float KD, float torq){
+	FDCAN_TxHeaderTypeDef Tx_Header = {
+		.Identifier = id,
+		.IdType = FDCAN_STANDARD_ID,
+		.TxFrameType = FDCAN_DATA_FRAME,
+		.DataLength = FDCAN_DLC_BYTES_8,
+		.ErrorStateIndicator = FDCAN_ESI_ACTIVE,
+		.BitRateSwitch = FDCAN_BRS_OFF,
+		.FDFormat = FDCAN_CLASSIC_CAN,
+		.TxEventFifoControl = FDCAN_NO_TX_EVENTS,
+		.MessageMarker = 0
+	};
+
+	uint16_t pos_tmp = DM4310_FloatToUint(pos, P_MIN, P_MAX, 16);
+	uint16_t vel_tmp = DM4310_FloatToUint(vel, V_MIN, V_MAX, 12);
+	uint16_t kp_tmp = DM4310_FloatToUint(KP, KP_MIN, KP_MAX, 12);
+	uint16_t kd_tmp = DM4310_FloatToUint(KD, KD_MIN, KD_MAX, 12);
+	uint16_t tor_tmp = DM4310_FloatToUint(torq, T_MIN, T_MAX, 12);
+
+	uint8_t Tx_Data[8] = {
+		(pos_tmp >> 8),
+		pos_tmp,
+		(vel_tmp >> 4),
+		((vel_tmp & 0xF) << 4) | (kp_tmp >> 8),
+		kp_tmp,
+		(kd_tmp >> 4),
+		((kd_tmp & 0xF) << 4) | (tor_tmp >> 8),
+		tor_tmp
+	};
+
+	if (HAL_FDCAN_AddMessageToTxFifoQ(hcan, &Tx_Header, Tx_Data) != HAL_OK)
+	{
+		return 1; // 发送失败
+	}
+	return 0;
 }
 
 /**
@@ -223,7 +264,7 @@ void DM4310_Speed_CtrlMotor(FDCAN_HandleTypeDef* hfdcan, uint16_t ID, float _vel
  * @param bits 无符号整数的位数。
  * @return 转换后的浮点数。
  */
-inline float DM4310_UintToFloat(int x_int, float x_min, float x_max, int bits)
+float DM4310_UintToFloat(int x_int, float x_min, float x_max, int bits)
 {
 	float span = x_max - x_min;
 	return ((float)x_int) * span / ((float)((1 << bits) - 1)) + x_min;
@@ -257,17 +298,17 @@ void motor_4310_can_callback(uint32_t can_id, const uint8_t* rx_data)
 {
 	switch (can_id)
 	{
-	case FDCAN_DM4310_M1_SLAVE_ID:
+	case FDCAN_DM4310_M1_MASTER_ID:
 		dm_4310_measure_parse(&dm_4310_measure[0], rx_data);
 		detect_hook(PITCH_GIMBAL_MOTOR_TOE);
 		break;
-	case FDCAN_DM4310_M2_SLAVE_ID:
+	case FDCAN_DM4310_M2_MASTER_ID:
 		dm_4310_measure_parse(&dm_4310_measure[1], rx_data);
 		break;
-	case FDCAN_DM4310_M3_SLAVE_ID:
+	case FDCAN_DM4310_M3_MASTER_ID:
 		dm_4310_measure_parse(&dm_4310_measure[2], rx_data);
 		break;
-	case FDCAN_DM4310_M4_SLAVE_ID:
+	case FDCAN_DM4310_M4_MASTER_ID:
 		dm_4310_measure_parse(&dm_4310_measure[3], rx_data);
 		break;
 	default:
