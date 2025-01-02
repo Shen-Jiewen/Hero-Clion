@@ -18,6 +18,10 @@
 #include "pid.h"
 #include "detect.h"
 
+extern FDCAN_HandleTypeDef hfdcan3;
+
+#define DM_CAN &hfdcan3
+
 /**
  * @brief 定义电机控制参数的取值范围
  */
@@ -37,10 +41,14 @@
  */
 typedef enum
 {
-	FDCAN_DM4310_ALL_ID = 0x1FF,  // 所有电机的FDCAN ID
-	FDCAN_DM4310_M1_ID = 0x201,   // 电机1的FDCAN ID
-	FDCAN_DM4310_M2_ID = 0x202,   // 电机2的FDCAN ID
-	FDCAN_DM4310_M3_ID = 0x203,   // 电机3的FDCAN ID
+	FDCAN_DM4310_M1_MASTER_ID = 0x005,	// 电机1的FDCAN主控ID
+	FDCAN_DM4310_M1_SLAVE_ID = 0x006,   // 电机1的FDCAN从机ID
+	FDCAN_DM4310_M2_MASTER_ID = 0x007,	// 电机2的FDCAN主控ID
+	FDCAN_DM4310_M2_SLAVE_ID = 0x008,   // 电机2的FDCAN从机ID
+	FDCAN_DM4310_M3_MASTER_ID = 0x009,	// 电机3的FDCAN主控ID
+	FDCAN_DM4310_M3_SLAVE_ID = 0x00A,   // 电机3的FDCAN从机ID
+	FDCAN_DM4310_M4_MASTER_ID = 0x00B,	// 电机4的FDCAN主控ID
+	FDCAN_DM4310_M4_SLAVE_ID = 0x00C    // 电机4的FDCAN从机ID
 } dm_4310_id_e;
 
 /**
@@ -56,21 +64,25 @@ typedef enum
 /**
  * @brief 定义电机测量数据结构体
  */
-typedef struct
-{
-	uint16_t ecd;               // 编码器数据
-	int16_t speed_rpm;          // 电机转速，单位：转/分钟
-	int16_t given_current;      // 给定电流值
-	uint8_t temperature;        // 电机温度
-	int16_t last_ecd;           // 上一次的编码器数据
-} dm_4310_measure_t;
+typedef struct {
+	uint8_t error;       // 错误码，4 位
+	uint8_t ID;          // 电机 ID，4 位
+	uint16_t p_int;      // 位置原始数据，16 位
+	uint16_t v_int;      // 速度原始数据，12 位
+	uint16_t t_int;      // 扭矩原始数据，12 位
+	float position;      // 解析后的位置，单位为弧度 (rad)
+	float velocity;      // 解析后的速度，单位为弧度每秒 (rad/s)
+	float torque;        // 解析后的扭矩，单位为牛顿米 (Nm)
+	float T_mos;         // MOSFET 温度，单位为摄氏度 (°C)
+	float T_motor;       // 电机线圈温度，单位为摄氏度 (°C)
+} motor_4310_measure_t;
 
 /**
  * @brief 定义电机控制数据结构体
  */
 typedef struct
 {
-	const dm_4310_measure_t* motor_measure;  // 指向电机测量数据的常量指针
+	const motor_4310_measure_t* motor_measure;  // 指向电机测量数据的常量指针
 
 	pid_type_def position_pid;               // 位置PID控制器
 	pid_type_def speed_pid;                  // 速度PID控制器
@@ -85,20 +97,12 @@ typedef struct
 } dm_4310_t;
 
 /**
- * @brief 获取指定索引的dm_4310_measure_t结构体指针。
+ * @brief 获取指定索引的motor_4310_measure_t结构体指针。
  *
  * @param i 数组索引，范围为0到2。
- * @return 指向指定索引的dm_4310_measure_t结构体的指针。
+ * @return 指向指定索引的motor_4310_measure_t结构体的指针。
  */
-const dm_4310_measure_t* get_dm_4310_measure_point(uint8_t i);
-
-/**
- * @brief FDCAN回调函数，处理接收到的FDCAN消息。
- *
- * @param can_id FDCAN消息的ID。
- * @param rx_data 指向接收到的FDCAN数据的字节数组的指针。
- */
-void dm_4310_fdcan_callback(uint32_t can_id, const uint8_t* rx_data);
+const motor_4310_measure_t* get_dm_4310_measure_point(uint8_t i);
 
 /**
  * @brief 发送标准ID的数据帧。
@@ -113,7 +117,7 @@ uint8_t DM4310_SendStdData(FDCAN_HandleTypeDef* hfdcan, uint16_t ID, uint8_t* pD
 /**
  * @brief 使能电机。
  */
-void DM4310_MotorEnable(void);
+void DM4310_MotorEnable(uint8_t index);
 
 /**
  * @brief MIT模式控制电机。
@@ -174,5 +178,7 @@ float DM4310_UintToFloat(int x_int, float x_min, float x_max, int bits);
  * @return 转换后的无符号整数。
  */
 int DM4310_FloatToUint(float x, float x_min, float x_max, int bits);
+
+void motor_4310_can_callback(uint32_t can_id, const uint8_t* rx_data);
 
 #endif // DM_4310_H_

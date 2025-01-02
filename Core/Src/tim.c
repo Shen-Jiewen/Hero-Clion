@@ -141,9 +141,9 @@ void MX_TIM24_Init(void)
 
   /* USER CODE END TIM24_Init 1 */
   htim24.Instance = TIM24;
-  htim24.Init.Prescaler = 17-1;
+  htim24.Init.Prescaler = 12-1;
   htim24.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim24.Init.Period = 500;
+  htim24.Init.Period = 399;
   htim24.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim24.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim24) != HAL_OK)

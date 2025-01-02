@@ -9,12 +9,14 @@ extern FDCAN_HandleTypeDef hfdcan2;
 static gimbal_control_t gimbal_control;
 
 static fp32 motor_ecd_to_angle_change(uint16_t ecd, uint16_t offset_ecd);
-static void gimbal_absolute_angle_limit(gimbal_motor_t *gimbal_motor, fp32 add);
-static void gimbal_relative_angle_limit(gimbal_motor_t *gimbal_motor, fp32 add);
+static void gimbal_absolute_angle_limit(gimbal_motor_t* gimbal_motor, fp32 add);
+static void gimbal_relative_angle_limit(gimbal_motor_t* gimbal_motor, fp32 add);
 
-static void gimbal_motor_raw_angle_control(gimbal_motor_t *gimbal_motor);
-static void gimbal_motor_absolute_angle_control(gimbal_motor_t *gimbal_motor);
-static void gimbal_motor_relative_angle_control(gimbal_motor_t *gimbal_motor);
+static void gimbal_motor_raw_angle_control(gimbal_motor_t* gimbal_motor);
+static void gimbal_motor_absolute_angle_control(gimbal_motor_t* gimbal_motor);
+static void gimbal_motor_relative_angle_control(gimbal_motor_t* gimbal_motor);
+
+inline static fp32 get_relative_angle(const gimbal_motor_t* motor);
 
 /**
   * @brief          初始化云台控制结构体"gimbal_control"变量，设置PID控制器、遥控器、云台电机、陀螺仪数据指针等。
@@ -29,19 +31,25 @@ static void gimbal_motor_relative_angle_control(gimbal_motor_t *gimbal_motor);
   * 5. 清除所有PID控制器。
   * 6. 设置电机的目标角度和速度。
   */
-void gimbal_init(gimbal_control_t *init)
+void gimbal_init(gimbal_control_t* init)
 {
 	// 定义各个PID参数
-	static const fp32 Yaw_absolute_angle_pid[3] = {YAW_GYRO_ABSOLUTE_PID_KP, YAW_GYRO_ABSOLUTE_PID_KI, YAW_GYRO_ABSOLUTE_PID_KD};
-	static const fp32 Yaw_relative_angle_pid[3] = {YAW_ENCODE_RELATIVE_PID_KP, YAW_ENCODE_RELATIVE_PID_KI, YAW_ENCODE_RELATIVE_PID_KD};
-	static const fp32 Yaw_speed_pid[3] = {YAW_SPEED_PID_KP, YAW_SPEED_PID_KI, YAW_SPEED_PID_KD};
-	static const fp32 Pitch_absolute_angle_pid[3] = {PITCH_GYRO_ABSOLUTE_PID_KP, PITCH_GYRO_ABSOLUTE_PID_KI, PITCH_GYRO_ABSOLUTE_PID_KD};
-	static const fp32 Pitch_relative_angle_pid[3] = {PITCH_ENCODE_RELATIVE_PID_KP, PITCH_ENCODE_RELATIVE_PID_KI, PITCH_ENCODE_RELATIVE_PID_KD};
-	static const fp32 Pitch_speed_pid[3] = {PITCH_SPEED_PID_KP, PITCH_SPEED_PID_KI, PITCH_SPEED_PID_KD};
+	static const fp32
+		Yaw_absolute_angle_pid[3] = { YAW_GYRO_ABSOLUTE_PID_KP, YAW_GYRO_ABSOLUTE_PID_KI, YAW_GYRO_ABSOLUTE_PID_KD };
+	static const fp32 Yaw_relative_angle_pid[3] =
+		{ YAW_ENCODE_RELATIVE_PID_KP, YAW_ENCODE_RELATIVE_PID_KI, YAW_ENCODE_RELATIVE_PID_KD };
+	static const fp32 Yaw_speed_pid[3] = { YAW_SPEED_PID_KP, YAW_SPEED_PID_KI, YAW_SPEED_PID_KD };
+	static const fp32 Pitch_absolute_angle_pid[3] =
+		{ PITCH_GYRO_ABSOLUTE_PID_KP, PITCH_GYRO_ABSOLUTE_PID_KI, PITCH_GYRO_ABSOLUTE_PID_KD };
+	static const fp32 Pitch_relative_angle_pid[3] =
+		{ PITCH_ENCODE_RELATIVE_PID_KP, PITCH_ENCODE_RELATIVE_PID_KI, PITCH_ENCODE_RELATIVE_PID_KD };
+	static const fp32 Pitch_speed_pid[3] = { PITCH_SPEED_PID_KP, PITCH_SPEED_PID_KI, PITCH_SPEED_PID_KD };
 
-	// 初始化云台电机测量数据
-	init->gimbal_yaw_motor.gimbal_motor_measure = get_motor_6020_measure_point(0);
-	init->gimbal_pitch_motor.gimbal_motor_measure = get_motor_6020_measure_point(1);
+	// 初始化云台电机类型和测量数据
+	init->gimbal_yaw_motor.motor_type = MOTOR_TYPE_6020;
+	init->gimbal_yaw_motor.motor_measure.motor_6020 = get_motor_6020_measure_point(0);
+	init->gimbal_pitch_motor.motor_type = MOTOR_TYPE_4310;
+	init->gimbal_pitch_motor.motor_measure.motor_4310 = get_dm_4310_measure_point(0);
 	// 获取陀螺仪数据和INS角度数据的指针
 	init->gimbal_INT_angle_point = get_INS_angle_point();  // 获取惯性导航系统（INS）角度数据指针
 	init->gimbal_INT_gyro_point = get_gyro_data_point();   // 获取陀螺仪数据指针
@@ -57,14 +65,38 @@ void gimbal_init(gimbal_control_t *init)
 	init->gimbal_pitch_motor.gimbal_motor_mode = init->gimbal_pitch_motor.last_gimbal_motor_mode = GIMBAL_MOTOR_RAW;
 
 	// 初始化偏航角电机的PID控制器
-	PID_init(&init->gimbal_yaw_motor.gimbal_motor_absolute_angle_pid, PID_POSITION, Yaw_absolute_angle_pid, YAW_GYRO_ABSOLUTE_PID_MAX_OUT, YAW_GYRO_ABSOLUTE_PID_MAX_IOUT);
-	PID_init(&init->gimbal_yaw_motor.gimbal_motor_relative_angle_pid, PID_POSITION, Yaw_relative_angle_pid, YAW_ENCODE_RELATIVE_PID_MAX_OUT, YAW_ENCODE_RELATIVE_PID_MAX_IOUT);
-	PID_init(&init->gimbal_yaw_motor.gimbal_motor_gyro_pid, PID_POSITION, Yaw_speed_pid, YAW_SPEED_PID_MAX_OUT, YAW_SPEED_PID_MAX_IOUT);
+	PID_init(&init->gimbal_yaw_motor.gimbal_motor_absolute_angle_pid,
+		PID_POSITION,
+		Yaw_absolute_angle_pid,
+		YAW_GYRO_ABSOLUTE_PID_MAX_OUT,
+		YAW_GYRO_ABSOLUTE_PID_MAX_IOUT);
+	PID_init(&init->gimbal_yaw_motor.gimbal_motor_relative_angle_pid,
+		PID_POSITION,
+		Yaw_relative_angle_pid,
+		YAW_ENCODE_RELATIVE_PID_MAX_OUT,
+		YAW_ENCODE_RELATIVE_PID_MAX_IOUT);
+	PID_init(&init->gimbal_yaw_motor.gimbal_motor_gyro_pid,
+		PID_POSITION,
+		Yaw_speed_pid,
+		YAW_SPEED_PID_MAX_OUT,
+		YAW_SPEED_PID_MAX_IOUT);
 
 	// 初始化俯仰角电机的PID控制器
-	PID_init(&init->gimbal_pitch_motor.gimbal_motor_absolute_angle_pid, PID_POSITION, Pitch_absolute_angle_pid, PITCH_GYRO_ABSOLUTE_PID_MAX_OUT, PITCH_GYRO_ABSOLUTE_PID_MAX_IOUT);
-	PID_init(&init->gimbal_pitch_motor.gimbal_motor_relative_angle_pid, PID_POSITION, Pitch_relative_angle_pid, PITCH_ENCODE_RELATIVE_PID_MAX_OUT, PITCH_ENCODE_RELATIVE_PID_MAX_IOUT);
-	PID_init(&init->gimbal_pitch_motor.gimbal_motor_gyro_pid, PID_POSITION, Pitch_speed_pid, PITCH_SPEED_PID_MAX_OUT, PITCH_SPEED_PID_MAX_IOUT);
+	PID_init(&init->gimbal_pitch_motor.gimbal_motor_absolute_angle_pid,
+		PID_POSITION,
+		Pitch_absolute_angle_pid,
+		PITCH_GYRO_ABSOLUTE_PID_MAX_OUT,
+		PITCH_GYRO_ABSOLUTE_PID_MAX_IOUT);
+	PID_init(&init->gimbal_pitch_motor.gimbal_motor_relative_angle_pid,
+		PID_POSITION,
+		Pitch_relative_angle_pid,
+		PITCH_ENCODE_RELATIVE_PID_MAX_OUT,
+		PITCH_ENCODE_RELATIVE_PID_MAX_IOUT);
+	PID_init(&init->gimbal_pitch_motor.gimbal_motor_gyro_pid,
+		PID_POSITION,
+		Pitch_speed_pid,
+		PITCH_SPEED_PID_MAX_OUT,
+		PITCH_SPEED_PID_MAX_IOUT);
 
 	// 清除偏航电机的PID控制器状态
 	PID_clear(&init->gimbal_yaw_motor.gimbal_motor_absolute_angle_pid);
@@ -85,8 +117,10 @@ void gimbal_init(gimbal_control_t *init)
 	init->gimbal_pitch_motor.absolute_angle_set = init->gimbal_pitch_motor.absolute_angle;
 	init->gimbal_pitch_motor.relative_angle_set = init->gimbal_pitch_motor.relative_angle;
 	init->gimbal_pitch_motor.motor_gyro_set = init->gimbal_pitch_motor.motor_gyro;
-}
 
+	// pitch电机使能
+	DM4310_MotorEnable(0);
+}
 
 /**
   * @brief          更新底盘测量数据，包括电机速度、欧拉角度和机器人速度。
@@ -101,7 +135,7 @@ void gimbal_init(gimbal_control_t *init)
   *                 来计算相对角度，并根据是否定义了 `PITCH_TURN` 和 `YAW_TURN` 来决定角度的
   *                 方向。此外，计算偏航角的角速度时需要考虑俯仰角的影响。
   */
-void gimbal_feedback_update(gimbal_control_t *feedback_update)
+void gimbal_feedback_update(gimbal_control_t* feedback_update)
 {
 	// 如果传入的 feedback_update 指针为空，直接返回
 	if (feedback_update == NULL)
@@ -110,42 +144,33 @@ void gimbal_feedback_update(gimbal_control_t *feedback_update)
 	}
 
 	// 更新俯仰电机的绝对角度
-	feedback_update->gimbal_pitch_motor.absolute_angle = *(feedback_update->gimbal_INT_angle_point + INS_PITCH_ADDRESS_OFFSET);
+	feedback_update->gimbal_pitch_motor.absolute_angle =
+		*(feedback_update->gimbal_INT_angle_point + INS_PITCH_ADDRESS_OFFSET);
 
 	// 更新俯仰电机的相对角度
 #if PITCH_TURN
 	// 如果启用了 PITCH_TURN，将相对角度计算为负值
-        feedback_update->gimbal_pitch_motor.relative_angle = -motor_ecd_to_angle_change(
-            feedback_update->gimbal_pitch_motor.gimbal_motor_measure->ecd,
-            feedback_update->gimbal_pitch_motor.offset_ecd
-        );
+	feedback_update->gimbal_pitch_motor.relative_angle = -get_relative_angle(&feedback_update->gimbal_pitch_motor);
 #else
 	// 否则使用正值计算相对角度
-	feedback_update->gimbal_pitch_motor.relative_angle = motor_ecd_to_angle_change(
-		feedback_update->gimbal_pitch_motor.gimbal_motor_measure->ecd,
-		feedback_update->gimbal_pitch_motor.offset_ecd
-	);
+	feedback_update->gimbal_pitch_motor.relative_angle = get_relative_angle(&feedback_update->gimbal_pitch_motor);
 #endif
 
 	// 更新俯仰电机的陀螺仪数据（角速度）
-	feedback_update->gimbal_pitch_motor.motor_gyro = *(feedback_update->gimbal_INT_gyro_point + INS_GYRO_Y_ADDRESS_OFFSET);
+	feedback_update->gimbal_pitch_motor.motor_gyro =
+		*(feedback_update->gimbal_INT_gyro_point + INS_GYRO_Y_ADDRESS_OFFSET);
 
 	// 更新偏航电机的绝对角度
-	feedback_update->gimbal_yaw_motor.absolute_angle = *(feedback_update->gimbal_INT_angle_point + INS_YAW_ADDRESS_OFFSET);
+	feedback_update->gimbal_yaw_motor.absolute_angle =
+		*(feedback_update->gimbal_INT_angle_point + INS_YAW_ADDRESS_OFFSET);
 
 	// 更新偏航电机的相对角度
 #if YAW_TURN
 	// 如果启用了 YAW_TURN，将相对角度计算为负值
-	feedback_update->gimbal_yaw_motor.relative_angle = -motor_ecd_to_angle_change(
-		feedback_update->gimbal_yaw_motor.gimbal_motor_measure->ecd,
-		feedback_update->gimbal_yaw_motor.offset_ecd
-	);
+	feedback_update->gimbal_yaw_motor.relative_angle = -get_relative_angle(&feedback_update->gimbal_yaw_motor);
 #else
 	// 否则使用正值计算相对角度
-        feedback_update->gimbal_yaw_motor.relative_angle = motor_ecd_to_angle_change(
-            feedback_update->gimbal_yaw_motor.gimbal_motor_measure->ecd,
-            feedback_update->gimbal_yaw_motor.offset_ecd
-        );
+		feedback_update->gimbal_yaw_motor.relative_angle = get_relative_angle(&feedback_update->gimbal_yaw_motor);
 #endif
 
 	// 更新偏航电机的陀螺仪数据（角速度）
@@ -182,7 +207,7 @@ static fp32 motor_ecd_to_angle_change(uint16_t ecd, uint16_t offset_ecd)
   * @param[out]     gimbal_set_mode:"gimbal_control"变量指针.
   * @retval         none
   */
-void gimbal_set_mode(gimbal_control_t *set_mode)
+void gimbal_set_mode(gimbal_control_t* set_mode)
 {
 	if (set_mode == NULL)
 	{
@@ -196,7 +221,7 @@ void gimbal_set_mode(gimbal_control_t *set_mode)
   * @param[out]     gimbal_mode_change:"gimbal_control"变量指针.
   * @retval         none
   */
-void gimbal_mode_change_control_transit(gimbal_control_t *gimbal_mode_change)
+void gimbal_mode_change_control_transit(gimbal_control_t* gimbal_mode_change)
 {
 	if (gimbal_mode_change == NULL)
 	{
@@ -204,35 +229,47 @@ void gimbal_mode_change_control_transit(gimbal_control_t *gimbal_mode_change)
 	}
 
 	//yaw电机状态机切换保存数据
-	if (gimbal_mode_change->gimbal_yaw_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_RAW && gimbal_mode_change->gimbal_yaw_motor.gimbal_motor_mode == GIMBAL_MOTOR_RAW)
+	if (gimbal_mode_change->gimbal_yaw_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_RAW
+		&& gimbal_mode_change->gimbal_yaw_motor.gimbal_motor_mode == GIMBAL_MOTOR_RAW)
 	{
-		gimbal_mode_change->gimbal_yaw_motor.raw_cmd_current = gimbal_mode_change->gimbal_yaw_motor.current_set = (fp32)gimbal_mode_change->gimbal_yaw_motor.given_current;
+		gimbal_mode_change->gimbal_yaw_motor.raw_cmd_current = gimbal_mode_change->gimbal_yaw_motor.current_set =
+			(fp32)gimbal_mode_change->gimbal_yaw_motor.given_current;
 	}
-	else if (gimbal_mode_change->gimbal_yaw_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_GYRO && gimbal_mode_change->gimbal_yaw_motor.gimbal_motor_mode == GIMBAL_MOTOR_GYRO)
+	else if (gimbal_mode_change->gimbal_yaw_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_GYRO
+		&& gimbal_mode_change->gimbal_yaw_motor.gimbal_motor_mode == GIMBAL_MOTOR_GYRO)
 	{
 		gimbal_mode_change->gimbal_yaw_motor.absolute_angle_set = gimbal_mode_change->gimbal_yaw_motor.absolute_angle;
 	}
-	else if (gimbal_mode_change->gimbal_yaw_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_ENCONDE && gimbal_mode_change->gimbal_yaw_motor.gimbal_motor_mode == GIMBAL_MOTOR_ENCONDE)
+	else if (gimbal_mode_change->gimbal_yaw_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_ENCONDE
+		&& gimbal_mode_change->gimbal_yaw_motor.gimbal_motor_mode == GIMBAL_MOTOR_ENCONDE)
 	{
 		gimbal_mode_change->gimbal_yaw_motor.relative_angle_set = gimbal_mode_change->gimbal_yaw_motor.relative_angle;
 	}
-	gimbal_mode_change->gimbal_yaw_motor.last_gimbal_motor_mode = gimbal_mode_change->gimbal_yaw_motor.gimbal_motor_mode;
+	gimbal_mode_change->gimbal_yaw_motor.last_gimbal_motor_mode =
+		gimbal_mode_change->gimbal_yaw_motor.gimbal_motor_mode;
 
 	//pitch电机状态机切换保存数据
-	if (gimbal_mode_change->gimbal_pitch_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_RAW && gimbal_mode_change->gimbal_pitch_motor.gimbal_motor_mode == GIMBAL_MOTOR_RAW)
+	if (gimbal_mode_change->gimbal_pitch_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_RAW
+		&& gimbal_mode_change->gimbal_pitch_motor.gimbal_motor_mode == GIMBAL_MOTOR_RAW)
 	{
-		gimbal_mode_change->gimbal_pitch_motor.raw_cmd_current = gimbal_mode_change->gimbal_pitch_motor.current_set = (fp32)gimbal_mode_change->gimbal_pitch_motor.given_current;
+		gimbal_mode_change->gimbal_pitch_motor.raw_cmd_current = gimbal_mode_change->gimbal_pitch_motor.current_set =
+			(fp32)gimbal_mode_change->gimbal_pitch_motor.given_current;
 	}
-	else if (gimbal_mode_change->gimbal_pitch_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_GYRO && gimbal_mode_change->gimbal_pitch_motor.gimbal_motor_mode == GIMBAL_MOTOR_GYRO)
+	else if (gimbal_mode_change->gimbal_pitch_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_GYRO
+		&& gimbal_mode_change->gimbal_pitch_motor.gimbal_motor_mode == GIMBAL_MOTOR_GYRO)
 	{
-		gimbal_mode_change->gimbal_pitch_motor.absolute_angle_set = gimbal_mode_change->gimbal_pitch_motor.absolute_angle;
+		gimbal_mode_change->gimbal_pitch_motor.absolute_angle_set =
+			gimbal_mode_change->gimbal_pitch_motor.absolute_angle;
 	}
-	else if (gimbal_mode_change->gimbal_pitch_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_ENCONDE && gimbal_mode_change->gimbal_pitch_motor.gimbal_motor_mode == GIMBAL_MOTOR_ENCONDE)
+	else if (gimbal_mode_change->gimbal_pitch_motor.last_gimbal_motor_mode != GIMBAL_MOTOR_ENCONDE
+		&& gimbal_mode_change->gimbal_pitch_motor.gimbal_motor_mode == GIMBAL_MOTOR_ENCONDE)
 	{
-		gimbal_mode_change->gimbal_pitch_motor.relative_angle_set = gimbal_mode_change->gimbal_pitch_motor.relative_angle;
+		gimbal_mode_change->gimbal_pitch_motor.relative_angle_set =
+			gimbal_mode_change->gimbal_pitch_motor.relative_angle;
 	}
 
-	gimbal_mode_change->gimbal_pitch_motor.last_gimbal_motor_mode = gimbal_mode_change->gimbal_pitch_motor.gimbal_motor_mode;
+	gimbal_mode_change->gimbal_pitch_motor.last_gimbal_motor_mode =
+		gimbal_mode_change->gimbal_pitch_motor.gimbal_motor_mode;
 }
 
 /**
@@ -240,7 +277,7 @@ void gimbal_mode_change_control_transit(gimbal_control_t *gimbal_mode_change)
   * @param[out]     gimbal_set_control:"gimbal_control"变量指针.
   * @retval         none
   */
-void gimbal_set_control(gimbal_control_t *set_control)
+void gimbal_set_control(gimbal_control_t* set_control)
 {
 	if (set_control == NULL)
 	{
@@ -291,7 +328,7 @@ void gimbal_set_control(gimbal_control_t *set_control)
   * @param[out]     gimbal_motor:yaw电机或者pitch电机
   * @retval         none
   */
-static void gimbal_absolute_angle_limit(gimbal_motor_t *gimbal_motor, fp32 add)
+static void gimbal_absolute_angle_limit(gimbal_motor_t* gimbal_motor, fp32 add)
 {
 	if (gimbal_motor == NULL)
 	{
@@ -305,7 +342,7 @@ static void gimbal_absolute_angle_limit(gimbal_motor_t *gimbal_motor, fp32 add)
   * @param[out]     gimbal_motor:yaw电机或者pitch电机
   * @retval         none
   */
-static void gimbal_relative_angle_limit(gimbal_motor_t *gimbal_motor, fp32 add)
+static void gimbal_relative_angle_limit(gimbal_motor_t* gimbal_motor, fp32 add)
 {
 	if (gimbal_motor == NULL)
 	{
@@ -328,7 +365,7 @@ static void gimbal_relative_angle_limit(gimbal_motor_t *gimbal_motor, fp32 add)
   * @param[out]     gimbal_control_loop:"gimbal_control"变量指针.
   * @retval         none
   */
-void gimbal_control_loop(gimbal_control_t *control_loop)
+void gimbal_control_loop(gimbal_control_t* control_loop)
 {
 	if (control_loop == NULL)
 	{
@@ -367,7 +404,7 @@ void gimbal_control_loop(gimbal_control_t *control_loop)
   * @param[out]     gimbal_motor:yaw电机或者pitch电机
   * @retval         none
   */
-static void gimbal_motor_raw_angle_control(gimbal_motor_t *gimbal_motor)
+static void gimbal_motor_raw_angle_control(gimbal_motor_t* gimbal_motor)
 {
 	if (gimbal_motor == NULL)
 	{
@@ -382,15 +419,18 @@ static void gimbal_motor_raw_angle_control(gimbal_motor_t *gimbal_motor)
   * @param[out]     gimbal_motor:yaw电机或者pitch电机
   * @retval         none
   */
-static void gimbal_motor_absolute_angle_control(gimbal_motor_t *gimbal_motor)
+static void gimbal_motor_absolute_angle_control(gimbal_motor_t* gimbal_motor)
 {
 	if (gimbal_motor == NULL)
 	{
 		return;
 	}
 
-	gimbal_motor->motor_gyro_set = PID_calc(&gimbal_motor->gimbal_motor_absolute_angle_pid, gimbal_motor->absolute_angle, gimbal_motor->absolute_angle_set);
-	gimbal_motor->current_set = PID_calc(&gimbal_motor->gimbal_motor_gyro_pid, gimbal_motor->motor_gyro, gimbal_motor->motor_gyro_set);
+	gimbal_motor->motor_gyro_set = PID_calc(&gimbal_motor->gimbal_motor_absolute_angle_pid,
+		gimbal_motor->absolute_angle,
+		gimbal_motor->absolute_angle_set);
+	gimbal_motor->current_set =
+		PID_calc(&gimbal_motor->gimbal_motor_gyro_pid, gimbal_motor->motor_gyro, gimbal_motor->motor_gyro_set);
 	//控制值赋值
 	gimbal_motor->given_current = (int16_t)(gimbal_motor->current_set);
 }
@@ -400,7 +440,7 @@ static void gimbal_motor_absolute_angle_control(gimbal_motor_t *gimbal_motor)
   * @param[out]     gimbal_motor:yaw电机或者pitch电机
   * @retval         none
   */
-static void gimbal_motor_relative_angle_control(gimbal_motor_t *gimbal_motor)
+static void gimbal_motor_relative_angle_control(gimbal_motor_t* gimbal_motor)
 {
 	if (gimbal_motor == NULL)
 	{
@@ -408,10 +448,61 @@ static void gimbal_motor_relative_angle_control(gimbal_motor_t *gimbal_motor)
 	}
 
 	//角度环，速度环串级pid调试
-	gimbal_motor->motor_gyro_set = PID_calc(&gimbal_motor->gimbal_motor_relative_angle_pid, gimbal_motor->relative_angle, gimbal_motor->relative_angle_set);
-	gimbal_motor->current_set = PID_calc(&gimbal_motor->gimbal_motor_gyro_pid, gimbal_motor->motor_gyro, gimbal_motor->motor_gyro_set);
+	gimbal_motor->motor_gyro_set = PID_calc(&gimbal_motor->gimbal_motor_relative_angle_pid,
+		gimbal_motor->relative_angle,
+		gimbal_motor->relative_angle_set);
+	gimbal_motor->current_set =
+		PID_calc(&gimbal_motor->gimbal_motor_gyro_pid, gimbal_motor->motor_gyro, gimbal_motor->motor_gyro_set);
 	//控制值赋值
 	gimbal_motor->given_current = (int16_t)(gimbal_motor->current_set);
+}
+
+/**
+ * @brief 根据云台电机类型选择对应的测量值
+ *
+ * @param motor 指向云台电机控制数据的指针
+ * @return const void* 返回指向对应电机测量数据的常量指针
+ */
+inline static fp32 get_relative_angle(const gimbal_motor_t* motor)
+{
+	if (motor == NULL)
+	{
+		return 0;
+	}
+
+	switch (motor->motor_type)
+	{
+	case MOTOR_TYPE_6020:
+		return motor_ecd_to_angle_change(motor->motor_measure.motor_6020->ecd, (uint16_t)motor->offset_ecd);
+	case MOTOR_TYPE_4310:
+		return (motor->motor_measure.motor_4310->position - motor->offset_ecd);
+	default:
+		return 0;
+	}
+}
+
+/**
+ * @brief 获取云台电机的绝对编码值
+ *
+ * @return fp32 返回云台电机的绝对编码值
+ */
+fp32 get_gimbal_motor_ecd(const gimbal_motor_t* motor)
+{
+	if (motor == NULL)
+	{
+		return 0;
+	}
+
+	switch (motor->motor_type)
+	{
+	case MOTOR_TYPE_6020:
+		return motor->motor_measure.motor_6020->ecd;
+	case MOTOR_TYPE_4310:
+		return motor->motor_measure.motor_4310->position;
+	default:
+		break;
+	}
+	return 0;
 }
 
 static void FDCAN_cmd_gimbal(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4)
@@ -447,16 +538,18 @@ static void FDCAN_cmd_gimbal(int16_t motor1, int16_t motor2, int16_t motor3, int
 	}
 }
 
-gimbal_control_t * get_gimbal_control_point(void)
+gimbal_control_t* get_gimbal_control_point(void)
 {
 	return &gimbal_control;
 }
 
-gimbal_motor_t* get_yaw_motor_point(void){
+gimbal_motor_t* get_yaw_motor_point(void)
+{
 	return &gimbal_control.gimbal_yaw_motor;
 }
 
-gimbal_motor_t* get_pitch_motor_point(void){
+gimbal_motor_t* get_pitch_motor_point(void)
+{
 	return &gimbal_control.gimbal_pitch_motor;
 }
 

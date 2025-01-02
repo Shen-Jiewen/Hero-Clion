@@ -51,37 +51,6 @@ typedef struct
 } motor_6020_measure_t;
 
 /**
- * @brief 定义电机控制数据结构体
- */
-typedef struct
-{
-	const motor_6020_measure_t* gimbal_motor_measure;  // 指向电机测量数据的常量指针
-
-	pid_type_def gimbal_motor_absolute_angle_pid;      // 绝对角度PID控制器
-	pid_type_def gimbal_motor_relative_angle_pid;      // 相对角度PID控制器
-	pid_type_def gimbal_motor_gyro_pid;                // 陀螺仪PID控制器
-
-	gimbal_motor_mode_e gimbal_motor_mode;             // 当前电机控制模式
-	gimbal_motor_mode_e last_gimbal_motor_mode;        // 上一次电机控制模式
-
-	uint16_t offset_ecd;                               // 编码器偏移值
-
-	fp32 max_relative_angle;                           // 允许的最大相对角度，单位：弧度 (rad)
-	fp32 min_relative_angle;                           // 允许的最小相对角度，单位：弧度 (rad)
-
-	fp32 relative_angle;                               // 当前相对角度，单位：弧度 (rad)
-	fp32 relative_angle_set;                           // 设定相对角度，单位：弧度 (rad)
-	fp32 absolute_angle;                               // 当前绝对角度，单位：弧度 (rad)
-	fp32 absolute_angle_set;                           // 设定绝对角度，单位：弧度 (rad)
-	fp32 motor_gyro;                                   // 电机陀螺仪测量值，单位：弧度/秒 (rad/s)
-	fp32 motor_gyro_set;                               // 陀螺仪设定值，单位：弧度/秒 (rad/s)
-	fp32 motor_speed;                                  // 电机速度，单位：弧度/秒 (rad/s)
-	fp32 raw_cmd_current;                              // 原始电流命令值
-	fp32 current_set;                                  // 电流设定值
-	int32_t given_current;                             // 实际给定电流值
-} gimbal_motor_t;
-
-/**
  * @brief 获取指定索引的motor_6020_measure_t结构体指针。
  *
  * @param i 数组索引，范围为0到7。

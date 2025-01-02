@@ -333,7 +333,7 @@ static void gimbal_cali_control(fp32 *yaw, fp32 *pitch, gimbal_control_t *gimbal
 		//判断陀螺仪数据， 并记录最大最小角度数据
 		gimbal_cali_gyro_judge(gimbal_control_set->gimbal_pitch_motor.motor_gyro, cali_time, gimbal_control_set->gimbal_cali.max_pitch,
 			gimbal_control_set->gimbal_pitch_motor.absolute_angle, gimbal_control_set->gimbal_cali.max_pitch_ecd,
-			gimbal_control_set->gimbal_pitch_motor.gimbal_motor_measure->ecd, gimbal_control_set->gimbal_cali.step)
+			get_gimbal_motor_ecd(&gimbal_control_set->gimbal_pitch_motor), gimbal_control_set->gimbal_cali.step)
 	}
 	else if (gimbal_control_set->gimbal_cali.step == GIMBAL_CALI_PITCH_MIN_STEP)
 	{
@@ -342,7 +342,7 @@ static void gimbal_cali_control(fp32 *yaw, fp32 *pitch, gimbal_control_t *gimbal
 
 		gimbal_cali_gyro_judge(gimbal_control_set->gimbal_pitch_motor.motor_gyro, cali_time, gimbal_control_set->gimbal_cali.min_pitch,
 			gimbal_control_set->gimbal_pitch_motor.absolute_angle, gimbal_control_set->gimbal_cali.min_pitch_ecd,
-			gimbal_control_set->gimbal_pitch_motor.gimbal_motor_measure->ecd, gimbal_control_set->gimbal_cali.step)
+			get_gimbal_motor_ecd(&gimbal_control_set->gimbal_pitch_motor), gimbal_control_set->gimbal_cali.step)
 	}
 	else if (gimbal_control_set->gimbal_cali.step == GIMBAL_CALI_YAW_MAX_STEP)
 	{
@@ -351,7 +351,7 @@ static void gimbal_cali_control(fp32 *yaw, fp32 *pitch, gimbal_control_t *gimbal
 
 		gimbal_cali_gyro_judge(gimbal_control_set->gimbal_yaw_motor.motor_gyro, cali_time, gimbal_control_set->gimbal_cali.max_yaw,
 			gimbal_control_set->gimbal_yaw_motor.absolute_angle, gimbal_control_set->gimbal_cali.max_yaw_ecd,
-			gimbal_control_set->gimbal_yaw_motor.gimbal_motor_measure->ecd, gimbal_control_set->gimbal_cali.step)
+			get_gimbal_motor_ecd(&gimbal_control_set->gimbal_yaw_motor), gimbal_control_set->gimbal_cali.step)
 	}
 
 	else if (gimbal_control_set->gimbal_cali.step == GIMBAL_CALI_YAW_MIN_STEP)
@@ -361,7 +361,7 @@ static void gimbal_cali_control(fp32 *yaw, fp32 *pitch, gimbal_control_t *gimbal
 
 		gimbal_cali_gyro_judge(gimbal_control_set->gimbal_yaw_motor.motor_gyro, cali_time, gimbal_control_set->gimbal_cali.min_yaw,
 			gimbal_control_set->gimbal_yaw_motor.absolute_angle, gimbal_control_set->gimbal_cali.min_yaw_ecd,
-			gimbal_control_set->gimbal_yaw_motor.gimbal_motor_measure->ecd, gimbal_control_set->gimbal_cali.step)
+			get_gimbal_motor_ecd(&gimbal_control_set->gimbal_yaw_motor), gimbal_control_set->gimbal_cali.step)
 	}
 	else if (gimbal_control_set->gimbal_cali.step == GIMBAL_CALI_END_STEP)
 	{

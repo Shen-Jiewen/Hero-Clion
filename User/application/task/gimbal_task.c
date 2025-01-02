@@ -15,7 +15,6 @@ _Noreturn void gimbal_task(void* argument)
 	gimbal_control = get_gimbal_control_point();
 	// 云台初始化
 	gimbal_init(gimbal_control);
-	// 发射机构初始化
 
 	// 判断电机是否都上线
 	while (toe_is_error(PITCH_GIMBAL_MOTOR_TOE) && toe_is_error(YAW_GIMBAL_MOTOR_TOE)

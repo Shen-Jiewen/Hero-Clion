@@ -14,58 +14,36 @@
 #include "dm_4310.h"
 
 // 静态数组，用于存储3个DM 4310电机的测量数据
-static dm_4310_measure_t dm_4310_measure[3] = {0};
-
-extern FDCAN_HandleTypeDef hfdcan3;
+static motor_4310_measure_t dm_4310_measure[4] = { 0};
 
 /**
- * @brief 解析FDCAN数据并填充到dm_4310_measure_t结构体中。
+ * @brief 解析FDCAN数据并填充到motor_4310_measure_t结构体中。
  *
- * @param ptr 指向dm_4310_measure_t结构体的指针。
+ * @param ptr 指向motor_4310_measure_t结构体的指针。
  * @param data 指向包含原始FDCAN数据的字节数组的指针。
  */
-void dm_4310_measure_parse(dm_4310_measure_t* ptr, const uint8_t* data)
-{
-	ptr->last_ecd = (int16_t)ptr->ecd; // 存储上一次的编码器计数
-	ptr->ecd = (uint16_t)((data[0] << 8) | data[1]); // 提取当前编码器计数
-	ptr->speed_rpm = (uint16_t)((data[2] << 8) | data[3]); // 提取转速（RPM）
-	ptr->given_current = (uint16_t)((data[4] << 8) | data[5]); // 提取给定电流
-	ptr->temperature = data[6]; // 提取温度
+void dm_4310_measure_parse(motor_4310_measure_t* ptr, const uint8_t* data) {
+	ptr->ID = (data[0] & 0xF);                      // 提取低 4 位作为 ID
+	ptr->error = (data[0] >> 4);                    // 提取高 4 位作为错误码
+	ptr->p_int = (data[1] << 8) | data[2];          // 组合成 16 位位置整数
+	ptr->v_int = (data[3] << 4) | (data[4] >> 4);   // 组合成 12 位速度整数
+	ptr->t_int = ((data[4] & 0xF) << 8) | data[5];  // 组合成 12 位扭矩整数
+	ptr->position = DM4310_UintToFloat(ptr->p_int, P_MIN, P_MAX, 16); // 转换为浮点数位置，单位：弧度 (rad)
+	ptr->velocity = DM4310_UintToFloat(ptr->v_int, V_MIN, V_MAX, 12); // 转换为浮点数速度，单位：弧度/秒 (rad/s)
+	ptr->torque = DM4310_UintToFloat(ptr->t_int, T_MIN, T_MAX, 12);   // 转换为浮点数扭矩，单位：牛·米 (N·m)
+	ptr->T_mos = (float)data[6];                    // MOSFET 温度，单位：摄氏度 (°C)
+	ptr->T_motor = (float)data[7];                  // 电机线圈温度，单位：摄氏度 (°C)
 }
 
 /**
- * @brief 获取指定索引的dm_4310_measure_t结构体指针。
+ * @brief 获取指定索引的motor_4310_measure_t结构体指针。
  *
  * @param i 数组索引，范围为0到2。
- * @return 指向指定索引的dm_4310_measure_t结构体的指针。
+ * @return 指向指定索引的motor_4310_measure_t结构体的指针。
  */
-const dm_4310_measure_t* get_dm_4310_measure_point(uint8_t i)
+const motor_4310_measure_t* get_dm_4310_measure_point(uint8_t i)
 {
 	return &dm_4310_measure[i];
-}
-
-/**
- * @brief FDCAN回调函数，处理接收到的FDCAN消息。
- *
- * @param can_id FDCAN消息的ID。
- * @param rx_data 指向接收到的FDCAN数据的字节数组的指针。
- */
-void dm_4310_fdcan_callback(uint32_t can_id, const uint8_t* rx_data)
-{
-	switch (can_id)
-	{
-	case FDCAN_DM4310_M1_ID:
-		dm_4310_measure_parse(&dm_4310_measure[0], rx_data); // 解析电机1的数据
-		break;
-	case FDCAN_DM4310_M2_ID:
-		dm_4310_measure_parse(&dm_4310_measure[1], rx_data); // 解析电机2的数据
-		break;
-	case FDCAN_DM4310_M3_ID:
-		dm_4310_measure_parse(&dm_4310_measure[2], rx_data); // 解析电机3的数据
-		break;
-	default:
-		break;
-	}
 }
 
 /**
@@ -100,15 +78,26 @@ uint8_t DM4310_SendStdData(FDCAN_HandleTypeDef* hfdcan, uint16_t ID, uint8_t* pD
 /**
  * @brief 使能电机。
  */
-void DM4310_MotorEnable(void)
+void DM4310_MotorEnable(uint8_t index)
 {
-	uint8_t Data_Enable[8] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFC};
-	DM4310_SendStdData(&hfdcan3, FDCAN_DM4310_M1_ID, Data_Enable);
-	HAL_Delay(10);
-	DM4310_SendStdData(&hfdcan3, FDCAN_DM4310_M2_ID, Data_Enable);
-	HAL_Delay(10);
-	DM4310_SendStdData(&hfdcan3, FDCAN_DM4310_M3_ID, Data_Enable);
-	HAL_Delay(10);
+	uint8_t Data_Enable[8] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFC };
+	switch (index)
+	{
+	case 0:
+		DM4310_SendStdData(DM_CAN, FDCAN_DM4310_M1_SLAVE_ID, Data_Enable);
+		break;
+	case 1:
+		DM4310_SendStdData(DM_CAN, FDCAN_DM4310_M2_SLAVE_ID, Data_Enable);
+		break;
+	case 2:
+		DM4310_SendStdData(DM_CAN, FDCAN_DM4310_M3_SLAVE_ID, Data_Enable);
+		break;
+	case 3:
+		DM4310_SendStdData(DM_CAN, FDCAN_DM4310_M4_SLAVE_ID, Data_Enable);
+		break;
+	default:
+		break;
+	}
 }
 
 /**
@@ -122,7 +111,13 @@ void DM4310_MotorEnable(void)
  * @param KD 位置微分系数。
  * @param torq 转矩给定值。
  */
-void DM4310_MIT_CtrlMotor(FDCAN_HandleTypeDef* hfdcan, uint16_t id, float pos, float vel, float KP, float KD, float _torq)
+void DM4310_MIT_CtrlMotor(FDCAN_HandleTypeDef* hfdcan,
+	uint16_t id,
+	float pos,
+	float vel,
+	float KP,
+	float KD,
+	float _torq)
 {
 	FDCAN_TxHeaderTypeDef Tx_Header = {
 		.Identifier = id,
@@ -249,3 +244,33 @@ inline int DM4310_FloatToUint(float x, float x_min, float x_max, int bits)
 	return (int)((x - x_min) * ((float)((1 << bits) - 1)) / span);
 }
 
+/**
+ * @brief CAN回调函数，处理接收到的CAN消息。
+ *
+ * 该函数根据CAN消息的ID，解析对应电机的数据，并调用检测钩子函数。
+ * 如果CAN ID不在预期范围内，则调用错误处理函数。
+ *
+ * @param can_id CAN消息的ID。
+ * @param rx_data 指向接收到的CAN数据的字节数组的指针。
+ */
+void motor_4310_can_callback(uint32_t can_id, const uint8_t* rx_data)
+{
+	switch (can_id)
+	{
+	case FDCAN_DM4310_M1_SLAVE_ID:
+		dm_4310_measure_parse(&dm_4310_measure[0], rx_data);
+		detect_hook(PITCH_GIMBAL_MOTOR_TOE);
+		break;
+	case FDCAN_DM4310_M2_SLAVE_ID:
+		dm_4310_measure_parse(&dm_4310_measure[1], rx_data);
+		break;
+	case FDCAN_DM4310_M3_SLAVE_ID:
+		dm_4310_measure_parse(&dm_4310_measure[2], rx_data);
+		break;
+	case FDCAN_DM4310_M4_SLAVE_ID:
+		dm_4310_measure_parse(&dm_4310_measure[3], rx_data);
+		break;
+	default:
+		break;
+	}
+}

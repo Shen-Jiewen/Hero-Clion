@@ -7,9 +7,8 @@
 
 #include "main.h"
 #include "struct_typedef.h"
-#include <stdbool.h>
-#include "gimbal.h"
 #include "detect.h"
+#include "gimbal.h"
 
 typedef enum
 {

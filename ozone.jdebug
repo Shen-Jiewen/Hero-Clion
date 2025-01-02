@@ -33,7 +33,6 @@ void OnProjectLoad (void) {
   //
   // User settings
   //
-  Edit.SysVar (VAR_HSS_SPEED, FREQ_100_HZ);
   Project.SetOSPlugin ("FreeRTOSPlugin_CM4");
   File.Open ("$(ProjectDir)/cmake-build-debug/DM_02_Hero.elf");
 }
