@@ -3,7 +3,7 @@
 [GENERAL]
   aATEModuleSel[24] = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
   ConnectMode = 0
-  CurrentFile = "D:\ClionProject\Hero-Clion\cmake-build-debug\DM_02_Hero.hex"
+  CurrentFile = "C:\Users\35126\Desktop\Hero-Clion\cmake-build-debug\DM_02_Hero.hex"
   DataFileSAddr = 0x00000000
   GUIMode = 0
   HostName = ""
