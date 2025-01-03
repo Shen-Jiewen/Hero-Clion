@@ -536,6 +536,8 @@ static void FDCAN_cmd_gimbal(int16_t motor1, int16_t motor2, int16_t motor3, int
 	{
 
 	}
+
+	DM4310_MIT_CtrlMotor(&hfdcan2, FDCAN_DM4310_M1_MASTER_ID, 0, 0, 0, 0, 0);
 }
 
 gimbal_control_t* get_gimbal_control_point(void)

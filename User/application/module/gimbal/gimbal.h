@@ -60,7 +60,6 @@
 #define YAW_ENCODE_RELATIVE_PID_MAX_OUT   10.0f
 #define YAW_ENCODE_RELATIVE_PID_MAX_IOUT  0.0f
 
-
 //任务初始化 空闲一段时间
 #define GIMBAL_TASK_INIT_TIME 2000
 //yaw,pitch控制通道以及状态开关通道

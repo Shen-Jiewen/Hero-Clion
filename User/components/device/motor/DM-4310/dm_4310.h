@@ -18,10 +18,6 @@
 #include "pid.h"
 #include "detect.h"
 
-extern FDCAN_HandleTypeDef hfdcan2;
-
-#define DM_CAN &hfdcan2
-
 /**
  * @brief 定义电机控制参数的取值范围
  */
@@ -113,9 +109,6 @@ const motor_4310_measure_t* get_dm_4310_measure_point(uint8_t i);
  * @param Len 字节数0~8。
  */
 uint8_t DM4310_SendStdData(FDCAN_HandleTypeDef* hfdcan, uint16_t ID, uint8_t* pData);
-
-uint8_t MIT_CtrlMotor(FDCAN_HandleTypeDef* hcan,uint16_t id, float pos, float vel,
-	float KP, float KD, float torq);
 
 /**
  * @brief 使能电机。
