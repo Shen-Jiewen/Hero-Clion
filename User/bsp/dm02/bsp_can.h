@@ -9,6 +9,7 @@
 #include "dji_3508.h"
 #include "dji_6020.h"
 #include "dm_4310.h"
+#include "dm_4310_v41.h"
 
 extern void fdcan1_filter_init(void);
 extern void fdcan2_filter_init(void);
