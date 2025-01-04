@@ -62,11 +62,10 @@ typedef struct
 /**
  * @brief 获取指定索引的motor_3508_measure_t结构体指针。
  *
- * @param i 数组索引，范围为0到7。
+ * @param i 数组索引，范围为0到1。0代表CAN1,1代表CAN2 ,j数组索引，范围为0到7
  * @return 指向指定索引的motor_3508_measure_t结构体的指针。
  */
-const motor_3508_measure_t* get_motor_3508_measure_point(uint8_t i);
-
+const motor_3508_measure_t* get_motor_3508_measure_point(uint8_t i,uint8_t j);
 /**
  * @brief CAN回调函数，处理接收到的CAN消息。
  *
@@ -74,5 +73,5 @@ const motor_3508_measure_t* get_motor_3508_measure_point(uint8_t i);
  * @param rx_data 指向接收到的CAN数据的字节数组的指针。
  */
 void motor_3508_can_callback(uint32_t can_id, const uint8_t* rx_data);
-
+void shoot_3508_can_callback(uint32_t can_id, const uint8_t* rx_data);
 #endif //DM_02_HERO_USER_COMPONENTS_DEVICE_MOTOR_DJI_3508_DJI_3508_H_

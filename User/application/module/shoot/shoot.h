@@ -38,6 +38,20 @@
 #define INSIDE_SHOOT_SPEED_PID_MAX_OUT  16000.0f
 #define INSIDE_SHOOT_SPEED_PID_MAX_IOUT 2000.0f
 
+//m3508速度转化的比例，
+#define M3508_MOTOR_RPM_TO_VECTOR 0.000415809748903494517209f
+
+typedef enum
+{
+   SHOOT_STOP = 0,
+   SHOOT_READY_FRIC,
+   SHOOT_READY_BULLET,
+   SHOOT_READY,
+   SHOOT_BULLET,
+   SHOOT_CONTINUE_BULLET,
+   SHOOT_DONE,
+} shoot_mode_e;
+
 /**
  * @brief 定义电机类型的枚举类型
  */
@@ -57,12 +71,29 @@ typedef struct {
       const motor_4310_measure_t* motor_4310;      //指向4310电机测量数据的常量指针
    }motor_measure;
 
+   pid_type_def trigger_angle_pid;                 //拨盘电机角度环PID
+   int16_t give_current;                            // 实际给定电流值
+   fp32 speed_set;                                  // 电机设定速度
+   float angle_set;                                 //电机角度设定值
+
 }shoot_motor_t;
 
 typedef struct
 {
-   const RC_ctrl_t* shoot_rc_ctrl;                //指向发射机构遥控控制输入的常量指针
-   shoot_motor_t trigger_motor;
+   const RC_ctrl_t* shoot_rc_ctrl;                 //指向发射机构遥控控制输入的常量指针
+   shoot_motor_t trigger_motor;                    //拨盘电机结构体
+   motor_3508_t friction_motor[4];                 //四个摩擦轮电机结构体
+   shoot_mode_e shoot_mode;                        //发射的状态机枚举
+   pid_type_def friction_speed_pid[4];             //四个摩擦轮电机的PID
+   bool_t shoot_flag;                              //发射标志位
+   bool_t press_l;                                 //鼠标左键状态
+   bool_t press_r;                                 //鼠标右键状态
+   bool_t last_press_l;                            //上一次鼠标左键状态
+   bool_t last_press_r;                            //上一次鼠标右键状态
+   uint16_t shoot_speed_limit;                     //射速限制
+   uint16_t last_shoot_speed_limit;                //上一次射速限制
+   uint16_t heat_limit;                            //热量限制
+   uint16_t heat;	                                 //热量
 }shoot_control_t;
 
 shoot_control_t* get_shoot_control_point(void);

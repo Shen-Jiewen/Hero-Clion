@@ -11,8 +11,9 @@
 
 #include "dji_3508.h"
 
-// 静态数组，用于存储8个DJI 3508电机的测量数据
-static motor_3508_measure_t motor_3508_measure[8] = { 0 };
+// 静态数组，用于存储两组8个DJI 3508电机的测量数据
+//二维数组方便存放不同CAN上相同id的3508
+static motor_3508_measure_t motor_3508_measure[2][8] = { 0 };
 
 /**
  * @brief 解析CAN数据并填充到motor_3508_measure_t结构体中。
@@ -36,11 +37,11 @@ void motor_3508_measure_parse(motor_3508_measure_t *ptr, const uint8_t *data) {
  *
  * 该函数返回指向motor_3508_measure数组中指定索引的结构体指针。
  *
- * @param i 数组索引，范围为0到7。
+ * @param i 数组索引，范围为0到1，分别代表CAN1和CAN2，J，数组索引，范围为0到7
  * @return 指向指定索引的motor_3508_measure_t结构体的指针。
  */
-const motor_3508_measure_t* get_motor_3508_measure_point(uint8_t i){
-	return &motor_3508_measure[i];
+const motor_3508_measure_t* get_motor_3508_measure_point(uint8_t i,uint8_t j){
+	return &motor_3508_measure[i][j];
 }
 
 /**
@@ -57,34 +58,65 @@ void motor_3508_can_callback(uint32_t can_id, const uint8_t* rx_data)
 	switch (can_id)
 	{
 	case CAN_3508_M1_ID:
-		motor_3508_measure_parse(&motor_3508_measure[0], rx_data); // 解析电机1的数据
+		motor_3508_measure_parse(&motor_3508_measure[0][0], rx_data); // 解析电机1的数据
 		detect_hook(CHASSIS_MOTOR1_TOE); // 调用检测钩子函数
 		break;
 	case CAN_3508_M2_ID:
-		motor_3508_measure_parse(&motor_3508_measure[1], rx_data); // 解析电机2的数据
+		motor_3508_measure_parse(&motor_3508_measure[0][1], rx_data); // 解析电机2的数据
 		detect_hook(CHASSIS_MOTOR2_TOE); // 调用检测钩子函数
 		break;
 	case CAN_3508_M3_ID:
-		motor_3508_measure_parse(&motor_3508_measure[2], rx_data); // 解析电机3的数据
+		motor_3508_measure_parse(&motor_3508_measure[0][2], rx_data); // 解析电机3的数据
 		detect_hook(CHASSIS_MOTOR3_TOE); // 调用检测钩子函数
 		break;
 	case CAN_3508_M4_ID:
-		motor_3508_measure_parse(&motor_3508_measure[3], rx_data); // 解析电机4的数据
+		motor_3508_measure_parse(&motor_3508_measure[0][3], rx_data); // 解析电机4的数据
 		detect_hook(CHASSIS_MOTOR4_TOE); // 调用检测钩子函数
 		break;
 	case CAN_3508_M5_ID:
-		motor_3508_measure_parse(&motor_3508_measure[4], rx_data); // 解析电机5的数据
+		motor_3508_measure_parse(&motor_3508_measure[0][4], rx_data); // 解析电机5的数据
 		break;
 	case CAN_3508_M6_ID:
-		motor_3508_measure_parse(&motor_3508_measure[5], rx_data); // 解析电机6的数据
+		motor_3508_measure_parse(&motor_3508_measure[0][5], rx_data); // 解析电机6的数据
 		break;
 	case CAN_3508_M7_ID:
-		motor_3508_measure_parse(&motor_3508_measure[6], rx_data); // 解析电机7的数据
+		motor_3508_measure_parse(&motor_3508_measure[0][6], rx_data); // 解析电机7的数据
 		break;
 	case CAN_3508_M8_ID:
-		motor_3508_measure_parse(&motor_3508_measure[7], rx_data); // 解析电机8的数据
+		motor_3508_measure_parse(&motor_3508_measure[0][7], rx_data); // 解析电机8的数据
 		break;
 	default:
 		break;
+	}
+}
+
+void shoot_3508_can_callback(uint32_t can_id, const uint8_t* rx_data) {
+	switch (can_id) {
+		case CAN_3508_M1_ID:
+			motor_3508_measure_parse(&motor_3508_measure[1][0], rx_data); // 解析电机1的数据
+		break;
+		case CAN_3508_M2_ID:
+			motor_3508_measure_parse(&motor_3508_measure[1][1], rx_data); // 解析电机2的数据
+		break;
+		case CAN_3508_M3_ID:
+			motor_3508_measure_parse(&motor_3508_measure[1][2], rx_data); // 解析电机3的数据
+		break;
+		case CAN_3508_M4_ID:
+			motor_3508_measure_parse(&motor_3508_measure[1][3], rx_data); // 解析电机4的数据
+		break;
+		case CAN_3508_M5_ID:
+			motor_3508_measure_parse(&motor_3508_measure[1][4], rx_data); // 解析电机5的数据
+		break;
+		case CAN_3508_M6_ID:
+			motor_3508_measure_parse(&motor_3508_measure[1][5], rx_data); // 解析电机6的数据
+		break;
+		case CAN_3508_M7_ID:
+			motor_3508_measure_parse(&motor_3508_measure[1][6], rx_data); // 解析电机7的数据
+		break;
+		case CAN_3508_M8_ID:
+			motor_3508_measure_parse(&motor_3508_measure[1][7], rx_data); // 解析电机8的数据
+		break;
+		default:
+			break;
 	}
 }
