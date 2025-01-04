@@ -7,7 +7,7 @@
 
 extern IWDG_HandleTypeDef hiwdg1;
 
-_Noreturn void watch_task(void* argument){
+_Noreturn void watch_task(__attribute__((unused)) void* argument){
 
 	// 喂狗任务,间隔20ms
 	while (1){

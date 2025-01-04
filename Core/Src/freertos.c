@@ -153,7 +153,7 @@ extern void remote_control_task(void *argument);
 extern void gimbal_task(void *argument);
 extern void buzzer_task(void *argument);
 extern void shoot_task(void *argument);
-extern void watch_task(void *argument);
+extern void watch_task(__attribute__((unused)) void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
