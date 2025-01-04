@@ -13,7 +13,7 @@
 #include "dji_6020.h"
 
 // 静态数组，用于存储8个DJI 6020电机的测量数据
-static motor_6020_measure_t motor_6020_measure[8] = { 0};
+static motor_6020_measure_t motor_6020_measure[8] = {0};
 
 /**
  * @brief 解析CAN数据并填充到motor_6020_measure_t结构体中。
