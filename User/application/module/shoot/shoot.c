@@ -8,13 +8,6 @@
 
 static shoot_control_t shoot_control;
 
-/**
-  * @brief          射击数据更新
-  * @param[in]      void
-  * @retval         void
-  */
-static void shoot_feedback_update(void);
-
 shoot_control_t* get_shoot_control_point(void)
 {
     return &shoot_control;
@@ -71,7 +64,7 @@ void shoot_init(shoot_control_t* shoot_init)
     }
 
     //数据更新
-    shoot_feedback_update();
+    shoot_feedback_update(shoot_init);
     //初始化发射标志位
     shoot_init->shoot_flag = 0;
 
@@ -100,21 +93,21 @@ void shoot_init(shoot_control_t* shoot_init)
   * @param[in]      void
   * @retval         void
   */
-static void shoot_feedback_update(void) {
+void shoot_feedback_update(shoot_control_t* shoot_feedback) {
 
     //更新拨弹电机数据
-    shoot_control.trigger_motor.motor_measure.motor_4310 = get_dm_4310_measure_point(1);
+    shoot_feedback->trigger_motor.motor_measure.motor_4310 = get_dm_4310_measure_point(1);
 
     //更新摩擦轮电机速度
     for (uint8_t i = 0; i < 4; i++) {
-        shoot_control.friction_motor[i].speed = shoot_control.friction_motor[i].motor_3508_measure->speed_rpm * M3508_MOTOR_RPM_TO_VECTOR;
+        shoot_feedback->friction_motor[i].speed = shoot_feedback->friction_motor[i].motor_3508_measure->speed_rpm * M3508_MOTOR_RPM_TO_VECTOR;
     }
 
     //记录上次的键盘状态
-    shoot_control.last_press_l = shoot_control.press_l;
-    shoot_control.last_press_r = shoot_control.press_r;
+    shoot_feedback->last_press_l =  shoot_feedback->press_l;
+     shoot_feedback->last_press_r =  shoot_feedback->press_r;
 
     //判断鼠标状态
-    shoot_control.press_l = shoot_control.shoot_rc_ctrl->mouse.press_l;
-    shoot_control.press_r = shoot_control.shoot_rc_ctrl->mouse.press_r;
+     shoot_feedback->press_l =  shoot_feedback->shoot_rc_ctrl->mouse.press_l;
+     shoot_feedback->press_r =  shoot_feedback->shoot_rc_ctrl->mouse.press_r;
 }

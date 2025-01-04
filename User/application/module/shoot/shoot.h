@@ -41,6 +41,7 @@
 //m3508速度转化的比例，
 #define M3508_MOTOR_RPM_TO_VECTOR 0.000415809748903494517209f
 
+#define SHOOT_CONTROL_TIME 1
 typedef enum
 {
    SHOOT_STOP = 0,
@@ -97,5 +98,6 @@ typedef struct
 }shoot_control_t;
 
 shoot_control_t* get_shoot_control_point(void);
-
+void shoot_init(shoot_control_t* shoot_init);
+void shoot_feedback_update(shoot_control_t* shoot_feedback);
 #endif //SHOOT_H_
