@@ -210,7 +210,7 @@ typedef struct
 	gimbal_step_cali_t gimbal_cali;         // 云台步进位置的校准数据。
 
 	// 通信接口定义
-	void (* CAN_cmd_gimbal)(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);
+	void (* CAN_cmd_gimbal)(uint16_t canid, int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);
 } gimbal_control_t;
 
 void gimbal_init(gimbal_control_t* init);

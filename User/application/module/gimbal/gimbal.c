@@ -49,7 +49,7 @@ void gimbal_init(gimbal_control_t* init)
 	init->gimbal_yaw_motor.motor_type = MOTOR_TYPE_6020;
 	init->gimbal_yaw_motor.motor_measure.motor_6020 = get_motor_6020_measure_point(0);
 	init->gimbal_pitch_motor.motor_type = MOTOR_TYPE_4310;
-	init->gimbal_pitch_motor.motor_measure.motor_4310 = get_motor_4310_v41_measure_point(0);
+	init->gimbal_pitch_motor.motor_measure.motor_4310 = get_motor_4310_v41_measure_point(1);
 	// 获取陀螺仪数据和INS角度数据的指针
 	init->gimbal_INT_angle_point = get_INS_angle_point();  // 获取惯性导航系统（INS）角度数据指针
 	init->gimbal_INT_gyro_point = get_gyro_data_point();   // 获取陀螺仪数据指针
@@ -541,13 +541,13 @@ fp32 get_gimbal_motor_ecd(const gimbal_motor_t* motor)
 	return 0;
 }
 
-static void FDCAN_cmd_gimbal(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4)
+static void FDCAN_cmd_gimbal(uint16_t canid, int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4)
 {
 	FDCAN_TxHeaderTypeDef txHeader;
 	uint8_t txData[8]; // 数据缓存
 
 	// 配置 FDCAN 消息头
-	txHeader.Identifier = CAN_GIMBAL_ALL_ID;  // 示例标准 ID (根据实际需求修改)
+	txHeader.Identifier = canid;  // 示例标准 ID (根据实际需求修改)
 	txHeader.IdType = FDCAN_STANDARD_ID;       // 标准帧 (11位 ID)
 	txHeader.TxFrameType = FDCAN_DATA_FRAME;   // 数据帧
 	txHeader.DataLength = FDCAN_DLC_BYTES_8;   // 数据长度为 8 字节

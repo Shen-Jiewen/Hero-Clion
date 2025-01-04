@@ -56,12 +56,17 @@ _Noreturn void gimbal_task(void* argument)
 		{
 			if (toe_is_error(DBUS_TOE))
 			{
-				gimbal_control->CAN_cmd_gimbal(0, 0, 0, 0);
+				gimbal_control->CAN_cmd_gimbal(CAN_6020_ALL_ID, 0, 0, 0, 0);
+				gimbal_control->CAN_cmd_gimbal(CAN_4310_v41_ALL_ID, 0, 0, 0, 0);
 			}
 			else
 			{
-				gimbal_control->CAN_cmd_gimbal((int16_t)gimbal_control->gimbal_yaw_motor.given_current,
+				gimbal_control->CAN_cmd_gimbal(CAN_6020_ALL_ID, (int16_t)gimbal_control->gimbal_yaw_motor.given_current,
 					0,
+					0,
+					0);
+				gimbal_control->CAN_cmd_gimbal(CAN_4310_v41_ALL_ID, 0,
+					(int16_t)gimbal_control->gimbal_pitch_motor.given_current,
 					0,
 					0);
 			}
