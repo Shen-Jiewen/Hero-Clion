@@ -248,7 +248,7 @@ void chassis_init(chassis_control_t* chassis_move_init)
 	// 初始化PID参数
 	for (uint8_t i = 0; i < 4; i++)
 	{
-		chassis_move_init->motor_chassis[i].motor_3508_measure = get_motor_3508_measure_point(i);
+		chassis_move_init->motor_chassis[i].motor_3508_measure = get_motor_3508_measure_point(0,i);
 		PID_init(&chassis_move_init->motor_speed_pid[i],
 			PID_POSITION,
 			motor_speed_pid,
