@@ -113,7 +113,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 			if (HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &RxHeader, RxData) == HAL_OK)
 			{
 				// 处理 FDCAN1 的接收到的消息
-				motor_3505_can_callback(RxHeader.Identifier, RxData);
+				motor_3508_can_callback(RxHeader.Identifier, RxData);
 			}
 		}
 	}

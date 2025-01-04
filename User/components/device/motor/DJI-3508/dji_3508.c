@@ -52,7 +52,7 @@ const motor_3508_measure_t* get_motor_3508_measure_point(uint8_t i){
  * @param can_id CAN消息的ID。
  * @param rx_data 指向接收到的CAN数据的字节数组的指针。
  */
-void motor_3505_can_callback(uint32_t can_id, const uint8_t* rx_data)
+void motor_3508_can_callback(uint32_t can_id, const uint8_t* rx_data)
 {
 	switch (can_id)
 	{

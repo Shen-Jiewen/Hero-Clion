@@ -37,7 +37,7 @@
 
 - **Javen** 邮箱:`jiewenshen6741@gmail.com`
 - **Syh** 邮箱:``
-- **Otter**
+- **Du.X.Y** 邮箱：`3512683509@qq.com`
 
 ## 许可证
 
