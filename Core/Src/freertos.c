@@ -131,6 +131,13 @@ const osThreadAttr_t watchTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityRealtime,
 };
+/* Definitions for uiTask */
+osThreadId_t uiTaskHandle;
+const osThreadAttr_t uiTask_attributes = {
+  .name = "uiTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for imuBinarySem01 */
 osSemaphoreId_t imuBinarySem01Handle;
 const osSemaphoreAttr_t imuBinarySem01_attributes = {
@@ -153,7 +160,8 @@ extern void remote_control_task(void *argument);
 extern void gimbal_task(void *argument);
 extern void buzzer_task(void *argument);
 extern void shoot_task(void *argument);
-extern void watch_task(__attribute__((unused)) void *argument);
+extern void watch_task(void *argument);
+extern void ui_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -241,6 +249,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of watchTask */
   watchTaskHandle = osThreadNew(watch_task, NULL, &watchTask_attributes);
+
+  /* creation of uiTask */
+  uiTaskHandle = osThreadNew(ui_task, NULL, &uiTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
