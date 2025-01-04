@@ -13,7 +13,7 @@
 #include "dm_4310_v41.h"
 
 // 静态数组，用于存储3个DM 4310电机的测量数据
-static motor_4310_v41_measure_t dm_4310_v41_measure[4] = { 0};
+static motor_4310_v41_measure_t dm_4310_v41_measure[4] = {0};
 
 /**
  * @brief 解析CAN数据并填充到`motor_4310_v41_measure_t`结构体中。
@@ -61,9 +61,11 @@ void motor_4310_v41_can_callback(uint32_t can_id, const uint8_t* rx_data)
 	{
 	case FDCAN_DM4310_V41_M1_ID:
 		motor_4310_v41_measure_parse(&dm_4310_v41_measure[0], rx_data); // 解析Yaw电机的数据
+		detect_hook(YAW_GIMBAL_MOTOR_TOE);
 		break;
 	case FDCAN_DM4310_V41_M2_ID:
 		motor_4310_v41_measure_parse(&dm_4310_v41_measure[1], rx_data); // 解析Pitch电机的数据
+		detect_hook(PITCH_GIMBAL_MOTOR_TOE);
 		break;
 	default:
 		break;

@@ -23,7 +23,7 @@
  */
 typedef enum
 {
-	CAN_GIMBAL_ALL_ID = 0x1FF,  // 所有电机的CAN ID
+	CAN_6020_ALL_ID = 0x1FF,  // 所有电机的CAN ID
 	CAN_YAW_MOTOR_ID = 0x205,   // Yaw电机的CAN ID
 	CAN_PIT_MOTOR_ID = 0x206,   // Pitch电机的CAN ID
 } motor_6020_id_e;
