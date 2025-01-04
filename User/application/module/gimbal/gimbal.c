@@ -8,7 +8,7 @@
 extern FDCAN_HandleTypeDef hfdcan2;
 static gimbal_control_t gimbal_control;
 
-static fp32 motor_ecd_to_angle_change(uint16_t ecd, uint16_t offset_ecd);
+static fp32 motor_6020_ecd_to_angle_change(uint16_t ecd, uint16_t offset_ecd);
 static void gimbal_absolute_angle_limit(gimbal_motor_t* gimbal_motor, fp32 add);
 static void gimbal_relative_angle_limit(gimbal_motor_t* gimbal_motor, fp32 add);
 
@@ -49,7 +49,7 @@ void gimbal_init(gimbal_control_t* init)
 	init->gimbal_yaw_motor.motor_type = MOTOR_TYPE_6020;
 	init->gimbal_yaw_motor.motor_measure.motor_6020 = get_motor_6020_measure_point(0);
 	init->gimbal_pitch_motor.motor_type = MOTOR_TYPE_4310;
-	init->gimbal_pitch_motor.motor_measure.motor_4310 = get_dm_4310_measure_point(0);
+	init->gimbal_pitch_motor.motor_measure.motor_4310 = get_motor_4310_v41_measure_point(0);
 	// 获取陀螺仪数据和INS角度数据的指针
 	init->gimbal_INT_angle_point = get_INS_angle_point();  // 获取惯性导航系统（INS）角度数据指针
 	init->gimbal_INT_gyro_point = get_gyro_data_point();   // 获取陀螺仪数据指针
@@ -131,7 +131,7 @@ void gimbal_init(gimbal_control_t* init)
   * @retval         none
   *
   * @note           该函数主要用于更新云台电机的绝对角度、相对角度、陀螺仪数据等信息。
-  *                 其中，俯仰角和偏航角的更新有所不同。通过 `motor_ecd_to_angle_change` 函数
+  *                 其中，俯仰角和偏航角的更新有所不同。通过 `motor_6020_ecd_to_angle_change` 函数
   *                 来计算相对角度，并根据是否定义了 `PITCH_TURN` 和 `YAW_TURN` 来决定角度的
   *                 方向。此外，计算偏航角的角速度时需要考虑俯仰角的影响。
   */
@@ -187,7 +187,7 @@ void gimbal_feedback_update(gimbal_control_t* feedback_update)
   * @param[in]      offset_ecd: 电机中值编码
   * @retval         相对角度，单位rad
   */
-static fp32 motor_ecd_to_angle_change(uint16_t ecd, uint16_t offset_ecd)
+static fp32 motor_6020_ecd_to_angle_change(uint16_t ecd, uint16_t offset_ecd)
 {
 	int32_t relative_ecd = ecd - offset_ecd;
 	if (relative_ecd > HALF_ECD_RANGE)
@@ -200,6 +200,42 @@ static fp32 motor_ecd_to_angle_change(uint16_t ecd, uint16_t offset_ecd)
 	}
 
 	return (fp32)relative_ecd * MOTOR_ECD_TO_RAD;
+}
+
+/**
+  * @brief          计算电机输出轴的角度
+  * @param[in]      ecd: 电机当前编码器值
+  * @param[in]      offset_ecd: 电机中值编码器值
+  * @retval         输出轴的角度，单位 rad
+  */
+static fp32 motor_4310_v41_edc_to_angle_change(uint16_t ecd, uint16_t offset_ecd)
+{
+	// 减速比
+	const fp32 GEAR_RATIO = 10.0f;            // 减速比为 10:1
+
+	// 编码器值转换为角度的比例系数
+	const fp32 ECD_TO_RAD = (2.0f * PI) / ECD_RANGE; // 编码器值转换为弧度的系数
+
+	// 计算相对编码器值
+	int32_t relative_ecd = ecd - offset_ecd;
+
+	// 处理编码器值溢出
+	if (relative_ecd > HALF_ECD_RANGE)
+	{
+		relative_ecd -= ECD_RANGE;
+	}
+	else if (relative_ecd < -HALF_ECD_RANGE)
+	{
+		relative_ecd += ECD_RANGE;
+	}
+
+	// 计算电机转子的角度（弧度）
+	fp32 rotor_angle = (fp32)relative_ecd * ECD_TO_RAD;
+
+	// 计算输出轴的角度（考虑减速比）
+	fp32 output_angle = rotor_angle / GEAR_RATIO;
+
+	return output_angle;
 }
 
 /**
@@ -473,9 +509,9 @@ inline static fp32 get_relative_angle(const gimbal_motor_t* motor)
 	switch (motor->motor_type)
 	{
 	case MOTOR_TYPE_6020:
-		return motor_ecd_to_angle_change(motor->motor_measure.motor_6020->ecd, (uint16_t)motor->offset_ecd);
+		return motor_6020_ecd_to_angle_change(motor->motor_measure.motor_6020->ecd, (uint16_t)motor->offset_ecd);
 	case MOTOR_TYPE_4310:
-		return (motor->motor_measure.motor_4310->position - motor->offset_ecd);
+		return motor_4310_v41_edc_to_angle_change(motor->motor_measure.motor_4310->ecd, (uint16_t)motor->offset_ecd);
 	default:
 		return 0;
 	}
@@ -498,7 +534,7 @@ fp32 get_gimbal_motor_ecd(const gimbal_motor_t* motor)
 	case MOTOR_TYPE_6020:
 		return motor->motor_measure.motor_6020->ecd;
 	case MOTOR_TYPE_4310:
-		return motor->motor_measure.motor_4310->position;
+		return motor->motor_measure.motor_4310->ecd;
 	default:
 		break;
 	}
@@ -536,8 +572,6 @@ static void FDCAN_cmd_gimbal(int16_t motor1, int16_t motor2, int16_t motor3, int
 	{
 
 	}
-
-	DM4310_MIT_CtrlMotor(&hfdcan2, FDCAN_DM4310_M1_MASTER_ID, 0, 0, 0, 0, 0);
 }
 
 gimbal_control_t* get_gimbal_control_point(void)
