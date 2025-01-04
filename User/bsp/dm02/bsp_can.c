@@ -105,7 +105,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 	uint8_t RxData[8]; // 数据缓存
 
 	// 检查触发回调的具体 FDCAN 实例
-	if (hfdcan == &hfdcan1)
+	if (hfdcan->Instance == FDCAN1)
 	{
 		// FDCAN1 的接收处理
 		if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != 0)
@@ -117,7 +117,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 			}
 		}
 	}
-	else if (hfdcan == &hfdcan2)
+	else if (hfdcan->Instance == FDCAN2)
 	{
 		// FDCAN2 的接收处理
 		if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != 0)
@@ -127,11 +127,11 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 				// 处理 FDCAN2 的接收到的消息
 				// 6020电机和4310电机的数据处理
 				motor_6020_can_callback(RxHeader.Identifier, RxData);
-				motor_4310_can_callback(RxHeader.Identifier, RxData);
+				motor_4310_v41_can_callback(RxHeader.Identifier, RxData);
 			}
 		}
 	}
-	else if (hfdcan == &hfdcan3)
+	else if (hfdcan->Instance == FDCAN3)
 	{
 		// FDCAN3 的接收处理
 		if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != 0)

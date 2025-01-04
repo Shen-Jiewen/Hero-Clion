@@ -10,6 +10,7 @@
 #include "dji_3508.h"
 #include "dji_6020.h"
 #include "dm_4310.h"
+#include "dm_4310_v41.h"
 #include "dt7.h"
 #include "user_lib.h"
 #include "arm_math.h"
@@ -147,7 +148,8 @@ typedef struct
 /**
  * @brief 定义通用电机字段枚举类型
  */
-typedef enum {
+typedef enum
+{
 	MOTOR_FIELD_TEMPERATURE,  // 电机温度（通用字段）
 	MOTOR_FIELD_LAST_ECD      // 上一次的编码器数据（通用字段）
 } motor_common_field_t;
@@ -155,7 +157,8 @@ typedef enum {
 /**
  * @brief 定义电机控制模式的枚举类型
  */
-typedef enum {
+typedef enum
+{
 	MOTOR_TYPE_6020,
 	MOTOR_TYPE_4310,
 	MOTOR_TYPE_UNKNOWN
@@ -166,10 +169,11 @@ typedef enum {
  */
 typedef struct
 {
-	motor_type_e motor_type;                           // 电机类型
-	union {
-		const motor_6020_measure_t* motor_6020;  	   // 指向6020电机测量数据的常量指针
-		const motor_4310_measure_t* motor_4310;		   // 指向4310电机测量数据的常量指针
+	motor_type_e motor_type;                                // 电机类型
+	union
+	{
+		const motor_6020_measure_t* motor_6020;            // 指向6020电机测量数据的常量指针
+		const motor_4310_v41_measure_t* motor_4310;        // 指向4310电机测量数据的常量指针
 	} motor_measure;
 
 	pid_type_def gimbal_motor_absolute_angle_pid;      // 绝对角度PID控制器
@@ -179,7 +183,7 @@ typedef struct
 	gimbal_motor_mode_e gimbal_motor_mode;             // 当前电机控制模式
 	gimbal_motor_mode_e last_gimbal_motor_mode;        // 上一次电机控制模式
 
-	fp32 offset_ecd;								   // 编码器偏移值
+	fp32 offset_ecd;                                   // 编码器偏移值
 
 	fp32 max_relative_angle;                           // 允许的最大相对角度，单位：弧度 (rad)
 	fp32 min_relative_angle;                           // 允许的最小相对角度，单位：弧度 (rad)
@@ -206,7 +210,7 @@ typedef struct
 	gimbal_step_cali_t gimbal_cali;         // 云台步进位置的校准数据。
 
 	// 通信接口定义
-	void (* CAN_cmd_gimbal)(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);
+	void (* CAN_cmd_gimbal)(uint16_t canid, int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4);
 } gimbal_control_t;
 
 void gimbal_init(gimbal_control_t* init);
