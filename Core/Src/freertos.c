@@ -159,7 +159,7 @@ extern void detect_task(void *argument);
 extern void remote_control_task(void *argument);
 extern void gimbal_task(void *argument);
 extern void buzzer_task(void *argument);
-extern void shoot_task(void *argument);
+extern void shoot_task(__attribute__((unused)) void *argument);
 extern void watch_task(void *argument);
 extern void ui_task(void *argument);
 

@@ -7,7 +7,7 @@
 
 shoot_control_t* shoot_control;
 
-_Noreturn void shoot_task(void* argument)
+_Noreturn void shoot_task(__attribute__((unused)) void* argument)
 {
 	//等待上电后一段时间使能拨盘达妙电机
 	osDelay(SHOOT_TASK_INIT_TIME);
