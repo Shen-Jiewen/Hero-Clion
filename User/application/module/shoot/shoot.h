@@ -54,6 +54,10 @@
 
 #define OUTSIDE_SPEED_SET        2.0f
 #define INSIDE_SPEED_SET         1.8f
+
+#define Down_TRIGGER_POSITION  -1.04719755	//拨弹电机MIT模式下绝对位置
+#define Down_TRIGGER_MOTOR_ID 0x103			//拨弹电机MIT模式下电机ID
+
 typedef enum
 {
    SHOOT_STOP = 0,

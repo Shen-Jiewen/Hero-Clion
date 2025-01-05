@@ -3,6 +3,8 @@
 //
 
 #include "shoot.h"
+
+#include "fdcan.h"
 #include "gimbal_behaviour.h"
 #include "referee.h"
 
@@ -10,6 +12,10 @@ static shoot_control_t shoot_control;
 static gimbal_behaviour_e* gimbal_behaviour;
 
 
+
+static void trigger_motor_turn_back(void);
+static void DM_shoot_control(void);
+static void Down_shoot_bullet_control(void);
 /**
   * @brief          返回射击控制结构体指针
   * @param[in]      void
@@ -265,8 +271,60 @@ void shoot_set_control(shoot_control_t* set_control) {
         set_control->trigger_motor.trigger_angle_pid.max_iout = Down_TRIGGER_ANGLE_PID_MAX_IOUT;
 
         //射击控制
-        
+        Down_shoot_bullet_control();
     }
 
 
+}
+
+static void Down_shoot_bullet_control(void) {
+
+    //热量限制
+//    if (shoot_control.heat_limit - shoot_control.heat >= 100) {
+        DM_shoot_control();
+//    }
+    if (shoot_control.shoot_mode == SHOOT_BULLET
+        && (!(switch_is_down(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL]))
+        && (shoot_control.press_l == 0))) {
+        shoot_control.shoot_mode = SHOOT_READY_BULLET;
+    }
+}
+
+/**
+ * @brief 拨弹电机拨弹转动控制
+ * @param void
+ */
+static void DM_shoot_control(void) {
+    static int count = 0;
+    count++;
+
+    if (shoot_control.shoot_mode == SHOOT_BULLET) {
+        if (shoot_control.move_flag ==1
+            && fabs(shoot_control.trigger_motor.motor_measure.motor_4310->position - Down_TRIGGER_POSITION) < 0.04f) {
+            //每次循环保存一次零点，使电机转动绝对位置近似于转动相对位置
+            //如果在射击模式下就向拨弹电机发送数据，每次转六十度
+            uint8_t Data_Save_zero[8]={0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE};	//达妙电机保存零点命令
+            shoot_control.move_flag = 0;
+            DM4310_SendStdData(&hfdcan2,Down_TRIGGER_MOTOR_ID,Data_Save_zero);
+        }
+        if ( count == 5) {
+            trigger_motor_turn_back();
+            count = 0;
+        }
+        shoot_control.move_flag = 0;
+    }
+
+}
+
+/**
+ * @brief 拨弹电机防堵转
+ * @param void
+ */
+static void trigger_motor_turn_back(void) {
+    if (fabs(shoot_control.trigger_motor.motor_measure.motor_4310->torque) > 10) {
+        DM4310_PosSpeed_CtrlMotor(&hfdcan2,Down_TRIGGER_MOTOR_ID,0.1,0.5);
+    }
+    else {
+        DM4310_PosSpeed_CtrlMotor(&hfdcan2,Down_TRIGGER_MOTOR_ID,Down_TRIGGER_POSITION,-2);
+    }
 }
