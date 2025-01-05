@@ -35,6 +35,10 @@ _Noreturn void shoot_task(void* argument)
 		//发射机构PID计算
 		shoot_control_loop(shoot_control);
 
-
+		// 发送CAN数据
+		shoot_control->CAN_cmd_shoot(shoot_control->friction_motor[0].give_current,
+			shoot_control->friction_motor[1].give_current,
+			shoot_control->friction_motor[2].give_current,
+			shoot_control->friction_motor[3].give_current);
 	}
 }

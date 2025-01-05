@@ -22,7 +22,8 @@
  */
 typedef enum
 {
-	CAN_CHASSIS_ALL_ID = 0x200,  // 所有电机的CAN ID
+	CAN_CHASSIS_ALL_ID = 0x200,  // 所有底盘电机的CAN ID
+	CAN_SHOOT_ALL_ID = 0x200,	 // 所有发射机构电机的CAN ID
 	CAN_3508_M1_ID = 0x201,      // 电机1的CAN ID
 	CAN_3508_M2_ID = 0x202,      // 电机2的CAN ID
 	CAN_3508_M3_ID = 0x203,      // 电机3的CAN ID

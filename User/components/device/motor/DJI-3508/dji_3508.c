@@ -47,7 +47,7 @@ const motor_3508_measure_t* get_motor_3508_measure_point(uint8_t i,uint8_t j){
 /**
  * @brief CAN回调函数，处理接收到的CAN消息。
  *
- * 该函数根据CAN消息的ID，解析对应电机的数据，并调用检测钩子函数。
+ * 该函数根据CAN消息的ID，解析`底盘`对应电机的数据，并调用检测钩子函数。
  * 如果CAN ID不在预期范围内，则调用错误处理函数。
  *
  * @param can_id CAN消息的ID。
@@ -90,6 +90,15 @@ void motor_3508_can_callback(uint32_t can_id, const uint8_t* rx_data)
 	}
 }
 
+
+/**
+ * @brief CAN回调函数，处理接收到的CAN消息。
+ *
+ * 该函数根据CAN消息的ID，解析`发射机构`对应电机的数据，并调用检测钩子函数。
+ * 如果CAN ID不在预期范围内，则调用错误处理函数。
+ * @param can_id
+ * @param rx_data
+ */
 void shoot_3508_can_callback(uint32_t can_id, const uint8_t* rx_data) {
 	switch (can_id) {
 		case CAN_3508_M1_ID:
