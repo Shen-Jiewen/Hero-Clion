@@ -36,9 +36,18 @@ _Noreturn void shoot_task(__attribute__((unused)) void* argument)
 		shoot_control_loop(shoot_control);
 
 		// 发送CAN数据
-		shoot_control->CAN_cmd_shoot(shoot_control->friction_motor[0].give_current,
-			shoot_control->friction_motor[1].give_current,
-			shoot_control->friction_motor[2].give_current,
-			shoot_control->friction_motor[3].give_current);
+		if (!toe_is_error(DOWN_TRIGGER_MOTOR_TOE)) {
+			if (toe_is_error(DBUS_TOE)) {
+				shoot_control->CAN_cmd_shoot(0,0,0,0);
+			}
+			else {
+				shoot_control->CAN_cmd_shoot(shoot_control->friction_motor[0].give_current,
+				shoot_control->friction_motor[1].give_current,
+				shoot_control->friction_motor[2].give_current,
+				shoot_control->friction_motor[3].give_current);
+			}
+		}
+
+
 	}
 }
