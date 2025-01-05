@@ -156,46 +156,46 @@ void shoot_feedback_update(shoot_control_t* shoot_feedback) {
   * @param[in]      void
   * @retval         void
   */
-void shoot_set_mode(void) {
+void shoot_set_mode(shoot_control_t* set_mode) {
     static int8_t last_s = RC_SW_UP;
 
     //左拨杆上拨判断，一次开启，再次关闭
-    if (switch_is_up(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])
+    if (switch_is_up(set_mode ->shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])
         && !switch_is_up(last_s)
-        && shoot_control.shoot_mode == SHOOT_STOP){
-        shoot_control.shoot_mode = SHOOT_READY_FRIC;
+        && set_mode ->shoot_mode == SHOOT_STOP){
+        set_mode ->shoot_mode = SHOOT_READY_FRIC;
     }
 
     //拨杆居中，Q键开启摩擦轮，E键关闭摩擦轮
-    if (switch_is_mid(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])
-        && (shoot_control.shoot_rc_ctrl->key.v & SHOOT_ON_KEYBOARD)
-        && shoot_control.shoot_mode == SHOOT_STOP) {
-        shoot_control.shoot_mode = SHOOT_READY_FRIC;
+    if (switch_is_mid(set_mode ->shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])
+        && (set_mode ->shoot_rc_ctrl->key.v & SHOOT_ON_KEYBOARD)
+        && set_mode ->shoot_mode == SHOOT_STOP) {
+        set_mode ->shoot_mode = SHOOT_READY_FRIC;
     }
-    else if (switch_is_mid(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])
-        && (shoot_control.shoot_rc_ctrl->key.v & SHOOT_OFF_KEYBOARD)
-        && shoot_control.shoot_mode != SHOOT_STOP) {
-        shoot_control.shoot_mode = SHOOT_STOP;
+    else if (switch_is_mid(set_mode ->shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])
+        && (set_mode ->shoot_rc_ctrl->key.v & SHOOT_OFF_KEYBOARD)
+        && set_mode ->shoot_mode != SHOOT_STOP) {
+        set_mode ->shoot_mode = SHOOT_STOP;
     }
 
     //摩擦轮开启模式下，且四个摩擦轮转速与对应目标值误差不大，进入准备发射环节
-    if (shoot_control.shoot_mode == SHOOT_READY_FRIC
-        && fabs(shoot_control.friction_motor[0].speed - shoot_control.friction_motor[0].speed_set) < 0.1f
-        && fabs(shoot_control.friction_motor[1].speed - shoot_control.friction_motor[1].speed_set) < 0.1f
-        && fabs(shoot_control.friction_motor[2].speed - shoot_control.friction_motor[2].speed_set) < 0.1f
-        && fabs(shoot_control.friction_motor[3].speed - shoot_control.friction_motor[3].speed_set) < 0.1f) {
-        shoot_control.shoot_mode = SHOOT_READY_BULLET;  //Ready_Bullet为拨弹停，此时摩擦轮准备完毕
+    if (set_mode ->shoot_mode == SHOOT_READY_FRIC
+        && fabs(set_mode ->friction_motor[0].speed - set_mode ->friction_motor[0].speed_set) < 0.1f
+        && fabs(set_mode ->friction_motor[1].speed - set_mode ->friction_motor[1].speed_set) < 0.1f
+        && fabs(set_mode ->friction_motor[2].speed - set_mode ->friction_motor[2].speed_set) < 0.1f
+        && fabs(set_mode ->friction_motor[3].speed - set_mode ->friction_motor[3].speed_set) < 0.1f) {
+        set_mode ->shoot_mode = SHOOT_READY_BULLET;  //Ready_Bullet为拨弹停，此时摩擦轮准备完毕
     }
 
     //遥控器左拨杆下拨，或者按下鼠标左键代表发射（允许拨弹电机拨弹）
-    else if (shoot_control.shoot_mode == SHOOT_READY_BULLET
-        && ((switch_is_down(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])) || shoot_control.press_l)) {
-    shoot_control.shoot_mode = SHOOT_BULLET;
+    else if (set_mode ->shoot_mode == SHOOT_READY_BULLET
+        && ((switch_is_down(set_mode ->shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])) || set_mode ->press_l)) {
+    set_mode ->shoot_mode = SHOOT_BULLET;
     }
     //左拨杆没有下拨，或者没有按下鼠标左键表示处于准备发射阶段
-    else if (shoot_control.shoot_mode == SHOOT_READY
-        && (!switch_is_down(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])) || shoot_control.press_l ==0) {
-    shoot_control.shoot_mode = SHOOT_READY_BULLET;
+    else if (set_mode ->shoot_mode == SHOOT_READY
+        && (!switch_is_down(set_mode ->shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])) || set_mode ->press_l ==0) {
+    set_mode ->shoot_mode = SHOOT_READY_BULLET;
     }
     //  现在还没有写自瞄没有接口先注释掉
     // //开启自瞄并且找到目标后允许拨弹
@@ -206,35 +206,35 @@ void shoot_set_mode(void) {
     // }
 
     //获取枪口热量限制和当前热量
-    get_shoot_heat0_limit_and_heat0(&shoot_control.heat_limit,&shoot_control.heat);
+    get_shoot_heat0_limit_and_heat0(&set_mode ->heat_limit,&set_mode ->heat);
 
     //若发生错误或者枪口热量超限，退出射击模式，进入准备射击
     if (!toe_is_error(REFEREE_TOE)
-        &&(shoot_control.heat + SHOOT_HEAT_NEED_VALUE > shoot_control.heat_limit) ) {
-        if (shoot_control.shoot_mode == SHOOT_BULLET) {
-            shoot_control.shoot_mode = SHOOT_READY_BULLET;
+        &&(set_mode ->heat + SHOOT_HEAT_NEED_VALUE > set_mode ->heat_limit) ) {
+        if (set_mode ->shoot_mode == SHOOT_BULLET) {
+            set_mode ->shoot_mode = SHOOT_READY_BULLET;
         }
     }
 
     //若升级导致射速上限提高，就关闭发射
-    if (shoot_control.shoot_speed_limit != shoot_control.last_shoot_speed_limit) {
-        shoot_control.shoot_mode = SHOOT_STOP;
+    if (set_mode ->shoot_speed_limit != set_mode ->last_shoot_speed_limit) {
+        set_mode ->shoot_mode = SHOOT_STOP;
     }
 
     //若云台无力，关闭发射
     if (*gimbal_behaviour == GIMBAL_ZERO_FORCE) {
-        shoot_control.shoot_mode = SHOOT_STOP;
+        set_mode ->shoot_mode = SHOOT_STOP;
     }
 
     //设置摩擦轮标志位
-    if (shoot_control.shoot_mode >= SHOOT_READY_FRIC) {
-        shoot_control.fric_flag = 1;
+    if (set_mode ->shoot_mode >= SHOOT_READY_FRIC) {
+        set_mode ->fric_flag = 1;
     }
     else {
-        shoot_control.fric_flag = 0;
+        set_mode ->fric_flag = 0;
     }
 
-    last_s = shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL];
+    last_s = set_mode ->shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL];
 }
 
 /**
@@ -325,4 +325,60 @@ static void trigger_motor_turn_back(void) {
     else {
         DM4310_PosSpeed_CtrlMotor(&hfdcan2,Down_TRIGGER_MOTOR_ID,Down_TRIGGER_POSITION,-2);
     }
+}
+
+void shoot_control_loop(shoot_control_t* control_loop) {
+
+    if (control_loop == NULL) {
+        return;
+    }
+
+    if (control_loop->shoot_mode == SHOOT_STOP) {
+        control_loop->trigger_motor.give_current = 0.0f;
+
+        //关闭摩擦轮
+        if (fabs(control_loop->friction_motor[0].speed < 0.1f)
+            && fabs(control_loop->friction_motor[1].speed < 0.1f)
+            && fabs(control_loop->friction_motor[2].speed < 0.1f)
+            && fabs(control_loop->friction_motor[3].speed < 0.1f)) {
+            for (uint8_t i = 0; i < 4; i++) {
+                control_loop->friction_motor[i].give_current = 0.0f;
+            }
+        }else {
+            control_loop->friction_motor[0].give_current = control_loop->friction_speed_pid[0].out;
+            control_loop->friction_motor[1].give_current = -control_loop->friction_speed_pid[1].out;
+            control_loop->friction_motor[2].give_current = control_loop->friction_speed_pid[2].out;
+            control_loop->friction_motor[3].give_current = -control_loop->friction_speed_pid[3].out;
+        }
+    }else {
+        //PID计算
+        //下拨弹电机电流赋值
+        control_loop->trigger_motor.give_current = control_loop->trigger_motor.trigger_angle_pid.out;
+
+        //摩擦轮电流赋值
+        control_loop->friction_motor[0].give_current = control_loop->friction_speed_pid[0].out;
+        control_loop->friction_motor[1].give_current = -control_loop->friction_speed_pid[1].out;
+        control_loop->friction_motor[2].give_current = control_loop->friction_speed_pid[2].out;
+        control_loop->friction_motor[3].give_current = -control_loop->friction_speed_pid[3].out;
+        //如果状态机更改
+        if (control_loop->shoot_mode < SHOOT_READY_BULLET) {
+            control_loop->trigger_motor.give_current =0.0f;
+        }
+    }
+
+    //PID计算
+    PID_calc(&control_loop->friction_speed_pid[0],
+        control_loop->friction_motor[0].speed,
+        control_loop->outside_fric_speed_set);
+
+    PID_calc(&control_loop->friction_speed_pid[1],
+       control_loop->friction_motor[1].speed,
+         control_loop->outside_fric_speed_set);
+
+    PID_calc(&control_loop->friction_speed_pid[2],
+       control_loop->friction_motor[2].speed,
+        control_loop->inside_fric_speed_set);
+    PID_calc(&control_loop->friction_speed_pid[3],
+        control_loop->friction_motor[3].speed,
+        control_loop->inside_fric_speed_set);
 }

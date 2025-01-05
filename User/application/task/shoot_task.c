@@ -24,12 +24,17 @@ _Noreturn void shoot_task(void* argument)
 	while (1)
 	{
 		//设置发射机构状态机
-		shoot_set_mode();
+		shoot_set_mode(shoot_control);
 
 		//更新发射机构数据
 		shoot_feedback_update(shoot_control);
 
 		//设置发射机构控制量
 		shoot_set_control(shoot_control);
+
+		//发射机构PID计算
+		shoot_control_loop(shoot_control);
+
+
 	}
 }
