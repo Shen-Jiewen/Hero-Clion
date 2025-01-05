@@ -14,9 +14,9 @@ static gimbal_behaviour_e* gimbal_behaviour;
 static void trigger_motor_turn_back(void);
 static void DM_shoot_control(void);
 static void Down_shoot_bullet_control(void);
+
 /**
   * @brief          返回射击控制结构体指针
-  * @param[in]      void
   * @retval         void
   */
 shoot_control_t* get_shoot_control_point(void)
@@ -26,6 +26,7 @@ shoot_control_t* get_shoot_control_point(void)
 
 /**
   * @brief          射击初始化
+  * @param			shoot_init
   * @param[in]      shoot_control_t结构体指针
   * @retval         void
   */
@@ -122,7 +123,7 @@ void shoot_init(shoot_control_t* shoot_init)
 
 /**
   * @brief          射击数据更新
-  * @param[in]      shoot_control_t结构体指针
+  * @param			shoot_feedback
   * @retval         void
   */
 void shoot_feedback_update(shoot_control_t* shoot_feedback)
@@ -140,7 +141,7 @@ void shoot_feedback_update(shoot_control_t* shoot_feedback)
 	for (uint8_t i = 0; i < 4; i++)
 	{
 		shoot_feedback->friction_motor[i].speed =
-			shoot_feedback->friction_motor[i].motor_3508_measure->speed_rpm * M3508_MOTOR_RPM_TO_VECTOR;
+				(float)shoot_feedback->friction_motor[i].motor_3508_measure->speed_rpm * M3508_MOTOR_RPM_TO_VECTOR;
 	}
 
 	//记录上次的键盘状态
@@ -159,7 +160,7 @@ void shoot_feedback_update(shoot_control_t* shoot_feedback)
     *	SHOOT_READY_FRIC，摩擦轮开启模式，前后四个摩擦轮转动
     *	SHOOT_READY_BULLET，准备射击模式，摩擦轮转动稳定会跳到下一个模式
     *	SHOOT_BULLET，射击模式，摩擦轮和拨弹电机转动，弹丸被发射出去
-  * @param[in]      void
+  * @param			set_mode
   * @retval         void
   */
 void shoot_set_mode(shoot_control_t* set_mode)
@@ -193,9 +194,9 @@ void shoot_set_mode(shoot_control_t* set_mode)
 		&& fabs(set_mode->friction_motor[0].speed - set_mode->friction_motor[0].speed_set) < 0.1f
 		&& fabs(set_mode->friction_motor[1].speed - set_mode->friction_motor[1].speed_set) < 0.1f
 		&& fabs(set_mode->friction_motor[2].speed - set_mode->friction_motor[2].speed_set) < 0.1f
-		&& fabs(set_mode->friction_motor[3].speed - set_mode->friction_motor[3].speed_set) < 0.1f)
-	{
-		set_mode->shoot_mode = SHOOT_READY_BULLET;  //Ready_Bullet为拨弹停，此时摩擦轮准备完毕
+		&& fabs(set_mode->friction_motor[3].speed - set_mode->friction_motor[3].speed_set) < 0.1f) {
+		//Ready_Bullet为拨弹停，此时摩擦轮准备完毕
+		set_mode->shoot_mode = SHOOT_READY_BULLET;
 	}
 
 		//遥控器左拨杆下拨，或者按下鼠标左键代表发射（允许拨弹电机拨弹）
@@ -253,12 +254,12 @@ void shoot_set_mode(shoot_control_t* set_mode)
 		set_mode->fric_flag = 0;
 	}
 
-	last_s = set_mode->shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL];
+	last_s = (int8_t)set_mode->shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL];
 }
 
 /**
   * @brief          设置发射机构控制量
-  * @param[in]      shoot_control_t结构体指针
+  * @param			set_control
   * @retval         void
   */
 void shoot_set_control(shoot_control_t* set_control)
@@ -351,9 +352,9 @@ static void DM_shoot_control(void)
  */
 static void trigger_motor_turn_back(void)
 {
-	if (fabs(shoot_control.trigger_motor.motor_measure.motor_4310->torque) > 10)
+	if (fabsf(shoot_control.trigger_motor.motor_measure.motor_4310->torque) > 10)
 	{
-		DM4310_PosSpeed_CtrlMotor(&hfdcan2, Down_TRIGGER_MOTOR_ID, 0.1, 0.5);
+		DM4310_PosSpeed_CtrlMotor(&hfdcan2, Down_TRIGGER_MOTOR_ID, (float)0.1, (float)0.5);
 	}
 	else
 	{
@@ -371,7 +372,7 @@ void shoot_control_loop(shoot_control_t* control_loop)
 
 	if (control_loop->shoot_mode == SHOOT_STOP)
 	{
-		control_loop->trigger_motor.give_current = 0.0f;
+		control_loop->trigger_motor.give_current = (int16_t)0.0f;
 
 		//关闭摩擦轮
 		if (fabs(control_loop->friction_motor[0].speed < 0.1f)
@@ -381,15 +382,15 @@ void shoot_control_loop(shoot_control_t* control_loop)
 		{
 			for (uint8_t i = 0; i < 4; i++)
 			{
-				control_loop->friction_motor[i].give_current = 0.0f;
+				control_loop->friction_motor[i].give_current = (int16_t)0.0f;
 			}
 		}
 		else
 		{
-			control_loop->friction_motor[0].give_current = control_loop->friction_speed_pid[0].out;
-			control_loop->friction_motor[1].give_current = -control_loop->friction_speed_pid[1].out;
-			control_loop->friction_motor[2].give_current = control_loop->friction_speed_pid[2].out;
-			control_loop->friction_motor[3].give_current = -control_loop->friction_speed_pid[3].out;
+			control_loop->friction_motor[0].give_current = (int16_t)control_loop->friction_speed_pid[0].out;
+			control_loop->friction_motor[1].give_current = (int16_t)-control_loop->friction_speed_pid[1].out;
+			control_loop->friction_motor[2].give_current = (int16_t)control_loop->friction_speed_pid[2].out;
+			control_loop->friction_motor[3].give_current = (int16_t)-control_loop->friction_speed_pid[3].out;
 		}
 	}
 	else
@@ -400,13 +401,13 @@ void shoot_control_loop(shoot_control_t* control_loop)
 
 		//摩擦轮电流赋值
 		control_loop->friction_motor[0].give_current = (int16_t)control_loop->friction_speed_pid[0].out;
-		control_loop->friction_motor[1].give_current = -control_loop->friction_speed_pid[1].out;
-		control_loop->friction_motor[2].give_current = control_loop->friction_speed_pid[2].out;
-		control_loop->friction_motor[3].give_current = -control_loop->friction_speed_pid[3].out;
+		control_loop->friction_motor[1].give_current = (int16_t)-control_loop->friction_speed_pid[1].out;
+		control_loop->friction_motor[2].give_current = (int16_t)control_loop->friction_speed_pid[2].out;
+		control_loop->friction_motor[3].give_current = (int16_t)-control_loop->friction_speed_pid[3].out;
 		//如果状态机更改
 		if (control_loop->shoot_mode < SHOOT_READY_BULLET)
 		{
-			control_loop->trigger_motor.give_current = 0.0f;
+			control_loop->trigger_motor.give_current = (int16_t)0.0f;
 		}
 	}
 
