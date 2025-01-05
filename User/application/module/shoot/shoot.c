@@ -3,10 +3,11 @@
 //
 
 #include "shoot.h"
-
+#include "gimbal_behaviour.h"
 #include "referee.h"
 
 static shoot_control_t shoot_control;
+static gimbal_behaviour_e* gimbal_behaviour;
 
 shoot_control_t* get_shoot_control_point(void)
 {
@@ -26,8 +27,11 @@ void shoot_init(shoot_control_t* shoot_init)
     //获取遥控器指针
     shoot_init ->shoot_rc_ctrl = get_dt7_point();
 
+    //获取云台行为模式指针
+    gimbal_behaviour = get_gimbal_behaviour_point();
+
     //初始化拨盘电机类型和测量数据
-    shoot_init->trigger_motor.motor_type = MOTOR_TYPE_4310;
+    shoot_init->trigger_motor.motor_type = MOTOR_4310;
     shoot_init->trigger_motor.motor_measure.motor_4310 = get_dm_4310_measure_point(1);
 
     //初始化摩擦轮电机的测量数据
@@ -66,7 +70,7 @@ void shoot_init(shoot_control_t* shoot_init)
     //数据更新
     shoot_feedback_update(shoot_init);
     //初始化发射标志位
-    shoot_init->shoot_flag = 0;
+    shoot_init->fric_flag = 0;
 
     //初始化四个摩擦轮电机的速度和目标速度
     for (uint8_t i = 0; i < 4; i++) {
@@ -164,7 +168,41 @@ void shoot_set_mode(void) {
         && (!switch_is_down(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])) || shoot_control.press_l ==0) {
     shoot_control.shoot_mode = SHOOT_READY_BULLET;
     }
+    //  现在还没有写自瞄没有接口先注释掉
+    // //开启自瞄并且找到目标后允许拨弹
+    // else if (shoot_control.shoot_mode == SHOOT_READY_BULLET
+    //     && *gimbal_behaviour == GIMBAL_AUTO
+    //     && Get_Shoot_Brief() == 1) {
+    //     shoot_control.shoot_mode = SHOOT_BULLET;
+    // }
 
-    
+    //获取枪口热量限制和当前热量
+    get_shoot_heat0_limit_and_heat0(&shoot_control.heat_limit,&shoot_control.heat);
 
+    //若发生错误或者枪口热量超限，退出射击模式，进入准备射击
+    if (!toe_is_error(REFEREE_TOE)
+        &&(shoot_control.heat + SHOOT_HEAT_NEED_VALUE > shoot_control.heat_limit) ) {
+        if (shoot_control.shoot_mode == SHOOT_BULLET) {
+            shoot_control.shoot_mode = SHOOT_READY_BULLET;
+        }
+    }
+
+    //若升级导致射速上限提高，就关闭发射
+    if (shoot_control.shoot_speed_limit != shoot_control.last_shoot_speed_limit) {
+        shoot_control.shoot_mode = SHOOT_STOP;
+    }
+
+    //若云台无力，关闭发射
+    if (*gimbal_behaviour == GIMBAL_ZERO_FORCE) {
+        shoot_control.shoot_mode = SHOOT_STOP;
+    }
+
+    if (shoot_control.shoot_mode >= SHOOT_READY_FRIC) {
+        shoot_control.fric_flag = 1;
+    }
+    else {
+        shoot_control.fric_flag = 0;
+    }
+
+    last_s = shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL];
 }

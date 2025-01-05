@@ -23,7 +23,8 @@ _Noreturn void shoot_task(void* argument)
 	}
 	while (1)
 	{
-
+		//设置发射机构状态机
+		shoot_set_mode();
 
 	}
 }

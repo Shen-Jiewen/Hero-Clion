@@ -49,6 +49,9 @@
 //射击摩擦轮打开/关闭键盘值
 #define SHOOT_ON_KEYBOARD           KEY_PRESSED_OFFSET_Q
 #define SHOOT_OFF_KEYBOARD          KEY_PRESSED_OFFSET_E
+
+#define SHOOT_HEAT_NEED_VALUE     100     //发射一次大弹丸需要的热量
+
 typedef enum
 {
    SHOOT_STOP = 0,
@@ -64,9 +67,9 @@ typedef enum
  * @brief 定义电机类型的枚举类型
  */
 typedef enum {
-   MOTOR_TYPE_4310,
-   MOTOR_TYPE_3508,
-   MOTOR_TYPE_UNKNOWN
+   MOTOR_4310,
+   MOTOR_3508,
+   MOTOR_UNKNOWN
 }shoot_motor_type_e;
 
 /**
@@ -93,7 +96,7 @@ typedef struct
    motor_3508_t friction_motor[4];                 //四个摩擦轮电机结构体
    shoot_mode_e shoot_mode;                        //发射的状态机枚举
    pid_type_def friction_speed_pid[4];             //四个摩擦轮电机的PID
-   bool_t shoot_flag;                              //发射标志位
+   bool_t fric_flag;                              //摩擦轮标志位
    bool_t press_l;                                 //鼠标左键状态
    bool_t press_r;                                 //鼠标右键状态
    bool_t last_press_l;                            //上一次鼠标左键状态
@@ -107,4 +110,5 @@ typedef struct
 shoot_control_t* get_shoot_control_point(void);
 void shoot_init(shoot_control_t* shoot_init);
 void shoot_feedback_update(shoot_control_t* shoot_feedback);
+void shoot_set_mode(void);
 #endif //SHOOT_H_

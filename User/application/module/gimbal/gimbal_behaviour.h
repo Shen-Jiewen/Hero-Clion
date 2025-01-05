@@ -24,5 +24,5 @@ typedef enum
 extern void gimbal_behaviour_set(gimbal_control_t *gimbal_mode_set);
 extern void gimbal_behaviour_mode_set(gimbal_control_t *gimbal_mode_set);
 extern void gimbal_behaviour_control_set(fp32 *add_yaw, fp32 *add_pitch, gimbal_control_t *gimbal_control_set);
-
+gimbal_behaviour_e* get_gimbal_behaviour_point(void);
 #endif //GIMBAL_BEHAVIOUR_H_
