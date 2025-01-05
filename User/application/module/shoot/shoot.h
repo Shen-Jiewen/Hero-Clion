@@ -42,6 +42,13 @@
 #define M3508_MOTOR_RPM_TO_VECTOR 0.000415809748903494517209f
 
 #define SHOOT_CONTROL_TIME 1
+
+//射击控制遥控器通道
+#define SHOOT_RC_MODE_CHANNEL       1
+
+//射击摩擦轮打开/关闭键盘值
+#define SHOOT_ON_KEYBOARD           KEY_PRESSED_OFFSET_Q
+#define SHOOT_OFF_KEYBOARD          KEY_PRESSED_OFFSET_E
 typedef enum
 {
    SHOOT_STOP = 0,

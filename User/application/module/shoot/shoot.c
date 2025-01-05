@@ -111,3 +111,60 @@ void shoot_feedback_update(shoot_control_t* shoot_feedback) {
      shoot_feedback->press_l =  shoot_feedback->shoot_rc_ctrl->mouse.press_l;
      shoot_feedback->press_r =  shoot_feedback->shoot_rc_ctrl->mouse.press_r;
 }
+
+
+/**
+  * @brief 射击状态机设置，遥控器上拨一次开启，再上拨关闭，下拨1次发射1颗，一直处在下，则持续发射，用于3min准备时间清理子弹
+    *	实际上只用到了三个状态机模式
+    *	SHOOT_STOP，初始停止模式，摩擦轮和拨弹电机都不转动
+    *	SHOOT_READY_FRIC，摩擦轮开启模式，前后四个摩擦轮转动
+    *	SHOOT_READY_BULLET，准备射击模式，摩擦轮转动稳定会跳到下一个模式
+    *	SHOOT_BULLET，射击模式，摩擦轮和拨弹电机转动，弹丸被发射出去
+  * @param[in]      void
+  * @retval         void
+  */
+void shoot_set_mode(void) {
+    static int8_t last_s = RC_SW_UP;
+
+    //左拨杆上拨判断，一次开启，再次关闭
+    if (switch_is_up(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])
+        && !switch_is_up(last_s)
+        && shoot_control.shoot_mode == SHOOT_STOP){
+        shoot_control.shoot_mode = SHOOT_READY_FRIC;
+    }
+
+    //拨杆居中，Q键开启摩擦轮，E键关闭摩擦轮
+    if (switch_is_mid(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])
+        && (shoot_control.shoot_rc_ctrl->key.v & SHOOT_ON_KEYBOARD)
+        && shoot_control.shoot_mode == SHOOT_STOP) {
+        shoot_control.shoot_mode = SHOOT_READY_FRIC;
+    }
+    else if (switch_is_mid(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])
+        && (shoot_control.shoot_rc_ctrl->key.v & SHOOT_OFF_KEYBOARD)
+        && shoot_control.shoot_mode != SHOOT_STOP) {
+        shoot_control.shoot_mode = SHOOT_STOP;
+    }
+
+    //摩擦轮开启模式下，且四个摩擦轮转速与对应目标值误差不大，进入准备发射环节
+    if (shoot_control.shoot_mode == SHOOT_READY_FRIC
+        && fabs(shoot_control.friction_motor[0].speed - shoot_control.friction_motor[0].speed_set) < 0.1f
+        && fabs(shoot_control.friction_motor[1].speed - shoot_control.friction_motor[1].speed_set) < 0.1f
+        && fabs(shoot_control.friction_motor[2].speed - shoot_control.friction_motor[2].speed_set) < 0.1f
+        && fabs(shoot_control.friction_motor[3].speed - shoot_control.friction_motor[3].speed_set) < 0.1f) {
+        shoot_control.shoot_mode = SHOOT_READY_BULLET;  //Ready_Bullet为拨弹停，此时摩擦轮准备完毕
+    }
+
+    //遥控器左拨杆下拨，或者按下鼠标左键代表发射（允许拨弹电机拨弹）
+    else if (shoot_control.shoot_mode == SHOOT_READY_BULLET
+        && ((switch_is_down(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])) || shoot_control.press_l)) {
+    shoot_control.shoot_mode = SHOOT_BULLET;
+    }
+    //左拨杆没有下拨，或者没有按下鼠标左键表示处于准备发射阶段
+    else if (shoot_control.shoot_mode == SHOOT_READY
+        && (!switch_is_down(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL])) || shoot_control.press_l ==0) {
+    shoot_control.shoot_mode = SHOOT_READY_BULLET;
+    }
+
+    
+
+}
