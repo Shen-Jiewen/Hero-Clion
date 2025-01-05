@@ -26,5 +26,8 @@ _Noreturn void shoot_task(void* argument)
 		//设置发射机构状态机
 		shoot_set_mode();
 
+		//更新发射机构数据
+		shoot_feedback_update(shoot_control);
+
 	}
 }

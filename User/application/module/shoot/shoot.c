@@ -83,6 +83,9 @@ void shoot_init(shoot_control_t* shoot_init)
     shoot_init->trigger_motor.angle_set = shoot_init->trigger_motor.motor_measure.motor_4310->position;
     shoot_init->trigger_motor.speed_set = 0;
 
+    shoot_init->outside_fric_speed_set = 0.0f;
+    shoot_init->inside_fric_speed_set = 0.0f;
+
     //获取当前弹速限制以及热量限制
     get_shoot_speed_limit(&shoot_init->last_shoot_speed_limit);
     get_shoot_speed_limit(&shoot_init->shoot_speed_limit);
@@ -197,6 +200,7 @@ void shoot_set_mode(void) {
         shoot_control.shoot_mode = SHOOT_STOP;
     }
 
+    //设置摩擦轮标志位
     if (shoot_control.shoot_mode >= SHOOT_READY_FRIC) {
         shoot_control.fric_flag = 1;
     }

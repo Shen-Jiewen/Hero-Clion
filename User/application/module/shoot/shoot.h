@@ -105,6 +105,8 @@ typedef struct
    uint16_t last_shoot_speed_limit;                //上一次射速限制
    uint16_t heat_limit;                            //热量限制
    uint16_t heat;	                                 //热量
+   fp32 outside_fric_speed_set;                    //靠外摩擦轮速度设定值
+   fp32 inside_fric_speed_set;                     //靠内摩擦轮速度设定值
 }shoot_control_t;
 
 shoot_control_t* get_shoot_control_point(void);
