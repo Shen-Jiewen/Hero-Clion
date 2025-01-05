@@ -248,7 +248,7 @@ void shoot_set_control(shoot_control_t* set_control) {
         return;
     }
 
-    //发射停止，拨弹电机摩擦轮电机速度设定均为0
+    //发射停止，目标值置0
     if (set_control->shoot_mode == SHOOT_STOP) {
         set_control->trigger_motor.speed_set =0.0f;
         set_control->outside_fric_speed_set =0.0f;
@@ -273,8 +273,6 @@ void shoot_set_control(shoot_control_t* set_control) {
         //射击控制
         Down_shoot_bullet_control();
     }
-
-
 }
 
 static void Down_shoot_bullet_control(void) {

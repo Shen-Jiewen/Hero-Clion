@@ -120,4 +120,5 @@ shoot_control_t* get_shoot_control_point(void);
 void shoot_init(shoot_control_t* shoot_init);
 void shoot_feedback_update(shoot_control_t* shoot_feedback);
 void shoot_set_mode(void);
+void shoot_set_control(shoot_control_t* set_control);
 #endif //SHOOT_H_
