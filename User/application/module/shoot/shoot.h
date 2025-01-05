@@ -42,6 +42,22 @@
 #define M3508_MOTOR_RPM_TO_VECTOR 0.000415809748903494517209f
 
 #define SHOOT_CONTROL_TIME 1
+
+//射击控制遥控器通道
+#define SHOOT_RC_MODE_CHANNEL       1
+
+//射击摩擦轮打开/关闭键盘值
+#define SHOOT_ON_KEYBOARD           KEY_PRESSED_OFFSET_Q
+#define SHOOT_OFF_KEYBOARD          KEY_PRESSED_OFFSET_E
+
+#define SHOOT_HEAT_NEED_VALUE     100     //发射一次大弹丸需要的热量
+
+#define OUTSIDE_SPEED_SET        2.0f
+#define INSIDE_SPEED_SET         1.8f
+
+#define Down_TRIGGER_POSITION  -1.04719755	//拨弹电机MIT模式下绝对位置
+#define Down_TRIGGER_MOTOR_ID 0x103			//拨弹电机MIT模式下电机ID
+
 typedef enum
 {
    SHOOT_STOP = 0,
@@ -57,9 +73,9 @@ typedef enum
  * @brief 定义电机类型的枚举类型
  */
 typedef enum {
-   MOTOR_TYPE_4310,
-   MOTOR_TYPE_3508,
-   MOTOR_TYPE_UNKNOWN
+   MOTOR_4310,
+   MOTOR_3508,
+   MOTOR_UNKNOWN
 }shoot_motor_type_e;
 
 /**
@@ -86,7 +102,7 @@ typedef struct
    motor_3508_t friction_motor[4];                 //四个摩擦轮电机结构体
    shoot_mode_e shoot_mode;                        //发射的状态机枚举
    pid_type_def friction_speed_pid[4];             //四个摩擦轮电机的PID
-   bool_t shoot_flag;                              //发射标志位
+   bool_t fric_flag;                              //摩擦轮标志位
    bool_t press_l;                                 //鼠标左键状态
    bool_t press_r;                                 //鼠标右键状态
    bool_t last_press_l;                            //上一次鼠标左键状态
@@ -95,9 +111,15 @@ typedef struct
    uint16_t last_shoot_speed_limit;                //上一次射速限制
    uint16_t heat_limit;                            //热量限制
    uint16_t heat;	                                 //热量
+   fp32 outside_fric_speed_set;                    //靠外摩擦轮速度设定值
+   fp32 inside_fric_speed_set;                     //靠内摩擦轮速度设定值
+   bool_t move_flag;                               //单发标志位
 }shoot_control_t;
 
 shoot_control_t* get_shoot_control_point(void);
 void shoot_init(shoot_control_t* shoot_init);
 void shoot_feedback_update(shoot_control_t* shoot_feedback);
+void shoot_set_control(shoot_control_t* set_control);
+void shoot_control_loop(shoot_control_t* control_loop);
+void shoot_set_mode(shoot_control_t* set_mode);
 #endif //SHOOT_H_

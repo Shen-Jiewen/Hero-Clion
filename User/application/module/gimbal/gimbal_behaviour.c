@@ -419,3 +419,14 @@ static void gimbal_motionless_control(fp32 *yaw, fp32 *pitch, __attribute__((unu
 	*yaw = 0.0f;
 	*pitch = 0.0f;
 }
+
+/**
+  * @brief          返回云台状态机指针，目前用于发射机构判断是否自瞄以及是否无力
+  * @author         Du.X.Y
+  * @param[in]      none
+  * @param[out]      gimbal_behaviour:云台状态机指针
+  * @retval         none
+  */
+gimbal_behaviour_e* get_gimbal_behaviour_point(void) {
+	return &gimbal_behaviour;
+}
