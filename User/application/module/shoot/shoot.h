@@ -52,6 +52,8 @@
 
 #define SHOOT_HEAT_NEED_VALUE     100     //发射一次大弹丸需要的热量
 
+#define OUTSIDE_SPEED_SET        2.0f
+#define INSIDE_SPEED_SET         1.8f
 typedef enum
 {
    SHOOT_STOP = 0,
@@ -107,6 +109,7 @@ typedef struct
    uint16_t heat;	                                 //热量
    fp32 outside_fric_speed_set;                    //靠外摩擦轮速度设定值
    fp32 inside_fric_speed_set;                     //靠内摩擦轮速度设定值
+   bool_t move_flag;                               //单发标志位
 }shoot_control_t;
 
 shoot_control_t* get_shoot_control_point(void);

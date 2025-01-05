@@ -9,13 +9,29 @@
 static shoot_control_t shoot_control;
 static gimbal_behaviour_e* gimbal_behaviour;
 
+
+/**
+  * @brief          返回射击控制结构体指针
+  * @param[in]      void
+  * @retval         void
+  */
 shoot_control_t* get_shoot_control_point(void)
 {
     return &shoot_control;
 }
 
+/**
+  * @brief          射击初始化
+  * @param[in]      shoot_control_t结构体指针
+  * @retval         void
+  */
 void shoot_init(shoot_control_t* shoot_init)
 {
+
+    if (shoot_init == NULL) {
+        return;
+    }
+
     //定义各个PID参数
     static const fp32 Down_trigger_angle_pid[3] =
         { Down_TRIGGER_ANGLE_PID_KP, Down_TRIGGER_ANGLE_PID_KI, Down_TRIGGER_ANGLE_PID_KD};
@@ -58,11 +74,11 @@ void shoot_init(shoot_control_t* shoot_init)
     OUTSIDE_SHOOT_SPEED_PID_MAX_IOUT);
     }
 
-    //初始化外侧摩擦轮电机PID
-    for (uint8_t i = 3; i < 5; i++) {
+    //初始化内侧摩擦轮电机PID
+    for (uint8_t i = 2; i < 4; i++) {
         PID_init(&shoot_init->friction_speed_pid[i],
     PID_POSITION,
-    Outside_shoot_speed_pid,
+    Inside_shoot_speed_pid,
     OUTSIDE_SHOOT_SPEED_PID_MAX_OUT,
     OUTSIDE_SHOOT_SPEED_PID_MAX_IOUT);
     }
@@ -97,10 +113,14 @@ void shoot_init(shoot_control_t* shoot_init)
 
 /**
   * @brief          射击数据更新
-  * @param[in]      void
+  * @param[in]      shoot_control_t结构体指针
   * @retval         void
   */
 void shoot_feedback_update(shoot_control_t* shoot_feedback) {
+
+    if (shoot_feedback == NULL) {
+        return;
+    }
 
     //更新拨弹电机数据
     shoot_feedback->trigger_motor.motor_measure.motor_4310 = get_dm_4310_measure_point(1);
@@ -209,4 +229,44 @@ void shoot_set_mode(void) {
     }
 
     last_s = shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL];
+}
+
+/**
+  * @brief          设置发射机构控制量
+  * @param[in]      shoot_control_t结构体指针
+  * @retval         void
+  */
+void shoot_set_control(shoot_control_t* set_control) {
+
+    if (set_control == NULL) {
+        return;
+    }
+
+    //发射停止，拨弹电机摩擦轮电机速度设定均为0
+    if (set_control->shoot_mode == SHOOT_STOP) {
+        set_control->trigger_motor.speed_set =0.0f;
+        set_control->outside_fric_speed_set =0.0f;
+        set_control->inside_fric_speed_set = 0.0f;
+    }
+    else if (set_control->shoot_mode == SHOOT_READY_FRIC) {
+        //更新拨弹电机速度
+        set_control->trigger_motor.speed_set =0.0f;
+    }
+    else if (set_control->shoot_mode == SHOOT_READY_BULLET) {
+        //设置摩擦轮电机的速度
+        set_control->outside_fric_speed_set = -OUTSIDE_SPEED_SET;
+        set_control->inside_fric_speed_set = -INSIDE_SPEED_SET;
+        //单发标志位，拨动一次或鼠标按下一次只可以发射一发
+        set_control->move_flag = 1;
+    }
+    else if (set_control->shoot_mode == SHOOT_BULLET) {
+        //角度环限幅
+        set_control->trigger_motor.trigger_angle_pid.max_out = Down_TRIGGER_ANGLE_PID_MAX_OUT;
+        set_control->trigger_motor.trigger_angle_pid.max_iout = Down_TRIGGER_ANGLE_PID_MAX_IOUT;
+
+        //射击控制
+        
+    }
+
+
 }
