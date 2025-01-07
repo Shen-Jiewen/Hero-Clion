@@ -63,7 +63,8 @@ typedef struct
 /**
  * @brief 获取指定索引的motor_3508_measure_t结构体指针。
  *
- * @param i 数组索引，范围为0到1。0代表CAN1,1代表CAN2 ,j数组索引，范围为0到7
+ * @param i 数组索引，范围为0到1。0代表CAN1,1代表CAN2 ,
+ * @param j	数组索引，范围为0到7，代表8个电机数据
  * @return 指向指定索引的motor_3508_measure_t结构体的指针。
  */
 const motor_3508_measure_t* get_motor_3508_measure_point(uint8_t i,uint8_t j);
