@@ -301,6 +301,10 @@ void shoot_set_control(shoot_control_t* set_control)
 	}
 }
 
+/**
+ * @brief 下拨弹电机的状态机控制函数
+ * @param void
+ */
 static void Down_shoot_bullet_control(void)
 {
 
@@ -362,6 +366,10 @@ static void trigger_motor_turn_back(void)
 	}
 }
 
+/**
+ * @brief 射击控制循环函数，根据不同的状态机实现输出函数中输入数据的控制
+ * @param control_loop
+ */
 void shoot_control_loop(shoot_control_t* control_loop)
 {
 
@@ -428,6 +436,13 @@ void shoot_control_loop(shoot_control_t* control_loop)
 		control_loop->inside_fric_speed_set);
 }
 
+/**
+ * @brief 发射机构的CAN发送函数
+ * @param motor1
+ * @param motor2
+ * @param motor3
+ * @param motor4
+ */
 static void FDCAN_cmd_shoot(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4)
 {
 	FDCAN_TxHeaderTypeDef txHeader;
