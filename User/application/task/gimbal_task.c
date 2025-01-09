@@ -7,9 +7,7 @@
 
 gimbal_control_t* gimbal_control;
 
-uint8_t dm_data[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-
-_Noreturn void gimbal_task(void* argument)
+_Noreturn void gimbal_task(__attribute__((unused)) void* argument)
 {
 	// 等待陀螺仪任务更新数据
 	osDelay(GIMBAL_TASK_INIT_TIME);
@@ -19,8 +17,7 @@ _Noreturn void gimbal_task(void* argument)
 	gimbal_init(gimbal_control);
 
 	// 判断电机是否都上线
-	while (toe_is_error(PITCH_GIMBAL_MOTOR_TOE) && toe_is_error(YAW_GIMBAL_MOTOR_TOE)
-		&& toe_is_error(DOWN_TRIGGER_MOTOR_TOE))
+	while (toe_is_error(PITCH_GIMBAL_MOTOR_TOE) && toe_is_error(YAW_GIMBAL_MOTOR_TOE))
 	{
 		osDelay(GIMBAL_CONTROL_TIME);
 		gimbal_feedback_update(gimbal_control);
@@ -51,8 +48,7 @@ _Noreturn void gimbal_task(void* argument)
 		gimbal_control->gimbal_pitch_motor.given_current = gimbal_control->gimbal_pitch_motor.given_current;
 #endif
 
-		if (!(toe_is_error(YAW_GIMBAL_MOTOR_TOE) && toe_is_error(PITCH_GIMBAL_MOTOR_TOE)
-			&& toe_is_error(DOWN_TRIGGER_MOTOR_TOE)))
+		if (!(toe_is_error(YAW_GIMBAL_MOTOR_TOE) && toe_is_error(PITCH_GIMBAL_MOTOR_TOE)))
 		{
 			if (toe_is_error(DBUS_TOE))
 			{

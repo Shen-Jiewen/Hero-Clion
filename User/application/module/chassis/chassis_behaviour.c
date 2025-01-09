@@ -104,19 +104,20 @@ void chassis_behaviour_mode_set(chassis_control_t* chassis_move_mode)
 	}
 	else if (switch_is_mid(chassis_move_mode->chassis_RC->rc.s[CHASSIS_MODE_CHANNEL]))
 	{
+		chassis_behaviour_mode = CHASSIS_FOLLOW_GIMBAL_YAW;
 		// 如果开关处于中间，检查是否按下Shift键来切换模式
-		if ((chassis_move_mode->chassis_RC->key.v & KEY_PRESSED_OFFSET_SHIFT)
-			&& last_chassis_behaviour_mode == CHASSIS_FOLLOW_GIMBAL_YAW)
-		{
-			// 如果当前模式是步兵跟随云台模式，按下Shift后切换到陀螺模式
-			chassis_behaviour_mode = CHASSIS_GYRO_MODE;
-		}
-		else if ((chassis_move_mode->chassis_RC->key.v & KEY_PRESSED_OFFSET_SHIFT)
-			&& last_chassis_behaviour_mode == CHASSIS_GYRO_MODE)
-		{
-			// 如果当前模式是陀螺模式，按下Shift后切换到步兵跟随云台模式
-			chassis_behaviour_mode = CHASSIS_FOLLOW_GIMBAL_YAW;
-		}
+//		if ((chassis_move_mode->chassis_RC->key.v & KEY_PRESSED_OFFSET_SHIFT)
+//			&& last_chassis_behaviour_mode == CHASSIS_FOLLOW_GIMBAL_YAW)
+//		{
+//			// 如果当前模式是步兵跟随云台模式，按下Shift后切换到陀螺模式
+//			chassis_behaviour_mode = CHASSIS_GYRO_MODE;
+//		}
+//		else if ((chassis_move_mode->chassis_RC->key.v & KEY_PRESSED_OFFSET_SHIFT)
+//			&& last_chassis_behaviour_mode == CHASSIS_GYRO_MODE)
+//		{
+//			// 如果当前模式是陀螺模式，按下Shift后切换到步兵跟随云台模式
+//			chassis_behaviour_mode = CHASSIS_FOLLOW_GIMBAL_YAW;
+//		}
 	}
 
 	// 当云台处于某个模式时，底盘不执行移动控制
@@ -131,11 +132,11 @@ void chassis_behaviour_mode_set(chassis_control_t* chassis_move_mode)
 		// 零力矩模式，底盘处于原始控制模式 | 开环控制模式，底盘按照原始控制信号进行控制
 		chassis_move_mode->chassis_mode = CHASSIS_VECTOR_RAW;
 	}
-//	else if (chassis_behaviour_mode == CHASSIS_NO_MOVE | chassis_behaviour_mode == CHASSIS_GYRO_MODE)
-//	{
-//		// 底盘不移动模式，底盘锁死不允许移动 | 小陀螺模式，底盘旋转不跟随云台
-//		chassis_move_mode->chassis_mode = CHASSIS_VECTOR_NO_FOLLOW_YAW;
-//	}
+	else if (chassis_behaviour_mode == CHASSIS_NO_MOVE | chassis_behaviour_mode == CHASSIS_GYRO_MODE)
+	{
+		// 底盘不移动模式，底盘锁死不允许移动 | 小陀螺模式，底盘旋转不跟随云台
+		chassis_move_mode->chassis_mode = CHASSIS_VECTOR_NO_FOLLOW_YAW;
+	}
 	else if (chassis_behaviour_mode == CHASSIS_FOLLOW_GIMBAL_YAW)
 	{
 		// 底盘跟随云台模式，底盘与云台同步

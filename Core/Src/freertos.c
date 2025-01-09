@@ -66,7 +66,7 @@ osThreadId_t imuTaskHandle;
 const osThreadAttr_t imuTask_attributes = {
   .name = "imuTask",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+  .priority = (osPriority_t) osPriorityRealtime1,
 };
 /* Definitions for usbTask */
 osThreadId_t usbTaskHandle;
@@ -159,7 +159,7 @@ extern void detect_task(void *argument);
 extern void remote_control_task(void *argument);
 extern void gimbal_task(void *argument);
 extern void buzzer_task(void *argument);
-extern void shoot_task(__attribute__((unused)) void *argument);
+extern void shoot_task(void *argument);
 extern void watch_task(void *argument);
 extern void ui_task(void *argument);
 

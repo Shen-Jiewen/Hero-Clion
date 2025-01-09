@@ -19,7 +19,7 @@
 
 typedef enum
 {
-	CAN_4310_v41_ALL_ID = 0x3FE,		// 所有电机的ID
+	CAN_4310_v41_ALL_ID = 0x4FE,		// 所有电机的ID
 	FDCAN_DM4310_V41_M1_ID = 0x305,   	// 电机1的ID
 	FDCAN_DM4310_V41_M2_ID = 0x306,   	// 电机2的ID
 	FDCAN_DM4310_V41_M3_ID = 0x307,   	// 电机3的ID

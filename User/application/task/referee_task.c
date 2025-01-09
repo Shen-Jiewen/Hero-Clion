@@ -21,7 +21,7 @@ uint8_t referee_buffer[USART_RX_BUF_LENGTH];
 // 声明UART句柄
 extern UART_HandleTypeDef huart1;
 
-_Noreturn void referee_task(void *argument){
+_Noreturn void referee_task(__attribute__((unused)) void *argument){
 	// 裁判系统结构体初始化
 	init_referee_struct_data();
 	// 接收FIFO初始化

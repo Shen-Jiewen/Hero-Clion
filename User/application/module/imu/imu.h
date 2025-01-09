@@ -16,9 +16,9 @@
 #define INS_TASK_INIT_TIME 7  // IMU任务初始化时间
 
 // 欧拉角偏移地址
-#define INS_YAW_ADDRESS_OFFSET    0
+#define INS_YAW_ADDRESS_OFFSET    2
 #define INS_PITCH_ADDRESS_OFFSET  1
-#define INS_ROLL_ADDRESS_OFFSET   2
+#define INS_ROLL_ADDRESS_OFFSET   0
 
 // 陀螺仪数据偏移地址
 #define INS_GYRO_X_ADDRESS_OFFSET 0

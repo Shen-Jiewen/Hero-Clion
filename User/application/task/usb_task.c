@@ -9,7 +9,7 @@
 #include "chassis.h"
 #include "imu.h"
 
-_Noreturn void usb_task(void* argument){
+_Noreturn void usb_task(__attribute__((unused)) void* argument){
 	osDelay(1000);
 	RC_ctrl_t *usb_dt7_ctrl = get_dt7_point();
 	imu_control_t *imu_control = get_imu_control_point();

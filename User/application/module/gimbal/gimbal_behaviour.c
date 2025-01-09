@@ -216,16 +216,12 @@ static void handle_gimbal_switch_control(gimbal_control_t *gimbal_mode_set)
 	// 遥控器右拨杆拨到中间，云台进入跟随模式
 	else if (switch_is_mid(gimbal_mode_set->gimbal_rc_ctrl->rc.s[GIMBAL_MODE_CHANNEL]))
 	{
+		// 默认是绝对角度控制
+		gimbal_behaviour = GIMBAL_RELATIVE_ANGLE;
 		// 在跟随模式下按下鼠标右键时，切换到自瞄模式
-		if (gimbal_mode_set->gimbal_rc_ctrl->mouse.press_r && last_gimbal_behaviour != GIMBAL_AUTO)
+		if (gimbal_mode_set->gimbal_rc_ctrl->mouse.press_r)
 		{
 			gimbal_behaviour = GIMBAL_AUTO;
-		}
-		
-		// 若鼠标右键未按下，恢复为绝对角度模式
-		else if (gimbal_mode_set->gimbal_rc_ctrl->mouse.press_r == 0 && last_gimbal_behaviour == GIMBAL_AUTO)
-		{
-			gimbal_behaviour = GIMBAL_ABSOLUTE_ANGLE;
 		}
 	}
 }

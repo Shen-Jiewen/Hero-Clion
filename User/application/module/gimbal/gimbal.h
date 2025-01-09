@@ -18,11 +18,11 @@
 #include "imu.h"
 
 //pitch 速度环 PID参数以及 PID最大输出，积分输出
-#define PITCH_SPEED_PID_KP        8000.0f//1500
-#define PITCH_SPEED_PID_KI        28.0f//5
+#define PITCH_SPEED_PID_KP        2000.0f//1500
+#define PITCH_SPEED_PID_KI        7.0f//5
 #define PITCH_SPEED_PID_KD        0.0f
-#define PITCH_SPEED_PID_MAX_OUT   30000.0f
-#define PITCH_SPEED_PID_MAX_IOUT  10000.0f
+#define PITCH_SPEED_PID_MAX_OUT   16000.0f
+#define PITCH_SPEED_PID_MAX_IOUT  5000.0f
 
 //yaw 速度环 PID参数以及 PID最大输出，积分输出
 #define YAW_SPEED_PID_KP        10000.0f//3600
@@ -32,7 +32,7 @@
 #define YAW_SPEED_PID_MAX_IOUT  5000.0f
 
 //pitch 角度环 角度由陀螺仪解算 PID参数以及 PID最大输出，积分输出
-#define PITCH_GYRO_ABSOLUTE_PID_KP 25.5f  //15
+#define PITCH_GYRO_ABSOLUTE_PID_KP 15.5f  //15
 #define PITCH_GYRO_ABSOLUTE_PID_KI 0.0f
 #define PITCH_GYRO_ABSOLUTE_PID_KD 0.0f
 
@@ -68,12 +68,6 @@
 #define PITCH_CHANNEL 3
 #define GIMBAL_MODE_CHANNEL 0
 
-//掉头180 按键
-#define TURN_KEYBOARD KEY_PRESSED_OFFSET_F
-//掉头云台速度
-#define TURN_SPEED    0.04f
-//测试按键尚未使用
-#define TEST_KEYBOARD KEY_PRESSED_OFFSET_R
 //遥控器输入死区，因为遥控器存在差异，摇杆在中间，其值不一定为零
 #define RC_DEADBAND   10
 
@@ -89,21 +83,18 @@
 
 #define GIMBAL_CONTROL_TIME 1
 
-//云台测试模式 宏定义 0 为不使用测试模式
-#define GIMBAL_TEST_MODE 0
-
 #define PITCH_TURN  0//1
 #define YAW_TURN    1//0
 
 //电机码盘值最大以及中值
 #define HALF_ECD_RANGE  4096
 #define ECD_RANGE       8191
-//云台初始化回中值，允许的误差,并且在误差范围内停止一段时间以及最大时间6s后解除初始化状态，
+// 云台初始化回中值，允许的误差,并且在误差范围内停止一段时间以及最大时间6s后解除初始化状态，
 #define GIMBAL_INIT_ANGLE_ERROR     0.1f
 #define GIMBAL_INIT_STOP_TIME       100
 #define GIMBAL_INIT_TIME            6000
 #define GIMBAL_CALI_REDUNDANT_ANGLE 0.1f
-//云台初始化回中值的速度以及控制到的角度
+// 云台初始化回中值的速度以及控制到的角度
 #define GIMBAL_INIT_PITCH_SPEED     0.004f
 #define GIMBAL_INIT_YAW_SPEED       0.005f
 
@@ -183,7 +174,7 @@ typedef struct
 	gimbal_motor_mode_e gimbal_motor_mode;             // 当前电机控制模式
 	gimbal_motor_mode_e last_gimbal_motor_mode;        // 上一次电机控制模式
 
-	fp32 offset_ecd;                                   // 编码器偏移值
+	int16_t offset_ecd;                                   // 编码器偏移值
 
 	fp32 max_relative_angle;                           // 允许的最大相对角度，单位：弧度 (rad)
 	fp32 min_relative_angle;                           // 允许的最小相对角度，单位：弧度 (rad)

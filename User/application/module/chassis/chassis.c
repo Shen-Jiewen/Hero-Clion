@@ -317,7 +317,7 @@ void chassis_mode_change_control_transit(chassis_control_t* chassis_move_transit
 		chassis_move_transit->chassis_relative_angle_set = 0.0f;
 	}
 
-		//切入不跟随云台模式
+	//切入不跟随云台模式
 	else if ((chassis_move_transit->last_chassis_mode != CHASSIS_VECTOR_NO_FOLLOW_YAW)
 		&& chassis_move_transit->chassis_mode == CHASSIS_VECTOR_NO_FOLLOW_YAW)
 	{

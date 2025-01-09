@@ -7,7 +7,7 @@
 
 error_t *error_list;
 
-_Noreturn void detect_task(void *argument){
+_Noreturn void detect_task(__attribute__((unused)) void *argument){
 	static uint32_t system_time;
 	system_time = osKernelGetTickCount();
 	// detect初始化

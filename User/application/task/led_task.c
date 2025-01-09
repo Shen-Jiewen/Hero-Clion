@@ -9,7 +9,7 @@ uint8_t red = 1;
 uint8_t green = 1;
 uint8_t blue = 1;
 
-_Noreturn void led_task(void* argument)
+_Noreturn void led_task(__attribute__((unused)) void* argument)
 {
 	while (1)
 	{

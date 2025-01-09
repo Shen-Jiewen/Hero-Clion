@@ -6,7 +6,7 @@
 #include "bsp_pwm.h"
 #include "detect.h"
 
-#define BUZZER
+//#define BUZZER
 
 // 定义蜂鸣器开关宏
 #ifdef BUZZER

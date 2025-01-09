@@ -14,7 +14,7 @@ extern UART_HandleTypeDef huart5;
 
 static void rc_callback(void);
 
-_Noreturn void remote_control_task(void* argument)
+_Noreturn void remote_control_task(__attribute__((unused)) void* argument)
 {
 	// 初始化串口
 	BSP_UART_InitTypeDef uart_config = {
