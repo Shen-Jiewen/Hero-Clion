@@ -7,6 +7,20 @@ extern FDCAN_HandleTypeDef hfdcan1;
 uint8_t cap_state = 0;
 FDCAN_TxHeaderTypeDef cap_TX_header;
 float input_power = 50;
+
+/**
+ * @brief 底盘功率控制函数
+ *
+ * 该函数用于动态调整机器人底盘的功率分配，确保底盘在不超过最大功率限制的情况下，
+ * 根据超级电容器的能量状态和用户输入（如加速键）来优化电机的输出功率。
+ * 函数通过计算每个电机的初始功率，并在总功率超过限制时进行功率缩放，
+ * 同时根据电容器的能量状态动态调整底盘的最大功率。
+ *
+ * @param chassis_power_control 指向底盘控制结构体的指针，包含电机PID控制数据和底盘状态信息。
+ *
+ * @note 该函数会根据电容器的能量状态和用户输入（如加速键）动态调整功率分配，
+ *       并在功率超过限制时对电机输出进行缩放，确保系统稳定运行。
+ */
 void chassis_power_control(chassis_control_t *chassis_power_control)
 {
     uint16_t max_power_limit = 40; //最大功率限制
