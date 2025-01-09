@@ -80,6 +80,7 @@ include_directories(
         User/components/device/BMI088
         User/components/device/IST8310
         User/components/device/ws2812
+        User/components/device/supercap
         #  component/support
         User/components/support
         User/components/support/vofa+
