@@ -36,7 +36,7 @@
 ## 开发者
 
 - **Javen** 邮箱:`jiewenshen6741@gmail.com`
-- **Syh** 邮箱:``
+- **Syh** 邮箱:`1684441286@qq.com`
 - **Du.X.Y** 邮箱：`3512683509@qq.com`
 
 ## 许可证
