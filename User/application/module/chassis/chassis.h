@@ -12,6 +12,7 @@
 #include "dji_3508.h"
 #include "dt7.h"
 #include "detect.h"
+#include "supercap.h"
 // 库
 #include "pid.h"
 #include "user_lib.h"
