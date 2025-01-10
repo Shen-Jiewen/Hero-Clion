@@ -6,6 +6,7 @@
 #include "cmsis_os.h"
 
 #define SAMPLE_RATE 1000
+#define DEG_TO_RAD(angle) ((angle) * (M_PI / 180.0))
 
 // 全局IMU控制指针
 static imu_control_t imu_control_instance;
@@ -92,9 +93,9 @@ void imu_data_update(imu_control_t *imu_control) {
 		              0);
 		Mahony_computeAngles();
 		//ekf获取姿态角度函数
-		imu_control->angle[0] = Get_Pitch(); //获得pitch
-		imu_control->angle[1] = Get_Roll(); //获得roll
-		imu_control->angle[2] = Get_Yaw(); //获得yaw
+		imu_control->angle[0] = DEG_TO_RAD(Get_Roll());
+		imu_control->angle[1] = DEG_TO_RAD(Get_Pitch());
+		imu_control->angle[2] = DEG_TO_RAD(Get_Yaw());
 	} else if (imu_control->step_status == 0) {
 		//gyro correct
 		imu_control->gyro_correct[0] += imu_control->gyroscope[0];

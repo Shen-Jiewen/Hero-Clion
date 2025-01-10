@@ -61,10 +61,10 @@ _Noreturn void gimbal_task(__attribute__((unused)) void* argument)
 					0,
 					0,
 					0);
-				// gimbal_control->CAN_cmd_gimbal(CAN_4310_v41_ALL_ID, 0,
-				// 	(int16_t)gimbal_control->gimbal_pitch_motor.given_current,
-				// 	0,
-				// 	0);
+				gimbal_control->CAN_cmd_gimbal(CAN_4310_v41_ALL_ID, 0,
+					(int16_t)gimbal_control->gimbal_pitch_motor.given_current,
+					0,
+					0);
 			}
 		}
 		osDelay(GIMBAL_CONTROL_TIME);
