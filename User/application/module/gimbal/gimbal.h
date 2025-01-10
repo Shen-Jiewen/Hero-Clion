@@ -5,24 +5,19 @@
 #ifndef GIMBAL_H_
 #define GIMBAL_H_
 
-#include "main.h"
 #include "struct_typedef.h"
-#include "dji_3508.h"
 #include "dji_6020.h"
-#include "dm_4310.h"
 #include "dm_4310_v41.h"
 #include "dt7.h"
-#include "user_lib.h"
-#include "arm_math.h"
 #include "pid.h"
 #include "imu.h"
 
 //pitch 速度环 PID参数以及 PID最大输出，积分输出
-#define PITCH_SPEED_PID_KP        2000.0f//1500
-#define PITCH_SPEED_PID_KI        7.0f//5
+#define PITCH_SPEED_PID_KP        3000.0f//1500
+#define PITCH_SPEED_PID_KI        0.0f//5
 #define PITCH_SPEED_PID_KD        0.0f
-#define PITCH_SPEED_PID_MAX_OUT   16000.0f
-#define PITCH_SPEED_PID_MAX_IOUT  5000.0f
+#define PITCH_SPEED_PID_MAX_OUT   200.0f
+#define PITCH_SPEED_PID_MAX_IOUT  10.0f
 
 //yaw 速度环 PID参数以及 PID最大输出，积分输出
 #define YAW_SPEED_PID_KP        10000.0f//3600
@@ -32,25 +27,23 @@
 #define YAW_SPEED_PID_MAX_IOUT  5000.0f
 
 //pitch 角度环 角度由陀螺仪解算 PID参数以及 PID最大输出，积分输出
-#define PITCH_GYRO_ABSOLUTE_PID_KP 15.5f  //15
-#define PITCH_GYRO_ABSOLUTE_PID_KI 0.0f
+#define PITCH_GYRO_ABSOLUTE_PID_KP 0.03f  //15
+#define PITCH_GYRO_ABSOLUTE_PID_KI 0.001f
 #define PITCH_GYRO_ABSOLUTE_PID_KD 0.0f
-
 #define PITCH_GYRO_ABSOLUTE_PID_MAX_OUT 10.0f
 #define PITCH_GYRO_ABSOLUTE_PID_MAX_IOUT 0.0f
 
 //yaw 角度环 角度由陀螺仪解算 PID参数以及 PID最大输出，积分输出
-#define YAW_GYRO_ABSOLUTE_PID_KP        26.0f  //28（26）
+#define YAW_GYRO_ABSOLUTE_PID_KP        30.0f  //28（26）
 #define YAW_GYRO_ABSOLUTE_PID_KI        0.0f
-#define YAW_GYRO_ABSOLUTE_PID_KD        0.3f  //0.3
+#define YAW_GYRO_ABSOLUTE_PID_KD        0.0f  //0.3
 #define YAW_GYRO_ABSOLUTE_PID_MAX_OUT   10.0f
 #define YAW_GYRO_ABSOLUTE_PID_MAX_IOUT  0.0f
 
 //pitch 角度环 角度由编码器 PID参数以及 PID最大输出，积分输出
-#define PITCH_ENCODE_RELATIVE_PID_KP 100.0f   //  15
+#define PITCH_ENCODE_RELATIVE_PID_KP 0.0f   //  15
 #define PITCH_ENCODE_RELATIVE_PID_KI 0.0f
 #define PITCH_ENCODE_RELATIVE_PID_KD 0.0f
-
 #define PITCH_ENCODE_RELATIVE_PID_MAX_OUT 10.0f
 #define PITCH_ENCODE_RELATIVE_PID_MAX_IOUT 0.0f
 
@@ -73,7 +66,7 @@
 
 //遥控器通道转换成电机角度
 #define YAW_RC_SEN    (-0.000005f)
-#define PITCH_RC_SEN  (-0.000004f) //6f
+#define PITCH_RC_SEN  (0.000004f) //6f
 
 #define YAW_MOUSE_SEN   0.00005f
 #define PITCH_MOUSE_SEN 0.00005f // 0.00015

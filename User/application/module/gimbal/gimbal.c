@@ -4,6 +4,7 @@
 
 #include "gimbal.h"
 #include "gimbal_behaviour.h"
+#include "user_lib.h"
 
 extern FDCAN_HandleTypeDef hfdcan2;
 static gimbal_control_t gimbal_control;
@@ -178,9 +179,9 @@ void gimbal_feedback_update(gimbal_control_t* feedback_update)
 	// 更新偏航电机的陀螺仪数据（角速度）
 	// 计算时考虑俯仰角度对偏航角速度的影响
 	feedback_update->gimbal_yaw_motor.motor_gyro = arm_cos_f32(feedback_update->gimbal_pitch_motor.relative_angle) *
-		(*(feedback_update->gimbal_INT_gyro_point + INS_GYRO_Z_ADDRESS_OFFSET))
+		*(feedback_update->gimbal_INT_gyro_point + INS_GYRO_Z_ADDRESS_OFFSET)
 		- arm_sin_f32(feedback_update->gimbal_pitch_motor.relative_angle) *
-			(*(feedback_update->gimbal_INT_gyro_point + INS_GYRO_X_ADDRESS_OFFSET));
+			*(feedback_update->gimbal_INT_gyro_point + INS_GYRO_X_ADDRESS_OFFSET);
 }
 
 /**
@@ -336,7 +337,7 @@ static void gimbal_absolute_angle_limit(gimbal_motor_t* gimbal_motor, fp32 add)
 	{
 		return;
 	}
-	gimbal_motor->absolute_angle_set = rad_format(gimbal_motor->absolute_angle_set + add);
+	gimbal_motor->absolute_angle_set = fp32_constrain(gimbal_motor->absolute_angle_set + add, -0.27f, 0.51f);
 }
 
 /**
@@ -434,7 +435,7 @@ static void gimbal_motor_absolute_angle_control(gimbal_motor_t* gimbal_motor)
 	gimbal_motor->current_set =
 		PID_calc(&gimbal_motor->gimbal_motor_gyro_pid, gimbal_motor->motor_gyro, gimbal_motor->motor_gyro_set);
 	//控制值赋值
-	gimbal_motor->given_current = (int16_t)(gimbal_motor->current_set);
+	gimbal_motor->given_current = (int16_t)gimbal_motor->current_set;
 }
 
 /**
