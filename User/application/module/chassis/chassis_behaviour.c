@@ -122,6 +122,9 @@ void chassis_behaviour_mode_set(chassis_control_t* chassis_move_mode)
 
 	// 当云台处于某个模式时，底盘不执行移动控制
 	// 此处可以添加具体的云台模式判断，进行底盘停滞或不操作的处理
+	if (gimbal_cmd_to_chassis_stop()) {
+		chassis_behaviour_mode = CHASSIS_NO_MOVE;
+	}
 
 	// 更新上一次的底盘行为模式
 	last_chassis_behaviour_mode = chassis_behaviour_mode;

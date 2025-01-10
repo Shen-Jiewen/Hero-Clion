@@ -111,7 +111,7 @@ static int16_t dt7_abs(int16_t value)
 	}
 }
 
-void sbus_to_dt7(RC_ctrl_t *rc_ctrl, uint8_t *sbus_buf)
+void sbus_to_dt7(RC_ctrl_t *rc_ctrl, const uint8_t *sbus_buf)
 {
 	// 检查sbuff_buf是否为空或长度不足
 	if (rc_ctrl == NULL || sbus_buf == NULL) {
@@ -119,24 +119,24 @@ void sbus_to_dt7(RC_ctrl_t *rc_ctrl, uint8_t *sbus_buf)
 	}
 
 	// 解析遥控器通道值并校准
-	rc_ctrl->rc.ch[0] = ((uint16_t)sbus_buf[0] | ((uint16_t)sbus_buf[1] << 8)) & 0x07FF; // 将buff[0]和buff[1]的值组合为ch0通道的值，并将其限制在11位
+	rc_ctrl->rc.ch[0] = ((uint16_t) sbus_buf[1] << 8 | (uint16_t) sbus_buf[0]) & 0x07FF; // NOLINT(*-narrowing-conversions)
 	rc_ctrl->rc.ch[0] -= 1024; // 中心值为0
 
-	rc_ctrl->rc.ch[1] = (((uint16_t)sbus_buf[1] >> 3) | ((uint16_t)sbus_buf[2] << 5)) & 0x07FF;
+	rc_ctrl->rc.ch[1] = ((uint16_t)sbus_buf[1] >> 3 | ((uint16_t)sbus_buf[2] << 5)) & 0x07FF; // NOLINT(*-narrowing-conversions)
 	rc_ctrl->rc.ch[1] -= 1024;
 
-	rc_ctrl->rc.ch[2] = (((uint16_t)sbus_buf[2] >> 6) | ((uint16_t)sbus_buf[3] << 2) | ((uint16_t)sbus_buf[4] << 10)) & 0x07FF;
+	rc_ctrl->rc.ch[2] = ((uint16_t)sbus_buf[2] >> 6 | (uint16_t)sbus_buf[3] << 2 | (uint16_t)sbus_buf[4] << 10) & 0x07FF; // NOLINT(*-narrowing-conversions)
 	rc_ctrl->rc.ch[2] -= 1024;
 
-	rc_ctrl->rc.ch[3] = (((uint16_t)sbus_buf[4] >> 1) | ((uint16_t)sbus_buf[5] << 7)) & 0x07FF;
+	rc_ctrl->rc.ch[3] = ((uint16_t)sbus_buf[4] >> 1 | (uint16_t)sbus_buf[5] << 7) & 0x07FF; // NOLINT(*-narrowing-conversions)
 	rc_ctrl->rc.ch[3] -= 1024;
 
-	rc_ctrl->rc.ch[4] = ((uint16_t)sbus_buf[16] | ((uint16_t)sbus_buf[17] << 8)) & 0x07FF; // 左上角滚轮
+	rc_ctrl->rc.ch[4] = ((uint16_t) sbus_buf[17] << 8 | (uint16_t) sbus_buf[16]) & 0x07FF; // 左上角滚轮 NOLINT(*-narrowing-conversions)
 	rc_ctrl->rc.ch[4] -= 1024;
 
 	// 解析开关状态
-	rc_ctrl->rc.s[0] = ((sbus_buf[5] >> 4) & 0x0C) >> 2;
-	rc_ctrl->rc.s[1] = (sbus_buf[5] >> 4) & 0x03;
+	rc_ctrl->rc.s[0] = (sbus_buf[5] >> 4) & 0x03;
+	rc_ctrl->rc.s[1] = ((sbus_buf[5] >> 4) & 0x0C) >> 2;
 }
 
 

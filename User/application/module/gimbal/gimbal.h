@@ -83,7 +83,7 @@
 
 #define GIMBAL_CONTROL_TIME 1
 
-#define PITCH_TURN  0//1
+#define PITCH_TURN  1//0
 #define YAW_TURN    1//0
 
 //电机码盘值最大以及中值

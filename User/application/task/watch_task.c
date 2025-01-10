@@ -5,14 +5,10 @@
 #include "main.h"
 #include "cmsis_os.h"
 
-extern IWDG_HandleTypeDef hiwdg1;
-
 _Noreturn void watch_task(__attribute__((unused)) void* argument){
 
 	// 喂狗任务,间隔20ms
 	while (1){
-		// 定时喂狗
-		HAL_IWDG_Refresh(&hiwdg1);
 		// 延时
 		osDelay(20);
 	}

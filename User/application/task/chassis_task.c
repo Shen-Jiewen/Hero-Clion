@@ -46,10 +46,10 @@ _Noreturn void chassis_task(__attribute__((unused)) void* argument)
 			}
 			else
 			{
-//				chassis_control->CAN_cmd_chassis(chassis_control->motor_chassis[0].give_current,
-//					chassis_control->motor_chassis[1].give_current,
-//					chassis_control->motor_chassis[2].give_current,
-//					chassis_control->motor_chassis[3].give_current);
+				// chassis_control->CAN_cmd_chassis(chassis_control->motor_chassis[0].give_current,
+				// 	chassis_control->motor_chassis[1].give_current,
+				// 	chassis_control->motor_chassis[2].give_current,
+				// 	chassis_control->motor_chassis[3].give_current);
 			}
 		}
 		osDelay(CHASSIS_CONTROL_TIME_MS);

@@ -1,5 +1,4 @@
 #include "FreeRTOS.h"
-#include "Fusion.h"
 #include "semphr.h"
 #include "imu.h"
 #include "ist8310driver.h"
@@ -21,13 +20,11 @@ _Noreturn void imu_task(__attribute__((unused)) void *argument) {
 
 			ist_count++;
 			imu_data_update(imu_control);
-			imu_calibration_init(imu_control);
-			imu_ahrs_update(imu_control);
 			imu_statistics_update(imu_control);
 			imu_temperature_control(imu_control);
 		}
 		if(ist_count == 50){
-			ist8310_read_mag(imu_control->magnetometer.array);
+			ist8310_read_mag(imu_control->magnetometer);
 		}
 	}
 }

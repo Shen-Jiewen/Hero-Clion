@@ -48,6 +48,13 @@ void gimbal_init(gimbal_control_t* init)
 	init->gimbal_yaw_motor.motor_measure.motor_6020 = get_motor_6020_measure_point(0);
 	init->gimbal_pitch_motor.motor_type = MOTOR_TYPE_4310;
 	init->gimbal_pitch_motor.motor_measure.motor_4310 = get_motor_4310_v41_measure_point(1);
+	// 初始化云台Yaw和Pitch编码器中值
+	init->gimbal_yaw_motor.offset_ecd = 720;
+	init->gimbal_pitch_motor.offset_ecd = 8100;
+	init->gimbal_yaw_motor.max_relative_angle = 1.4f;
+	init->gimbal_yaw_motor.min_relative_angle = -1.4f;
+	init->gimbal_pitch_motor.max_relative_angle = 0.6f;
+	init->gimbal_pitch_motor.min_relative_angle = -0.3f;
 	// 获取陀螺仪数据和INS角度数据的指针
 	init->gimbal_INT_angle_point = get_INS_angle_point();  // 获取惯性导航系统（INS）角度数据指针
 	init->gimbal_INT_gyro_point = get_gyro_data_point();   // 获取陀螺仪数据指针
@@ -107,7 +114,8 @@ void gimbal_init(gimbal_control_t* init)
 	PID_clear(&init->gimbal_pitch_motor.gimbal_motor_gyro_pid);
 
 	// 设置电机的初始目标角度和速度（默认为当前角度和速度）
-	init->gimbal_yaw_motor.absolute_angle_set = init->gimbal_yaw_motor.absolute_angle;
+	init->gimbal_yaw_motor.
+	absolute_angle_set = init->gimbal_yaw_motor.absolute_angle;
 	init->gimbal_yaw_motor.relative_angle_set = init->gimbal_yaw_motor.relative_angle;
 	init->gimbal_yaw_motor.motor_gyro_set = init->gimbal_yaw_motor.motor_gyro;
 
@@ -151,10 +159,6 @@ void gimbal_feedback_update(gimbal_control_t* feedback_update)
 	feedback_update->gimbal_pitch_motor.relative_angle = motor_ecd_to_angle_change(feedback_update->gimbal_pitch_motor.motor_measure.motor_4310->ecd,
 		feedback_update->gimbal_pitch_motor.offset_ecd);
 #endif
-
-	// 更新俯仰电机的陀螺仪数据（角速度）
-	feedback_update->gimbal_pitch_motor.motor_gyro =
-		*(feedback_update->gimbal_INT_gyro_point + INS_GYRO_Y_ADDRESS_OFFSET);
 
 	// 更新偏航电机的绝对角度
 	feedback_update->gimbal_yaw_motor.absolute_angle =

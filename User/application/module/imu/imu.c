@@ -12,6 +12,7 @@ static imu_control_t imu_control_instance;
 
 // 中断回调函数声明
 static void acc_int_callback(void);
+
 static void gyro_int_callback(void);
 
 /**
@@ -30,23 +31,14 @@ void imu_control_init(imu_control_t *imu_control) {
 	imu_control->solve_count = 0;
 	imu_control->solves_per_second = 0;
 
-	// 初始化IMU相关变量
-	FusionOffsetInitialise(&imu_control->offset, SAMPLE_RATE);
-	FusionAhrsInitialise(&imu_control->ahrs);
-
-	// 设置AHRS算法设置
-	const FusionAhrsSettings settings = {
-		.convention = FusionConventionNwu,
-		.gain = 10.0f,
-		.gyroscopeRange = 2000.0f, /* 替换为实际陀螺仪范围，单位：°/s */
-		.accelerationRejection = 20.0f,
-		.magneticRejection = 10.0f,
-		.recoveryTriggerPeriod = 2 * SAMPLE_RATE
-	};
-	FusionAhrsSetSettings(&imu_control->ahrs, &settings);
+	// AHRS初始化
+	IMU_QuaternionEKF_Init(10, (fp32) 1 / SAMPLE_RATE, 10000000, 1, 0.001f, 0); //ekf初始化
+	Mahony_Init(SAMPLE_RATE);
+	MahonyAHRSinit(imu_control->accelerometer[0], imu_control->accelerometer[1], imu_control->accelerometer[2], 0, 0,
+	               0);
 
 	// 初始化温度PID控制器
-	fp32 PID_params[3] = {30.0f, 0.1f, 0.0f}; // Kp, Ki, Kd
+	const fp32 PID_params[3] = {30.0f, 0.1f, 0.0f}; // Kp, Ki, Kd
 	PID_init(&imu_control->temp_pid, PID_POSITION, PID_params, 100.0f, 50.0f);
 }
 
@@ -68,30 +60,9 @@ void imu_hardware_init(void) {
 	while (BMI088_init()) {
 		// 等待IMU初始化完成
 	}
-	while (ist8310_init()){
+	while (ist8310_init()) {
 		// 等待磁力计初始化完成
 	}
-}
-
-/**
- * @brief 初始化IMU校准参数
- *
- * @param imu_control IMU控制结构体指针
- */
-void imu_calibration_init(imu_control_t *imu_control) {
-	const FusionMatrix gyroscopeMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
-	const FusionVector gyroscopeSensitivity = {1.0f, 1.0f, 1.0f};
-	const FusionVector gyroscopeOffset = {0.0f, 0.0f, 0.0f};
-	const FusionMatrix accelerometerMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
-	const FusionVector accelerometerSensitivity = {1.0f, 1.0f, 1.0f};
-	const FusionVector accelerometerOffset = {0.0f, 0.0f, 0.0f};
-	const FusionMatrix softIronMatrix = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
-	const FusionVector hardIronOffset = {0.0f, 0.0f, 0.0f};
-
-	// 传感器数据校准
-	imu_control->gyroscope = FusionCalibrationInertial(imu_control->gyroscope, gyroscopeMisalignment, gyroscopeSensitivity, gyroscopeOffset);
-	imu_control->accelerometer = FusionCalibrationInertial(imu_control->accelerometer, accelerometerMisalignment, accelerometerSensitivity, accelerometerOffset);
-	imu_control->magnetometer = FusionCalibrationMagnetic(imu_control->magnetometer, softIronMatrix, hardIronOffset);
 }
 
 /**
@@ -101,23 +72,42 @@ void imu_calibration_init(imu_control_t *imu_control) {
  */
 void imu_data_update(imu_control_t *imu_control) {
 	// 获取当前时间戳
-	TickType_t current_time = xTaskGetTickCount();
-	imu_control->delta_time = (float)(current_time - imu_control->last_update_time) / (float)configTICK_RATE_HZ;
+	const TickType_t current_time = xTaskGetTickCount();
+	imu_control->delta_time = (float) (current_time - imu_control->last_update_time) / (float) configTICK_RATE_HZ;
 	imu_control->last_update_time = current_time;
 
-	// 更新校准
-	imu_control->gyroscope = FusionOffsetUpdate(&imu_control->offset, imu_control->gyroscope);
-}
+	// 更新陀螺仪数据
+	if (imu_control->step_status == 1) {
+		imu_control->gyroscope[0] -= imu_control->gyro_correct[0]; //减去陀螺仪0飘
+		imu_control->gyroscope[1] -= imu_control->gyro_correct[1];
+		imu_control->gyroscope[2] -= imu_control->gyro_correct[2];
 
-/**
- * @brief 更新AHRS算法
- *
- * @param imu_control IMU控制结构体指针
- */
-void imu_ahrs_update(imu_control_t *imu_control) {
-	FusionAhrsUpdateNoMagnetometer(&imu_control->ahrs, imu_control->gyroscope, imu_control->accelerometer, imu_control->delta_time);
-//	FusionAhrsUpdate(&imu_control->ahrs, imu_control->gyroscope, imu_control->accelerometer, imu_control->magnetometer, imu_control->delta_time);
-	imu_control->euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&imu_control->ahrs));
+		//ekf姿态解算部分
+		IMU_QuaternionEKF_Update(imu_control->gyroscope[0], imu_control->gyroscope[1], imu_control->gyroscope[2],
+		                         imu_control->accelerometer[0], imu_control->accelerometer[1],
+		                         imu_control->accelerometer[2]);
+		//mahony姿态解算部分
+		Mahony_update(imu_control->gyroscope[0], imu_control->gyroscope[1], imu_control->gyroscope[2],
+		              imu_control->accelerometer[0], imu_control->accelerometer[1], imu_control->accelerometer[2], 0, 0,
+		              0);
+		Mahony_computeAngles();
+		//ekf获取姿态角度函数
+		imu_control->angle[0] = Get_Pitch(); //获得pitch
+		imu_control->angle[1] = Get_Roll(); //获得roll
+		imu_control->angle[2] = Get_Yaw(); //获得yaw
+	} else if (imu_control->step_status == 0) {
+		//gyro correct
+		imu_control->gyro_correct[0] += imu_control->gyroscope[0];
+		imu_control->gyro_correct[1] += imu_control->gyroscope[1];
+		imu_control->gyro_correct[2] += imu_control->gyroscope[2];
+		imu_control->time_count++;
+		if (imu_control->time_count >= SAMPLE_RATE) {
+			imu_control->gyro_correct[0] /= SAMPLE_RATE;
+			imu_control->gyro_correct[1] /= SAMPLE_RATE;
+			imu_control->gyro_correct[2] /= SAMPLE_RATE;
+			imu_control->step_status = 1; //go to 2 state
+		}
+	}
 }
 
 /**
@@ -126,11 +116,10 @@ void imu_ahrs_update(imu_control_t *imu_control) {
  * @param imu_control IMU控制结构体指针
  */
 void imu_statistics_update(imu_control_t *imu_control) {
-
 	imu_control->solve_count++;
 
 	// 每秒钟更新一次解算次数
-	TickType_t current_time = xTaskGetTickCount();
+	const TickType_t current_time = xTaskGetTickCount();
 	if (current_time - imu_control->last_second_time >= configTICK_RATE_HZ) {
 		imu_control->solves_per_second = imu_control->solve_count;
 		imu_control->solve_count = 0;
@@ -159,7 +148,7 @@ void imu_temperature_control(imu_control_t *imu_control) {
 	}
 
 	// 更新PWM占空比
-	BSP_PWM_SetDutyCycle(&htim3, PWM_CHANNEL_4, (uint16_t)pwm_duty_cycle);
+	BSP_PWM_SetDutyCycle(&htim3, PWM_CHANNEL_4, (uint16_t) pwm_duty_cycle);
 }
 
 /**
@@ -169,7 +158,7 @@ static void acc_int_callback(void) {
 	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
 	// 读取加速度计数据
-	BMI088_read_accel(imu_control_instance.accelerometer.array);
+	BMI088_read_accel(imu_control_instance.accelerometer);
 
 	// 在中断中释放信号量
 	xSemaphoreGiveFromISR(imu_control_instance.xAccSemaphore, &xHigherPriorityTaskWoken);
@@ -185,7 +174,7 @@ static void gyro_int_callback(void) {
 	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
 	// 读取陀螺仪数据
-	BMI088_read_gyro(imu_control_instance.gyroscope.array);
+	BMI088_read_gyro(imu_control_instance.gyroscope);
 
 	// 在中断中释放信号量
 	xSemaphoreGiveFromISR(imu_control_instance.xGyroSemaphore, &xHigherPriorityTaskWoken);
@@ -259,10 +248,10 @@ void imu_gpio_init(void) {
 void imu_pwm_init(void) {
 	// 定义PWM初始化结构体
 	PWM_InitTypeDef pwm_config = {
-		.htim = &htim3,           		// 定时器句柄
-		.channel = PWM_CHANNEL_4,      	// PWM通道
-		.frequency = 1000,  			// PWM频率
-		.duty_cycle = 0 				// PWM占空比
+		.htim = &htim3, // 定时器句柄
+		.channel = PWM_CHANNEL_4, // PWM通道
+		.frequency = 1000, // PWM频率
+		.duty_cycle = 0 // PWM占空比
 	};
 
 	// 初始化PWM
@@ -276,14 +265,14 @@ void imu_pwm_init(void) {
  * @brief 获取欧拉角数据指针
  * @return
  */
-fp32* get_INS_angle_point(){
-	return imu_control_instance.euler.array;
+fp32 *get_INS_angle_point() {
+	return imu_control_instance.angle;
 }
 
 /**
  * @brief 获取陀螺仪数据指针
  * @return
  */
-fp32* get_gyro_data_point(){
-	return imu_control_instance.gyroscope.array;
+fp32 *get_gyro_data_point() {
+	return imu_control_instance.gyroscope;
 }
