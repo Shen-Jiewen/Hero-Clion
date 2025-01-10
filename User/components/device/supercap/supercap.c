@@ -75,7 +75,7 @@ uint8_t CAP_CAN_DataSend(FDCAN_HandleTypeDef* hfdcan,float lim_power, uint8_t ca
     CAP_CAN_txbuf[0] = temp_data>>8;
     CAP_CAN_txbuf[1] = temp_data&0xff;
     CAP_CAN_txbuf[2] = CAP_CANData.set_mode;
-
+    // 将消息添加到CAN发送队列，并检查发送是否成功
     if (HAL_FDCAN_AddMessageToTxFifoQ(hfdcan, &Tx_Header, CAP_CAN_txbuf) != HAL_OK)
     {
         return 1;   //发送失败

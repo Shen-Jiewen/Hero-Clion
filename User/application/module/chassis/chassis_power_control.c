@@ -4,7 +4,7 @@
 #include "chassis_power_control.h"
 extern RC_ctrl_t rc_ctrl;
 extern FDCAN_HandleTypeDef hfdcan1;
-uint8_t cap_state = 0;
+uint8_t cap_state = 0;      // 超级电容状态标志，0表示默认模式，1表示暴走模式
 FDCAN_TxHeaderTypeDef cap_TX_header;
 float input_power = 50;
 
