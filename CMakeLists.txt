@@ -64,6 +64,7 @@ include_directories(
         User/application/module/shoot
         User/application/module/tick
         User/application/module/ui
+        user/application/module/mini_gimbal
         # dsp
         User/bsp/dm02
         # component/algorithm
