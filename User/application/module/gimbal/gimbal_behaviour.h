@@ -9,6 +9,7 @@
 #include "struct_typedef.h"
 #include "stdbool.h"
 #include "gimbal.h"
+#include "feedforward.h"
 
 typedef enum
 {
