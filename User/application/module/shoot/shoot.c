@@ -59,7 +59,7 @@ void shoot_init(shoot_control_t* shoot_init)
 	//初始化摩擦轮电机的测量数据
 	for (uint8_t i = 0; i < 4; i++)
 	{
-		shoot_init->friction_motor[i].motor_3508_measure = get_motor_3508_measure_point(1, i);
+		shoot_init->friction_motor[i].motor_3508_measure = get_motor_3508_measure_point(1,i);
 	}
 
 	//初始状态机为发射停止

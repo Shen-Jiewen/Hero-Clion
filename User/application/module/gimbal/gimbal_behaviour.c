@@ -217,7 +217,7 @@ static void handle_gimbal_switch_control(gimbal_control_t *gimbal_mode_set)
 	else if (switch_is_mid(gimbal_mode_set->gimbal_rc_ctrl->rc.s[GIMBAL_MODE_CHANNEL]))
 	{
 		// 默认是绝对角度控制
-		gimbal_behaviour = GIMBAL_RELATIVE_ANGLE;
+		gimbal_behaviour = GIMBAL_ABSOLUTE_ANGLE;
 		// 在跟随模式下按下鼠标右键时，切换到自瞄模式
 		if (gimbal_mode_set->gimbal_rc_ctrl->mouse.press_r)
 		{
@@ -414,6 +414,23 @@ static void gimbal_motionless_control(fp32 *yaw, fp32 *pitch, __attribute__((unu
 {
 	*yaw = 0.0f;
 	*pitch = 0.0f;
+}
+
+/**
+ * @brief          返回云台状态机指针，目前用于发射机构判断是否自瞄以及是否无力
+ * @param[in]      none
+ * @return         云台状态机指针
+ */
+bool_t gimbal_cmd_to_chassis_stop(void)
+{
+	if (gimbal_behaviour == GIMBAL_INIT || gimbal_behaviour == GIMBAL_CALI || gimbal_behaviour == GIMBAL_MOTIONLESS || gimbal_behaviour == GIMBAL_ZERO_FORCE)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
 }
 
 /**

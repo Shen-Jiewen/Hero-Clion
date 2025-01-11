@@ -22,7 +22,7 @@ static chassis_control_t chassis_control;
   * @param[in,out]  vy_channel: 垂直通道（Y轴）原始输入值，经过死区限制后的值
   * @retval         none
   */
-inline static void apply_rc_deadband_limit(chassis_control_t* chassis_move_rc_to_vector,
+static void apply_rc_deadband_limit(chassis_control_t* chassis_move_rc_to_vector,
 	int16_t* vx_channel,
 	int16_t* vy_channel);
 
@@ -34,7 +34,7 @@ inline static void apply_rc_deadband_limit(chassis_control_t* chassis_move_rc_to
   * @param[in,out]  vy_set_channel: 垂直速度通道值，根据键盘控制进行调整
   * @retval         none
   */
-inline static void apply_keyboard_control(chassis_control_t* chassis_move_rc_to_vector,
+static void apply_keyboard_control(chassis_control_t* chassis_move_rc_to_vector,
 	fp32* vx_set_channel,
 	fp32* vy_set_channel);
 
@@ -46,7 +46,7 @@ inline static void apply_keyboard_control(chassis_control_t* chassis_move_rc_to_
   * @param[in,out]  vy_set_channel: 垂直速度通道值，经过滤波和平滑处理
   * @retval         none
   */
-inline static void apply_smooth_control(chassis_control_t* chassis_move_rc_to_vector,
+static void apply_smooth_control(chassis_control_t* chassis_move_rc_to_vector,
 	const fp32* vx_set_channel,
 	const fp32* vy_set_channel);
 
@@ -58,7 +58,7 @@ inline static void apply_smooth_control(chassis_control_t* chassis_move_rc_to_ve
  * @param[in]      current_yaw: 当前云台角度
  * @retval         relative_angle: 计算后的相对角度
  */
-inline static fp32 calculate_relative_angle(fp32 vx_set, fp32 vy_set, fp32 mov_mag, fp32 current_yaw);
+static fp32 calculate_relative_angle(fp32 vx_set, fp32 vy_set, fp32 mov_mag, fp32 current_yaw);
 
 /**
  * @brief          在原始模式下直接设置底盘速度
@@ -68,7 +68,7 @@ inline static fp32 calculate_relative_angle(fp32 vx_set, fp32 vy_set, fp32 mov_m
  * @param[out]     chassis_move_control: 底盘控制结构体指针
  * @retval         none
  */
-inline static void chassis_raw_mode(fp32 vx_set, fp32 vy_set, fp32 angle_set, chassis_control_t* chassis_move_control);
+static void chassis_raw_mode(fp32 vx_set, fp32 vy_set, fp32 angle_set, chassis_control_t* chassis_move_control);
 
 /**
  * @brief          跟随云台的角度进行底盘控制
@@ -78,7 +78,7 @@ inline static void chassis_raw_mode(fp32 vx_set, fp32 vy_set, fp32 angle_set, ch
  * @param[out]     chassis_move_control: 底盘控制结构体指针
  * @retval         none
  */
-inline static void chassis_follow_gimbal_yaw(fp32 vx_set,
+static void chassis_follow_gimbal_yaw(fp32 vx_set,
 	fp32 vy_set,
 	fp32 angle_set,
 	chassis_control_t* chassis_move_control);
@@ -91,12 +91,12 @@ inline static void chassis_follow_gimbal_yaw(fp32 vx_set,
  * @param[out]     chassis_move_control: 底盘控制结构体指针
  * @retval         none
  */
-inline static void chassis_no_follow_yaw(fp32 vx_set,
+static void chassis_no_follow_yaw(fp32 vx_set,
 	fp32 vy_set,
 	fp32 angle_set,
 	chassis_control_t* chassis_move_control);
 
-inline static void chassis_vector_to_mecanum_wheel_speed(fp32 vx_set, fp32 vy_set, fp32 wz_set, fp32 wheel_speed[4]);
+static void chassis_vector_to_mecanum_wheel_speed(fp32 vx_set, fp32 vy_set, fp32 wz_set, fp32 wheel_speed[4]);
 
 /**
   * @brief          根据遥控器通道值，计算纵向和横移速度
@@ -108,12 +108,6 @@ inline static void chassis_vector_to_mecanum_wheel_speed(fp32 vx_set, fp32 vy_se
   */
 void chassis_rc_to_control_vector(fp32* vx_set, fp32* vy_set, chassis_control_t* chassis_move_rc_to_vector)
 {
-	// 参数检查
-	if (chassis_move_rc_to_vector == NULL || vx_set == NULL || vy_set == NULL)
-	{
-		return;
-	}
-
 	// 初始化通道值
 	int16_t vx_channel = 0, vy_channel = 0;
 	fp32 vx_set_channel = 0.0f, vy_set_channel = 0.0f;
@@ -125,7 +119,7 @@ void chassis_rc_to_control_vector(fp32* vx_set, fp32* vy_set, chassis_control_t*
 	vx_set_channel = (fp32)vx_channel * CHASSIS_VX_RC_SEN;
 	vy_set_channel = (fp32)vy_channel * -CHASSIS_VY_RC_SEN;
 
-	// 应用键盘控制（优先级覆盖遥控器）
+	// 键盘控制
 	apply_keyboard_control(chassis_move_rc_to_vector, &vx_set_channel, &vy_set_channel);
 
 	// 应用平滑控制：低通滤波处理
@@ -144,7 +138,7 @@ void chassis_rc_to_control_vector(fp32* vx_set, fp32* vy_set, chassis_control_t*
   * @param[in,out]  vy_channel: 垂直通道（Y轴）原始输入值，经过死区限制后的值
   * @retval         none
   */
-inline static void apply_rc_deadband_limit(chassis_control_t* chassis_move_rc_to_vector,
+static void apply_rc_deadband_limit(chassis_control_t* chassis_move_rc_to_vector,
 	int16_t* vx_channel,
 	int16_t* vy_channel)
 {
@@ -160,7 +154,7 @@ inline static void apply_rc_deadband_limit(chassis_control_t* chassis_move_rc_to
   * @param[in,out]  vy_set_channel: 垂直速度通道值，根据键盘控制进行调整
   * @retval         none
   */
-inline static void apply_keyboard_control(chassis_control_t* chassis_move_rc_to_vector,
+static void apply_keyboard_control(chassis_control_t* chassis_move_rc_to_vector,
 	fp32* vx_set_channel,
 	fp32* vy_set_channel)
 {
@@ -193,7 +187,7 @@ inline static void apply_keyboard_control(chassis_control_t* chassis_move_rc_to_
   * @param[in,out]  vy_set_channel: 垂直速度通道值，经过滤波和平滑处理
   * @retval         none
   */
-inline static void apply_smooth_control(chassis_control_t* chassis_move_rc_to_vector,
+static void apply_smooth_control(chassis_control_t* chassis_move_rc_to_vector,
 	const fp32* vx_set_channel,
 	const fp32* vy_set_channel)
 {
@@ -409,6 +403,7 @@ void chassis_set_control(chassis_control_t* chassis_move_control)
 static void chassis_follow_gimbal_yaw(fp32 vx_set, fp32 vy_set, fp32 angle_set, chassis_control_t* chassis_move_control)
 {
 	fp32 sin_yaw, cos_yaw;
+
 	// 旋转控制底盘速度方向，保证前进方向是云台方向
 	sin_yaw = sinf(-chassis_move_control->chassis_yaw_motor->relative_angle);
 	cos_yaw = sinf(-chassis_move_control->chassis_yaw_motor->relative_angle);

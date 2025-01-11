@@ -7,10 +7,12 @@
 
 #include "main.h"
 #include "struct_typedef.h"
-#include "fusion.h"
 #include "FreeRTOS.h"
 #include "semphr.h"
 #include "pid.h"
+#include "kalman_filter.h"
+#include "QuaternionEKF.h"
+#include "MahonyAHRS.h"
 
 // 定义常量
 #define INS_TASK_INIT_TIME 7  // IMU任务初始化时间
@@ -39,12 +41,11 @@ extern TIM_HandleTypeDef htim3;
 
 // IMU控制结构体
 typedef struct {
-	FusionAhrs ahrs;                // AHRS算法实例
-	FusionOffset offset;            // 陀螺仪偏移校准实例
-	FusionEuler euler;              // 欧拉角数据
-	FusionVector gyroscope;         // 陀螺仪数据（单位：°/s）
-	FusionVector accelerometer;     // 加速度计数据（单位：g）
-	FusionVector magnetometer;      // 磁力计数据（单位：uT）
+	fp32 angle[3];					// 欧拉角数据
+	fp32 gyroscope[3];				// 陀螺仪数据（单位：°/s）
+	fp32 gyro_correct[3];			// 陀螺仪校准数据
+	fp32 accelerometer[3];			// 加速度计数据（单位：g）
+	fp32 magnetometer[3];			// 磁力计数据（单位：uT）
 
 	pid_type_def temp_pid;          // 温度PID
 	float temperature;              // 温度数据
@@ -59,6 +60,9 @@ typedef struct {
 
 	uint32_t solves_per_second;     // 每秒解算次数
 	uint32_t solve_count;           // 当前解算次数
+
+	uint32_t time_count;            // 时间计数
+	uint32_t step_status;		   // 步态状态
 } imu_control_t;
 
 // 初始化IMU控制结构体
@@ -71,9 +75,7 @@ imu_control_t *get_imu_control_point(void);
 void imu_gpio_init(void);
 void imu_pwm_init(void);
 void imu_hardware_init(void);
-void imu_calibration_init(imu_control_t *imu_control);
 void imu_data_update(imu_control_t *imu_control);
-void imu_ahrs_update(imu_control_t *imu_control);
 void imu_temperature_control(imu_control_t *imu_control);
 void imu_statistics_update(imu_control_t *imu_control);
 

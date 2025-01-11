@@ -9,6 +9,7 @@
 #include "struct_typedef.h"
 #include "arm_math.h"
 #include "chassis.h"
+#include "gimbal_behaviour.h"
 #include "dt7.h"
 #include "user_lib.h"
 

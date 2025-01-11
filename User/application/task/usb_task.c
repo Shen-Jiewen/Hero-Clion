@@ -4,7 +4,6 @@
 
 #include "cmsis_os.h"
 #include "vofa.h"
-#include "Fusion.h"
 #include "dt7.h"
 #include "chassis.h"
 #include "imu.h"
@@ -17,9 +16,9 @@ _Noreturn void usb_task(__attribute__((unused)) void* argument){
 
 	// 初始化
 	while (1){
-		vofa_send_data(0, imu_control->euler.angle.pitch);
-		vofa_send_data(1, imu_control->euler.angle.yaw);
-		vofa_send_data(2, imu_control->euler.angle.roll);
+		vofa_send_data(0, imu_control->angle[0]);
+		vofa_send_data(1, imu_control->angle[1]);
+		vofa_send_data(2, imu_control->angle[2]);
 		vofa_send_data(3, usb_dt7_ctrl->rc.ch[0]);
 		vofa_send_data(4, usb_dt7_ctrl->rc.ch[1]);
 		vofa_send_data(5, usb_dt7_ctrl->rc.ch[2]);
