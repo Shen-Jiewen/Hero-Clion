@@ -65,6 +65,8 @@ include_directories(
         User/application/module/tick
         User/application/module/ui
         user/application/module/mini_gimbal
+        # test
+        User/application/test/feedforward
         # dsp
         User/bsp/dm02
         # component/algorithm
@@ -82,7 +84,7 @@ include_directories(
         User/components/device/IST8310
         User/components/device/ws2812
         User/components/device/supercap
-        #  component/support
+        # component/support
         User/components/support
         User/components/support/vofa+
         User/components/support/crc
@@ -90,7 +92,7 @@ include_directories(
 
 # User include_directories END
 
-add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32H723xx)
+add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32H723xx -DUSE_PWR_LDO_SUPPLY)
 
 file(GLOB_RECURSE SOURCES "Core/*.*" "Middlewares/*.*" "Drivers/*.*" "USB_DEVICE/*.*"
         # User file BEGIN

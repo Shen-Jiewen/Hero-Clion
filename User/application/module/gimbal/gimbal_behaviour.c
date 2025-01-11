@@ -255,7 +255,11 @@ void gimbal_behaviour_control_set(fp32 *add_yaw, fp32 *add_pitch, gimbal_control
 	}
 	else if (gimbal_behaviour == GIMBAL_ABSOLUTE_ANGLE)
 	{
+#ifdef feedforward_test
+		gimbal_feedforward_control(add_yaw, add_pitch, gimbal_control_set);
+#else
 		gimbal_absolute_angle_control(add_yaw, add_pitch, gimbal_control_set);
+#endif
 	}
 	else if (gimbal_behaviour == GIMBAL_RELATIVE_ANGLE)
 	{
