@@ -42,9 +42,9 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
 {
   RCC_ClkInitTypeDef    clkconfig;
   uint32_t              uwTimclock;
-
   uint32_t              uwPrescalerValue;
   uint32_t              pFLatency;
+
   /*Configure the TIM1 IRQ priority */
   if (TickPriority < (1UL << __NVIC_PRIO_BITS))
    {
@@ -61,8 +61,10 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
 
   /* Enable TIM1 clock */
   __HAL_RCC_TIM1_CLK_ENABLE();
-  /* Get clock configuration */
+
+/* Get clock configuration */
   HAL_RCC_GetClockConfig(&clkconfig, &pFLatency);
+
   /* Compute TIM1 clock */
       uwTimclock = HAL_RCC_GetPCLK2Freq();
 

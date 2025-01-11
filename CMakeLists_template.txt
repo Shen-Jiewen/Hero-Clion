@@ -64,10 +64,12 @@ include_directories(
         User/application/module/tick
         User/application/module/ui
         user/application/module/mini_gimbal
+        # test
+        User/application/test/feedforward
         # dsp
         User/bsp/dm02
         # component/algorithm
-        User/components/algorithm/madgwick
+        User/components/algorithm/AHRS
         User/components/algorithm/user_lib
         # component/controller
         User/components/controller/pid
@@ -80,7 +82,8 @@ include_directories(
         User/components/device/BMI088
         User/components/device/IST8310
         User/components/device/ws2812
-        #  component/support
+        User/components/device/supercap
+        # component/support
         User/components/support
         User/components/support/vofa+
         User/components/support/crc
