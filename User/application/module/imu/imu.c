@@ -33,7 +33,7 @@ void imu_control_init(imu_control_t *imu_control) {
 	imu_control->solves_per_second = 0;
 
 	// AHRS初始化
-	IMU_QuaternionEKF_Init(10, (fp32) 1 / SAMPLE_RATE, 10000000, 1, 0.001f, 0); //ekf初始化
+	IMU_QuaternionEKF_Init(10, 0.001f, 1000, 1, (fp32)1 / SAMPLE_RATE, 0); //ekf初始化
 	Mahony_Init(SAMPLE_RATE);
 	MahonyAHRSinit(imu_control->accelerometer[0], imu_control->accelerometer[1], imu_control->accelerometer[2], 0, 0,
 	               0);

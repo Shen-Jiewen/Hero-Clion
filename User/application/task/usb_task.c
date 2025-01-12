@@ -7,6 +7,7 @@
 #include "dt7.h"
 #include "chassis.h"
 #include "imu.h"
+#include "feedforward.h"
 
 _Noreturn void usb_task(__attribute__((unused)) void* argument){
 	osDelay(1000);
@@ -32,6 +33,10 @@ _Noreturn void usb_task(__attribute__((unused)) void* argument){
 		vofa_send_data(13, motor0->speed_rpm);
 		vofa_send_data(14, motor0->given_current);
 		vofa_send_data(15, imu_control->temperature);
+		vofa_send_data(16, imu_control->angle[1]);
+		vofa_send_data(17, get_gimbal_pitch_current());
+		vofa_send_data(18, imu_control->angle[2]);
+		vofa_send_data(19, get_gimbal_yaw_current());
 		vofa_sendframetail();
 		osDelay(10);
 	}

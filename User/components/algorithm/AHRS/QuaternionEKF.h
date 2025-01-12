@@ -23,10 +23,6 @@
 #define FALSE 0 /**< boolean fails */
 #endif
 
-
-
-
-
 typedef struct
 {
     uint8_t Initialized;

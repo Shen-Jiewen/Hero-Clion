@@ -8,22 +8,6 @@
 
 #include "feedforward.h"
 
-// 控制周期 2ms
-#define CONTROL_PRECISION 0.002f
-
-// 角度变化间隔 5s
-#define ANGLE_CHANGE_INTERVAL 5000
-
-// 角度变化步长，直接使用弧度制
-#define YAW_ANGLE_CHANGE_STEP 0.001745f   // Yaw 每次角度变化0.1度，直接使用弧度值 (0.1 * π / 180 ≈ 0.001745)
-#define PITCH_ANGLE_CHANGE_STEP 0.001745f // Pitch 每次角度变化0.1度，直接使用弧度值 (0.1 * π / 180 ≈ 0.001745)
-
-// 起始角度和末尾角度，直接使用弧度制
-#define YAW_START_ANGLE 0.0f        // Yaw 起始角度0度，直接使用弧度值
-#define YAW_END_ANGLE 0.0f          // Yaw 目标角度0度，直接使用弧度值
-#define PITCH_START_ANGLE 0.5236f   // Pitch 起始角度30度，直接使用弧度值 (30 * π / 180 ≈ 0.5236)
-#define PITCH_END_ANGLE (-0.5236f)  // Pitch 目标角度-30度，直接使用弧度值 (-30 * π / 180 ≈ -0.5236)
-
 // 静态全局变量，记录当前电流值
 static fp32 gimbal_yaw_current = 0.f;
 static fp32 gimbal_pitch_current = 0.f;
@@ -59,50 +43,58 @@ void gimbal_feedforward_control(fp32 *yaw, fp32 *pitch, const gimbal_control_t *
     pitch_control.time += 2;
 
     // Yaw 角度变化逻辑
-    if (yaw_control.time >= ANGLE_CHANGE_INTERVAL)
-    {
-        yaw_control.time = 0; // 重置时间
-
-        // 更新 Yaw 角度
-        yaw_control.current_angle += yaw_control.step;
-
-        // 如果角度超过目标角度，则重置为起始角度
-        if (yaw_control.current_angle > yaw_control.target_angle)
-        {
-            yaw_control.current_angle = YAW_START_ANGLE;
-        }
-
-        // 直接输出 Yaw 角度（已经是弧度制）
-        *yaw = yaw_control.current_angle;
-
-        // 记录当前 Yaw 电流值到静态全局变量中
-        gimbal_yaw_current = gimbal_control_set->gimbal_yaw_motor.current_set;
-    }
-    else
-    {
-        // 保持当前 Yaw 角度
-        *yaw = yaw_control.current_angle;
-    }
+    // if (yaw_control.time >= ANGLE_CHANGE_INTERVAL)
+    // {
+    //     yaw_control.time = 0; // 重置时间
+    //
+    //     // 记录当前 Yaw 电流值到静态全局变量中
+    //     gimbal_yaw_current = gimbal_control_set->gimbal_yaw_motor.current_set;
+    //
+    //     // 根据目标角度和当前角度的大小关系决定步长方向
+    //     if (yaw_control.target_angle > yaw_control.current_angle) {
+    //         yaw_control.current_angle += yaw_control.step;
+    //         if (yaw_control.current_angle > yaw_control.target_angle) {
+    //             yaw_control.current_angle = yaw_control.target_angle; // 到达目标角度后保持
+    //         }
+    //     } else {
+    //         yaw_control.current_angle -= yaw_control.step;
+    //         if (yaw_control.current_angle < yaw_control.target_angle) {
+    //             yaw_control.current_angle = yaw_control.target_angle; // 到达目标角度后保持
+    //         }
+    //     }
+    //
+    //     // 直接输出 Yaw 角度（已经是弧度制）
+    //     *yaw = yaw_control.current_angle;
+    // }
+    // else
+    // {
+    //     // 保持当前 Yaw 角度
+    //     *yaw = yaw_control.current_angle;
+    // }
 
     // Pitch 角度变化逻辑
     if (pitch_control.time >= ANGLE_CHANGE_INTERVAL)
     {
         pitch_control.time = 0; // 重置时间
 
-        // 更新 Pitch 角度
-        pitch_control.current_angle += pitch_control.step;
+        // 记录当前 Pitch 电流值到静态全局变量中
+        gimbal_pitch_current = gimbal_control_set->gimbal_pitch_motor.current_set;
 
-        // 如果角度超过目标角度，则重置为起始角度
-        if (pitch_control.current_angle > pitch_control.target_angle)
-        {
-            pitch_control.current_angle = PITCH_START_ANGLE;
+        // 根据目标角度和当前角度的大小关系决定步长方向
+        if (pitch_control.target_angle > pitch_control.current_angle) {
+            pitch_control.current_angle += pitch_control.step;
+            if (pitch_control.current_angle > pitch_control.target_angle) {
+                pitch_control.current_angle = pitch_control.target_angle; // 到达目标角度后保持
+            }
+        } else {
+            pitch_control.current_angle -= pitch_control.step;
+            if (pitch_control.current_angle < pitch_control.target_angle) {
+                pitch_control.current_angle = pitch_control.target_angle; // 到达目标角度后保持
+            }
         }
 
         // 直接输出 Pitch 角度（已经是弧度制）
         *pitch = pitch_control.current_angle;
-
-        // 记录当前 Pitch 电流值到静态全局变量中
-        gimbal_pitch_current = gimbal_control_set->gimbal_pitch_motor.current_set;
     }
     else
     {

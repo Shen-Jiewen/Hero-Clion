@@ -13,7 +13,7 @@
 #include "imu.h"
 
 //pitch 速度环 PID参数以及 PID最大输出，积分输出
-#define PITCH_SPEED_PID_KP        3000.0f//1500
+#define PITCH_SPEED_PID_KP        2000.0f//1500
 #define PITCH_SPEED_PID_KI        0.0f//5
 #define PITCH_SPEED_PID_KD        0.0f
 #define PITCH_SPEED_PID_MAX_OUT   200.0f
@@ -27,8 +27,8 @@
 #define YAW_SPEED_PID_MAX_IOUT  5000.0f
 
 //pitch 角度环 角度由陀螺仪解算 PID参数以及 PID最大输出，积分输出
-#define PITCH_GYRO_ABSOLUTE_PID_KP 0.03f  //15
-#define PITCH_GYRO_ABSOLUTE_PID_KI 0.001f
+#define PITCH_GYRO_ABSOLUTE_PID_KP 0.02f  //15
+#define PITCH_GYRO_ABSOLUTE_PID_KI 0.0f
 #define PITCH_GYRO_ABSOLUTE_PID_KD 0.0f
 #define PITCH_GYRO_ABSOLUTE_PID_MAX_OUT 10.0f
 #define PITCH_GYRO_ABSOLUTE_PID_MAX_IOUT 0.0f

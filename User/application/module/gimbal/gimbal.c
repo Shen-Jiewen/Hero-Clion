@@ -325,6 +325,12 @@ void gimbal_set_control(gimbal_control_t* set_control)
 		//enconde模式下，电机编码角度控制
 		gimbal_relative_angle_limit(&set_control->gimbal_pitch_motor, add_pitch_angle);
 	}
+
+#ifdef feedforward_test
+	if (switch_is_mid(set_control->gimbal_rc_ctrl->rc.s[GIMBAL_MODE_CHANNEL])) {
+		gimbal_feedforward_control(&set_control->gimbal_yaw_motor.absolute_angle_set, &set_control->gimbal_pitch_motor.absolute_angle_set, set_control);
+	}
+#endif
 }
 /**
   * @brief          云台控制模式:GIMBAL_MOTOR_GYRO，使用陀螺仪计算的欧拉角进行控制
