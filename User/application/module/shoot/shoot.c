@@ -25,11 +25,9 @@ shoot_control_t* get_shoot_control_point(void)
 }
 
 /**
-  * @brief          射击初始化
-  * @param			shoot_init
-  * @param[in]      shoot_control_t结构体指针
-  * @retval         void
-  */
+ * @brief          射击任务初始化函数
+ * @param shoot_init 射击控制的结构体指针
+ */
 void shoot_init(shoot_control_t* shoot_init)
 {
 
@@ -302,16 +300,21 @@ void shoot_set_control(shoot_control_t* set_control)
 }
 
 /**
- * @brief 下拨弹电机的状态机控制函数
- * @param void
+ * @brief 拨弹控制
  */
 static void Down_shoot_bullet_control(void)
 {
 
+
+#if HEAT_LIMIT_ENABLE
 	//热量限制
-//    if (shoot_control.heat_limit - shoot_control.heat >= 100) {
+	if (shoot_control.heat_limit - shoot_control.heat >= 100) {
+		DM_shoot_control();
+	}
+#else
 	DM_shoot_control();
-//    }
+#endif
+
 	if (shoot_control.shoot_mode == SHOOT_BULLET
 		&& (!(switch_is_down(shoot_control.shoot_rc_ctrl->rc.s[SHOOT_RC_MODE_CHANNEL]))
 			&& (shoot_control.press_l == 0)))
@@ -321,8 +324,7 @@ static void Down_shoot_bullet_control(void)
 }
 
 /**
- * @brief 拨弹电机拨弹转动控制
- * @param void
+ * @brief 拨弹电机转动角度控制函数
  */
 static void DM_shoot_control(void)
 {
@@ -351,8 +353,7 @@ static void DM_shoot_control(void)
 }
 
 /**
- * @brief 拨弹电机防堵转
- * @param void
+ * @brief 拨弹电机防堵转函数
  */
 static void trigger_motor_turn_back(void)
 {

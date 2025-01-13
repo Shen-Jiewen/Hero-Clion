@@ -35,6 +35,10 @@ _Noreturn void chassis_task(__attribute__((unused)) void* argument)
 		chassis_set_control(chassis_control);
 		// 底盘控制PID计算
 		chassis_control_loop(chassis_control);
+
+#if	CHASSIS_DISABLE
+		chassis_control->CAN_cmd_chassis(0, 0, 0, 0);
+#else
 		// 确保至少一个电机在线,这样CAN控制包也可以被接收到
 		if (!(toe_is_error(CHASSIS_MOTOR1_TOE) && toe_is_error(CHASSIS_MOTOR2_TOE) && toe_is_error(CHASSIS_MOTOR3_TOE)
 			&& toe_is_error(CHASSIS_MOTOR4_TOE)))
@@ -52,6 +56,7 @@ _Noreturn void chassis_task(__attribute__((unused)) void* argument)
 					chassis_control->motor_chassis[3].give_current);
 			}
 		}
+#endif
 		osDelay(CHASSIS_CONTROL_TIME_MS);
 	}
 }
