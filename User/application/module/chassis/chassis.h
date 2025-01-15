@@ -101,6 +101,7 @@
 #define CHASSIS_FOLLOW_GIMBAL_PID_MAX_OUT 6.0f
 #define CHASSIS_FOLLOW_GIMBAL_PID_MAX_IOUT 0.2f
 
+#define CHASSIS_DISABLE		1 //调试云台发射机构时失能底盘
 typedef enum
 {
 	CHASSIS_VECTOR_FOLLOW_GIMBAL_YAW,   // 底盘会跟随云台相对角度
