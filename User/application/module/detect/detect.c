@@ -8,7 +8,7 @@ static error_t error_list[ERROR_LIST_LENGHT + 1];
 
 void detect_init(uint32_t time)
 {
-	//设置离线时间，上线稳定工作时间，优先级 offlineTime onlinetime priority
+	//设置离线时间，上线稳定工作时间，优先级 offlineTime online time priority
 	uint16_t set_item[ERROR_LIST_LENGHT][3] =
 		{
 			{30, 40, 15},   //SBUS
