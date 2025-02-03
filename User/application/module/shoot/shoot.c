@@ -16,7 +16,7 @@ static void Down_shoot_bullet_control(void);
 
 /**
   * @brief          返回射击控制结构体指针
-  * @retval         void
+  * @return         &shoot_control
   */
 shoot_control_t* get_shoot_control_point(void)
 {

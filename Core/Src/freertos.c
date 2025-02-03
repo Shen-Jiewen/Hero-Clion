@@ -138,6 +138,13 @@ const osThreadAttr_t uiTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for minigimbalTask */
+osThreadId_t minigimbalTaskHandle;
+const osThreadAttr_t minigimbalTask_attributes = {
+  .name = "minigimbalTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityHigh2,
+};
 /* Definitions for imuBinarySem01 */
 osSemaphoreId_t imuBinarySem01Handle;
 const osSemaphoreAttr_t imuBinarySem01_attributes = {
@@ -162,6 +169,7 @@ extern void buzzer_task(void *argument);
 extern void shoot_task(void *argument);
 extern void watch_task(void *argument);
 extern void ui_task(void *argument);
+extern void mini_gimbal_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -252,6 +260,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of uiTask */
   uiTaskHandle = osThreadNew(ui_task, NULL, &uiTask_attributes);
+
+  /* creation of minigimbalTask */
+  minigimbalTaskHandle = osThreadNew(mini_gimbal_task, NULL, &minigimbalTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
