@@ -14,3 +14,10 @@ mini_gimbal_control_t* get_mini_gimbal_control_point(void)
 {
     return &mini_gimbal_control;
 }
+
+void mini_gimbal_init(mini_gimbal_control_t* init)
+{
+    if (init == NULL)return;
+    //获取遥控器指针
+    init->mini_gimbal_rc_ctrl = get_dt7_point();
+}

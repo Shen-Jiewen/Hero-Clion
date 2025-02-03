@@ -13,9 +13,10 @@
 
 typedef struct
 {
-    const RC_ctrl_t* shoot_rc_ctrl;                 //指向发射机构遥控控制输入的常量指针
+    const RC_ctrl_t* mini_gimbal_rc_ctrl;                 //指向发射机构遥控控制输入的常量指针
 }mini_gimbal_control_t;
 
 mini_gimbal_control_t* get_mini_gimbal_control_point(void);
+void mini_gimbal_init(mini_gimbal_control_t* init);
 
 #endif //MINI_GIMBAL_H
