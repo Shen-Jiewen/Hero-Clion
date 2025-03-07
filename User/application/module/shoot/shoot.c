@@ -9,7 +9,6 @@
 #include "referee.h"
 
 static shoot_control_t shoot_control;
-static gimbal_behaviour_e* gimbal_behaviour;
 
 static void trigger_motor_turn_back(void);
 static void DM_shoot_control(void);
@@ -46,9 +45,6 @@ void shoot_init(shoot_control_t* shoot_init)
 
 	//获取遥控器指针
 	shoot_init->shoot_rc_ctrl = get_dt7_point();
-
-	//获取云台行为模式指针
-	gimbal_behaviour = get_gimbal_behaviour_point();
 
 	//初始化拨盘电机类型和测量数据
 	shoot_init->trigger_motor.motor_type = MOTOR_4310;
@@ -210,9 +206,9 @@ void shoot_set_mode(shoot_control_t* set_mode)
 		set_mode->shoot_mode = SHOOT_READY_BULLET;
 	}
 	//  现在还没有写自瞄没有接口先注释掉
-	// //开启自瞄并且找到目标后允许拨弹
+	//开启自瞄并且找到目标后允许拨弹
 	// else if (shoot_control.shoot_mode == SHOOT_READY_BULLET
-	//     && *gimbal_behaviour == GIMBAL_AUTO
+	//     && gimbal_cmd_to_chassis_stop()
 	//     && Get_Shoot_Brief() == 1) {
 	//     shoot_control.shoot_mode = SHOOT_BULLET;
 	// }
@@ -237,7 +233,7 @@ void shoot_set_mode(shoot_control_t* set_mode)
 	}
 
 	//若云台无力，关闭发射
-	if (*gimbal_behaviour == GIMBAL_ZERO_FORCE)
+	if (gimbal_cmd_to_chassis_stop())
 	{
 		set_mode->shoot_mode = SHOOT_STOP;
 	}

@@ -433,13 +433,4 @@ bool_t gimbal_cmd_to_chassis_stop(void)
 	}
 }
 
-/**
-  * @brief          返回云台状态机指针，目前用于发射机构判断是否自瞄以及是否无力
-  * @author         Du.X.Y
-  * @param[in]      none
-  * @param[out]      gimbal_behaviour:云台状态机指针
-  * @retval         none
-  */
-gimbal_behaviour_e* get_gimbal_behaviour_point(void) {
-	return &gimbal_behaviour;
-}
+

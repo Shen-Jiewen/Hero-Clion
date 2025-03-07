@@ -16,8 +16,14 @@ _Noreturn void shoot_task(__attribute__((unused)) void* argument)
 	//发射机构初始化
 	shoot_init(shoot_control);
 
-	//判断电机是否在线
-	while (toe_is_error(DOWN_TRIGGER_MOTOR_TOE)) {
+	//判断是否允许开始任务循环
+	while (toe_is_error(DOWN_TRIGGER_MOTOR_TOE)||
+		toe_is_error(DBUS_TOE) ||
+		toe_is_error(FRIC_MOTOR1_TOE) ||
+		toe_is_error(FRIC_MOTOR2_TOE) ||
+		toe_is_error(FRIC_MOTOR3_TOE) ||
+		toe_is_error(FRIC_MOTOR4_TOE)
+		) {
 		osDelay(SHOOT_CONTROL_TIME);
 		shoot_feedback_update(shoot_control);
 	}

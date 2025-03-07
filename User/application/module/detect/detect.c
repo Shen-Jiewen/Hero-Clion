@@ -8,7 +8,7 @@ static error_t error_list[ERROR_LIST_LENGHT + 1];
 
 void detect_init(uint32_t time)
 {
-	//设置离线时间，上线稳定工作时间，优先级 offlineTime onlinetime priority
+	//设置离线时间，上线稳定工作时间，优先级 offlineTime online time priority
 	uint16_t set_item[ERROR_LIST_LENGHT][3] =
 		{
 			{30, 40, 15},   //SBUS
@@ -25,6 +25,10 @@ void detect_init(uint32_t time)
 			{100, 100, 5},  //referee
 			{10, 10, 7},    //rm imu
 			{100, 100, 1},  //oled
+			{10, 10, 11},   //fric_motor1
+			{10, 10, 10},   //fric_motor2
+			{10, 10, 9},    //fric_motor3
+			{10, 10, 8},    //fric_motor4
 		};
 
 	for (uint8_t i = 0; i < ERROR_LIST_LENGHT; i++)

@@ -15,6 +15,7 @@ static void gimbal_relative_angle_limit(gimbal_motor_t* gimbal_motor, fp32 add);
 
 static void gimbal_motor_raw_angle_control(gimbal_motor_t* gimbal_motor);
 static void gimbal_motor_absolute_angle_control(gimbal_motor_t* gimbal_motor);
+static void pitch_motor_absolute_angle_control(gimbal_motor_t* gimbal_motor);
 static void gimbal_motor_relative_angle_control(gimbal_motor_t* gimbal_motor);
 
 /**
@@ -400,7 +401,8 @@ void gimbal_control_loop(gimbal_control_t* control_loop)
 	}
 	else if (control_loop->gimbal_pitch_motor.gimbal_motor_mode == GIMBAL_MOTOR_GYRO)
 	{
-		gimbal_motor_absolute_angle_control(&control_loop->gimbal_pitch_motor);
+		pitch_motor_absolute_angle_control(&control_loop->gimbal_pitch_motor);
+
 	}
 	else if (control_loop->gimbal_pitch_motor.gimbal_motor_mode == GIMBAL_MOTOR_ENCONDE)
 	{
@@ -443,6 +445,28 @@ static void gimbal_motor_absolute_angle_control(gimbal_motor_t* gimbal_motor)
 	//控制值赋值
 	gimbal_motor->given_current = (int16_t)gimbal_motor->current_set;
 }
+
+/**
+  * @brief          云台控制模式:GIMBAL_MOTOR_GYRO，使用陀螺仪计算的欧拉角进行控制
+  * @param[out]     gimbal_motor:yaw电机或者pitch电机
+  * @retval         none
+  */
+static void pitch_motor_absolute_angle_control(gimbal_motor_t* gimbal_motor)
+{
+	if (gimbal_motor == NULL)
+	{
+		return;
+	}
+
+	gimbal_motor->motor_gyro_set = PID_calc(&gimbal_motor->gimbal_motor_absolute_angle_pid,
+		gimbal_motor->absolute_angle,
+		gimbal_motor->absolute_angle_set);
+	gimbal_motor->current_set =
+		PID_calc(&gimbal_motor->gimbal_motor_gyro_pid, gimbal_motor->motor_gyro, gimbal_motor->motor_gyro_set);
+	//控制值赋值
+	gimbal_motor->given_current = (int16_t)gimbal_motor->current_set;
+}
+
 
 /**
   * @brief          云台控制模式:GIMBAL_MOTOR_ENCONDE，使用编码相对角进行控制
