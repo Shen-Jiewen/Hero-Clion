@@ -3,6 +3,7 @@
 //
 
 #include "gimbal.h"
+#include "arm_math.h"
 #include "gimbal_behaviour.h"
 #include "user_lib.h"
 

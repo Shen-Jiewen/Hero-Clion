@@ -1,4 +1,5 @@
 #include "referee.h"
+#include "CRC8_CRC16.h"
 
 
 frame_header_struct_t referee_receive_header;

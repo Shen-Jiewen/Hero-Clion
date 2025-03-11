@@ -6,7 +6,7 @@
 #include "dt7.h"
 
 // 遥控器出错数据上限
-#define RC_CHANNAL_ERROR_VALUE 700
+#define RC_CHANNEL_ERROR_VALUE 700
 
 static int16_t dt7_abs(int16_t value);
 
@@ -30,19 +30,19 @@ RC_ctrl_t *get_dt7_point(void){
   * 检查遥控器的通道值和开关状态是否超出允许的误差范围。如果检测到错误，清空控制数据并返回1。
   */
 uint8_t dt7_data_is_error(void){
-	if (dt7_abs(dt7_ctrl.rc.ch[0]) > RC_CHANNAL_ERROR_VALUE)
+	if (dt7_abs(dt7_ctrl.rc.ch[0]) > RC_CHANNEL_ERROR_VALUE)
 	{
 		goto error;
 	}
-	if (dt7_abs(dt7_ctrl.rc.ch[1]) > RC_CHANNAL_ERROR_VALUE)
+	if (dt7_abs(dt7_ctrl.rc.ch[1]) > RC_CHANNEL_ERROR_VALUE)
 	{
 		goto error;
 	}
-	if (dt7_abs(dt7_ctrl.rc.ch[2]) > RC_CHANNAL_ERROR_VALUE)
+	if (dt7_abs(dt7_ctrl.rc.ch[2]) > RC_CHANNEL_ERROR_VALUE)
 	{
 		goto error;
 	}
-	if (dt7_abs(dt7_ctrl.rc.ch[3]) > RC_CHANNAL_ERROR_VALUE)
+	if (dt7_abs(dt7_ctrl.rc.ch[3]) > RC_CHANNEL_ERROR_VALUE)
 	{
 		goto error;
 	}

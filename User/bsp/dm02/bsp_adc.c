@@ -71,19 +71,18 @@ void init_vrefint_reciprocal(void)
 fp32 get_temperature(void)
 {
 	uint16_t adcx = 0;
-	fp32 temperature;
 	uint16_t ts_cal1 = (*TEMPSENSOR_CAL1_ADDR); // 校准值 @ 30°C
 	uint16_t ts_cal2 = (*TEMPSENSOR_CAL2_ADDR); // 校准值 @ 110°C
 
 	adcx = adcx_get_chx_value(&hadc3, ADC_CHANNEL_TEMPSENSOR, ADC_SAMPLETIME_387CYCLES_5);
 	// 计算温度值（线性插值公式）
 //	temperature = ((fp32)adcx - ts_cal1) * (110.0f - 30.0f) / (ts_cal2 - ts_cal1) + 30.0f; // NOLINT(*-narrowing-conversions)
-	temperature = __HAL_ADC_CALC_TEMPERATURE_TYP_PARAMS( // NOLINT(*-integer-division)
-		4300,           // Avg_Slope: µV/°C
-		760,            // V30: 30°C 时的典型电压（单位：mV）
-		30,             // 校准温度（30°C）
-		vref_voltage,   // 当前参考电压（单位：mV）
-		adcx,       // 温度传感器的 ADC 值
+	fp32 temperature = __HAL_ADC_CALC_TEMPERATURE_TYP_PARAMS( // NOLINT(*-integer-division)
+		4300, // Avg_Slope: µV/°C
+		760, // V30: 30°C 时的典型电压（单位：mV）
+		30, // 校准温度（30°C）
+		vref_voltage, // 当前参考电压（单位：mV）
+		adcx, // 温度传感器的 ADC 值
 		ADC_RESOLUTION_12B // ADC 分辨率（这里是 12 位）
 	);
 

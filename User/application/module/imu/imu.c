@@ -4,6 +4,8 @@
 #include "bsp_gpio.h"
 #include "bsp_pwm.h"
 #include "cmsis_os.h"
+#include "MahonyAHRS.h"
+#include "QuaternionEKF.h"
 
 #define SAMPLE_RATE 1000
 #define DEG_TO_RAD(angle) ((angle) * (M_PI / 180.0))
@@ -87,11 +89,6 @@ void imu_data_update(imu_control_t *imu_control) {
 		IMU_QuaternionEKF_Update(imu_control->gyroscope[0], imu_control->gyroscope[1], imu_control->gyroscope[2],
 		                         imu_control->accelerometer[0], imu_control->accelerometer[1],
 		                         imu_control->accelerometer[2]);
-		//mahony姿态解算部分
-		Mahony_update(imu_control->gyroscope[0], imu_control->gyroscope[1], imu_control->gyroscope[2],
-		              imu_control->accelerometer[0], imu_control->accelerometer[1], imu_control->accelerometer[2], 0, 0,
-		              0);
-		Mahony_computeAngles();
 		//ekf获取姿态角度函数
 		imu_control->angle[0] = DEG_TO_RAD(Get_Roll());
 		imu_control->angle[1] = DEG_TO_RAD(Get_Pitch());

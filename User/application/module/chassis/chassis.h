@@ -16,7 +16,6 @@
 // 库
 #include "pid.h"
 #include "user_lib.h"
-#include "arm_math.h"
 
 // 任务开始时空闲一段时间
 #define CHASSIS_TASK_INIT_TIME 357

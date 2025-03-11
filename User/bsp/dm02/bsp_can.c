@@ -4,6 +4,7 @@
 
 #include "bsp_can.h"
 
+
 extern FDCAN_HandleTypeDef hfdcan1;
 extern FDCAN_HandleTypeDef hfdcan2;
 extern FDCAN_HandleTypeDef hfdcan3;
@@ -110,10 +111,8 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 		// FDCAN1 的接收处理
 		if (HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &RxHeader, RxData) == HAL_OK)
 		{
-
 			// 处理 FDCAN1 的接收到的消息
 			motor_3508_can_callback(RxHeader.Identifier, RxData);
-
 		}
 	}
 	else if (hfdcan == &hfdcan2)
@@ -121,13 +120,12 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 		// FDCAN2 的接收处理
 		if (HAL_FDCAN_GetRxMessage(&hfdcan2, FDCAN_RX_FIFO0, &RxHeader, RxData) == HAL_OK)
 		{
-
 			// 处理 FDCAN2 的接收到的消息
 			// 摩擦轮3508、6020电机和4310电机的数据处理
 			motor_6020_can_callback(RxHeader.Identifier, RxData);
 			motor_4310_v41_can_callback(RxHeader.Identifier, RxData);
 			shoot_3508_can_callback(RxHeader.Identifier, RxData);
-
+			CAP_CAN_RxCallback(RxHeader.Identifier, RxData);
 		}
 	}
 	else if (hfdcan == &hfdcan3)
@@ -135,9 +133,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 		// FDCAN3 的接收处理
 		if (HAL_FDCAN_GetRxMessage(&hfdcan3, FDCAN_RX_FIFO0, &RxHeader, RxData) == HAL_OK)
 		{
-
 			// 处理 FDCAN3 的接收到的消息
-
 		}
 	}
 }

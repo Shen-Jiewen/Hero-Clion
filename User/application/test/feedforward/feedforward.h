@@ -12,23 +12,20 @@
 #include "struct_typedef.h"
 #include "gimbal.h"
 
-#define feedforward_test
+// #define feedforward_test
 
-// 控制周期 2ms
-#define CONTROL_PRECISION 0.002f
-
-// 角度变化间隔 1s
-#define ANGLE_CHANGE_INTERVAL 3000
+// 角度变化间隔
+#define ANGLE_CHANGE_INTERVAL 5000
 
 // 角度变化步长，直接使用弧度制
-#define YAW_ANGLE_CHANGE_STEP 0.1f   // Yaw 每次角度变化0.1度，直接使用弧度值 (0.1 * π / 180 ≈ 0.001745)
+#define YAW_ANGLE_CHANGE_STEP 0.1f    // Yaw 每次角度变化0.1度，直接使用弧度值 (0.1 * π / 180 ≈ 0.001745)
 #define PITCH_ANGLE_CHANGE_STEP 0.01f // Pitch 每次角度变化0.1度，直接使用弧度值 (0.1 * π / 180 ≈ 0.001745)
 
 // 起始角度和末尾角度，直接使用弧度制
 #define YAW_START_ANGLE 0.0f        // Yaw 起始角度0度，直接使用弧度值
-#define YAW_END_ANGLE 1.0f          // Yaw 目标角度1.0弧度
-#define PITCH_START_ANGLE (-0.25f)   // Pitch 起始角度-0.2弧度
-#define PITCH_END_ANGLE (0.62f)     // Pitch 目标角度0.52弧度
+#define YAW_END_ANGLE 0.0f          // Yaw 目标角度1.0弧度
+#define PITCH_START_ANGLE (-0.26f)  // Pitch 起始角度-0.2弧度
+#define PITCH_END_ANGLE (0.45)      // Pitch 目标角度0.52弧度
 
 /**
  * @brief 云台前馈控制函数

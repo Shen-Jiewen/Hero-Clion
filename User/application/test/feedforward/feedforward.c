@@ -38,9 +38,9 @@ static angle_control_t pitch_control = {0, PITCH_START_ANGLE, PITCH_END_ANGLE, P
  */
 void gimbal_feedforward_control(fp32 *yaw, fp32 *pitch, const gimbal_control_t *gimbal_control_set)
 {
-    // 每次进入函数，时间增加2ms
-    yaw_control.time += 2;
-    pitch_control.time += 2;
+    // 每次进入函数，时间增加1ms
+    yaw_control.time += 1;
+    pitch_control.time += 1;
 
     // Yaw 角度变化逻辑
     // if (yaw_control.time >= ANGLE_CHANGE_INTERVAL)

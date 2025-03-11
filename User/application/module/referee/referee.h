@@ -1,10 +1,7 @@
 #ifndef REFEREE_H
 #define REFEREE_H
 
-#include "main.h"
 #include "protocol.h"
-#include "string.h"
-#include "CRC8_CRC16.h"
 #include "fifo.h"
 
 typedef enum {

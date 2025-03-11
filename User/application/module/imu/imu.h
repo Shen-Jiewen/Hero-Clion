@@ -10,9 +10,6 @@
 #include "FreeRTOS.h"
 #include "semphr.h"
 #include "pid.h"
-#include "kalman_filter.h"
-#include "QuaternionEKF.h"
-#include "MahonyAHRS.h"
 
 // 定义常量
 #define INS_TASK_INIT_TIME 7  // IMU任务初始化时间

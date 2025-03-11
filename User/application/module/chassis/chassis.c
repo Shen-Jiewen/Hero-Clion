@@ -4,6 +4,7 @@
 
 #include "chassis.h"
 #include "chassis_behaviour.h"
+#include "chassis_power_control.h"
 
 extern FDCAN_HandleTypeDef hfdcan1;
 static chassis_control_t chassis_control;
@@ -576,6 +577,9 @@ void chassis_control_loop(chassis_control_t* chassis_move_control_loop)
 			chassis_move_control_loop->motor_chassis[i].speed,
 			chassis_move_control_loop->motor_chassis[i].speed_set);
 	}
+
+	// 功率控制
+	chassis_power_control(chassis_move_control_loop);
 
 	//赋值电流值
 	for (i = 0; i < 4; i++)

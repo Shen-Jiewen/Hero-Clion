@@ -2,7 +2,6 @@
 #define BMI088DRIVER_H
 
 #include "stdint.h"
-#include "main.h"
 
 #define BMI088_TEMP_FACTOR 0.125f
 #define BMI088_TEMP_OFFSET 23.0f

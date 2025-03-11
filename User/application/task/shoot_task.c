@@ -53,7 +53,5 @@ _Noreturn void shoot_task(__attribute__((unused)) void* argument)
 				shoot_control->friction_motor[3].give_current);
 			}
 		}
-
-
 	}
 }
